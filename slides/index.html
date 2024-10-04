@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Reading Lolita in Teheran</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Leseszenen in der Literatur
+### A. Nafisi: Reading Lolita in Teheran
+
+notes:
+>[!note] Notizen zu Reading Lolita | Hinweise
+
+>[!info] Studienleistungen: Frau Steil, Frau Willms (Arbeitspapiere) <br> Möglichkeit Gruppenarbeit: Kap. 5, 7, 10 unter der Frage, wie hier gelesen wird
+
+## Themen
+- Motiv zum Lesen: „epiphany of truth” [(3)](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=22)
+- das Seminar thematisiert das Verhältnis Fiktion, Imagination und Realität (ganz ähnlich wie unser Seminar… [(6)](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=25)) – zu den Beispieltexten gehört auch *Madame Bovary* – es geht um die Frage, was uns Literatur zur politischen Situation sagen kann, aber auch um die Funktion von Imagination für das Überleben in repressiven Regimen – gleichzeitig Notwendigkeit der Imagination, um diese Lektüresituation im Geist der Autorin und ihrer Leser wieder auferstehen zu lassen
+- Kapitel: 5–6 Scheherazade und Nabokov – Notwendigkeit von Literatur in repressiven Regimen
+	- ["] „how these great works of imagination could help us in our present trapped situation as women” [(19)](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=38)
+	- [>] *A Thousand and One Nights*, Scheherazades Strategie
+	- [>] Lektüren von „Upsilamba” (auch als ein Beispiel für das Vorgehen in der Klasse) [(21)](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=40) und von *Invitation to a Beheading*  
+- Kapitel 7: die Allegorie vom „blinden Zensor”
+- Kapitel 9, S. 32f.: knappe Lektüre von Lolita
+	- die Untertanen und die normierte Realität als Imagination des Zensors/Ayatollahs [28](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=47)
+	- zentrale Stelle für die Lektüre von *Lolita*: Humbert als „solipsizer” und Ebenbild der Zensoren, zugleich gebe es bei Nabokov „always the shadow of another world … attainable through fiction” und Zufluchtsort für die Unterdrückten [32](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=51)
+- Kapitel 10, S. [35ff.](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=54): Fortsetzung der Lektüre von Lolita
+	- the narrator/perpetrator and the victim - parallels to Iran‘s history and to the living conditions under the dictatorship [35](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=54)
+	- Lolita as Humbert’s creature  [36](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=55)
+	- Vergleich zwischen Iran und Lolita: beide Opfer von „solipsizers” [37](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=56)
+	- „the perverse intimacy of victim and jailer” [37](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=56)
+- das Seminar als „place of transgression” [(8)](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=27)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Besprechung der Evaluation
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="padding: 0 20px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+### Allgemeine Infos
+</div>
+
+<div class="" style="position: absolute; left: 10%; top: 15%; height: 70%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Azar_Nafisi_2015.jpg/440px-Azar_Nafisi_2015.jpg" alt="Azar Nafisi" style="object-fit: scale-down">
+
+</div>
+
+<div class="" style="position: absolute; left: 40%; top: 15%; height: 70%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="right">
+
+- Azar Nafisi (\*1948): amerikanisch-iranische Schriftstellerin und Literaturwissenschaftlerin
+- nach einem Studium im Ausland (CH, GB, USA) lehrte sie in Teheran (1979-1995)
+- wanderte 1997 in die USA aus und lehrt an bekannten Universitäten wie Johns Hopkins (Baltimore, MA)
+- 2003: *Reading Lolita in Teheran: A Memoir in Books*
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Leseszenen des Buches
+- „A Memoir in Books”
+- das Lesen im Seminar<!-- .element: class="fragment" data-fragment-index="1" -->
+- die Erinnerung der Autorin (Lesen von Fotografien)<!-- .element: class="fragment" data-fragment-index="1" -->
+- Rezeptionsebene (Imagination der Leser:innen)<!-- .element: class="fragment" data-fragment-index="1" -->
+
+notes:
+- Eine autobiographische Schrift in Leseszenen. Kapitel: Lolita, Gatsby, James, Austen; keine chronologisch-lineare Anordnung – erzählt historische und persönliche Situationen in Verbindung mit literarischen Texten/imaginativen Welten
+- **Vergleich mit Leseszenen** der bisher besprochenen Romane – diese zeigen das Gefahrenpotential literarischer Imagination auf (die Protagonist:innen verlieren sich in einer Wahnwelt) – hier wird nun das kritische Potential der literarischen Imagination entwickelt (Fiktion als Zufluchtsort, aber auch als Reflexion politischer Wirklichkeit)
+- das Lesen im Seminar: akademisches Lesen (?), Literatur als Zufluchtsort
+- die eigene Rückschau auf die Zeit in Teheran, dargestellt u.a. als Lesen von Fotografien
+- Rezeptionsebene: Lesen und Imagination
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="padding: 0 20px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+ 
+</div>
+
+
+
+
+
+
+
+<div class="" style="position: absolute; left: 5%; top: 15%; height: 70%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+<div class="block">
+
+She reminded me of a warning I was fond of repeating: do not, under any circumstances, belittle a work of fiction by trying to turn it into a carbon copy of real life; what we search for in fiction is not so much reality but the epiphany of truth. Yet I suppose that if I were to go against my own recommendation and choose a work of fiction that would most resonate with our lives in the Islamic Republic of Iran, it would not be *The Prime of Miss Jean Brodie* or even *1984* but perhaps Nabokov’s *Invitation to a Beheading* or better yet, *Lolita*.
+</div>
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="right">
+
+<div class="block">
+
+Nafisi, *Reading Lolita* (1999), 3
+</div>
+
+ 
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Frage: Wie liest Nafisi <em>Lolita</em> und inwiefern entgeht sie der zitierten Warnung?</li>
+<li>Wie wird das Verhältnis Literatur/Realität im Buch thematisiert?</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### *Lolita* (1955) als Referenztext
+- Vladimir Nabokov (1899-1977), geb. in Russland, Emigration nach D und USA
+- *Lolita* als Skandalerfolg – Geschichte einer Obsession und Panorama amerikanischer Kultur
+- Protagonisten: Humbert Humbert, Lolita
+
+notes:
+- s. Eintrag aus dem KLL
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1500px; min-height: 700px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Diskussion
+- Wie wird *Lolita* zur iranischen Realität in Bezug gesetzt?
+- Textauszüge: 
+	- Kapitel 9, S. 32f.
+	- Kapitel 10, S. 35ff.
+notes:
+- Kapitel 9, S. 32f.: knappe Lektüre von Lolita
+	- die Untertanen und die normierte Realität als Imagination des Zensors/Ayatollahs [28](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=47)
+	- zentrale Stelle für die Lektüre von *Lolita*: Humbert als „solipsizer” und Ebenbild der Zensoren, zugleich gebe es bei Nabokov „always the shadow of another world … attainable through fiction” und Zufluchtsort für die Unterdrückten [32](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=51)
+- Kapitel 10, S. [35ff.](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=54): Fortsetzung der Lektüre von Lolita
+	- the narrator/perpetrator and the victim - parallels to Iran‘s history and to the living conditions under the dictatorship [35](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=54)
+	- Lolita as Humbert’s creature  [36](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=55)
+	- Vergleich zwischen Iran und Lolita: beide Opfer von „solipsizers” [37](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=56)
+	- „the perverse intimacy of victim and jailer” [37](hook://file/hZTC1eoVr?p=Tm90ZXMvcGRm&n=Nafisi%20%E2%80%93%20Reading%20Lolita%20%282003%29%2Epdf#p=56)
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1500,"height":700,"margin":0.04,"controls":true,"progress":false,"slideNumber":false,"center":false,"transition":"slide","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
