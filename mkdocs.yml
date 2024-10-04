@@ -1,0 +1,26 @@
+site_name: VL Literaturgeschichte
+theme: material
+nav:
+  - Home: index.md
+  - About: about.md
+plugins:
+  - search
+  - bibtex:
+     bib_file: 'assets/Auswahlbibliografie.bib'
+     csl_file: 'assets/chicago-author-date.csl'
+     cite_inline: True
+markdown_extensions:
+  - smarty
+  - footnotes
+  - attr_list
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css: [extra.css]
+
+
