@@ -10,7 +10,7 @@ Am Leitfaden der Liebe als Thema literarischer Texte führt die Vorlesung in die
 <hr>
 
 - [@Harst_2024b]
-- [@Harst:2023f]
+- Wie @Harst:2023f sagt, handelt es sich um einen Fehler.
 - @Harst-2024c
 
 > Und er hat auch viele schlaue Sachen gesagt.[^FN]
