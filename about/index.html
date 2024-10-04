@@ -50,7 +50,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -350,11 +359,12 @@
 
 <ul>
 <li>(Harst 2024)<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
-<li>(Harst 2023)<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup></li>
+<li><a href="../slides/index.html">Link to slides</a></li>
+<li>Wie @Harst:2023f sagt, handelt es sich um einen Fehler.</li>
 <li>@Harst-2024c</li>
 </ul>
 <blockquote>
-<p>Und er hat auch viele schlaue Sachen gesagt.<sup id="fnref:FN"><a class="footnote-ref" href="#fn:FN">3</a></sup></p>
+<p>Und er hat auch viele schlaue Sachen gesagt.<sup id="fnref:FN"><a class="footnote-ref" href="#fn:FN">2</a></sup></p>
 </blockquote>
 <pre class="mermaid"><code>gantt
     title Literarische Epochen und Werke
@@ -375,7 +385,7 @@
   C --&gt; D[Debug];
   D --&gt; B;
   B ----&gt;|No| E[Yay!];</code></pre>
-<p><img alt="Image" class="img-left" src="https://komparatistik.uni-koeln.de/sites/komparatistik/user_upload/Joachim_Harst.png" /> </p>
+<p><a class="glightbox" href="https://komparatistik.uni-koeln.de/sites/komparatistik/user_upload/Joachim_Harst.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Image" src="https://komparatistik.uni-koeln.de/sites/komparatistik/user_upload/Joachim_Harst.png" /></a>{.img-left} </p>
 <p>Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.</p>
 <hr />
 <p>Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.Dies ist ein Beispieltext, der um das Bild herumfließt.</p>
@@ -386,11 +396,8 @@
 <li id="fn:1">
 <p>Harst, Joachim. 2024. “Geschichte Und Gesichtlichkeit. (De-)figurationen Nach Auerbach.” In <em>&ldquo;Leib Der Zeit.&rdquo; Ansätze Und Fortschreibungen Erich Auerbachs</em>, edited by Anja Lemke, 99–116. Göttingen: Wallstein.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
-<li id="fn:2">
-<p>Harst, Joachim. 2023. “Machine Analysis: Westworld and the Media History of Psychoanalysis.” In <em>Therapie Der Dinge? Materialität Der Psychoanalyse in Literatur Und Den Bildenden Künsten</em>, edited by Martin Bartelmus and Friederike Danebrock, 209–22. Bielefeld: transcript. <a href="https://doi.org/10.14361/9783839464762-011">https://doi.org/10.14361/9783839464762-011</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
 <li id="fn:FN">
-<p>Referenz in der Fußnote.&#160;<a class="footnote-backref" href="#fnref:FN" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+<p>Referenz in der Fußnote.&#160;<a class="footnote-backref" href="#fnref:FN" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -446,5 +453,7 @@
       <script src="../assets/javascripts/bundle.56dfad97.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
