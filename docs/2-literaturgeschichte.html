@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Antike 1</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: center;"></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left">2. Sitzung: Antike 1 | Teil 1: Liebe in der Bibel</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: lightgrey;">
+<div style="height: 100%; width: auto; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div></div>
+
+<div class="" style="padding: .5em; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 30%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+Egon Tschirsch<br>Hohelied Nr. 10
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Antike als Epochenbegriff
+
+- lat. antiquus = alt
+- regional verortet (Mittelmeerraum, Griechenland und Rom)
+- Beginn: 8. Jhdt. v.Chr. (Homer, griech. Kolonisation)
+- Ende: 5. Jhdt. n.Chr. (Ende des weströmischen Reiches)
+- umfasst griech. Archaik, Klassik, Hellenismus; röm. Republik und Kaiserreich
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Altertum als erweiterter Epochenbegriff
+- orientalische Kulturen des Mittelmeerraums (insbes. Ägypten und Levante/Phönizien, Israel, …) 
+- ab 3500 v.Chr. (Beginn der Schriftlichkeit)
+- auch hier lokal verortet: es gibt keine chinesische Antike/Altertum
+- Ungleichzeitigkeit der Epochen
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url(''); background-size: cover; background-position: center;">
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gegenstände der Vorlesung
+| Sitzung | Epoche      | Gegenstand                                                            | Gattung                          | Diskurs                                  |
+| ------- | ----------- | --------------------------------------------------------------------- | -------------------------------- | ---------------------------------------- |
+| 2       | Antike      | Altes und Neues Testament <br>Euripides: Phaidra                      | Bibel<br>Tragödie                | Erotisch/Christlich<br>Passional         |
+| 3       | Antike      | Platon: Symposion<br>Ovid: Amores und Metamorphosen                   | Dialog<br>Gedicht und Epos       | Erotisch/Platonisch<br>Rhetorik
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Altes Testament
+- wichtige Bestandteile: Bücher Mose, Propheten, Spruchdichtung/Hohelied
+- Zeitraum: 12. bis 2. Jhdt. v. Chr.
+- verschiedene Autoren und Redaktoren
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gott und sein Volk
+- **Moses**: Untreue, Eifersucht und neue Bundschlüsse durchziehen die Geschichte des jüdischen Volks (Bsp. Sintflut/Noah, Abraham, Goldenes Kalb)
+- **Propheten**: Gericht wegen Untreue, Hochzeits-Metapher veranschaulicht das Kommen des Messias
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Propheten: Jeremia (~7. Jhdt. v.Chr.)
+
+> So spricht der HERR: Ich gedenke der Treue deiner Jugend und der Liebe deiner Brautzeit, wie du mir folgtest in der Wüste, im Lande, da man nicht sät. Da war Israel dem HERRN heilig, die Erstlingsfrucht seiner Ernte. Wer davon essen wollte, machte sich schuldig, und Unheil musste über ihn kommen, spricht der HERR. Hört des HERRN Wort, ihr vom Hause Jakob und alle Geschlechter vom Hause Israel! So spricht der HERR: Was haben doch eure Väter Unrechtes an mir gefunden, dass sie von mir wichen und hingen den nichtigen Götzen an und wurden so zunichte und dachten niemals: Wo ist der HERR, der uns aus Ägyptenland führte und leitete uns in der Wüste, im wilden, ungebahnten Lande, im dürren und finstern Lande, im Lande, das niemand durchwandert und kein Mensch bewohnt? Und ich brachte euch in ein fruchtbares Land, dass ihr äßet seine Früchte und Güter. Aber als ihr hineinkamt, machtet ihr mein Land unrein und mein Eigentum mir zum Gräuel. Die Priester fragten nicht: Wo ist der HERR?, und die Hüter des Gesetzes achteten meiner nicht, und die Hirten des Volks wurden mir untreu, und die Propheten weissagten im Namen des Baal und hingen den Götzen an, die nicht helfen können. Darum muss ich noch weiter mit euch und mit euren Kindeskindern rechten, spricht der HERR. (1,2-9)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Propheten: Jesaja (~8. Jhdt. v.Chr.)
+- Prophet des Weltgerichts und des Messias
+- „Ich freue mich im HERRN, und meine Seele ist fröhlich in meinem Gott; denn er hat mich angezogen mit Kleidern des Heils und mit dem Rock der Gerechtigkeit gekleidet, wie einen Bräutigam, mit priesterlichem Schmuck geziert, und wie eine Braut, die in ihrem Geschmeide prangt.” (61:10)
+- „Denn wie ein Mann ein Weib liebhat, so werden dich deine Kinder liebhaben; und wie sich ein Bräutigam freut über die Braut, so wird sich dein Gott über dich freuen.” (62:5)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Propheten: Hosea (~8. Jhdt. v.Chr.)
+- Kampf gegen den Götzendienst in Metaphern einer Liebesbeziehung
+- Reinszenierung der Gottesbeziehung im Leben des Propheten
+- Androhung des Gerichts
+- Versprechen eines neuen Bundes: „Ich will mich mit dir verloben für alle Ewigkeit, ich will mich mit dir verloben in Gerechtigkeit und Recht, in Gnade und Barmherzigkeit.” (2:21)
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied
+- Zugehörigkeit zur Spruch- und Weisheitsdichtung
+- sinnliche Liebeslieder – Ort in der Bibel? → allegorische Auslegungsstrategien
+- Textschwierigkeiten (Bildsprache, Sprecherrollen, Einteilung/Struktur, narrativer Zusammenhang)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied: Aspekte der Lektüre
+- 1, 9-17 und 4,1-7: Bildsprache, Vergleiche
+- 2, 1-6 und 7,12-13: Sehnsucht und Erfüllung der Liebe
+- 8,6: Liebe als göttliche Gabe
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied: Interpretationen
+- die zwischengeschlechtliche Liebe als Geschenk Gottes (vgl. 1 Mose 2,23-25)
+- AT: Abbild der Verbindung zwischen Gott und seinem Volk (Jer 2,2; Hos 1-3)
+- NT: … zwischen Christus und seiner Gemeinde (Eph 5,25.31-32)
+- Mystik: zwischen Christus und der Seele (mystische Hochzeit)
+- ein Gedicht über das Lesen
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="align-items: center;">
+
+> „Da sprach der Mensch: Das ist doch Bein von meinem Bein und Fleisch von meinem Fleisch; man wird sie Männin nennen, weil sie vom Manne genommen ist. Darum wird ein Mann seinen Vater und seine Mutter verlassen und seiner Frau anhangen, und sie werden sein ein Fleisch. Und sie waren beide nackt, der Mensch und seine Frau, und schämten sich nicht.” (1 Mose 2,23-25)
+
+> „Ihr Männer, liebt eure Frauen, wie auch Christus die Gemeinde geliebt hat (…) Wer seine Frau liebt, der liebt sich selbst. Denn niemand hat je sein eigenes Fleisch gehasst; sondern er nährt und pflegt es wie auch Christus die Gemeinde. Denn wir sind Glieder seines Leibes. »Darum wird ein Mann Vater und Mutter verlassen und an seiner Frau hängen, und die zwei werden ein Fleisch sein.« Dies Geheimnis ist groß; ich deute es aber auf Christus und die Gemeinde.” (Eph 5, 25-32)
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Neue Testament
+- wichtige Bestandteile: Evangelien, Apostelbriefe (bes. Paulus)
+- Zeitraum: 1 Jhdt. n.Chr.
+- Beziehung zwischen AT und NT: 
+	- komplexes intertextuelles Gewebe
+	- „Präfiguration” = Zitat und Erfüllung (Bsp.: Pessachfest)
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div"><p class="right-title-text" style="transform: rotate(-76deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Antike 1</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg'); background-size: cover; background-position: left;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 1%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Hochzeit und Liebe im Evangelium
+- Jesus als Bräutigam (Mt 9:15; 25:1-13; → Erfüllung der Prophezeiung)
+- die Episode von der Ehebrecherin (Joh 7,53-8,11)
+- die Bergpredigt (Mt 5-7): 
+	- Verschärfung des Gesetzes
+	- Liebe als Erfüllung des Gesetzes
+	- Buchstabe und Geist des Gesetzes
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Die Bergpredigt: Liebe und Gesetz
+> „Ihr sollt nicht meinen, dass ich gekommen bin, das Gesetz oder die Propheten aufzulösen; ich bin nicht gekommen aufzulösen, sondern zu erfüllen. Denn wahrlich, ich sage euch: Bis Himmel und Erde vergehen, wird nicht vergehen der kleinste Buchstabe noch ein Tüpfelchen vom Gesetz, bis es alles geschieht.” (Mt 5:17-18)
+
+> „Ihr habt gehört, dass gesagt ist (2 Mose 20:14): »Du sollst nicht ehebrechen.« Ich aber sage euch: Wer eine Frau ansieht, sie zu begehren, der hat schon mit ihr die Ehe gebrochen in seinem Herzen.” (Mt 5:27-28)
+
+ > „Alles nun, was ihr wollt, dass euch die Leute tun sollen, das tut ihnen auch! Das ist das Gesetz und die Propheten.” (Mt 5:12, vgl. Mt 22,35-39)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Paulus: Liebe und Gesetz
+
+> Seid niemandem etwas schuldig, außer dass ihr euch untereinander liebt; denn wer d→ andern liebt, der hat das Gesetz erfüllt. Denn was da gesagt ist (2.Mose 20,13-17): »Du sollst nicht ehebrechen; du sollst nicht töten; du sollst nicht stehlen; du sollst nicht begehren«, und was da sonst an Geboten ist, das wird in diesem Wort zusammengefasst (3.Mose 19,18): »Du sollst deinen Nächsten lieben wie dich selbst.« Die Liebe tut dem Nächsten nichts Böses. So ist nun die Liebe des Gesetzes Erfüllung. (Röm 13:8-10)
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# VL Literaturgeschichte der Liebe
+## 2. Sitzung: Antike 1
+## Teil 2: Die griechische Tragödie
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Die griechische Tragödie: Historischer Kontext
+- Entstehung des Theaters aus dem Dionysos-Kult 
+- später als Festival und Wettbewerb säkularisiert
+- „orientalisches” Spektakel oder erhaben-klassisches Theater?
+- die drei wichtigen Tragödiendichter: Aischylos, Sophokles, Euripides (4. Jhdt. v.Chr.)
+- Archetyp: Sophokles, *König Ödipus*
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Die griechische Tragödie: Poetik
+- aus: Aristoteles, Poetik (um 335 v.Chr.)
+- Einheit von Zeit, Ort und Handlung
+- erhabene Sprache und Gegenstände/Personen (→ Stilebene)
+- Mimesis: „Die Tragödie ist Nachahmung einer guten und in sich geschlossenen Handlung von bestimmter Größe, in anziehend geformter Sprache.”
+- Ziel: Auslösen von Jammern und Schaudern zum Zwecke der Reinigung (Katharsis)
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Liebe in der Tragödie: Euripides, Hippolytos
+- Rivalität zwischen Aphrodite (sinnliche Liebe) und Artemis (Keuschheit)
+- Liebe als Krankheit und Wahnsinn (→Passion)
+- Liebe als Strafe der Götter
+- Zusammenhang zwischen Genre und Liebesdiskurs
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="height: 100%; display: flex; justify-content: center; align-items: center;">
+
+<div class="mermaid">
+graph TD;
+    Pasiphae-.->|Mutter|Phaidra
+    Ariadne-.->|Schwester|Phaidra
+    Theseus-.->|Ehemann|Phaidra
+    Theseus-.->|Vater|Hippolytos
+    Phaidra <-->|begehrt wahnsinnig/<br> verachtet| Hippolytos
+    Hippolytos -->|verehrt| Artemis
+    Aphrodite -->|schlägt mit Liebeswahnsinn| Phaidra
+    Phaidra -->|vertraut sich an| Amme
+    Amme -->|agiert als Kupplerin| Hippolytos
+    Aphrodite -->|ist eifersüchtig auf| Artemis
+
+style Phaidra fill:#3269AA50,stroke:#3269AA50,stroke-width:3px;
+style Hippolytos fill:#3269AA50,stroke:#3269AA50,stroke-width:3px;
+style Aphrodite fill:#3269AA50,stroke:#3269AA50,stroke-width:3px;
+
+</div>
+
+</div></div>
+</div></script></section></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal","mermaid":{"themeVariables":{"fontSize":"xx-large","background":null,"noteBkgColor":null}}}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
