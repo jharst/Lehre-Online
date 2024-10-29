@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Literatur und Theorie der Schreibszene
+### 1. Einführung
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Vorstellung
+
+notes:
+- Vertretung Lehrstuhl Solte-Gresser
+- Forschungsschwerpunkte
+- Mediengeschichte, Medienumbrüche (gemeinsam erarbeiten)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Thema: Schreibszene
+- was ist eine Schreibszene?
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->inhaltlich: Darstellung von Schreiben
+	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->formal: Einschreibung von materiellen Schreibbedingungen
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->weitere Bestimmungen
+	- „Spuren einer Praxis” (Campe 1991)
+	- „Schreiben als Kulturtechnik” (Stingelin 2012)
+	- „Schreiben als Prozess und Produkt” (Clare 2017)
+notes:
+- theoriegeschichtliche Herleitung der Fragestellung? Hermeneutik – Dekonstruktion – Diskursanalyse/Medienwissenschaft – cultural poetics
+- *Schreiben als Kulturtechnik* zu konzeptualisieren heißt, den Akt des Schreibens als Technik zu begreifen, die sowohl kulturell bedingt als auch kulturkonstituierend ist.
+-
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="padding: 0 20px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### Schreibszene
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 15%; height: 70%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+<div class="block">
+
+Der Begriff der écriture kann sich im Französischen, so Campe, »einmal auf die Schrift als eine Instanz der Sprache im Verhältnis von Mündlichkeit und Schriftlichkeit beziehen, [...] aber immer auch eine Praktik, ein Repertoire von Gesten und Vorkehrungen [implizieren].« (…) Campes Modell läuft also auf einen dynamischen Schreibbegriff hinaus – auf die Vorstellung eines Schreibens, das immer zugleich Prozess und Produkt ist und über die reinen Zeichen auf dem Papier weit hinausgeht.
+</div>
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="right">
+
+<div class="block">
+
+J. Clare. Textspuren und Schreibumgebungen (2017), 3.
+</div>
+
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="padding: 0 20px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### Schreib-Szene
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 15%; height: 70%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+<div class="block">
+
+wir [verstehen] im folgenden unter ›Schreibszene‹ die historisch und individuell von Autorin und Autor zu Autorin und Autor veränderliche Konstellation des Schreibens, die sich innerhalb des von der Sprache (Semantik des Schreibens), der Instrumentalität (Technologie des Schreibens) und der Geste (Körperlichkeit des Schreibens) gemeinsam gebildeten Rahmens abspielt (…); wo sich dieses Ensemble in seiner Heterogenität und Nicht-Stabilität an sich selbst aufzuhalten beginnt, thematisiert, problematisiert und reflektiert, sprechen wir von ›Schreib-Szene‹.
+</div>
+
+
+</div>
+
+<div class="" style="position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="right">
+
+<div class="block">
+
+M. Stingelin. „Schreiben. Einleitung” (2004), S. 15
+</div>
+
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Schaubild
+<div style="height: 100%; width: 100%; margin: 0; display: flex; justify-content: center; align-items: center;">
+
+<div class="mermaid">
+flowchart TD;
+    B(["Marxismus"])
+    C(["Diskursanalyse"])
+    F(["Strukturalismus"])
+    D(["Dekonstruktion"])
+    E(["New Historicism"])
+    G(["Schreibprozessforschung"])
+    I([Medienwissenschaft])
+    J(["Schreibszene"])
+
+    B--Historischer Materialismus-->C;
+    C--materielle Aussagebedingungen-->I;
+    F--Barthes: écriture-->C;
+    F-->D;
+    F--Kultur als Text-->E;
+    D<--Materialität von Schrift<br>Schreibmedien-->I;
+    E<--kultureller Kontext-->J;
+    D<--Intertextualität-->E;
+    G--individueller Schreibprozess-->J;
+    I--Schreibtechnologien,<br>Aufschreibesysteme-->J;
+    F--kulturelle Rahmung-->J;
+    
+    style C fill:#3269AA50;
+    style F fill:#3269AA50;
+    style I fill:#3269AA50;
+
+</div>
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+### Gruppenaktivität
+</div>
+
+<div class="" style="position: absolute; left: 0%; top: 10%; height: 80%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: space-evenly" align="left">
+
+**Frage**: die Auszüge stellen schreibende Figuren aus Austers Roman *City of Glass* (1985) dar – inwiefern können Sie Aspekte des Begriffs „Schreibszene” in dieser Darstellung wiedererkennen?
+</div>
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.xMgZrya-ormCkH9Qv8iMTAAAAA%26pid%3DApi&f=1&ipt=e066dea5209eb7979f029c99c6b42ec5344db76ec4ad5474904b9f416731107c&ipo=images" alt="Karasik/Mazzucchelli: Paul Auster’s City of Glass" style="position: absolute; height: 100%; width: auto; right: 0; bottom: 0; border: 5px solid darkgrey; border-radius: 5px; object-fit: fill">
+
+</div>
+</grid></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Seminarplan und Studienleistungen
+[Seminarplan](./Resources/Schreibszene-Seminarplan.pdf)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal","mermaid":{"themeVariables":{"fontSize":"xx-large","background":null,"noteBkgColor":null}}}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
