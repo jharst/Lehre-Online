@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Mittelalter 2</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left">5. Sitzung: Mittelalter 2</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hochmittelalter
+- Mittelalter: nachträgliche Epochenbezeichnung
+- Ständegesellschaft und höfische Dichtung
+- Höfische Liebe als normatives Ideal
+- Europäische Mythen: Artus und die Tafelrunde <br>(„matière de Bretagne”)
+
+<img src="Resources/images/12. Jhd. Gesellschaftsordnung.jpg" alt="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center; object-fit: fill">
+
+Quelle: dtv Atlas deutsche Literatur, hg. von Horst-Dieter Schlosser, 11. Auflage, München: dtv, 2010.<!-- .element: style="width: 48%; height: auto" class="right-image-source" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="Resources/images/11. Europa zu Beginn des Hoch-MA.jpg" alt="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center; object-fit: fill">
+
+Quelle: Putzger – Historischer Weltatlas, hg. von E. Bruckmüller und P.C. Hartmann, 102. Auflage, Berlin: Cornelsen 2012. <!-- .element: style="transform: rotate(-90deg) translate(40%, 460%); font-size: smaller; background: lightgrey; position: absolute; left: 20%; top: 85%; height: 15%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Mittelalter | Tristan</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" title="Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance." target="_blank">Szene aus der Uraufführung von Wagners <it>Tristan</it> (1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Vergleich Antike
+- politische Verfassung
+- Rhetorik
+- Religion
+- Liebesdiskurse
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="Resources/images/12. Jhd. Tristan-Stoff im MA_Handlungsverlauf bei Gottfried.jpg" alt="" style="position: absolute; left: 5%; top: 0%; height: 90%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: center; object-fit: fill">
+
+Quelle: dtv Atlas deutsche Literatur, hg. von Horst-Dieter Schlosser, 11. Auflage, München: dtv, 2010.<!-- .element: style="transform: rotate(-90deg) translate(50%, 440%); position: absolute; left: 25%; top: 85%; height: 15%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">4. Sitzung: Mittelalter | Tristan</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" title="Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance." target="_blank">Szene aus der Uraufführung von Wagners <it>Tristan</it> (1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gottfried von Straßburg: Tristan
+- Gattung: mhd. höfischer Roman (13. Jhdt.)
+- Liebesdiskurs: passional, erotisch, mystisch
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">4. Sitzung: Mittelalter | Tristan</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" title="Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance." target="_blank">Szene aus der Uraufführung von Wagners <it>Tristan</it> (1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+- Prolog: Lieben und Lesen
+- Tristan als vorbildlicher höfischer Ritter
+- Brautwerbung und Liebestrank
+- Liebe als Bruch mit der höfischen/sozialen Ordnung
+	- komische Episoden: Liebeslisten
+	- Idealisierung: Minnegrotte
+- Trennung und Tod
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">4. Sitzung: Mittelalter | Tristan</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" title="Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance." target="_blank">Szene aus der Uraufführung von Wagners <it>Tristan</it> (1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gottfried von Straßburg: Tristan-Minne
+- schicksalhafte Macht
+- sozial kontrovers
+- paradoxe Attribute („süßes Leid”) als Zeichen der Veredelung
+- absolute Vereinigung der Liebenden
+- Todesverfallenheit? (→ Wagner)
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">4. Sitzung: Mittelalter | Tristan</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Tristan_und_Isolde" title="Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance." target="_blank">Szene aus der Uraufführung von Wagners <it>Tristan</it> (1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gottfried von Straßburg: Minnegrotte
+- „Speisewunder” (16808ff.)
+- „Gesellschaftswunder” (16847ff.)
+- Schilderung der Grotte (16923ff.)
+	- Ort der Sinnlichkeit: kristallenes Bett
+	- erhebende Wirkung auf Zuschauer/-hörer:innen
+	- Erzähler: Augenzeugenschaft (17100ff.)
+- Schilderung des Tagesablaufs (Literatur und Liebesspiel, 17139ff.)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Speisewunder
+
+> Nun gibt es viele/ die sich voller Neugier und Verwunderung/ zu der Frage genötigt sehen,/ wie sich die beiden Liebenden,/ Tristan und Isold,/ in dieser Wüstenei ernären konnten./ Das will ich ihnen erklären/ und ihre Neugier stillen:/ sie sahen einander an/ das war ihre Nahrung;/ die Früchte ihrer Blicke,/ davon ernährten sich die beiden;/ sie lebten in der Grotte von nichts/ als von Liebe und Lust. (16807-20)
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Schilderung der Grotte (16923ff.)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+##  Tagesablauf
+
+> Alles, was man in alten Geschichten/ je zuvor von der *caverne*/ zu erzählen wußte,/ das bewahrheitete sich nunmehr an den beiden./ Zum ersten Mal/ hat die wahre Herrin der Grotte [die Göttin Minne]/ ihrem Spiel ganz freien Lauf gelassen./ Was früher darin getrieben wurde/ an Vergnügen oder an Liebeslust,/ das blieb dahinter zurück;/ es war in seiner Absicht/ nicht so lauter und so rein/ wie ihr beider Liebesspiel./ Sie erfüllten die Stunden der Liebe so,/ daß kein anderes Liebespaar es besser gekonnt hätte./ Sie taten einzig und allein nur das, wozu das Herz sie drängte. (17229-41)
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Mittelalter | Abaelard und Heloisa</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Abelard_and_Heloise.jpeg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Heloisa" title="Abaelardus und Héloïse in einer Handschrift des Rosenromans (14. Jahrhundert)" target="_blank">Das Paar in einer Handschrift des <em>Rosenromans</em> (14. Jhdt.).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einführung
+- Heloisa und Abaelard als historische Personen
+- Genre: literarischer Briefwechsel
+- Liebesdiskurs: passional-erotisch → christlich
+
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Mittelalter | Abaelard und Heloisa</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Abelard_and_Heloise.jpeg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Heloisa" title="Abaelardus und Héloïse in einer Handschrift des Rosenromans (14. Jahrhundert)" target="_blank">Das Paar in einer Handschrift des <em>Rosenromans</em> (14. Jhdt.).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Beziehungsgeschichte 1
+- Abaelard Hauslehrer (Zitat 1)
+- Schwangerschaft, Heirat gegen Heloisas Willen (Zitat 2)
+- Heloisas Eintritt in Kloster (geistliche Ehe)
+- Abaelards Kastration (Strafe oder Gnade)
+- Ende der Beziehung
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> unter dem Deckmantel der Unterweisung gaben wir uns ganz der Liebe hin, und unsere Beschäftigung mit Lektüre bot uns die Stille Abgeschiedenheit, die unsere Liebe sich wünschte. Da wurden über dem offenen Buch mehr Worte über Liebe als über Lektüre gewechselt; da gab es mehr Küsse als Sprüche (Abaelard, Brief 1.14, S. 16)
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> Meine Liebe schlug um in solchen Wahnsinn, daß sie sich selbst das, was sie einzig begehrte, raubte ohne Hoffnung auf Wiedererlangung, indem ich selbst auf deinen Befehl zugleich mit dem Gewand auch meine Seele umwandelte, um zu zeigen, daß du allein Herr meines Leibes und meiner Seele seist. Nichts habe ich je bei dir gesucht (…) als dich selbst: dich schlechthin begehrte ich, nicht das, was dein war. Kein Ehebündnis, keine Morgengabe habe ich erwartet; nicht meine Lust und meinen Willen suchte ich zu befriedigen, sondern den deinigen. Mag dir der Name ‚Gattin’ heiliger und ehrbarer scheinen, mir war allezeit reizender die Bezeichnung ‚Geliebte’, oder gar – verarg es mir nicht – deine ‚Konkubine’, deine ‚Dirne’. (…) Du hast es nicht verschmäht, einige der Gründe anzuführen, mit denen ich versuchte, dich von unserer Ehe und der unseligen Vermählung anzuhalten, allein du hast diejenigen fast alle unerwähnt gelassen, an denen ich die Liebe der Ehe, die Freihat dem Zwang vorzog. Gott rufe ich an als Zeugen; wollte mich heute der Kaiser, der Herr der Welt, der Ehre seines Ehebetts würdigen und mir zusichern, für immer über die ganze Welt gebieten zu können; für süßer und würdiger achtete ich’s, deine Buhlerin zu heißen als seine Kaiserin (Heloisa, Brief 2.7, S. 64f.).
+</div>
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Mittelalter | Abaelard und Heloisa</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Abelard_and_Heloise.jpeg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Heloisa" title="Abaelardus und Héloïse in einer Handschrift des Rosenromans (14. Jahrhundert)" target="_blank">Das Paar in einer Handschrift des <em>Rosenromans</em> (14. Jhdt.).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Beziehungsgeschichte 2
+- Heloisas Sehnsucht (Zitat 3)
+- Gründung eines Konvents
+- Briefwechsel und Bekehrung
+- geistliche Deutung der Ehe (Zitat 4)
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Heloisas Sehnsucht
+
+> Aber jene Wonnen der Liebenden, die wir miteinander genossen, waren mir so süß, daß sie mir weder missfallen noch eben aus dem Gedächtnis schwinden können. Wohin ich mich wende, immer stehen sie mir vor Augen und wecken sehnsüchtiges Verlangen. (…) Mitten im feierlichen Hochamt, wo das Gebet reiner sein soll als sonst, haben mein armes Herz so ganz jene wollüstigen Phantasiegebilde eingenommen, daß ich nur für ihre Lüsternheiten offen bin, nicht für das Gebet. Die ich aufstöhnen müßte über das Begangene, seufze lieber nach dem Vergangenen (Heloisa, Brief 4.9, S. 86)
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Geistliche Deutung der Liebe und Ehe
+
+> ich bin schwarz, aber lieblich, ihr Töchter Jerusalems; darum hat mich der König geliebt und in seine Kammer geführt (Beispiel: Abaelard deutet Vers aus dem Hohelied, Brief 5.5-9, S. 92-97)
+
+</div>
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Mittelalter | Abaelard und Heloisa</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/82/Abelard_and_Heloise.jpeg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Heloisa" title="Abaelardus und Héloïse in einer Handschrift des Rosenromans (14. Jahrhundert)" target="_blank">Das Paar in einer Handschrift des <em>Rosenromans</em> (14. Jhdt.).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Rezeption
+- Briefwechsel als Gründungsdokument
+- Beisetzung im Doppelgrab (1142/1164)
+- Übersetzung auf Friedhof Père Lachaise (1817)
+- zentrale Bedeutung für Liebesdiskurs seit Empfindsamkeit <br> (vgl. J.J. Rousseau, *La Nouvelle Héloise*, 1761)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/40/AbelardHeloiseTomb.jpg" alt="Grabmal" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center; object-fit: fill">
+
+Grabmal von Abaelard und Heloisa auf dem Friedhof Père Lachaise, Paris (1817), Quelle: wikipedia<!-- .element: style="transform: rotate(-90deg) translate(40%, 460%); font-size: smaller; background: lightgrey; position: absolute; left: 20%; top: 85%; height: 15%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
