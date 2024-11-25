@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Renaissance 1</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Gianciotto_Discovers_Paolo_and_Francesca_Jean_Auguste_Dominique_Ingres.jpg'); background-size: cover; background-position: left;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Paolo_and_Francesca_(Ingres)" title="J.A.D. Ingres: Gianciotto entdeckt Paolo und Francesca (1819), Musée des beaux arts, Angers" target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left">6. Sitzung: Renaissance I</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Dante_Alighieri" title="Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung." target="_blank">Botticelli: Porträt Dantes (1495).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einführung
+- italienische Renaissance und Humanismus
+- Wiederentdeckung der griech. Philosophie (→Eros-Lehre!)
+- Italien im 13. Jhdt.: kein Nationalstaat, keine einheitliche Sprache
+- Ausbildung des Italienischen als Literatursprache 
+- drei große Dichterphilosophen der Renaissance: Dante, Petrarca, Boccaccio
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="Resources/images/12. Italien im 10. und 11. Jhdt..jpg" alt="" style="position: absolute; left: 25%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center; object-fit: fill">
+
+Quelle: Putzger – Historischer Weltatlas, hg. von E. Bruckmüller und P.C. Hartmann, 102. Auflage, Berlin: Cornelsen 2012. <!-- .element: style="transform: rotate(-90deg) translate(40%, 460%); font-size: smaller; background: lightgrey; position: absolute; left: 20%; top: 85%; height: 15%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Minnesang
+<blockquote style="line-height: 1.2 !important;">
+Minnesang: (…) nicht erlebnishaft ausströmende Liebesdichtung, sondern konventionelle Gesellschaftslyrik, zur Unterhaltung höfischer Kreise vorgetragen; seine Dichter sind selbst Angehörige des Ritterstandes oder Ministerialen; der Frauendienst, die Verehrung des weiblichen Idealbildes in Gestalt der erwählten Ritterfrau, der unerreichbaren Herrin, als ästhetisches Spiel und dichterische Gestaltung ist das von dieser Gesellschaft geformte und gebilligte Ideal, Ritterpflicht.
+</blockquote>
+<blockquote style="line-height: 1.2 !important;">
+Schon aus der Grundsituation des Minnesängers, der mit seinem Lied die ritterliche Dame, Gemahlin seines Herrn, unter der Gefahr der Merker umwirbt, preist, selbst alles Irdischen entrückt, ergibt sich von selbst die Form der Minneklage: Das Wissen um die Hoffnungslosigkeit, Unerfüllbarkeit seines Sehnens nach Erhörung bleibt Grundmotiv, in dessen psychologischer und künstlerischer Abwandlung die Kunst des M. beruht (aus: Gero von Wilpert, Sachwörterbuch der Literatur, Art. Minnesang)
+</blockquote>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: style="font-size: smaller" class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Hoher Minnesang: Reinmar der Alte
+
+<blockquote style="line-height: 1.2 !important;">
+Ich werbe um alles, was ein Mann<br>
+zu weltlichen Freuden jemals haben kann:<br>
+Das ist eine Frau, die ich nicht<br>
+ihrem übergroßen Wert entsprechend preisen kann.<br>
+Lobe ich sie, so wie man es mit anderen Frauen tut,<br>
+nimmt sie es mir niemals als angemessen ab.<br>
+Doch schwöre ich es, sie ist in solcher Stellung,<br>
+dass sie nie einen Fuß breit weibliche Tugend verließ.<br>
+Das setzt euch matt.<br></blockquote>
+<blockquote style="line-height: 1.2 !important;">
+Wenn manchmal mir der Leib<br>
+mit seiner üblen Unstetigkeit rät, dass ich sie verlasse<br>
+und mich mit einer anderen Frau anfreunde,<br>
+so will jedoch das Herz nirgends hin als dorthin.<br>
+Wohl ihm, dass es so richtig wählen kann<br>
+und mir die süße Mühsal gönnt,<br>
+habe ich mir doch eine Liebste erkoren,<br>
+der zu Dienst ich, und wäre es der Zorn der ganzen Welt,<br>
+geboren bin.<br>
+</blockquote>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/0b/Codex_Manesse_Reinmar_der_Alte.jpg'); background-size: cover; background-position: bottom;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Reinmar_der_Alte" title="Herr Reinmar der Alte (Codex Manesse, frühes 14. Jhdt.)" target="_blank">Reinmar der Alte, Codex Manesse, 14. Jhdt.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Merkmale der Minnelyrik in Reinmars Gedicht
+- Unvergleichlichkeit („niemals als angemessen„, „übergroßer Wert“) 
+- Unaussprechlichkeit („nicht preisen können“)
+- Widersprüchlichkeit („süße Mühsal“)
+- Unerreichbarkeit („heimlich“, „verstecken“, „Kuss stehlen“, „ihr gleichgültig bin“) 
+- Frauenlob („weibliche Tugend“; „das setzt Euch matt“)
+- Liebesdienst („untertan“, „ihr dienen dürfen“, „der zu Dienst ich geboren bin“) 
+- Minneklage („das erleide ich“, „ich unglücklicher Mann“)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Dante_Alighieri" title="Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung." target="_blank">Botticelli: Porträt Dantes (1495).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Dante: Vita Nuova (~1293)
+- Gedichtsammlung zu Ehren Beatrices
+- greift Minnesang auf, prägt „dolce stil nuovo”
+- autobiografische Elemente, verbunden zu einer Handlung
+- endet mit Tod und Auffahrt Beatrices
+- Parallelisierung Beatrice/Christus sowie Minne/christliche Liebe
+- versehen mit erzählenden und interpretierenden Kommentaren
+
+notes:
+- druck dir Dante – Vita Nova aus
+- Folien [CSG](hook://file/ko5xq9GZE?p=TWF0ZXJpYWxpZW4gQ2hyaXN0aWFuZS9QcmHMiHNlbnRhdGlvbmVu&n=04%5F22%5F11%5F23%5FNeuzeit%5FPra%CC%88sentation%2Epdf#p=7) 
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Dante_Alighieri" title="Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung." target="_blank">Botticelli: Porträt Dantes (1495).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Dante: La Commedia (~1321)
+- Reise durch das christliche Jenseits
+- Darstellung des göttlichen Gerichts
+- Pilgerfahrt zur Vision Gottes
+- Dopplung: erlebendes und erzählendes Ich (Gegenwart, Vergangenheit)
+- performative Literatur
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Dante_Alighieri" title="Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung." target="_blank">Botticelli: Porträt Dantes (1495).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Rolle der Liebe in Dantes Commedia
+- Vergil und Beatrice als Führer:innen Dantes
+- die Schöpfung als Produkt der Liebe Gottes
+- Transformation höfischer in christliche Liebe
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Dante_Alighieri" title="Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung." target="_blank">Botticelli: Porträt Dantes (1495).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Paolo und Francesca
+- Lektüre eines höfischen Romans (Lanzelot)
+- Bezug auf Minnesang/höfische Liebesdichtung
+- performative Literatur
+- Dantes Reaktion
+- Stationen der Rezeption: Goethe, Flaubert, Borges
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg'); background-size: fill; background-position: right top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Francesco_Petrarca" title="Andrea del Castagno, Francesco Petrarca, Ausschnitt, Fresko, 1450, Uffizien, Florenz." target="_blank">Castagno: Porträt Petrarcas (1450).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Petrarca
+- Besteigung des Mt. Ventoux (1336)
+	- Humanismus: Wiederentdeckung antiker Quellen
+	- …im Licht neuztl. Subjektivität 
+- Canzoniere: Sonette auf Laura (1350)
+	- Laura als Gegenstand, Medium und Ziel der Poesie
+	- Tod Lauras als zentrales Element
+	- Transformation der Liebe (sinnlich/geistig)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg'); background-size: fill; background-position: right top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Francesco_Petrarca" title="Andrea del Castagno, Francesco Petrarca, Ausschnitt, Fresko, 1450, Uffizien, Florenz." target="_blank">Castagno: Porträt Petrarcas (1450).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Der Name Laura
+- Laura: Name der Geliebte
+- lauro: Lorbeer 
+- laureato: lorbeerbekränzt
+- l’auro: das Gold (z.B. der Haare)
+- l’aurora: Morgenröte
+- l’aura: der Windhauch, dichterische Inspiration
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg'); background-size: fill; background-position: right top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Francesco_Petrarca" title="Andrea del Castagno, Francesco Petrarca, Ausschnitt, Fresko, 1450, Uffizien, Florenz." target="_blank">Castagno: Porträt Petrarcas (1450).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gedichtbeispiele
+- III: Begegnung mit Laura am Karfreitag 
+- XC: Lauras himmlische Schönheit
+- CXXXII und CXXXIV:: die widerspruchsvolle, paradoxe Liebe
+- CCCII: die vergeistigte Laura als Führerin
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Renaissance</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg'); background-size: fill; background-position: right top;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Francesco_Petrarca" title="Andrea del Castagno, Francesco Petrarca, Ausschnitt, Fresko, 1450, Uffizien, Florenz." target="_blank">Castagno: Porträt Petrarcas (1450).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Petrarkistische Liebessprache
+- Einfluss biblischer Schönheitstopoi (Hohelied)
+- intensive und konflikthafte Emotionalität
+- paradoxe Formulierungen
+- wörtliche und übertragene Bedeutung des Todes
+- europäische Verbreitung
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: style="font-size: smaller" class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Petrarca: Sonett 132
+<blockquote style="line-height: 1.2 !important">
+S’amor non è, che dunque è quel ch’io sento?<br>
+Ma s’egli è amor, perdio, che cosa et quale?<br>
+Se bona, onde l’effecto aspro mortale?<br>
+Se ria, onde sí dolce ogni tormento?<br>
+
+S’a mia voglia ardo, onde ’l pianto e lamento?<br>
+S’a mal mio grado, il lamentar che vale?<br>
+O viva morte, o dilectoso male,<br>
+come puoi tanto in me, s’io no ’l consento?<br>
+
+Et s’io ’l consento, a gran torto mi doglio.<br>
+Fra sí contrari vènti in frale barca<br>
+mi trovo in alto mar senza governo,<br>
+
+sí lieve di saver, d’error sí carca<br>
+ch’i’ medesmo non so quel ch’io mi voglio,<br>
+et tremo a mezza state, ardendo il verno.<br>
+</blockquote>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: style="font-size: smaller" class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Übertragung von Martin Opitz (1644)
+<blockquote style="line-height: 1.2 !important">
+JSt Liebe lauter nichts/ wie daß sie mich entzündet<br>
+Jst sie dann gleichwol was/ wem ist jhr Thun bewust<br>
+Jst sie auch gut vnd recht/ wie bringt sie böse Lust<br>
+Jst sie nicht gut/ wie daß man Frewd’ auß jhr empfindet?<br>
+
+Lieb’ ich ohn allen Zwang/ wie kan ich schmertzen tragen?<br> 
+Muß ich es thun/ was hilfft’s daß ich solch Trawren führ’? <br>
+Heb’ ich es vngern an/ wer dann befihlt es mir<br>
+Thue ich es aber gern’/ vmb was hab’ ich zu klagen<br>
+
+Jch wancke wie das Graß so von den kühlen Winden<br> 
+Vmb Vesperzeit bald hin geneiget wird/ bald her<br>
+Jch walle wie ein Schiff das durch das wilde Meer<br>
+
+Von Wellen vmbgejagt nicht kan zu Rande finden. <br>
+Jch weiß nicht was ich wil/ ich wil nicht was ich weiß: <br>
+Jm Sommer ist mir kalt/ im Winter ist mir heiß.<br>
+</blockquote>
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
