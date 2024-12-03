@@ -7,22 +7,63 @@
   pointer-events: auto !important;
 }
 .reveal mark {
-  background-color: #3296AA;
-  border-radius: .15rem;
-  padding: .15rem;
+  background-color: #772F8B75;
+  border-radius: 2px;
+  padding: 10px;
 }
 
+/* Blockquote definition: white.css */
 .reveal blockquote {
   font-style: normal !important;
   text-align: left;
   width: 85%;
   box-shadow: none;
-  line-height: 2.0;
+  line-height: 1.7 !important;
+}
+
+.quote-block {
+  position: relative;
+  display: flex;
+  padding: 20px 20px 20px 60px;
+  border-radius: 10px;
+  text-align: justify;
+  width: 40%; 
+  height: auto;  
+  background-color: #DFE1E175;
+}
+
+.quote-block::before {
+  content: '“'; /* Typographisches Anführungszeichen */
+  width: 40px;
+  height: 40px;
+  font-size: 38px; /* Größe des Anführungszeichens */
+  position: absolute;
+  left: 0;
+  top: 40%;
+  color: #772F8B; /* Farbe des Anführungszeichens */
+  background-color: white; /* Hintergrundfarbe des Kreises */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.embedded-quote-block {
+  list-style-type: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Versuch, tags aus embedded blockquotes zu unterdrücken, funktioniert nicht */
+.reveal blockquote:contains("#Quote") {
+  display: none;
 }
 
 .reveal img {
   object-fit: contain !important;
 }
+
+
 /* MERMAID */
 .reveal .mermaid {   
   min-width: 80%; 
@@ -49,11 +90,10 @@
 .reveal h1, h2, h3 {
   font-family: 'Verdana', sans-serif !important;
   margin-bottom: 1em !important;
-  padding-left: 0 !important;
 }
 
-.reveal h2, h3 {
-  font-size: xxx-large;
+.reveal h1, h2, h3 {
+  font-size: xxx-large !important;
 }
 
 .link-icon {
