@@ -12,6 +12,7 @@
   padding: 10px;
 }
 
+/*======= BLOCKQUOTES ==============*/
 /* Blockquote definition: white.css */
 .reveal blockquote {
   font-style: normal !important;
@@ -21,6 +22,7 @@
   line-height: 1.7 !important;
 }
 
+/*Versuch, ein Icon zu generieren, das einen Textblock als Zitat markiert (i.S.e. Initiale)*/
 .quote-block {
   position: relative;
   display: flex;
@@ -48,23 +50,34 @@
   justify-content: center;
 }
 
-.embedded-quote-block {
-  list-style-type: none;
-  padding: 0 !important;
-  margin: 0 !important;
+/*Regel für embedded Blocks (Zitate)*/
+
+ul li.embedded-quote-block {
+  list-style-type: none; /* Remove the default bullet */
+  position: relative; /* Position the custom marker */
+  padding-left: 20px; /* Space for the custom marker */
 }
 
-/* Versuch, tags aus embedded blockquotes zu unterdrücken, funktioniert nicht */
-.reveal blockquote:contains("#Quote") {
-  display: none;
+/* Add a custom marker before the content */
+/*ul li.embedded-quote-block::before {
+  content: "❝"; /* Your desired custom bullet or icon 
+  position: absolute;
+  left: 0;
+  color: blue; /* Adjust the color as needed 
+  font-size: 1.2em; /* Adjust the size as needed 
+} */
+
+.hidden-tag {
+    display: none;
 }
+
 
 .reveal img {
   object-fit: contain !important;
 }
 
 
-/* MERMAID */
+/*====== MERMAID ===========*/
 .reveal .mermaid {   
   min-width: 80%; 
   max-height: auto;
