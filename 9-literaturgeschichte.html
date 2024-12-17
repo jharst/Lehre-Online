@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Französischer Klassizismus</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Alexandre_Cabanel_Phèdre.jpg'); background-size: cover; background-position: top left;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Phaedra_(Cabanel)" title="Alexandre Cabanel, Phèdre, 1880, Öl auf Leinwand, Paris, Louvre." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Louis_XIV_of_France.jpg'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Portrait_de_Louis_XIV_en_costume_de_sacre" title="Hyacinthe Rigaud: Portrait de Louis XIV (1701), Öl auf Leinwand, Paris, Louvre." target="_blank">Rigaud: Portrait de Louis XIV (1701).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Frz. Klassizismus (17.-18. Jhdt.)
+- Louis XIV (1638-1715), absolutistischer „Sonnenkönig”
+- Zentralisierung der Macht in Paris, Kultur der Repräsentation (Bsp. Versailles)
+- Instrumentalisierung der Kunst zur Fundierung des Machtanspruchs
+- Theater: Corneille (1606-1684), Racine (1639-1699), Molière (1622-1673)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/0/04/Chateau_de_Versailles_1668_Pierre_Patel.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Château_de_Versailles" title="Pierre Patel: Vue du château et des jardins de Versailles, prise de l'avenue de Paris, 1668, Öl auf Leinwand, Chateau de Versailles." target="_blank">Patel: Le château de Versailles (1668).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Louis_XIV_of_France.jpg'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Portrait_de_Louis_XIV_en_costume_de_sacre" title="Hyacinthe Rigaud: Portrait de Louis XIV (1701), Öl auf Leinwand, Paris, Louvre." target="_blank">Rigaud: Portrait de Louis XIV (1701).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Antike und klassizistische Tragödie
+- Antike: Tragödie, Dionysos-Kult, Demokratie
+- Klassizismus: höfische Repräsentation, Professionalisierung, Regelpoetik
+	- Einheit von Ort, Zeit und Handlung
+	- Stände- und Stillehre
+	- „Querelle des Anciens et des Modernes” (Boileau vs. Perrault)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Recto_d%27un_billet_de_50_francs_de_1967.JPG'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Jean_Racine" title="Jean Racine auf der Vorderseite einer 50-Franc-Note von 1967." target="_blank">Racine auf frz. Banknote (1967).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Racine (1639-1699)
+- jansenitische Ausbildung
+- altphilologische Kenntnisse
+- Karriere als Höfling und Schriftsteller
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Recto_d%27un_billet_de_50_francs_de_1967.JPG'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Jean_Racine" title="Jean Racine auf der Vorderseite einer 50-Franc-Note von 1967." target="_blank">Racine auf frz. Banknote (1967).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Racine: Poetik
+- Verarbeitung von griech. und röm. Stoffen
+- erhabenes Personal (Reflexion)
+- Anpassung an zeitgenössische Interessen/Moden
+- Versuch, die „Alten” zu übertreffen
+- impliziter Vergleich
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/77/Recto_d%27un_billet_de_50_francs_de_1967.JPG'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Jean_Racine" title="Jean Racine auf der Vorderseite einer 50-Franc-Note von 1967." target="_blank">Racine auf frz. Banknote (1967).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Racine: Poetik (nach Auerbach)
+- Stiltrennung, Einheitslehre, kein Realismus
+- fürstlicher Protagonist, aber Passion statt Politik
+- Ausblendung alltäglicher Aspekte
+- Inszenierte Theatralität, der Hof als Bühne
+- Passion als erhabener Affekt (Zitat)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+### Auerbach: Liebe als Passion
+- in den antiken Werken ist die Liebe nur sehr selten ein Gegenstand hohen Stils; sie ist dort, wenn sie als Hauptgegenstand, also ohne Verbindung mit anderen, göttlich-schichsalshaften Motiven auftritt, nur in Dichtungen mittlerer Höhenlage behandelt; aber sobald von ihr die Rede ist, sei es selbst in einem erhaben epischen oder tragischen Werk, wird ohne jede Scheu das Körperliche zur Sprache gebracht. Mit der französischen Tragödie ist es gerade umgekehrt. Sie hat die erhabene Auffassung der Liebe übernommen, wie sie sich in der höfischen Kultur und im Petrarkismus weiter ausgebildet hatte; schon bei Corneille ist sie ein tragisch-erhabenes Motiv, unter dem Einfluß der galanten Romane verdrängt sie fast alle anderen hohen Gegenstände […] aber bei alledem ist kaum ein Hauch von dem zu spüren, was der damalige Geschmack als niedrig und ungehörig empfand, vom Körperlichen und Geschlechtlichen. (363)<!-- .element: class="embedded-quote-block" -->
+<br>Quelle: Auerbach, E. (1994/1946). *Mimesis. Dargestellte Wirklichkeit in der abendländischen Literatur* (10. Aufl.). Francke.<!-- .element: style="margin-top: 5px !important; text-align: right !important" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Alexandre_Cabanel_Phèdre.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Phaedra_(Cabanel)" title="Alexandre Cabanel, Phèdre, 1880, Öl auf Leinwand, Paris, Louvre." target="_blank">Cabanel: Phèdre (1880).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+##  Racines Kritik an Euripides
+- mittlere Charaktere
+- „deus ex machina”
+- Rolle Phädras
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+<div class="block">
+
+<!-- .element: style="display: flex; flex-direction: column; align-items: start; justify-content: center" align="center" -->
+
+#### Figurenkonstellation Euripides
+[![](https://mermaid.ink/img/pako:eNqdkt1Kw0AQhV9lWG9bFYuCUYSAgmAFUfFCcrNNJtnB7A-7E7UY38bH8M4Xc9qm_vXOvZpdvjl7ZjgvqvQVqkw1UQcD0-ujwoGcW4MJuzTeHp_0Zwatdq6_MpqqqDeBO80Y-3MKwbdz9mlFDDgcjwWZYYMmMjxp4xI5R83O8SyewCNGXRpG7uFv__cdFgpCLhR6yCOjpQHKg4m-IsYlk0rTfrw1DJYYpoQzTOsPe_hlf21uUOaoO4ZEpQEtaG4tDvpSLSHdkGCg2wQXXQgtRnKbnn_bocSAVGNMH-8yJDWgu_rHAIVLPG_xy0xNbZttTfYODvN8f3eUOPoH3HgYP1HFJpuE56O1wI9V_Vvj2_o_JNRIWYxWxpAovSx2USiW2GChMikrrHXXcqEK9yqo7NrfzF2pMo4djlT0XWNUVsty5daFSvJ0SloiadcIijMfL1dZXUZ2pIJ2997bofH1Ewoh9ug?type=png)](https://mermaid.live/edit:eNqdkt1Kw0AQhV9lWG9bFYuCUYSAgmAFUfFCcrNNJtnB7A-7E7UY38bH8M4Xc9qm_vXOvZpdvjl7ZjgvqvQVqkw1UQcD0-ujwoGcW4MJuzTeHp_0Zwatdq6_MpqqqDeBO80Y-3MKwbdz9mlFDDgcjwWZYYMmMjxp4xI5R83O8SyewCNGXRpG7uFv__cdFgpCLhR6yCOjpQHKg4m-IsYlk0rTfrw1DJYYpoQzTOsPe_hlf21uUOaoO4ZEpQEtaG4tDvpSLSHdkGCg2wQXXQgtRnKbnn_bocSAVGNMH-8yJDWgu_rHAIVLPG_xy0xNbZttTfYODvN8f3eUOPoH3HgYP1HFJpuE56O1wI9V_Vvj2_o_JNRIWYxWxpAovSx2USiW2GChMikrrHXXcqEK9yqo7NrfzF2pMo4djlT0XWNUVsty5daFSvJ0SloiadcIijMfL1dZXUZ2pIJ2997bofH1Ewoh9ug)
+
+#### Figurenkonstellation Racine
+[![](https://mermaid.ink/img/pako:eNqdklFLwzAQx79KiK-tikPBbgwGCoIKouKD9OXa3ppgmoTkoo51393rNqdzb-bpcvnd_-74Zylr16AsZBvAK3H3OC6t4POsMGKK-XE-7a8VdmDtpArTdwyRXKjQihZbA6mi_kGBbgIc1r0AYehvtPfOLMjFDbHFxSRnpMIWVaCTQVuwONSKkHrxt-jnvqkzGrmzmAVda9zXHZ5ZiQIkElHXSoBlsuu23BCtIWg1YwJMFLfJe4NB2_3OpY20MLiTnmtjiqPR2cXlbHZ-mkUK7g0PEvmHbkgVI_85_hb4Nf4_NGQmOwwdz8A-LYctSknsCZay4LDBOSRDpSztilFe2z0tbC0LCgkzGVxqlSzmvCffkm_YlSsN7He3y2Kj2dX7zU9Yf4hMerCvzn0zqy8o2b2D?type=png)](https://mermaid.live/edit:eNqdklFLwzAQx79KiK-tikPBbgwGCoIKouKD9OXa3ppgmoTkoo51393rNqdzb-bpcvnd_-74Zylr16AsZBvAK3H3OC6t4POsMGKK-XE-7a8VdmDtpArTdwyRXKjQihZbA6mi_kGBbgIc1r0AYehvtPfOLMjFDbHFxSRnpMIWVaCTQVuwONSKkHrxt-jnvqkzGrmzmAVda9zXHZ5ZiQIkElHXSoBlsuu23BCtIWg1YwJMFLfJe4NB2_3OpY20MLiTnmtjiqPR2cXlbHZ-mkUK7g0PEvmHbkgVI_85_hb4Nf4_NGQmOwwdz8A-LYctSknsCZay4LDBOSRDpSztilFe2z0tbC0LCgkzGVxqlSzmvCffkm_YlSsN7He3y2Kj2dX7zU9Yf4hMerCvzn0zqy8o2b2D)
+
+</div>
+
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">9. Sitzung: Klassizismus | Racine, Phèdre</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/Alexandre_Cabanel_Phèdre.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Phaedra_(Cabanel)" title="Alexandre Cabanel, Phèdre, 1880, Öl auf Leinwand, Paris, Louvre." target="_blank">Cabanel: Phèdre (1880).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Lektüre von Phädras Liebesgeständnis (Akt I, Szene 3)
+notes:
+- Streichung der Götter
+- Einführung Aricie: Symmetrie, Hippolytos „gemischter” Charakter
+- Passion als Last der Könige/Königin
+- Hippolytos als Gott verehrt (hat allerdings Vorlage bei Euripides)
+- der vermutete Tod Theseus’ lässt Beziehung denkbar werden
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert  => 
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
