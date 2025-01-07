@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Hayles</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Literatur und/als Textverarbeitung
+### 9. Sitzung: Comparative Media Studies
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Structure of the Introduction
+- Thesis
+- Impact of digitalization on academic work in the humanities (17-22)
+- Introducing comparative media studies (22-25)
+- coevolution of humans and technology (25-28)
+- attention, temporality and spatiality (27-29)
+- databases and narrative (30-32, cf. Manovich)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Impact of digitalization on academic work <br>in the humanities (17-22)
+<div class="block">
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+- embodiment of digital practices 
+	- (ex. video games, social media)
+	- (cognition)
+- digital research practices
+- designing research projects (narration vs. database)
+- course design → comparative media studies
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Comparative Media Studies (22-25)
+<div class="block">
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+- course design
+	- theory and practice
+	- content orientation and problem orientation
+- problems with content-oriented classes
+- project-based research and teaching
+- ["] Project-based research, typical of work in the Digital Humanities, joins theory and practice through the productive work of making.  #Quote [24](hook://file/pAlKaRKHB?p=Tm90ZXMvcGRm&n=Hayles%20%E2%80%93%20How%20We%20Think%20%282012%29%2Epdf#p=24) 
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Besprechung der Studienleistung
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Manovich: Database and narrative
+- Datenbank: zunächst ungeordnete Materialsammlung
+- Algorithmus: Regel der Verknüpfung (→ Erzählung)
+- Interface: Regeln des nutzerseitigen Zugriffs auf Daten
+- „An interactive narrative (which can be also called „hyper-narrative„ in an analogy with hypertext) can then be understood as the sum of multiple trajectories through a database.“ (201)
+
+notes:
+Link to Manovich
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Database and narrative (30-32)
+- relational and object-oriented databases
+- perception, objects and time
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+[![](https://mermaid.ink/img/pako:eNp9UstOxDAM_JXKJxDdH6i4ICFOcNoVB9SLt3EbozyqPKjQ0n8nmxRp6RZ8STK2ZxzbJ-isIGigU-j9I-PgULemSpaR6sDkqlNBzna3D47NUBnUdI1KPHLAcOH4sCyqI000kLm5LY65NZcSr3YgtaXRq5jSlB_RmIk40Jq3V_wP7xP7Tm7xJjiOIxl0V5Um18Rab3DmRtx_7Xal3jWYxX7rPwi16l2WeMe_S37GTvrrFIXcyY2k0rmsn8UKWv6d0cwHNWhyGlmkOWfuFoKkND9o0lVQj1GFFlozp1CMwe4_TQdNcJFqcDYOEpoelU-vOAoMtOzJTwgJDta9LIt0PmpIM3uzVi-J8zedvr50?type=png)](https://mermaid.live/edit#pako:eNp9UstOxDAM_JXKJxDdH6i4ICFOcNoVB9SLt3EbozyqPKjQ0n8nmxRp6RZ8STK2ZxzbJ-isIGigU-j9I-PgULemSpaR6sDkqlNBzna3D47NUBnUdI1KPHLAcOH4sCyqI000kLm5LY65NZcSr3YgtaXRq5jSlB_RmIk40Jq3V_wP7xP7Tm7xJjiOIxl0V5Um18Rab3DmRtx_7Xal3jWYxX7rPwi16l2WeMe_S37GTvrrFIXcyY2k0rmsn8UKWv6d0cwHNWhyGlmkOWfuFoKkND9o0lVQj1GFFlozp1CMwe4_TQdNcJFqcDYOEpoelU-vOAoMtOzJTwgJDta9LIt0PmpIM3uzVi-J8zedvr50)
+notes:
+- **Vererbung**: Die Basisklasse `Tier` hat allgemeine Attribute wie `name` und `habitat` sowie eine Methode `bewegen()`. Die Klassen `Vogel` und `Fisch` erben von `Tier`, was bedeutet, dass sie die Attribute und Methoden von `Tier` übernehmen.
+- **Spezielles Verhalten**: `Vogel` fügt ein spezifisches Attribut `fluegelspannweite` und die Methode `fliegen()` hinzu, während `Fisch` `schuppenart` und die Methode `schwimmen()` hinzufügt.
+- **Weitere Spezialisierung**: `Adler` erbt von `Vogel` und fügt eine Methode `jagen()` hinzu. `Lachs` erbt von `Fisch` und fügt die Methode `laichen()` hinzu.
+- **Polymorphismus**: Wenn eine Methode wie `bewegen()` oder `fliegen()` in einer Liste von `Tier`-Objekten aufgerufen wird, wird die spezifische Implementierung verwendet, die der tatsächlichen Objektklasse entspricht. Das bedeutet, dass `bewegen()` für einen `Adler` anders sein kann als für einen `Lachs`.
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
