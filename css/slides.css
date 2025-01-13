@@ -1,4 +1,5 @@
 /*Anpassung von presentation slides*/
+/*=================================*/
 
 .reveal{
   overflow-x: hidden !important;
@@ -11,6 +12,12 @@
   border-radius: 2px;
   padding: 10px;
 }
+
+.reveal a {
+  color: #772F8B;
+  text-decoration: none;
+}
+
 
 /*======= BLOCKQUOTES ==============*/
 /* Blockquote definition: white.css */
@@ -242,3 +249,41 @@ ul li.embedded-quote-block {
   transform: rotate(-78deg) translate(-5%, 50%); 
   transform-origin: left top; 
 }
+
+/*POEM*/
+/* source: https://webdesignernotebook.com/css/styling-a-poem-with-advanced-css-selectors/ */
+#poem { 
+  margin: auto;
+  padding: 20px 0;
+  text-align: left;
+  font: Baskerville, "Palatino Linotype", "Times New Roman", Times, serif;
+  }
+
+#poem p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+#poem h2:before {
+  content: '— ';
+  }
+      
+#poem h2:after {
+  content: ' —';
+  }
+
+#poem h2 + p:first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  margin: 2px 5px 0 0;
+}
+
+#poem p:first-line {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  }
+#poem p:last-child {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  }
