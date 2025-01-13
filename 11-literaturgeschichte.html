@@ -1,105 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Europäische Romantik</title>
+    <link rel="stylesheet" href="dist/reset.css">
     <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
     <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
     <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
-	<link rel="stylesheet" href="css/layout.css" />
-	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
 
 
     <link rel="stylesheet" href="./css/slides.css" />
 
     <script defer src="dist/fontawesome/all.min.js"></script>
 
-	<script type="text/javascript">
-		var forgetPop = true;
-		function onPopState(event) {
-			if(forgetPop){
-				forgetPop = false;
-			} else {
-				parent.postMessage(event.target.location.href, "app://obsidian.md");
-			}
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
         }
-		window.onpopstate = onPopState;
-		window.onmessage = event => {
-			if(event.data == "reload"){
-				window.document.location.reload();
-			}
-			forgetPop = true;
-		}
 
-		function fitElements(){
-			const itemsToFit = document.getElementsByClassName('fitText');
-			for (const item in itemsToFit) {
-				if (Object.hasOwnProperty.call(itemsToFit, item)) {
-					var element = itemsToFit[item];
-					fitElement(element,1, 1000);
-					element.classList.remove('fitText');
-				}
-			}
-		}
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
 
-		function fitElement(element, start, end){
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
 
-			let size = (end + start) / 2;
-			element.style.fontSize = `${size}px`;
+        function fitElement(element, start, end) {
 
-			if(Math.abs(start - end) < 1){
-				while(element.scrollHeight > element.offsetHeight){
-					size--;
-					element.style.fontSize = `${size}px`;
-				}
-				return;
-			}
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
 
-			if(element.scrollHeight > element.offsetHeight){
-				fitElement(element, start, size);
-			} else {
-				fitElement(element, size, end);
-			}		
-		}
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
 
-
-		document.onreadystatechange = () => {
-			fitElements();
-			if (document.readyState === 'complete') {
-				if (window.location.href.indexOf("?export") != -1){
-					parent.postMessage(event.target.location.href, "app://obsidian.md");
-				}
-				if (window.location.href.indexOf("print-pdf") != -1){
-					let stateCheck = setInterval(() => {
-						clearInterval(stateCheck);
-						window.print();
-					}, 250);
-				}
-			}
-	};
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
 
 
-        </script>
-  </head>
-  <body>
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
     <div class="reveal">
-      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-# Titel
-
-
-<button title="Click to open speaker notes view" onclick="Reveal.triggerKey(83)">Text or image</button>
-
-<button title="Click to open speaker notes view" onclick="Reveal.triggerKey(70)">Fullscreen</button>
-
-
-Titelfolie mit Bild von CD Friedrich
-unbedingt Problem mit iPad speaker notes lösen!
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg'); background-size: cover; background-position: left;"><div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">11. Sitzung: Europäische Romantik</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
 
 ## Einführung
 - Romantik und Empfindsamkeit
@@ -107,29 +117,228 @@ unbedingt Problem mit iPad speaker notes lösen!
 
 notes:
 - Opposition zu Klassik (Verhältnis zu Goethe), Umgang mit „Romanzen”, *Don Quijote* als „romantischer Roman”, Universalpoesie
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-## Europäische Romantik
+<div class="mermaid">
+gantt
+    title Europäische Romantik
+    dateFormat YYYY
+    axisFormat %Y
+
+    section Epoche
+    Frühromantik    :active, 1770, 1805
+    Hochromantik    :active, 1806, 1825
+    Spätromantik    :active, 1826, 1850
+
+    section Deutschland
+    Novalis                :active, 1772, 1801
+	Friedrich Schlegel     :active, 1772, 1829
+    Ludwig Tieck           :crit, 1773, 1853
+    E. T. A. Hoffmann      :active, 1776, 1822
+    Clemens Brentano       :done, 1778, 1842
+    Achim von Arnim        :done, 1781, 1831
+    Joseph von Eichendorff :crit, 1788, 1857
+    Heinrich Heine         :crit 1797, 1856
+
+    section Großbritannien
+    William Wordsworth     :active, 1770, 1850
+    Samuel Taylor Coleridge:active, 1772, 1843
+    Jane Austen            :crit, 1775, 1817
+    Percy Bysshe Shelley   :active, 1792, 1822
+    John Keats             :active, 1795, 1821
+    Charlotte Brontë       :active, 1816, 1855
+    Emily Brontë           :active, 1818, 1848
+    Anne Brontë            :active, 1820, 1849
+
+    section Frankreich
+    Anne Louise de Staël   :active, 1766, 1817
+    François Chateaubriand :active, 1768, 1848
+    Victor Hugo            :active, 1802, 1885
+    Gerard de Nerval       :active, 1808, 1855
+    Charles Baudelaire     :active, 1821, 1867
+
+    section Russland
+    Alexander Puschkin     :active, 1799, 1837
+    Nikolai Gogol          :active, 1809, 1852
+    Michail Lermontow      :active, 1814, 1841
+
+    section Italien
+    Alessandro Manzoni     :crit, 1785, 1873
+    Giacomo Leopardi       :active, 1798, 1837
+
+</div>
 
 notes:
 - Geografie und Periodisierung – Karte zu Romantik? in dtv-Atlas nur Deutschland dargestellt
 - [CSG](hook://file/ko9AbpgEz?p=TWF0ZXJpYWxpZW4gQ2hyaXN0aWFuZS9QcmHMiHNlbnRhdGlvbmVu&n=07%5F13%5F12%5F23%5FRomantik%2DPra%CC%88sentation%2Epdf#p=20) hat Überblicksfolie „Romantik als europäische Strömung” → mermaid Zeitstrahl Frühromantik/Hochromantik/Spätromantik
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
 
 ## D: Romantische Liebe in Gedichten
 - Aspekte romantischer Liebe
-- Eichendorff
-- Tieck
-- Heine
+- Beispiele
+	- Eichendorff
+	- Heine
+	- (Tieck)
+notes:
+- Aspekte romantischer Liebe (Frage an alle)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
+<div class="block">
+
+<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+### Eichendorff: Mondnacht (1835/37)
+<div id="poem"><p>Es war, als hätt’ der Himmel<br>
+Die Erde still geküßt,<br>
+Daß sie im Blütenschimmer<br>
+Von ihm nun träumen müßt’.<br></p>
+<p>Die Luft ging durch die Felder,<br>
+Die Ähren wogten sacht,<br>
+Es rauschten leis’ die Wälder,<br>
+So sternklar war die Nacht.<br></p>
+<p>Und meine Seele spannte<br>
+Weit ihre Flügel aus,<br>
+Flog durch die stillen Lande,<br>
+Als flöge sie nach Haus.<br></p></div>
+<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" id="poem" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
 notes:
 - Aspekte romantischer Liebe (Frage an alle)
 - ### Eichendorff, Mondnacht (1835/37)
 	- Reimschema und Liedform → Volkslied in der Romantik
 	- Thema: Irdisches und Himmlisches verschränken sich, aber auch unendliche Sehnsucht (horizontale statt vertikale Bewegung der Seele)
-	- [Lied vorspielen](https://youtu.be/kBGyJvHe0kc?si=p8M_py-K2t3tzr3m) – Vertonung von Schumann (1840), daneben zahlreiche andere
+	- [Lied vorspielen](https://youtu.be/kBGyJvHe0kc?si=p8M_py-K2t3tzr3m) – Vertonung von Schumann (1840), gesungen von Friedrich Fischer-Dieskau; daneben zahlreiche andere Vertonungen
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<iframe width="1920" height="1080" src="https://www.youtube.com/embed/kBGyJvHe0kc?si=XKiNnbU-ezMdx968" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" id="poem" -->
+
+<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+### Heine: Lyrisches Intermezzo, LIV (1822/1827)
+<div id ="poem"><p>Ich steh’ auf des Berges Spitze,<br>
+Und werde sentimental.<br>
+„Wenn ich ein Vöglein wäre!”<br>
+Seufz’ ich viel tausendmal.<br>
+</p><p>
+Wenn ich eine Schwalbe wäre,<br>
+So flög’ ich zu dir, mein Kind,<br>
+Und baute mir mein Nestchen<br>
+Wo deine Fenster sind.<br>
+</p><p>
+Wenn ich eine Nachtigall wäre,<br>
+So flög’ ich zu dir, mein Kind,<br>
+Und sänge dir Nachts meine Lieder<br>
+Herab von der grünen Lind’.<br>
+</p>
+<p>Wenn ich ein Gimpel wäre,<br>
+So flög’ ich gleich an dein Herz;<br>
+Du bist ja hold den Gimpeln,<br>
+Und heilest Gimpelschmerz.<br>
+</p><div>
+<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+
+</div>
+
+
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+notes:
+### Heine, Lyrisches Intermezzo, LIV
+- Lied vorspielen
+- Reimschema und Liedform, Arbeit mit „Volkslied”
+- Wiederholung und Variation
+- Ironisierung
+- „Gimpel”
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+### Tieck: Wunder der Liebe (1803/21)
+<div id="poem"> <p>
+Mondbeglänzte Zaubernacht,<br>
+Die den Sinn gefangen hält,<br>
+Wundervolle Märchenwelt,<br>
+Steig’ auf in der alten Pracht!<br>
+</p>
+<p>
+Liebe läßt sich suchen, finden,<br>
+Niemals lernen, oder lehren,<br>
+Wer da will die Flamm’ entzünden<br>
+Ohne selbst sich zu verzehren,<br>
+Muß sich reinigen der Sünden.<br>
+Alles schläft, weil er noch wacht,<br>
+Wann der Stern der Liebe lacht,<br>
+Goldne Augen auf ihn blicken,<br>
+Schaut er trunken von Entzücken<br>
+Mondbeglänzte Zaubernacht.<br>
+</p>
+<p>Aber nie darf er erschrecken,<br>
+Wenn sich Wolken dunkel jagen,<br>
+Finsterniß die Sterne decken,<br>
+Kaum der Mond es noch will wagen,<br>
+Einen Schimmer zu erwecken.<br>
+Ewig steht der Liebe Zelt,<br>
+Von dem eignen Licht erhellt,<br>
+Aber Muth nur kann zerbrechen,<br>
+Was die Furcht will ewig schwächen,<br>
+Die den Sinn gefangen hält.<br>
+</p>
+<p>Keiner Liebe hat gefunden,<br>
+Dem ein trüber Ernst beschieden,<br>
+Flüchtig sind die goldnen Stunden,<br>
+Welche immer den vermieden,<br>
+Den die bleiche Sorg’ umwunden:<br>
+Wer die Schlange an sich hält,<br>
+Dem ist Schatten vorgestellt,<br>
+Alles was die Dichter sangen,<br>
+Nennt der Arme, eingefangen,<br>
+Wundervolle Märchenwelt.<br></p>
+
+<p>Herz im Glauben auferblühend<br>
+Fühlt alsbald die goldnen Scheine,<br>
+Die es lieblich in sich ziehend<br>
+Macht zu eigen sich und seine,<br>
+In der schönsten Flamme glühend.<br>
+Ist das Opfer angefacht,<br>
+Wird’s dem Himmel dargebracht,<br>
+Hat dich Liebe angenommen,<br>
+Auf dem Altar hell entglommen<br>
+Steig’ auf in der alten Pracht.<br></p></div>
+<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+
+</div>
+
+ <!-- .element: style="overflow-y: auto; font-size: smaller; background: #DFE1E175; border-radius: 5px; padding: 15px; padding-left: 30px" id="poem" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+notes:
 - ### Tieck
 	- Reimschema und Form: Glosse
 		- Eine Glosse besteht aus einem Motto mit meist vier Versen und aus vier Strophen, die als Dezime bezeichnet werden, weil sie aus zehn Versen bestehen. Das vorangestellte Motto verdeutlicht den kurzen Leitgedanken. Die vier Verse des Mottos werden am Ende der korrespondierenden Strophen wiederholt 
@@ -138,14 +347,17 @@ notes:
 	- Parallelisierung von Natur und Liebe
 	- Liebe als religiös konnotierter, Grenzen überwindender Weg vom Dunkeln ins Licht
 	- Dichtung, Verzauberung, Märchenwelt
-- ### Heine, Lyrisches Intermezzo, LIV
-	- Lied vorspielen
-	- Reimschema und Liedform, Arbeit mit „Volkslied”
-	- Wiederholung und Variation
-	- Ironisierung
-	- „Gimpel”
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
 
 ## UK: Jane Austen (1775-1817)
 - Biographisches
@@ -156,17 +368,21 @@ notes:
 - ## Biographisches
 	- als Tochter eines Geistlichen 1775 in Hampshire geboren; frühelterliche Förderung und erste Schreibversuche
 	- nach dem Tod des Vaters 1805 Umzug nach Chawton, wo alle ihre Werke entstanden sind (insgesamt 6 zu Lebzeiten veröffentlichte und erfolgreiche Romane); sie blieb unverheiratet und starb zurückgezogen
-	- musste ihre Werke anonym veröffentlichen (vgl. die männlichen Pseudonyme der Brontë-Schwestern odedie Schriftstellerin „George Eliot„ etwa zur gleichen Zeit)
-</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+	- musste ihre Werke anonym veröffentlichen (vgl. die männlichen Pseudonyme der Brontë-Schwestern oder die Schriftstellerin „George Eliot” etwa zur gleichen Zeit)
+
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://mermaid.ink/img/pako:eNqFUktuwjAQvYo164CSAIGkUiUg0KqCFVUrNWFh8EAsOTZyHFF-t-kZegEuVpMUKlb1wp_xm_eex3OApWIIEaw13WTkNX5IJbGjn0yp5lRKJDEtsq1SbE4ajcfjG2rBcWFIwZcZ4fJIBsmLyiR550Kocp0tdvNfjsEt4fxVFOZI-lfy6uIZuaYGbXyYDJVQEgUZaCqZkleGeo6TkeBS6X-djJIR21LNyBi1prq40oxueGXhObeS42RSLndkZhAFXnHjCjc5fxeG1OhSri3tHc2f7fjunRk1pL9anb801hJPF9t7Ok9lDQMHctQ55cyW-3CJpWAyzDGFyG4ZrmgpTAqpPFkoLY2a7eQSIqNLdEBfagvRiorCnsoNsx5iTu235bfohkqIDvAJkee5zbDTdgM3tEvX9T0HdhCFbrPbCtzA8z3Pd7126-TAXinL4DZ7fjsMwm7Q6_htLwhDB5Bxo_S07o-qTSqJjyrh4ur0A857tpY?type=png" template="" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-## Sense and Sensibility (1811)
-[![](https://mermaid.ink/img/pako:eNqFUktuwjAQvYo164CSAIGkUiUg0KqCFVUrNWFh8EAsOTZyHFF-t-kZegEuVpMUKlb1wp_xm_eex3OApWIIEaw13WTkNX5IJbGjn0yp5lRKJDEtsq1SbE4ajcfjG2rBcWFIwZcZ4fJIBsmLyiR550Kocp0tdvNfjsEt4fxVFOZI-lfy6uIZuaYGbXyYDJVQEgUZaCqZkleGeo6TkeBS6X-djJIR21LNyBi1prq40oxueGXhObeS42RSLndkZhAFXnHjCjc5fxeG1OhSri3tHc2f7fjunRk1pL9anb801hJPF9t7Ok9lDQMHctQ55cyW-3CJpWAyzDGFyG4ZrmgpTAqpPFkoLY2a7eQSIqNLdEBfagvRiorCnsoNsx5iTu235bfohkqIDvAJkee5zbDTdgM3tEvX9T0HdhCFbrPbCtzA8z3Pd7126-TAXinL4DZ7fjsMwm7Q6_htLwhDB5Bxo_S07o-qTSqJjyrh4ur0A857tpY?type=png)](https://mermaid.live/edit#pako:eNqFUktuwjAQvYo164CSAIGkUiUg0KqCFVUrNWFh8EAsOTZyHFF-t-kZegEuVpMUKlb1wp_xm_eex3OApWIIEaw13WTkNX5IJbGjn0yp5lRKJDEtsq1SbE4ajcfjG2rBcWFIwZcZ4fJIBsmLyiR550Kocp0tdvNfjsEt4fxVFOZI-lfy6uIZuaYGbXyYDJVQEgUZaCqZkleGeo6TkeBS6X-djJIR21LNyBi1prq40oxueGXhObeS42RSLndkZhAFXnHjCjc5fxeG1OhSri3tHc2f7fjunRk1pL9anb801hJPF9t7Ok9lDQMHctQ55cyW-3CJpWAyzDGFyG4ZrmgpTAqpPFkoLY2a7eQSIqNLdEBfagvRiorCnsoNsx5iTu235bfohkqIDvAJkee5zbDTdgM3tEvX9T0HdhCFbrPbCtzA8z3Pd7126-TAXinL4DZ7fjsMwm7Q6_htLwhDB5Bxo_S07o-qTSqJjyrh4ur0A857tpY)
-- Figurenkonstellation (die romantische Marianne vs. die vernünftige Elinor)
+<div class="fragment" style="background: #DFE1E175; border-radius: 5px; padding: 15px; position: absolute; left: 5%; top: 60%; height: 40%; width: 90%; display: flex; flex-direction: column; align-items: start; justify-content: center" data-fragment-index="1">
+
+- Figurenkonstellation (die romantische Marianne/sensibility vs. die vernünftige Elinor/sense)
 - [Liebe und Seelenverwandtschaft](#Austen_Liebe)
 - [Literaturgespräche](#Austen_Literatur)
-
+</div>
 notes:
+
+<!-- begin::[Austen – Sense and Sensibility.md] -->
 ## Allgemein
 Gelesen im Zusammenhang mit dem Abschluss des Ehebruchs-Projekts. Der Roman beschreibt die Liebes- und Ehegeschichte der Dashwood-Töchter Marianne und Elinor, die den im Titel genannten Gegensatz verkörpern. Marianne ist wie ihre Mutter ein „romantischer” Charakter, leidenschaftlich, intensiv, vorschnell, Elinor dagegen zurückhaltend, bedacht und vernünftig. Das wird zu Beginn in den Gesprächen über Liebe deutlich genug gemacht (Kap. 3, 4, 17). M.s romantische Gesinnung zeigt sich auch darin, dass sie glaubt, niemand könne ein zweites Mal aufrichtig lieben (Kap. 11). Den Hintergrund bildet die finanzielle Situation der Dashwoods, die eine vorteilhafte Heirat wünschenswert erscheinen lassen (wie überhaupt Heiraten im Roman vorrangig aus ökonomischer Perspektive interessieren). Insgesamt handelt es sich auch um einen Gesellschaftsroman, insofern alle Figuren mit einer gewissen kritischen Ironie beschrieben werden.
 
@@ -177,18 +393,90 @@ E. kümmert sich eigentlich den ganzen Roman über um ihre Schwester, doch hat s
 In ihrer leidenschaftliche Liebe (und Trauer) wird M.s Sensibilität deutlich kritisch gezeichnet (Kummer: Kap. 16ff.). Gleichwohl übt der Roman keine typische Polemik gegenüber romantischer Literatur: <mark>Das Interesse am Lesen teilen alle vier Frauen der engeren Familie (also die Töchter Elinor, Marianne und Margaret sowie die verwitwete Mutter), aber dieses wird an keiner Stelle für den “romantischen” Charakter M.s verantwortlich gemacht.</mark> Als M. und W. sich kennenlernen, werden die topischen Literaturgespräche erwähnt und von Seelenverwandtschaft gesprochen (Kap. 10, 11), aber ohne besondere Gewichtung versehen. Nachdem M. sich von ihrem Liebeskummer erholt hat, sieht sie einem intensiven Bücherstudium entgegen, aber wird dann von der Heirat mit Brandon davon abgehalten.
 
 Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne machen dieselben Erfahrungen (Beziehungen mit Männern, die bereits heimlich verlobt sind/waren etc.); dabei glaubt M., die jüngere, sie erlebe jede Wendung als erste, doch geht ihr zeitlich jeweils die Erfahrung ihrer älteren Schwester voraus, von der sie nur erst später erfährt. <mark>Sie _will_ immer die Erste sein, aber wiederholt unwillkürlich die Erfahrungen der Schwester (Intro, viii).</mark> Auch die männlichen Figuren Willoughby und Ferrars werden streng symmetrisch gezeichnet (selbe Erfahrungen in Bezug auf Heirat, wenn auch gegensätzliche Entscheidungen, xvii). Zusammen mit der Abwesenheit der väterlichen Position (in _allen_ wichtigen Familien, viii) und der Thematik mütterlichen Narzissmus (ix) erinnert mich das an die Struktur der _Wahlverwandtschaften._ Ein Vergleich wäre wohl auch aufgrund der sozialen Zugehörigkeit der Figuren (Landadel) und der hintergründigen ökonomischen Thematik (ein Gut bewirtschaften und einträglicher machen) möglich (xxi f.).
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Austen_Liebe" data-background-color="lightgrey" -->
+<!-- end::[Austen – Sense and Sensibility.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-- Willoughby/Marianne: „His person and air were equal to what her fancy had ever drawn for the hero of a favourite story; and in his carrying her into the house with so little previous formality, there was a rapidity of thought which particularly recommended the action to her.” (Ch. 9) #Quote 
-- Marianne: „You are mistaken, Elinor,” said she warmly, „in supposing I know very little of Willoughby. I have not known him long indeed, but I am much better acquainted with him than I am with any other creature in the world, except yourself an mamma. It is not time or opportunity that is to determine intimacy: it is disposition alone.” (Ch. 12) #Quote 
-- Colonel Brandon: „Your sister, I understand, does not approve of second attachments.” – „No,” replied Elinor, „her opinions are all romantic.” (Ch. 11) #Quote
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Austen_Literatur" data-background-color="lightgrey" -->
+[![](https://mermaid.ink/img/pako:eNqNk9-OojAUxl-l6dyiKYgomGwCArPZzFzNZDdZ8KLaIs3W1rQlyqhvM8-wL-CLbf27ejXSpNDy-75z2pyzgTNJKIzgXOFlDd7TUSmAfeLiFSuGhaAgxbpeSUkmoNP5tv1JFWd0aoBmsxowsQVJ8UPWAvxinMtmXk_bydkjuQr2n1qbLYgv5scf3ylT2FC7Py7GkktBOUgUFkSKi8NpTouMMyHVl5lkRUZWWBGQU6Ww0heb7MpLiy-YDZkXL82sBW-GUk4vXH7kXvZ_tQEnuhFza3tn8z_t9O6cNTYgrqr9p6KnEM-HtD_wpBQnTJuWU3v2yl5U9FT1sIc9Rxsl_9DoKYlRH_XPy86KEVNH7nJ9q0zPyt4wjvO8j67anheEcXyLJo-j48fR7HE0P6OJfxgWBdeD-lM7btnnL9nLDc441jqlFVCyEWQslaBKA7WOXOSo1s6jGw7ETuKkTubkd_gIOnBB1QIzYqt-cxCU0NR0QUsY2U9CK9xwU8JS7CyKGyPfWjGDkVENdaA6lDiMKsy1XTVLYkshZdh2z-K6u8QCRhu4hpHrom7Y91GAQvsaIM91YAujEHUHvQAFrue6HnL93s6BH1JaB9Qden4YhINg2Pd8NwhDB1LCjFSvpzY9dusxxO-j4JDV7h9ROCxD?type=png)](https://mermaid.live/edit#pako:eNqNk9-OojAUxl-l6dyiKYgomGwCArPZzFzNZDdZ8KLaIs3W1rQlyqhvM8-wL-CLbf27ejXSpNDy-75z2pyzgTNJKIzgXOFlDd7TUSmAfeLiFSuGhaAgxbpeSUkmoNP5tv1JFWd0aoBmsxowsQVJ8UPWAvxinMtmXk_bydkjuQr2n1qbLYgv5scf3ylT2FC7Py7GkktBOUgUFkSKi8NpTouMMyHVl5lkRUZWWBGQU6Ww0heb7MpLiy-YDZkXL82sBW-GUk4vXH7kXvZ_tQEnuhFza3tn8z_t9O6cNTYgrqr9p6KnEM-HtD_wpBQnTJuWU3v2yl5U9FT1sIc9Rxsl_9DoKYlRH_XPy86KEVNH7nJ9q0zPyt4wjvO8j67anheEcXyLJo-j48fR7HE0P6OJfxgWBdeD-lM7btnnL9nLDc441jqlFVCyEWQslaBKA7WOXOSo1s6jGw7ETuKkTubkd_gIOnBB1QIzYqt-cxCU0NR0QUsY2U9CK9xwU8JS7CyKGyPfWjGDkVENdaA6lDiMKsy1XTVLYkshZdh2z-K6u8QCRhu4hpHrom7Y91GAQvsaIM91YAujEHUHvQAFrue6HnL93s6BH1JaB9Qden4YhINg2Pd8NwhDB1LCjFSvpzY9dusxxO-j4JDV7h9ROCxD)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-- „Encouraged by this to a further examination of his opinions, she proceeded to question him on the subject of books; her favorite authors were brought forward and dwelt upon with so rapturous delight, that any young man of five-and-twenty must have been insensible indeed, not to become an immediate convert to the excellence of such works, however disregarded before. Their taste was strikingly alike. The same books, the same passages were idolised by each–or, if any difference appeared, any objection arose, it lasted no longer than till the force of her arguments and the brightness of her eyes could be displayed. He acquiesced in all her decisions, caught all her enthusiasm, and long before his visit concluded, they conversed with the familiarity of a long established acquaintance.” (Ch. 10) #Quote #Lesen #Liebe
+<div class="mermaid">
+graph TD;
+    A[Marianne Dashwood] -->|Verliebt sich in| B[John Willoughby];
+    B -->|Verlässt| A;
+    A -->|Heiratet| C[Colonel Brandon];
+    
+    D[Elinor Dashwood] -->|Verliebt sich in| E[Edward Ferrars];
+    E -->|Verlobt mit| F[Lucy Steele];
+    F -->|Löst Verlobung| E;
+    E -->|Heiratet| D;
+    B -->|hat Affäre mit| G[Eliza]
+
+    style A fill:#f3a2a2,stroke:#BA0505,stroke-width:1px
+    style D fill:#38AAFF50,stroke:#3269AA
+    style B fill:#38AAFF50,stroke:#3269AA
+    style C fill:#38AAFF50,stroke:#3269AA
+    style E fill:#38AAFF50,stroke:#3269AA
+    style F fill:#B4B4B450, stroke:#B4b4b4
+    style G fill:#B4B4B450, stroke:#B4b4b4
+
+
+    classDef roundCorners rx:10,ry:10;
+    class A,B,D,E,F roundCorners;
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .slide: id="Austen_Liebe" -->
+
+
+<!-- begin::[Austen – Sense and Sensibility.md] -->
+- Willoughby/Marianne: „His person and air were equal to what her fancy had ever drawn for the hero of a favourite story; and in his carrying her into the house with so little previous formality, there was a rapidity of thought which particularly recommended the action to her.” (Ch. 9) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+
+
+<!-- begin::[Austen – Sense and Sensibility.md] -->
+- Marianne: „You are mistaken, Elinor,” said she warmly, „in supposing I know very little of Willoughby. I have not known him long indeed, but I am much better acquainted with him than I am with any other creature in the world, except yourself an mamma. It is not time or opportunity that is to determine intimacy: it is disposition alone.” (Ch. 12) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+
+
+<!-- begin::[Austen – Sense and Sensibility.md] -->
+- Colonel Brandon: „Your sister, I understand, does not approve of second attachments.” – „No,” replied Elinor, „her opinions are all romantic.” (Ch. 11) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+
+
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" -->
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .slide: id="Austen_Literatur" -->
+
+<!-- begin::[Austen – Sense and Sensibility.md] -->
+- „Encouraged by this to a further examination of his opinions, she proceeded to question him on the subject of books; her favorite authors were brought forward and dwelt upon with so rapturous delight, that any young man of five-and-twenty must have been insensible indeed, not to become an immediate convert to the excellence of such works, however disregarded before. Their taste was strikingly alike. The same books, the same passages were idolised by each–or, if any difference appeared, any objection arose, it lasted no longer than till the force of her arguments and the brightness of her eyes could be displayed. He acquiesced in all her decisions, caught all her enthusiasm, and long before his visit concluded, they conversed with the familiarity of a long established acquaintance.” (Ch. 10) #Quote #Lesen #Liebe  <!-- end::[Austen – Sense and Sensibility.md] -->
+
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" -->
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div>
 </div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Molteni_Giuseppe%2C_Alessandro_Manzoni.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Alessandro_Manzoni" title="Giuseppe Molteni: Ritratto di Alessandro Manzoni a 50 anni. Accademia di Brera. Öl auf Leinwand, 1835." target="_blank">G. Molteni: Manzoni (1835).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
 
 ## I: Alessandro Manzoni (1785-1873)
 - Biographisches
@@ -200,17 +488,30 @@ notes:
 - Ablehnung Rückwendung zu Antike und klassizistische Ästhetik
 - stattdessen Auseinandersetzung mit der italienischen Geschichte
 - programmatische Äußerungen zur romantischen Literatur in seinen theoretischen Schriften
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
 <div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b8/Molteni_Giuseppe%2C_Alessandro_Manzoni.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Alessandro_Manzoni" title="Giuseppe Molteni: Ritratto di Alessandro Manzoni a 50 anni. Accademia di Brera. Öl auf Leinwand, 1835." target="_blank">G. Molteni: Manzoni (1835).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
 
 ## I Promessi Sposi (1827/40)
 - Handlung
 - Historischer Roman
 - Romantische Form (Herausgeberfiktion, Ironie, Mischcharakter, historischer Realismus)
 - Thema: Liebe, Ehe und italienische Identität/Nationalgeschichte
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://mermaid.ink/img/pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg?type=png" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-[![](https://mermaid.ink/img/pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg?type=png)](https://mermaid.live/edit#pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg)
-[![](https://mermaid.ink/img/pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg?type=png)](https://mermaid.live/edit#pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg)
+<!-- [![](https://mermaid.ink/img/pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg?type=png)](https://mermaid.live/edit#pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg)-->
+<!--[![](https://mermaid.ink/img/pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg?type=png)](https://mermaid.live/edit#pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg)-->
 notes:
 - ### Handlung
 	- spielt im 17. Jahrhundert, thematisiert Kleinstaaterei und Macht der lokalen Fürsten	
@@ -219,121 +520,139 @@ notes:
 	- Renzo auf der Suche nach Luzia, Abenteuer in Mailand, Festnahme, Geschichte der Pest in Mailand
 	- Wiederbegegnung in Lazarett, Überzeugung Luzias, dass das Gelübde nicht mehr gilt, Rodrigo gestorben, Hochzeit kann gefeiert werden
 - ### Nationalgeschichte
-	- Macht der Fürsten, Sehnsicht nach politischer und sozialer Einigung Italiens im 19. Jahrhundert (→ Risorgimento)
+	- Macht der Fürsten, Sehnsucht nach politischer und sozialer Einigung Italiens im 19. Jahrhundert (→ Risorgimento)
 	- sprachliche Standardisierung
 	- Werk trägt zur nationalen Identität bei, indem er die italienische Geschichte, Kultur und Sprache thematisiert
 - ### Liebe
 	- Liebe zwischen einfachen Leuten – keine Leidenschaft, keine ausführliche dichterische Beschreibung, aber spirituelle Dimension, die sich v.a. in der Geschichte der Personen zeigt (ihrem Leiden, ihren Prüfungen, ihrem Mut und Standhaftigkeit) – daneben Anzeichen einer gütigen Lenkung (von Erzähler und Gott)
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="mermaid">
+graph TD;
+    A[Renzo Tramaglino] <-->|wollen heiraten| B[Lucia Mondella];
+    C[Don Rodrigo] -->|begehrt| B;
+    D[Fra Cristoforo] -->|unterstützt| A & B;
+    E[Don Abbondio] -->|Zögert zu trauen| A & B;
+    F[L'innominato] -->|entführt| B
+    F -->|unterstützt| C
+    
+    style C fill:#f3a2a2,stroke:#333,stroke-width:2px
+    style E fill:#f3a2a2,stroke:#333,stroke-width:2px
+    style F fill:#f3a2a2,stroke:#333,stroke-width:2px
+    
+    classDef roundCorners rx:10,ry:10;
+    class A,B,C,D,E,F roundCorners;
+
+</div>
 </div></script></section></div>
     </div>
 
     <script src="dist/reveal.js"></script>
-
+    <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
+
     <script src="plugin/zoom/zoom.js"></script>
-    <script src="plugin/notes/notes.js"></script>
     <script src="plugin/math/math.js"></script>
-	<script src="plugin/mermaid/mermaid.js"></script>
-	<script src="plugin/chart/chart.min.js"></script>
-	<script src="plugin/chart/plugin.js"></script>
-	<script src="plugin/menu/menu.js"></script>
-	<script src="plugin/customcontrols/plugin.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
 
     <script>
-      function extend() {
-        var target = {};
-        for (var i = 0; i < arguments.length; i++) {
-          var source = arguments[i];
-          for (var key in source) {
-            if (source.hasOwnProperty(key)) {
-              target[key] = source[key];
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
             }
-          }
+            return target;
         }
-        return target;
-      }
 
-	  function isLight(color) {
-		let hex = color.replace('#', '');
+        function isLight(color) {
+            let hex = color.replace('#', '');
 
-		// convert #fff => #ffffff
-		if(hex.length == 3){
-			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
-		}
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
 
-		const c_r = parseInt(hex.substr(0, 2), 16);
-		const c_g = parseInt(hex.substr(2, 2), 16);
-		const c_b = parseInt(hex.substr(4, 2), 16);
-		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
-		return brightness > 155;
-	}
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
 
-	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
-	var isLight = isLight(bgColor);
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
 
-	if(isLight){
-		document.body.classList.add('has-light-background');
-	} else {
-		document.body.classList.add('has-dark-background');
-	}
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
 
-      // default options to init reveal.js
-      var defaultOptions = {
-        controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'default', // none/fade/slide/convex/concave/zoom
-        plugins: [
-          RevealMarkdown,
-          RevealHighlight,
-          RevealZoom,
-          RevealNotes,
-          RevealMath.MathJax3,
-		  RevealMermaid,
-		  RevealChart,
-		  RevealCustomControls,
-		  RevealMenu,
-        ],
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
 
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
 
-    	allottedTime: 120 * 1000,
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
 
-		mathjax3: {
-			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
-		},
-		markdown: {
-		  gfm: true,
-		  mangle: true,
-		  pedantic: false,
-		  smartLists: false,
-		  smartypants: false,
-		},
-
-		mermaid: {
-			theme: isLight ? 'default' : 'dark',
-		},
-
-		customcontrols: {
-			controls: [
-			]
-		},
-		menu: {
-			loadIcons: false
-		}
-      };
-
-      // options from URL query string
-      var queryOptions = Reveal().getQueryHash() || {};
-
-      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
     </script>
 
     <script>
       Reveal.initialize(options);
     </script>
-  </body>
+</body>
 
-  <!-- created with Advanced Slides -->
+<!-- created with Slides Extended -->
 </html>
