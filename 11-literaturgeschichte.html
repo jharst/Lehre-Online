@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Europäische Romantik</title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Titel
+
+
+<button title="Click to open speaker notes view" onclick="Reveal.triggerKey(83)">Text or image</button>
+
+<button title="Click to open speaker notes view" onclick="Reveal.triggerKey(70)">Fullscreen</button>
+
+
+Titelfolie mit Bild von CD Friedrich
+unbedingt Problem mit iPad speaker notes lösen!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Einführung
+- Romantik und Empfindsamkeit
+- Romantik und Klassik
+
+notes:
+- Opposition zu Klassik (Verhältnis zu Goethe), Umgang mit „Romanzen”, *Don Quijote* als „romantischer Roman”, Universalpoesie
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Europäische Romantik
+
+notes:
+- Geografie und Periodisierung – Karte zu Romantik? in dtv-Atlas nur Deutschland dargestellt
+- [CSG](hook://file/ko9AbpgEz?p=TWF0ZXJpYWxpZW4gQ2hyaXN0aWFuZS9QcmHMiHNlbnRhdGlvbmVu&n=07%5F13%5F12%5F23%5FRomantik%2DPra%CC%88sentation%2Epdf#p=20) hat Überblicksfolie „Romantik als europäische Strömung” → mermaid Zeitstrahl Frühromantik/Hochromantik/Spätromantik
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## D: Romantische Liebe in Gedichten
+- Aspekte romantischer Liebe
+- Eichendorff
+- Tieck
+- Heine
+
+notes:
+- Aspekte romantischer Liebe (Frage an alle)
+- ### Eichendorff, Mondnacht (1835/37)
+	- Reimschema und Liedform → Volkslied in der Romantik
+	- Thema: Irdisches und Himmlisches verschränken sich, aber auch unendliche Sehnsucht (horizontale statt vertikale Bewegung der Seele)
+	- [Lied vorspielen](https://youtu.be/kBGyJvHe0kc?si=p8M_py-K2t3tzr3m) – Vertonung von Schumann (1840), daneben zahlreiche andere
+- ### Tieck
+	- Reimschema und Form: Glosse
+		- Eine Glosse besteht aus einem Motto mit meist vier Versen und aus vier Strophen, die als Dezime bezeichnet werden, weil sie aus zehn Versen bestehen. Das vorangestellte Motto verdeutlicht den kurzen Leitgedanken. Die vier Verse des Mottos werden am Ende der korrespondierenden Strophen wiederholt 
+	- Wiederholung und Variation („Zaubernacht”, „Märchenwelt”)
+	- Bilder der Romantik: Nacht, Wetter
+	- Parallelisierung von Natur und Liebe
+	- Liebe als religiös konnotierter, Grenzen überwindender Weg vom Dunkeln ins Licht
+	- Dichtung, Verzauberung, Märchenwelt
+- ### Heine, Lyrisches Intermezzo, LIV
+	- Lied vorspielen
+	- Reimschema und Liedform, Arbeit mit „Volkslied”
+	- Wiederholung und Variation
+	- Ironisierung
+	- „Gimpel”
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## UK: Jane Austen (1775-1817)
+- Biographisches
+- Gattung: Roman
+- Thema: Liebe und Ehe/gesellschaftliche Konventionen, Verhandlung des „romantischen” Charakters
+
+notes:
+- ## Biographisches
+	- als Tochter eines Geistlichen 1775 in Hampshire geboren; frühelterliche Förderung und erste Schreibversuche
+	- nach dem Tod des Vaters 1805 Umzug nach Chawton, wo alle ihre Werke entstanden sind (insgesamt 6 zu Lebzeiten veröffentlichte und erfolgreiche Romane); sie blieb unverheiratet und starb zurückgezogen
+	- musste ihre Werke anonym veröffentlichen (vgl. die männlichen Pseudonyme der Brontë-Schwestern odedie Schriftstellerin „George Eliot„ etwa zur gleichen Zeit)
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Sense and Sensibility (1811)
+[![](https://mermaid.ink/img/pako:eNqFUktuwjAQvYo164CSAIGkUiUg0KqCFVUrNWFh8EAsOTZyHFF-t-kZegEuVpMUKlb1wp_xm_eex3OApWIIEaw13WTkNX5IJbGjn0yp5lRKJDEtsq1SbE4ajcfjG2rBcWFIwZcZ4fJIBsmLyiR550Kocp0tdvNfjsEt4fxVFOZI-lfy6uIZuaYGbXyYDJVQEgUZaCqZkleGeo6TkeBS6X-djJIR21LNyBi1prq40oxueGXhObeS42RSLndkZhAFXnHjCjc5fxeG1OhSri3tHc2f7fjunRk1pL9anb801hJPF9t7Ok9lDQMHctQ55cyW-3CJpWAyzDGFyG4ZrmgpTAqpPFkoLY2a7eQSIqNLdEBfagvRiorCnsoNsx5iTu235bfohkqIDvAJkee5zbDTdgM3tEvX9T0HdhCFbrPbCtzA8z3Pd7126-TAXinL4DZ7fjsMwm7Q6_htLwhDB5Bxo_S07o-qTSqJjyrh4ur0A857tpY?type=png)](https://mermaid.live/edit#pako:eNqFUktuwjAQvYo164CSAIGkUiUg0KqCFVUrNWFh8EAsOTZyHFF-t-kZegEuVpMUKlb1wp_xm_eex3OApWIIEaw13WTkNX5IJbGjn0yp5lRKJDEtsq1SbE4ajcfjG2rBcWFIwZcZ4fJIBsmLyiR550Kocp0tdvNfjsEt4fxVFOZI-lfy6uIZuaYGbXyYDJVQEgUZaCqZkleGeo6TkeBS6X-djJIR21LNyBi1prq40oxueGXhObeS42RSLndkZhAFXnHjCjc5fxeG1OhSri3tHc2f7fjunRk1pL9anb801hJPF9t7Ok9lDQMHctQ55cyW-3CJpWAyzDGFyG4ZrmgpTAqpPFkoLY2a7eQSIqNLdEBfagvRiorCnsoNsx5iTu235bfohkqIDvAJkee5zbDTdgM3tEvX9T0HdhCFbrPbCtzA8z3Pd7126-TAXinL4DZ7fjsMwm7Q6_htLwhDB5Bxo_S07o-qTSqJjyrh4ur0A857tpY)
+- Figurenkonstellation (die romantische Marianne vs. die vernünftige Elinor)
+- [Liebe und Seelenverwandtschaft](#Austen_Liebe)
+- [Literaturgespräche](#Austen_Literatur)
+
+notes:
+## Allgemein
+Gelesen im Zusammenhang mit dem Abschluss des Ehebruchs-Projekts. Der Roman beschreibt die Liebes- und Ehegeschichte der Dashwood-Töchter Marianne und Elinor, die den im Titel genannten Gegensatz verkörpern. Marianne ist wie ihre Mutter ein „romantischer” Charakter, leidenschaftlich, intensiv, vorschnell, Elinor dagegen zurückhaltend, bedacht und vernünftig. Das wird zu Beginn in den Gesprächen über Liebe deutlich genug gemacht (Kap. 3, 4, 17). M.s romantische Gesinnung zeigt sich auch darin, dass sie glaubt, niemand könne ein zweites Mal aufrichtig lieben (Kap. 11). Den Hintergrund bildet die finanzielle Situation der Dashwoods, die eine vorteilhafte Heirat wünschenswert erscheinen lassen (wie überhaupt Heiraten im Roman vorrangig aus ökonomischer Perspektive interessieren). Insgesamt handelt es sich auch um einen Gesellschaftsroman, insofern alle Figuren mit einer gewissen kritischen Ironie beschrieben werden.
+
+Fokusfigur des Romans ist Elinor, im Mittelpunkt steht dagegen Marianne und ihre Liebe zu Willoughby, den sie auf dem Land (bei Barton Cottage) kennengelernt hat, als sie sich einen Fuß verstaucht hat (Kap. 9, was mich an Herrmann und Dorothea erinnert). Alle gehen von einer heimlichen Verlobung und baldigen Heirat zwischen den beiden aus (vgl. die Zeichen Kap. 12 u. 13), doch W. verlässt M. unerwartet (Kap. 15). Nach einer Weile gehen die Schwestern nach London, wo M. W. wiederzusehen hofft, doch als ihr dies endlich gelingt, erhält sie ein schnödes Trennungsschreiben von ihm (Kap. 27-29). Später stellt sich raus, dass es keine förmliche Verlobung gab und W. aus finanziellen Gründe eine andere Heirat benötigte. (Auch hatte er bereits eine andere, Colonel Brandons Schutzbefohlene Eliza, verführt, ist also ein böser Libertin: Kap. 31.) Nach einem längeren Aufenthalt in London, der dazu dient, verschiedene entferntere Verwandte zu beschreiben, enthüllt W. anlässlich einer schweren Krankheit M.s, dass er sie eigentlich immer noch liebe und rechtfertigt sein Verhalten. Gleichwohl entsagt M. ihm für immer. Ganz am Schluss erhört sie ihren stillen Bewunderer, den deutlich älteren Colonel Brandon, von dem Mrs. Jennings schon sehr früh gesagt hat, dass er sie heiraten werde (Kap. 8).
+
+E. kümmert sich eigentlich den ganzen Roman über um ihre Schwester, doch hat sie ihre eigene Liebesgeschichte: Zu Beginn hat sie Hoffnungen, Edward Ferrars zu heiraten (obwohl ihre Beziehung zuerst gar nicht so eng scheint, Kap. 18); dann muss sie erkennen, dass Edward mit einer anderen, Lucy Steele, verlobt ist (Kap. 22), und er die Verlobung aufrecht erhält, obwohl er sie nicht mehr liebt (die Ehre!). Edward ist also Kontrastfigur zu Willoughby. Im Lauf des Londoner Aufenthalts wird immer deutlicher, wie unsympathisch Lucy ist; doch Edward bleibt seinem Wort treu, selbst nachdem seine Mutter ihm mit Enterbung gedroht hat (Kap. 37). Die Geschichte nimmt kurz vor Schluss noch eine unerwartete Wendung, da Lucy plötzlich von Edwards Bruder Robert ausgespannt wird. Edward ist also wieder frei und kann zu guter Letzt E. heiraten.
+
+In ihrer leidenschaftliche Liebe (und Trauer) wird M.s Sensibilität deutlich kritisch gezeichnet (Kummer: Kap. 16ff.). Gleichwohl übt der Roman keine typische Polemik gegenüber romantischer Literatur: <mark>Das Interesse am Lesen teilen alle vier Frauen der engeren Familie (also die Töchter Elinor, Marianne und Margaret sowie die verwitwete Mutter), aber dieses wird an keiner Stelle für den “romantischen” Charakter M.s verantwortlich gemacht.</mark> Als M. und W. sich kennenlernen, werden die topischen Literaturgespräche erwähnt und von Seelenverwandtschaft gesprochen (Kap. 10, 11), aber ohne besondere Gewichtung versehen. Nachdem M. sich von ihrem Liebeskummer erholt hat, sieht sie einem intensiven Bücherstudium entgegen, aber wird dann von der Heirat mit Brandon davon abgehalten.
+
+Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne machen dieselben Erfahrungen (Beziehungen mit Männern, die bereits heimlich verlobt sind/waren etc.); dabei glaubt M., die jüngere, sie erlebe jede Wendung als erste, doch geht ihr zeitlich jeweils die Erfahrung ihrer älteren Schwester voraus, von der sie nur erst später erfährt. <mark>Sie _will_ immer die Erste sein, aber wiederholt unwillkürlich die Erfahrungen der Schwester (Intro, viii).</mark> Auch die männlichen Figuren Willoughby und Ferrars werden streng symmetrisch gezeichnet (selbe Erfahrungen in Bezug auf Heirat, wenn auch gegensätzliche Entscheidungen, xvii). Zusammen mit der Abwesenheit der väterlichen Position (in _allen_ wichtigen Familien, viii) und der Thematik mütterlichen Narzissmus (ix) erinnert mich das an die Struktur der _Wahlverwandtschaften._ Ein Vergleich wäre wohl auch aufgrund der sozialen Zugehörigkeit der Figuren (Landadel) und der hintergründigen ökonomischen Thematik (ein Gut bewirtschaften und einträglicher machen) möglich (xxi f.).
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Austen_Liebe" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+- Willoughby/Marianne: „His person and air were equal to what her fancy had ever drawn for the hero of a favourite story; and in his carrying her into the house with so little previous formality, there was a rapidity of thought which particularly recommended the action to her.” (Ch. 9) #Quote 
+- Marianne: „You are mistaken, Elinor,” said she warmly, „in supposing I know very little of Willoughby. I have not known him long indeed, but I am much better acquainted with him than I am with any other creature in the world, except yourself an mamma. It is not time or opportunity that is to determine intimacy: it is disposition alone.” (Ch. 12) #Quote 
+- Colonel Brandon: „Your sister, I understand, does not approve of second attachments.” – „No,” replied Elinor, „her opinions are all romantic.” (Ch. 11) #Quote
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Austen_Literatur" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+- „Encouraged by this to a further examination of his opinions, she proceeded to question him on the subject of books; her favorite authors were brought forward and dwelt upon with so rapturous delight, that any young man of five-and-twenty must have been insensible indeed, not to become an immediate convert to the excellence of such works, however disregarded before. Their taste was strikingly alike. The same books, the same passages were idolised by each–or, if any difference appeared, any objection arose, it lasted no longer than till the force of her arguments and the brightness of her eyes could be displayed. He acquiesced in all her decisions, caught all her enthusiasm, and long before his visit concluded, they conversed with the familiarity of a long established acquaintance.” (Ch. 10) #Quote #Lesen #Liebe
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## I: Alessandro Manzoni (1785-1873)
+- Biographisches
+- Werke
+- Positionen
+notes:
+- historische Dramen, Romane, literaturtheoretische Texte
+- vor allem: historischer Roman *I promessi sposi* (1827/1840)
+- Ablehnung Rückwendung zu Antike und klassizistische Ästhetik
+- stattdessen Auseinandersetzung mit der italienischen Geschichte
+- programmatische Äußerungen zur romantischen Literatur in seinen theoretischen Schriften
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## I Promessi Sposi (1827/40)
+- Handlung
+- Historischer Roman
+- Romantische Form (Herausgeberfiktion, Ironie, Mischcharakter, historischer Realismus)
+- Thema: Liebe, Ehe und italienische Identität/Nationalgeschichte
+
+[![](https://mermaid.ink/img/pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg?type=png)](https://mermaid.live/edit#pako:eNqdkj1v2zAQhv8KwQDtQhv6cOSILgo4kj0lS5opUgbaOklEKdI4UYg_4r_VKZv_WGlLCFygS8vheCTf5-4IvAe6NgVQTisUm5o8p7NcE7fm2RPovSHPKBpRKanNK_k2Gn1_fzNKgSY1SBQW9Du5zx66tRTk0egClBKvQ4UkS40mT6ZAWTn4zK6gghqtYwZNmi1RkARla01pcJB12gK29vRh9047J18-9YtLzflq5XrJQf1y-lUBWrLviEXRnUe6RpbZw1eptWmkFnZAQNvy9NFPMqj-0jjpn_rY2p0CkpBSKsVvylAEImCtRfMT-E0YhkM-epOFrXmw2V5ji__Dlv-K9XGtRNumUBI0nS4Sg9p9iuCW-x7DnYuzKx2Zs3uWsJQt2PIPYEYZbQAbIQvnjsMZyamtoYGccpcWUIpO2Zzm-uikorPmx06vKbfYAaOuVFVTXgrVulO3KZxZUimcy5rP243QlB_olnLf98bx7cSLvNhtUy_wGd1RHnvjaRh5kR_4fuD5k_DI6N4YV8Eb3wWTOIqn0d1tMPGjOGYUCmkNPvZ2vrj60uLlApynOv4GOe3whg)
+[![](https://mermaid.ink/img/pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg?type=png)](https://mermaid.live/edit#pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg)
+notes:
+- ### Handlung
+	- spielt im 17. Jahrhundert, thematisiert Kleinstaaterei und Macht der lokalen Fürsten	
+	- Verlobung wird durch Eingreifen Don Rodrigos → Don Abbondio verhindert
+	- Luzia → Kloster, dann Entführung durch l’Innominato; Gelübde, Renzo nicht zu heiraten
+	- Renzo auf der Suche nach Luzia, Abenteuer in Mailand, Festnahme, Geschichte der Pest in Mailand
+	- Wiederbegegnung in Lazarett, Überzeugung Luzias, dass das Gelübde nicht mehr gilt, Rodrigo gestorben, Hochzeit kann gefeiert werden
+- ### Nationalgeschichte
+	- Macht der Fürsten, Sehnsicht nach politischer und sozialer Einigung Italiens im 19. Jahrhundert (→ Risorgimento)
+	- sprachliche Standardisierung
+	- Werk trägt zur nationalen Identität bei, indem er die italienische Geschichte, Kultur und Sprache thematisiert
+- ### Liebe
+	- Liebe zwischen einfachen Leuten – keine Leidenschaft, keine ausführliche dichterische Beschreibung, aber spirituelle Dimension, die sich v.a. in der Geschichte der Personen zeigt (ihrem Leiden, ihren Prüfungen, ihrem Mut und Standhaftigkeit) – daneben Anzeichen einer gütigen Lenkung (von Erzähler und Gott)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1920,"height":1080,"margin":0.04,"controls":true,"progress":false,"slideNumber":true,"center":false,"transition":"none","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
