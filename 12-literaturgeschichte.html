@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Europäischer Realismus</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e8/Edgar_Degas_-_In_a_Café_-_Google_Art_Project_2.jpg'); background-size: cover; background-position: top;"><div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/L%27Absinthe" title="Edgar Degas. Dans un café (L’Absinthe). Öl auf Leinwand, 92 x 68,5cm, Paris, Musée d’Orsay, 1875-76." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">12. Sitzung: Europäischer Realismus</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- begin::[Literarische Epochen Realismus.md] -->
+
+<div class="mermaid">
+gantt
+    title Literarische Epochen des Realismus in Europa
+    dateFormat YYYY
+    axisFormat %Y
+    
+    section Romantik
+    Spätromantik :done, 1826, 1850
+    
+    section Realismus
+    Bürgerl. Realismus (DE, AT, CH): 1830, 1890
+    Frz. Realismus :a6, 1830, 1870
+    Frz. Naturalismus :a2, 1860, 1885
+    Engl. Realismus :a3, 1837, 1901
+    Russ. Realismus :a4, 1840, 1880
+    Ital. Verismus :a5, 1870, 1890
+
+</div>
+
+- Fließender Übergang zum Realismus:
+	- ‚romantisme social‘ um 1830 in Frankreich (Victor Hugo, George Sand, der frühe Balzac)
+	- realistische Elemente in Jane Austen: *Pride and Prejudice* (1813) und Alessando Manzoni: *I promessi sposi* (1821-34/1842)
+<!-- end::[Literarische Epochen Realismus.md] -->
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">12. Sitzung: Europäischer Realismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e8/Edgar_Degas_-_In_a_Café_-_Google_Art_Project_2.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/L%27Absinthe" title="Edgar Degas. Dans un café (L’Absinthe). Öl auf Leinwand, 92 x 68,5cm, Paris, Musée d’Orsay, 1875-76." target="_blank">Degas: L’Absinthe (1875-76).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Einführung
+- Realismus in der Malerei
+- Realismus in der Literatur
+	- als europäische Epoche
+	- als epochenübergreifender Stil ([Auerbach](#Auerbach))
+- zeitgeschichtlicher Hintergrund (Wiener Kongress/Bürgertum →  deutsche Vereinigung)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://upload.wikimedia.org/wikipedia/commons/4/46/Gustave_Courbet_-_The_Stonebreakers_-_WGA05457.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Stone_Breakers" title="Gustave Courbet: Les casseurs de pierres, ehem. Gemäldegalerie Alter Meister, Dresden, Öl auf Leinwand, 1849 (165 x 257 cm)." target="_blank">Courbet: Les Casseurs de pierres (1849).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://upload.wikimedia.org/wikipedia/commons/4/4a/Adolph_Menzel_-_Eisenwalzwerk_-_Google_Art_Project.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Eisenwalzwerk_(Moderne_Cyklopen)" title="Adolf Menzel: Das Eisenwalzwerk (Moderne Cyklopen), Berlin, Alte Nationalgalerie, Öl auf Leinwand, 158 x 254cm, 1875." target="_blank">Menzel: Das Eisenwalzwerk (1875).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Auerbach" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .element: style="position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+## Realismus bei Auerbach
+- Stiltrennung vs. Stilmischung
+- Realismus: Wirklichkeit, kein Positivismus
+- kein Gegensatz zur Romantik
+- Frz. Revolution →  Revolte gegen die Stillehre
+- „Tragik des Alltäglichen”
+</div>
+
+
+
+<div class="block">
+
+<!-- .element: style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" class="fragment" data-fragment-index="1" -->
+
+<!-- begin::[Auerbach – Romantik und Realismus.md] -->
+- ["] sie sahen die Schichtungen der sozialen Welt im einzelnen, sie griffen nach den tatsächlichen Existenzbedingungen der Lebenden, ohne von vorne herein etwas auszuschließen (427) <!-- .element: class="fragment fade-in-then-out" data-fragment-index="1" -->
+<!-- end::[Auerbach – Romantik und Realismus.md] -->
+<!-- .element: class="fragment fade-in-then-out" data-fragment-index="1" -->
+
+<!-- begin::[Auerbach – Romantik und Realismus.md] -->
+- ["] Tatsächlich liegt in der Realistik der neueren Zeit eine Vernichtung der antik-klassizistischen Kunstlehre und ihres Begriffes von der Würde des Menschen, wie sie sich mit gleichem Radikalismus in keiner anderen Kunstgattung findet. (429) <!-- .element: class="fragment fade-in-then-out" data-fragment-index="2" -->
+<!-- end::[Auerbach – Romantik und Realismus.md] -->
+<!-- .element: class="fragment fade-in-then-out" data-fragment-index="2" -->
+</div>
+
+
+Quelle: Auerbach, E. (1933/2007). Romantik und Realismus. In K. Barck & M. Treml (Hrsg.), Erich Auerbach. Geschichte und Aktualität eines europäischen Philologen (S. 426–438). Berlin: Kadmos.<!-- .element: style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+notes:
+- Auerbach – Romantik und Realismus
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">12. Sitzung: Europäischer Realismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e8/Edgar_Degas_-_In_a_Café_-_Google_Art_Project_2.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/L%27Absinthe" title="Edgar Degas. Dans un café (L’Absinthe). Öl auf Leinwand, 92 x 68,5cm, Paris, Musée d’Orsay, 1875-76." target="_blank">Degas: L’Absinthe (1875-76).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Einführung
+- Realismus vs. Romantik?
+- Themen des Realismus
+	- gesellschaftlicher Alltag
+	- Leben niederer Schichten
+	- Probleme des (technischen) Fortschritts
+	- Rolle der Frau
+	- Liebe im Hinblick auf soziale Konventionen und vor dem Hintergrund sozialer Kontexte →  [Ehebruchsroman](#Ehebruchsroman)
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Ehebruchsroman" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- begin::[Schema Ehebruchsromane des Realismus.md] -->
+
+<div class="mermaid">
+gantt
+    title Ehebruchsromane des Realismus
+    dateFormat  YYYY
+    axisFormat  %Y
+    section Romane
+	Hawthorne,Scarlet Letter     : milestone, scarletletter, 1850, 1s
+    Flaubert, Madame Bovary      : milestone, mbovary, 1857, 1d
+    George Eliott, Middlemarch        : milestone, middlemarch, 1871, 1d
+    Tolstoi, Anna Karenina      : milestone, akarenina, 1877, 1d
+    de Queiroz, O Primo Basílio    : milestone, primo, 1878, 1d
+    Clarín, La Regenta         : milestone, laregenta, 1884, 1d
+    Fontane, Effi Briest        : milestone, ebriest, 1895, 1d
+
+</div>
+
+<!-- end::[Schema Ehebruchsromane des Realismus.md] -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">12. Sitzung: Europäischer Realismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4f/Gustave_Flaubert.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Gustave_Flaubert" title="" target="_blank">Nadar: Fotoportrait G. Flaubert (~1865).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Gustave Flaubert (1821-1880)
+- Biografisches
+- wichtige Romane
+- Madame Bovary: Erstlingswerk, Prozess
+
+notes:
+- Geboren in Rouen, Sohn eines Arztes
+- kennt Provinzleben aus eigener Anschauung
+- Jurastudium
+- Reisen in den Orient (in den Fußstapfen romantischer Schriftsteller wie Chateaubriand, Lamartine oder Nerval)
+- ab 1850er Jahre lebt er bei seiner Mutter in Rouen
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">12. Sitzung: Europäischer Realismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/50/James_Tissot_-_A_Woman_of_Ambition.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/James_Tissot" title="James Tissot: A Woman of Ambition, Öl auf Leinwand, 142 x 101cm, Buffalo AKG Art Museum, 1883." target="_blank">Tissot: Woman of Ambition (1883).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Madame Bovary (1857)
+- Stil: Realismus
+- Genre: Roman
+- Liebesdiskurs: romantisch (realistisch distanziert)
+
+--- 
+
+## Madame Bovary (1857)
+- „nach einer wahren Begebenheit” (D. Delamare)
+- „Leben in der Provinz”
+- Alltag und Langeweile (→  Auerbach)
+- Charaktere 
+- Gemeinplätze (insbes. „romantische Liebe”)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">12. Sitzung: Europäischer Realismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/50/James_Tissot_-_A_Woman_of_Ambition.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/James_Tissot" title="James Tissot: A Woman of Ambition, Öl auf Leinwand, 142 x 101cm, Buffalo AKG Art Museum, 1883." target="_blank">Tissot: Woman of Ambition (1883).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Madame Bovary: Erzähler
+- Unparteilichkeit?
+- Undurchdringlichkeit?
+- erlebte Rede
+- ironische/kritische Distanz zu Figuren
+- oft entlarvende Sachlichkeit
+- Stilvergleich mit *Don Quijote* und *Werther*
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- begin::[Schema Madame Bovary.md] -->
+## Madame Bovary: Handlung
+
+
+<div class="mermaid">
+graph TD
+    A(Emma Bovary) -->|Ehefrau von| B(Charles Bovary)
+    A -->|Affäre mit| D(Léon Dupuis)
+    A -->|Affäre mit| C(Rodolphe Boulanger)
+    H(Homais) -->|Apotheker, Freund von| B
+    
+    style B fill:#FFD700,stroke:#000,stroke-width:2px
+    style C fill:#FF4500,stroke:#000,stroke-width:2px
+    style D fill:#1E90FF,stroke:#000,stroke-width:2px
+
+</div>
+
+
+- Phase 1: Heirat und Eheleben mit Charles, Umzug, romantischer Flirt mit Léon Dupuis
+- Phase 2: Affäre mit Rodolphe Boulanger
+- Phase 3: Affäre mit Léon Dupuis
+- spiralförmiger, sich steigernder Handlungsverlauf
+- Gegensätze: Spiritualität und Sinnlichkeit
+<!-- end::[Schema Madame Bovary.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-position="top" data-background-image="https://upload.wikimedia.org/wikipedia/commons/5/50/James_Tissot_-_A_Woman_of_Ambition.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .element: style="overflow-y: auto; max-width: 85%; background: #DFE1E185; border-radius: 5px; padding: 15px; padding-left: 30px; line-height: 1.3" class="embedded-quote-block" --> 
+
+<!-- begin::[Flaubert – Mme Bovary (Struktur).md] -->
+## Madame Bovary: Lieben und Lesen
+- ["] Da gab's nur Liebschaften, Liebhaber, Liebhaberinnen, verfolgte Damen, die in einsamen Lusthäuschen ohnmächtig, Kutscher, die auf allen Poststationen ermordet, Pferde, die auf jeder Seite zuschanden geritten wurden, Waldesdunkel, Herzensqual, Schwüre, Schluchzer, Tränen und Küsse, Nachen im Mondenschein, Nachtigallen im Gehölz, *Herren* so tapfer wie Löwen, so sanft wie Lämmer, so tugendhaft wie keiner ist, stets wohlgekleidet, und deren Zähren fließen wie aus Krügen. Sechs Monate lang machte sich die fünfzehnjährige Emma die Hände schmutzig am Staub der alten Lesekabinette. (54)
+- ["] In den Romanzen, die sie während der Musikstunde sang, ging es nur um Engelein mit güldenen Flügeln, um Madonnen, Lagunen, Gondolieri, und hinter der stilistischen Einfalt und dem musikalischen Ungeschick dieser friedvollen Kompositionen erahnte sie die verlockenden Gaukeleien der Liebesdinge. (55)
+- ["] Trotzdem versuchte sie, mit Hilfe für gut befundener Theorien, Liebe in sich zu wecken. Bei Mondschein rezitierte sie im Garten alles, was sie an leidenschaftlichen Reimen auswendig konnte, und sang ihm schmachtend melancholische Adagios; doch hinterher war sie genauso gleichmütig wie zuvor, und Charles wirkte nicht verliebter und nicht aufgewühlter. Nachdem sie sich auf diese Weise geplagt hatte, aus ihrem Herzen ein bisschen Feuer zu schlagen, ohne dass ein Funke gesprüht wäre, unfähig, etwas zu begreifen, was sie nicht fühlte, oder an etwas zu glauben, was nicht in der üblichen Gestalt zutage trat, gelangte sie mühelos zu der Überzeugung, Charles’ Leidenschaft sei nicht mehr übermäßig groß. (63)
+- ["] Sie abonnierte *La Corbeille*, eine Zeitschrift für Frauen, und *Le Sylphe des salons*. \[…\] Sie kannte die neuen Moden, die Adressen der guten Schneider, die Tage für den Bois oder die Oper. Sie studierte bei Eugene Sue die Beschreibung von Wohnungseinrichtungen; sie las Balzac und George Sand, suchte dort imaginäre Befriedigung für ihre eigenen Gelüste. \[…\] Die Erinnerung an den Vicomte kehrte bei ihren Lektüren immer wieder. Zwischen ihm und den erfundenen Figuren konstruierte sie Zusammenhänge. Der Kreis jedoch, dessen Mittelpunkt er war, wurde allmählich größer, und die Aureole, die ihn umgab, löste sich von seiner Gestalt, breitete sich aus und strahlte auf andere Träume. (91)
+- ["] Emma und Léon tauschen Gemeinplätze der romantischen Literatur aus: (115).
+<!-- end::[Flaubert – Mme Bovary (Struktur).md] -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Don Quichotte und die Geschichte des Romans
+
+<div class="mermaid">
+graph TD
+	A(Don Quijote)-->|Tradition|B(Fielding, romance)
+	A-->|Ablehnung|C(Richardson, novel)
+	C-->D(Rousseau)
+	B-->E(Goethe)
+	E-->F(Flaubert)
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>
