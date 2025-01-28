@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>ChatGPT</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script src="./hideHashtags.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Literatur und/als Textverarbeitung
+### 12. Sitzung: Menschliches und maschinelles Wissen (ChatGPT)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Structure of the Text
+- Intro: Xerox and compression artifacts
+- Transfer to GPT
+- Compression and Understanding
+- Use cases of GPT
+
+notes:
+- GPT: Generative Pre-trained Transformer 3 (GPT-3)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="border-radius: 4px; background-color: lightgrey; padding: 20px; position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<div class="block">
+
+## Introduction
+- digital photography and compression
+- lossless and lossy compression
+</div>
+
+
+</div>
+
+<div class="fragment" style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" data-fragment-index="1">
+
+<div class="block">
+
+<!-- begin::[@Chiang-2023.md] -->
+- ["] To save space, the copier identifies similar-looking regions in the image and stores a single copy for all of them; when the file is decompressed, it uses that copy repeatedly to reconstruct the image. #Quote (2) <!-- .element: class="embedded-quote-block" -->
+<!-- end::[@Chiang-2023.md] -->
+<!-- .element: class="embedded-quote-block" -->
+
+</div>
+
+
+</div>
+
+<div class="" style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="border-radius: 4px; background-color: lightgrey; padding: 20px; position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<div class="block">
+
+## Transfer to GPT
+- a compressed copy of the digital archive (2), *not* an index/database
+- an approximation, but presented in an accurate form (3)
+- „hallucinations” as compression artifacts (3)
+- interpolation (3)
+</div>
+
+
+</div>
+
+<div class="fragment" style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" data-fragment-index="1">
+
+<div class="block">
+
+<!-- begin::[@Chiang-2023.md] -->
+- ["] It retains much of the information on the Web, in the same way that a jpeg retains much of the information of a higher-resolution image, but, if you’re looking for an exact sequence of bits, you won’t find it; all you will ever get is an approximation. #Quote (3)  <!-- .element: class="embedded-quote-block" --> <!-- end::[@Chiang-2023.md] -->
+
+</div>
+
+
+</div>
+
+<div class="" style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Compression and Understanding
+- ex.: mathematical calculation and rules (4)
+- ChatGPT knows many examples, but not the rule (5)
+- paraphrasing produces the illusion of understanding (vs. quoting raw material)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="border-radius: 4px; background-color: lightgrey; padding: 20px; position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<div class="block">
+
+## Use Cases of GPT
+- Web Search?
+- generate Web content?
+- creative/academic writing?
+- →  reflections on the process of writing
+</div>
+
+
+</div>
+
+<div class="fragment" style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" data-fragment-index="1">
+
+<div class="block">
+
+<!-- begin::[@Chiang-2023.md] -->
+- ["] starting with a blurry copy of unoriginal work isn’t a good way to create original work (…) The hours spent choosing the right word and rearranging sentences to better follow one another are what teach you how meaning is conveyed by prose. Having students write essays isn’t merely a way to test their grasp of the material; it gives them experience in articulating their thoughts. If students never have to write essays that we have all read before, they will never gain the skills needed to write something that we have never read. #Quote (6) <!-- .element: class="embedded-quote-block" style="font-size: smaller" -->
+<!-- end::[@Chiang-2023.md] -->
+<!-- .element: style="font-size: smaller" -->
+</div>
+
+
+</div>
+
+<div class="" style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+notes:
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>
