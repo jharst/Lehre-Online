@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Surrealismus</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">13. Sitzung: Surrealismus</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/en/9/90/DaliGreatMasturbator.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Salvador_Dalí" title="Salvador Dalì. The Great Masturbator. Öl auf Leinwand, 110 x 150 cm, Museo Nacional Centro de Arte Reina Sofía." target="_blank">Dalì: The Great Masturbator (1929).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Literarische Epochen Surrealismus.md] -->
+
+<div class="mermaid">
+gantt
+    title Literarische Epochen: Surrealismus und Magischer Realismus
+    dateFormat  YYYY
+    axisFormat  %Y
+    tickInterval 20y
+    
+    section Epochen
+    Surrealismus (Europa)     : s1, 1920, 1940
+    Magischer Realismus (Lateinamerika) : m1, 1940, 1970
+    David Lynch : l1, 1946, 2025
+    
+    section Werke
+    Breton, "Manifest des Surrealismus" : milestone, ms1, 1924, 1d
+    Breton, "Nadia" : milestone, ms2, 1928, 1d
+    García Marquez, "Hundert Jahre Einsamkeit" : milestone, mr1, 1967, 1d
+    Borges, "Fiktionen" : milestone, mr2, 1944, 1d
+    Lynch, "Mulholland Drive" : milestone, ms3, 2001, 1d
+
+</div>
+
+
+### Legende
+* **1924**: Veröffentlichung des "Manifest des Surrealismus" von André Breton
+* **1928**: Veröffentlichung von "Nadia" von André Breton
+* **1944**: Veröffentlichung von "Fiktionen" von Jorge Luis Borges
+* **1967**: Veröffentlichung von "Hundert Jahre Einsamkeit" von Gabriel García Márquez
+* **2001**: Veröffentlichung des Films "Mulholland Drive" von David Lynch als Adaption surrealistischen Stils
+<!-- end::[Literarische Epochen Surrealismus.md] -->
+
+
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;">
+</div>
+<a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einleitung
+- Romantik, Realismus und Surrealismus
+- Bedeutung des Namens
+
+> „Automatisme psychique pur par lequel on se propose d’exprimer, soit verbalement, soit par écrit, soit de toute autre manière, le fonctionnement réel de la pensée. Dictée de la pensée, en l'absence de tout contrôle exercé par la raison, en dehors de toute préoccupation esthétique ou morale.” (Breton, Manifeste du Surréalisme, 1924)
+
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://img.washingtonpost.com/rw/2010-2019/WashingtonPost/2013/09/19/Style/Images/moma_magritte_treacheryofimages.jpg?uuid=Jwo6jiF9EeOjWBFE3uY23Q" alt="" style="object-fit: scale-down">
+
+René Magritte: La trahison des images (1929), 60 x 81 cm, Öl auf Leinwand, Los Angeles County Museum of Art.<!-- .element: style="font-size: smaller" -->
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+
+
+## Französischer Surrealismus
+- Sprache und Repräsentation von Realität (Objektvität)
+- Suche nach einer neuen Sprache
+- Rausch, Traum und Unbewusstes als Quelle der künstlerischen Kreativität
+	- Psychoanalyse
+	- Techniken unbewusster Kreativität (écriture automatique)
+- Ablehnung bürgerlicher Ästhetiken (Realismus)
+
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Masson_automatic_drawing.jpg" alt="Masson: Automatic drawing" style="object-fit: scale-down">
+
+André Masson. Automatic Drawing. 1924. Ink on paper, 23.5 × 20.6 cm. Museum of Modern Art, New York.<!-- .element: style="font-size: smaller" -->
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Écriture automatique
+
+<!-- begin::[Lautréamont – Maldoror.md] -->
+- Il est beau comme la rétractilité des serres des oiseaux rapaces ; ou encore, comme l’incertitude des mouvements musculaires dans les plaies des parties molles de la région cervicale postérieure; ou plutôt, comme ce piège à rats perpétuel, toujours retendu par l’animal pris, qui peut prendre seul des rongeurs indéfiniment, et fonctionner même caché sous la paille ; <mark>et surtout, comme la rencontre fortuite sur une table de dissection d’une machine à coudre et d’un parapluie!</mark> <!-- end::[Lautréamont – Maldoror.md] -->
+
+
+Comte de Lautréamont. Les Chants de Maldoror. 1874.<!-- .element: style="font-size: smaller; margin-top: 10px !important; padding-top: 10px !important" -->
+
+
+
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;">
+</div>
+<a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Breton: Nadia (1928)
+- nicht-lineare Erzählung/Tagebucheinträge
+- autofiktionales Spiel zwischen Fakt und Fiktion (Breton, Kreis der Surrealisten, Paris)
+- collagenartige Einarbeitung von Zeitungsartikeln und Fotografien
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;">
+</div>
+<a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Breton: Nadia (1928)
+- Nadia: Kult einer surrealen Liebe
+	- zufälliges Treffen mit Patientin aus Psychiatrie
+	- Faszination und Obsession
+	- Diskussion surrealistischer Künstler
+	- Liebe zu Nadia als Begegnung mit einer surrealen Wirklichkeit
+	- scharfe Trennung zwischen Liebe und Person („Muse”)
+
+notes:
+- <mark>Zeichnung mit der Unterschrift: Qui est-elle?</mark>
+- Through this maze of arbitrary signs, a new order is revealed that creates a feeling of coherence despite the lack of plot. In turn, these signs and photos all add up to create a feeling of dream and, like the unconscious, lead us to a new, deeper perception of reality, which was the effect Breton was aiming for. [url](https://literariness.org/2023/08/02/analysis-of-andre-bretons-nadja/)
+- Through conversations with her, chance encounters, and an exchange of drawings and secrets, she becomes the key to Breton’s surrealist revelation. Nadja’s symbolic, enigmatic drawings are littered throughout the text and feature captions such as „who is she?” (qui est elle?), a question that again links to Breton’s quest for finding himself. This is a woman who assumes many guises—magician, medium, ghost—a woman-enigma whose strange movements juxtapose with Breton’s factual way of telling.
+- Der Erzähler ist von dieser Frau besessen, mit der er bei einer zufälligen Begegnung auf der Straße sofort ein Gespräch beginnt. Seine Faszination für Nadja liegt jedoch in ihrer Weltsicht, die oft durch eine Diskussion über die Werke verschiedener **surrealistischer Künstler**, darunter auch seiner selbst, hervorgerufen wird. Während ihr Verständnis der Existenz den streng autoritären Alltag untergräbt, stellt sich später heraus, dass sie einige Zeit in einem **Sanatorium** verbringt, während derer sich André nur auf sich selbst zu konzentrieren scheint, ohne ihre innere (oder äußere) Welt zu berücksichtigen. Nachdem Nadja Details aus ihrem eigenen Leben erzählt hat, wird sie gewissermaßen **entmystifiziert**, und der Erzähler beschließt, dass er ihre Beziehung nicht fortsetzen kann.
+- Im verbleibenden Viertel des Textes distanziert sich André von ihr und verfällt in ein mäanderndes Grübeln über ihre Abwesenheit, und zwar so sehr, dass man sich fragt, ob ihre Abwesenheit und seine Vorstellung von ihr es ihm erlaubt, sie für seine eigene Inspiration weiterhin in einer Weise zu objektivieren, für die ihre Anwesenheit als vollwertige Person, geschweige denn als Freundin, zu vermenschlichend wäre. Schließlich ist es Nadja als gewöhnlicher Mensch, den André letztlich verachtet und nicht erträgt. Die Nähe, die der Ich-Erzähler zu Nadja einst empfunden haben soll, deutet für ihn eine Tiefe jenseits der Grenzen bewusster Rationalität, wacher Logik und gesunder Alltagsabläufe an. Er zieht es vor, dass sie etwas wesentlich "Rätselhaftes, Unwahrscheinliches, Einzigartiges, Verwirrendes" an sich hat. Ihr **Rückzug in die Abwesenheit** ist das Hauptanliegen dieses Textes, eine Abwesenheit, die es Nadja erlaubt, frei in Andrés Bewusstsein und Unbewusstem zu leben, scheinbar ungehindert, und ihre paradoxe Rolle als Anwesende und Abwesende aufrechtzuerhalten.
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Magischer Realismus
+- Arturo Uslar Pietri: „realismo magico” (1948)
+- Miguel Ángel Asturias: *Hombres de maíz* (1949)
+- Alejo Carpentier: *El reino de este mundo* (1949)
+- Bekanntschaft in Paris, surrealistischer Einfluss
+notes:
+- Asturias: Darin wird die Wirklichkeit der Kultur und Geschichte Lateinamerikas aus der Sicht der indigenen Bevölkerung erzählt, deren Mythen (hier die der [Maya](https://de.wikipedia.org/wiki/Maya)) sich in ihr realisieren.
+- Carpentier: Begründung einer spezifisch lateinamerikanischen Literatur, die sich auf das „Wunderbar-Wirkliche Amerikas” _(lo real maravilloso de América)_ gründet
+- Kritik an europäischen Surralisten – Rationalismus/Descartes/Aufklärung – „mechanische” Herbeiführung des Wunderbaren vs. indigine südamerikanische Mythen/Glauben
+	- Carpentier grenzte Lateinamerika stark von Europa ab und kritisiert den Surrealismus. Dieser leide unter dem „ermüdenden Anspruch […], das Wunderbare künstlich herbeizuführen.”[12] Der Versuch der Surrealisten, in ihren Werken künstlich magische Effekte zu erzeugen, sei gescheitert. Sie hätten das Wunderbare „durch Taschenspielertricks geschaffen, indem man Gegenstände miteinander verbindet, die nie zusammengefunden würden.“[13] Sie deformierten damit die Wirklichkeit. Carpentier zufolge ist „dem Europäer“ die Fähigkeit des Erlebens des wunderbar Wirklichen durch die [Aufklärung](https://de.wikipedia.org/wiki/Aufkl%C3%A4rung) verloren gegangen, während Mythen- und Geisterglaube in Lateinamerika noch immer natürlich im Alltag integriert weiterlebt. Carpentier beschreibt den Magischen Realismus als natürliche, nicht erzwungene Wirklichkeitsauffassung: die Einbettung des Wunderbaren in den Alltag. [wiki](https://de.wikipedia.org/wiki/Magischer_Realismus)
+
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Magischer Realismus bei Borges
+- Kurzerzählungen: *Fiktionen* (1941) und *Das Aleph* (1949)
+- Philosophische Befragung von Wirklichkeit/Fiktion
+- Phantastische Gedankenexperimente (das Unendliche)
+- Auseinandersetzungen mit Weltliteratur (Bsp.: autofiktionales Spiel mit Dante und Beatrice)
+- Vorläufer der Postmoderne?
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Liebe und Poetik: Das Aleph (1949)
+- Figuren: Carlos Agentino Daneri, Beatriz Viterbo und „Borges”
+- das Aleph als Voraussetzung des „Weltepos”
+- unglückliche Liebe des Erzählers und seine Rache
+- Adaption und Inversion von Dantes *Komödie*
+- Literatur als Aleph?
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightgrey">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> [Ich] sah das Aleph aus allen Richtungen zugleich, sah im Aleph die Erde und in der Erde abermals das Aleph und im Aleph die Erde, sah mein Gesicht und meine Eingeweide, sah dein Gesicht und fühlte Schwindel und weinte, weil meine Augen diesen geheimen und gemutmaßten Gegenstand erschaut hatten, dessen Namen die Menschen in Beschlag nehmen, den aber kein Mensch je erblickt hat: das unfaßliche Universum (J.L. Borges, Das Aleph, 1949).
+
+> Borges ist besessen von der Vorstellung, der menschliche Geist habe ‚aus dem Nichts‘ eine Welt von Gedankensystemen geschaffen, die nun bis ins Unendliche fort weitere Gedankensysteme und dichterische Fiktionen erzeuge. (Marianne Kersting, Die Zeit, 1965)<!-- .element: class="fragment" data-fragment-index="1" -->
+
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://m.media-amazon.com/images/M/MV5BM2IyMGVmNjItNGZiMy00YmI1LTlmZWMtYzg2ZGZkMjlhZTQ0XkEyXkFqcGc@._V1_.jpg" alt="Poster" style="object-fit: scale-down">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## David Lynch (1946-2025)
+- Genre: Surrealismus, Film Noir, Horror
+- wichtige Filme: 
+	- *Eraserhead* (1977)
+	- *Mulholland Drive* (2001)
+	- *Twin Peaks* (TV-Serie, 1990-91/2017)
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 60%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://m.media-amazon.com/images/M/MV5BMjExODczOTg1MV5BMl5BanBnXkFtZTYwMzkyOTc2._V1_.jpg" alt="Metafiktional" style="object-fit: scale-down">
+
+<img src="https://m.media-amazon.com/images/M/MV5BMjE0NDY3Mzc3Nl5BMl5BanBnXkFtZTYwNzkyOTc2._V1_.jpg" alt="Narzissmus" style="object-fit: scale-down">
+
+</div>
+
+## Mulholland Drive (2001)
+- metafiktionale Aspekte
+	- Schauspielerin in Hollywood sucht ihre Chance
+	- Detektivplot führt in die Filmwelt hinein
+	- zentrale Rolle einer „blue box””
+- Aspekte der Liebe
+	- (narzisstische) Liebesgeschichte
+	- audition scene: gespielte wird erlebte Liebe
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Audition Scene 1
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/u9CrynDBO84?si=-MguAuc242KFqc0m" title="Mulholland Drive: Audition Scene 1" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Audition Scene 2
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/lwY4d2utCIY?si=Y4Y0zYfMj8cXeu7M" title="Mulholland Drive Audition Scene 2" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+<div class="" style="border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>

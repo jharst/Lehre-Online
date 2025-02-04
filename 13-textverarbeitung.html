@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Schluss</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Literatur und/als Textverarbeitung
+### 13. Sitzung: Menschliches und maschinelles Wissen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## KI-Zertifikat 
+Infos zum Zertifikat *Digitalität. KI. Gesellschaft*
+- 24 CP, 1 Pflichtmodul, 2 Wahlpflichtmodule 
+- [Studienordnung](https://www.uni-saarland.de/fileadmin/upload/fakultaet-p/studienkoordination/DB23_60_S.536-538_1_Studienordnung_Zertifikate_230723.pdf)
+- [Modulhandbuch](https://www.uni-saarland.de/fileadmin/upload/fakultaet-p/studienkoordination/Zertifikat_KI_Modulhandbuch.pdf)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="border-radius: 4px; background-color: lightgrey; padding: 20px; position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<div class="block">
+
+## Technische Hintergründe
+- Markow und Übergangswahrscheinlichkeit
+- Laut, Grammatik, Semantik
+- n-Gram und Kompression (vgl. Chiang 2023)
+
+Quelle: Seemann, M. (2023, Oktober). Künstliche Intelligenz, Large Language Models, ChatGPT und die Arbeitswelt der Zukunft. Hans-Böckler-Stiftung.<!-- .element: style="font-size: smaller; text-align: left; position: absolute; left: 10%; top: 80%; height: 100%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+</div>
+
+
+</div>
+
+<div class="fragment" style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 80%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" data-fragment-index="1">
+
+<div class="block">
+
+- „Nun könnte man sich vorstellen, aus den gesamten Trainingsdaten die vorkommenden n-grams (n steht für die Anzahl der verkoppelten Worte) zu bilden und zu speichern. Man erhielte eine verlustfreie Kopie der Trainingsdaten. (…)”
+- „Was man stattdessen macht, ist das, was man immer macht, wenn die Realität für die Verarbeitung zu komplex ist: Man macht ein Modell. Ein Modell ist immer eine Annäherung an die Realität, die nicht perfekt, aber für bestimmte Zwecke gut genug ist.”
+- „In den Daten klaffen Lücken und das Modell ist besonders kompetent darin, diese Lücken so zu füllen, dass es so aussieht, als seien da gar keine Lücken.”
+</div>
+
+
+</div>
+
+<div class="" style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="border-radius: 4px; background-color: lightgrey; padding: 20px; position: absolute; left: 0%; top: 20%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+<div class="block">
+
+## Training und latenter Raum
+- Tokenizing
+- Embedding
+- Orientierung
+- Aufmerksamkeit
+- Training
+Quelle: Seemann, M. (2023, Oktober). Künstliche Intelligenz, Large Language Models, ChatGPT und die Arbeitswelt der Zukunft. Hans-Böckler-Stiftung.<!-- .element: style="font-size: smaller; text-align: left; position: absolute; left: 10%; top: 80%; height: 100%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+</div>
+
+
+</div>
+
+<div class="fragment" style="background: darkgrey; border: solid darkblue 2px; border-radius: 5px; position: absolute; left: 50%; top: 20%; height: 80%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" data-fragment-index="1">
+
+<div class="block">
+
+<!-- begin::[@Seemann-2023.md] -->
+- ["] „Am Ende dieses langen Prozesses ist in den Embeddings die Komplexität von sprachlichen Äußerungen nicht nur auf Wort- oder Satzebene, sondern auch auf Konzept- und Ideen-Ebene gespeichert. Es entwickelt sich eine 1000-dimensionale Landkarte (bei GPT-3.5 sind es 12.288 Dimensionen) der Sprache” => „latent space” <!-- end::[@Seemann-2023.md] -->
+
+
+<!-- begin::[@Seemann-2023.md] -->
+- ["] „Anders ausgedrückt, scheint ChatGPT so menschlich zu sein, weil es von einer KI trainiert wurde, die Menschen nachahmte, die wiederum eine KI bewerteten, die Menschen imitierte, die so taten, als wären sie eine bessere Version der KI, die auf menschlichen Texten trainiert wurde.“ (Dzieza 2023). <!-- end::[@Seemann-2023.md] -->
+
+</div>
+
+
+</div>
+
+<div class="" style="font-size: smaller; position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+</div>
+
+notes:
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## GPT und Poststrukturalismus
+- LLMs kennen nicht den Unterschied zwischen „ist wahr” und „hört sich so an, als könnte es wahr sein” (true vs. truthy)
+- Underwood: GPT und der Linguistic Turn / Poststrukturalismus
+	- Intertextualität
+	- Mehrsprachigkeit
+	- „es gibt kein Außerhalb des Textes”
+	- différance (Differenz + Aufschub)
+- Wolfram: unbewusste „semantische Grammatik”
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: true,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+</body>
+
+<!-- created with Slides Extended -->
+</html>
