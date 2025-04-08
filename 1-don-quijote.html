@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Don Quijote in Romantik und (Post-)Moderne
+## 1. Sitzung: Einführung
+## Dr. habil. Joachim Harst
+
+notes:
+- kurze Selbstvorstellung
+- Gespräch über Don Quijote anhand der Abbildungen – die drei Abbildungen stellen Aspekte dar, die in der Rezeption immer wieder aufgegriffen wurden
+	- Doré: Fiktionsproblematik/Wahnsinn – Ritterromane – Lesen – Frauenfiguren: Liebe → Dulcinea
+	- Picasso: Duo DQ – Sancho Pansa; der Ritter und der bauernschlaue Knappe; Poesie vs. Prosa, Idealisierung vs. Realismus
+	- Fotografie: steht exemplarisch für eine bekannte Episode des Romans (Kampf gegen Windmühlen) – Erinnerung an Episodenstruktur des Romans
+- Zitate aus dem ersten Abschnitt
+- Besprechung des Seminarplans – weitere Adaptionen?
+- Gespräch über Velazquez – Selbstreflexion/Metastrukturen im Roman
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://historia.nationalgeographic.com.es/medio/2022/01/17/lamina-realizada-para-el-quijote-de-la-mancha_54569815_800x1199.jpg" data-background-size="contain" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+Gustave Doré: L’ingénieux hidalgo Don Quichotte de La Manche, Kupferstich, 1863.<!-- .element: style="font-size: smaller; position: absolute; left: 0%; top: 40%; height: 20%; width: 20%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+notes:
+- https://historia-arte.com/obras/don-quijote-de-dore
+- https://historia.nationalgeographic.com.es/a/gustave-dore-litografia-hecha-arte_17615
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://alchetron.com/cdn/don-quixote-picasso-3f039f27-37cb-49e6-8a1e-13e00b98e06-resize-750.jpeg" data-background-size="contain" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+Pablo Picasso: Cover-Illustration für Les Lettres Françaises (Jubiläums-Ausgabe zum 350. Geburtstag von Don Quijote), 10.08.1955<!-- .element: style="font-size: smaller; position: absolute; left: 0%; top: 40%; height: 20%; width: 20%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+notes:
+- https://alchetron.com/Don-Quixote-(Picasso)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Windmill_Dudutki_06.jpg/1280px-Windmill_Dudutki_06.jpg" data-background-size="contain" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+Windmühle in Dudutki‎, Weißrussland, Privatfoto<!-- .element: style="font-size: smaller; position: absolute; left: 0%; top: 40%; height: 20%; width: 20%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://collectionapi.metmuseum.org/api/collection/v1/iiif/369483/753263/restricted" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+### Kap. 1: Höfischer Roman und Realitätsverlust
+
+<!-- begin::[Cervantes – DQ 1.md] -->
+> Am besten gefielen ihm die des unvergleichlichen Feliciano de Silva, dessen klare Prosa und gewundene Ergründungen ihm wahre Juwelen zu sein schienen, vor allem die Galanterien und Fehdebriefe, wo er etwa geschrieben fand: „Der Grund der Unvernunft, auf die meine Vernunft sich gründet, hat gründlich mir die Vernunft getrübt, so dass ich mit vernünftigem Grund über Eure Schönheit klage.” (…) Derlei Ergründungen bezwangen den Verstand des wackeren Mannes. Der Ärmste durchwachte Nächte, um sie zu begreifen und einen Sinn herauszufischen, den nicht einmal Aristoteles hätte hervorlocken und greifen können, wäre er auch eigens dazu von den Toten auferstanden. (30) <!-- .element: style="background: #DFE1E175; border-radius: 5px" -->
+<!-- end::[Cervantes – DQ 1.md] -->
+<!-- .element: style="background: #DFE1E175; border-radius: 5px" -->
+</div>
+
+
+
+
+<div class="right-image-source"><a href="https://www.metmuseum.org/art/collection/search/369483" title="Picasso: 
+Celestina mit einer Frau, einem Ritter und seinem Diener, Linolschnitt, 1968, Metropolitan Museum, New York. " target="_blank">Picasso: Illustration zu La Celestina (1968).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://collectionapi.metmuseum.org/api/collection/v1/iiif/369483/753263/restricted" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Cervantes – DQ 1.md] -->
+### Kap. 1: Dulcinea
+> Ach, wie freute sich unser ritterlicher Mann, als er diese Rede getan, und erst recht, als er gefunden hatte, wen er sich zur Herzensdame erwählen sollte! Denn wie erzählt wird, lebte in einem Dorf in der Nähe eine Bauerntochter, hübsch anzusehen, in die er einmal verliebt gewesen war, obwohl sie angeblich nie etwas davon erfahren und ihn selbst nie angesehen hatte. Sie hieß Aldonza Lorenzo und schien ihm wie geschaffen, zur Herrin seiner Gedanken ernannt zu werden. Und auf der Suche nach einem Namen für sie, der dem seinen nicht nachstehe und geziemend und gebührend für eine Prinzessin und hohe Herrin sei, beschloss er, sie Dulcinea von Toboso zu nennen – denn sie stammte aus Toboso –, ein Name, der ihm klangvoll, wundersam und bedeutungsvoll erschien (34).
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px" -->
+<!-- end::[Cervantes – DQ 1.md] -->
+<!-- .element: style="background: #DFE1E175; border-radius: 5px" -->
+
+
+<div class="right-image-source"><a href="https://www.metmuseum.org/art/collection/search/369483" title="Picasso: 
+Celestina mit einer Frau, einem Ritter und seinem Diener, Linolschnitt, 1968, Metropolitan Museum, New York. " target="_blank">Picasso: Illustration zu La Celestina (1968).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Las_Meninas_01.jpg/889px-Las_Meninas_01.jpg" data-background-size="contain" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+Diego Velazquez: Die königliche Familie, genannt: Las Meninas, 1656, Öl auf Leinwand; Prado, Madrid.<!-- .element: style="font-size: smaller; position: absolute; left: 0%; top: 40%; height: 20%; width: 20%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
