@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Poesie und Prosa in der Romantik
+## 1. Sitzung: Einführung
+### Dr. habil. Joachim Harst
+
+notes:
+- Kurze Selbstvorstellung
+- Einstieg mit Gemälden: Naturszenen, Rückenansicht, Sehnsucht?
+- Zur Epoche: über welchen Zeitraum und welche Autor:innen sprechen wir?
+	- Frühromantik: 1795-1802
+	- Goethe und die Klassik
+	- Französische Revolution
+- Bedeutungen der Begriffe Prosa und Poesie (in der Romantik)
+	- literarische Gattungen
+	- allgemeinere Bedeutungen
+	- Romantik = Prosa * Poesie
+	- Romantisieren, Universalpoesie
+- Seminarplan und Studienleistungen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20) .<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Romantik: Epoche und Kontexte
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gruppenarbeit
+### Drei Eichendorff-Gedichte
+
+notes: 
+- Drei Eichendorff-Gedichte
+	- Mondnacht
+	- Die Nachtblume
+	- [Sehnsucht](https://de.wikipedia.org/wiki/Sehnsucht_%28Eichendorff%29)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+> „Die Welt muss romantisirt werden. So findet man den urspr Sinn wieder. Romantisiren ist nichts, als eine qualit Potenzirung. \[…\] Indem ich dem Gemeinen einen hohen Sinn, dem Gewöhnlichen ein geheimnißvolles Ansehn, dem Bekannten die Würde des Unbekannten, dem Endlichen einen unendlichen Schein gebe so romantisire ich es” (Novalis: *Die Schriften Friedrich von Hardenbergs*, hg. von Paul Kluckhohn, Bd. 2, Darmstadt 1981, S. 545, no. 105)
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+> „Die romantische Poesie ist eine **progressive Universalpoesie**. Ihre Bestimmung ist nicht bloß, alle getrennten Gattungen der Poesie wieder zu vereinigen und die Poesie mit der Philosophie und Rhetorik in Berührung zu setzen. Sie will und soll auch Poesie und Prosa, Genialität und Kritik, Kunstpoesie und Naturpoesie bald mischen, bald verschmelzen, die Poesie lebendig und gesellig und das Leben und die Gesellschaft poetisch machen, den Witz poetisieren und die Formen der Kunst mit gediegnem Bildungsstoff jeder Art anfüllen und sättigen und durch die Schwingungen des Humors beseelen.” (Athenäums-Fragment 116, Friedrich Schlegel: _Kritische Ausgabe_, Hg. von Ernst Behler (u. a.). Paderborn (u. a.). 1967. Bd. 2, S. 182f.)
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
