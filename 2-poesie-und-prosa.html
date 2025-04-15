@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Romantische Poesie</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Prosa und Poesie in der Romantik
+## 2. Sitzung: Romantische Poesie
+## Dr. habil. Joachim Harst
+
+notes:
+- [!] Besprechung des Seminarplans und der Referate
+- Romantik als europäische Epoche
+	- Überblicksfolie aus der Vorlesung
+	- Verhältnis zu Aufklärung, Empfindsamkeit und Realismus
+	- Verhältnis von Kunst, Philosophie und Wissenschaft: Anspruch, diese drei Felder zu verbinden oder vereinen
+- Diskussion der Fragmente aus der ersten Sitzung (Abbildung: Ruine)
+	- Was ist ein Fragment?
+	- Fragment und Ruine 
+	- Fragment vs. philosophisches System 
+	- Romantik und Fragment
+	- die beiden Fragmente: Romantisieren – Prosa und (Universal-)Poesie
+- Romantik und Volkspoesie/Volkslied
+	- Diskussion zu *Des Knaben Wunderhorn* (Kunstpoesie und Naturpoesie, Volkstum/Nationalismus, Quellen, Widmung an Goethe, Vorläufer: Herder, Mitwirken: Brüder Grimm)
+	- Gruppenarbeit: je zwei Gedichte lesen und vergleichen – Bezüge unter den ausgewählten Liedern (Form, Mühlrad, Liebe und Tod, aber auch: Ironisierung (Heine, Dreves))
+- Was macht ein romantisches Gedicht aus? 
+	- Erlebnislyrik
+	- Individualität/Ich-Bezug
+	- Romantisieren
+	- Ironie
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Besprechung des Seminarplans und der Referate
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Literarische Epochen Romantik.md] -->
+
+<div class="mermaid">
+gantt
+	title Literarische Epochen 18.-19. Jhdt.
+	dateFormat YYYY
+	axisFormat %Y
+	
+	section Epochen
+	Aufklärung (1650–1800) :a1, 1750, 1800 
+	Empfindsamkeit (1720-1789) :a3, 1750, 1789
+    Sturm und Drang (1765-1785):a4, 1765, 1785
+    Frühromantik    :crit, 1795, 1805
+    Hochromantik    :crit, 1806, 1825
+    Spätromantik    :crit, 1826, 1850
+	Realismus      :a2, 1850, 1900
+    Französische Revolution :crit, milestone, m5, 1779, 1795
+
+	section Autor_innen
+	Ludwig Tieck           :active, 1773, 1853
+	Joseph von Eichendorff :active, 1788, 1857
+	Heinrich Heine         :active, 1797, 1856
+	Jane Austen            :active, 1775, 1817
+	Alessandro Manzoni     :active, 1785, 1873
+
+</div>
+
+<!-- end::[Literarische Epochen Romantik.md] -->
+
+notes:
+- Romantik als europäische Epoche
+	- Überblicksfolie aus der Vorlesung
+	- Verhältnis zu Aufklärung, Empfindsamkeit und Realismus
+		- Aufklärung: Rationalismus, Selbstdenken (vs. Tradition)!
+	- Verhältnis von Kunst, Philosophie und Wissenschaft: Anspruch der Romantik, diese drei Felder zu verbinden oder vereinen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://cdn.gallerix.asia/sr/F/862540582/2764.jpg" data-background-size="cover" data-background-position="top" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+### Was ist ein (philosophisches) Fragment?
+- Fragment und Ruine 
+- Fragment vs. philosophisches System 
+- Romantik und Fragment
+</div>
+
+ <!-- .element: style="background: #DFE1E190; border-radius: 5px; padding: 20px; text-align: left" class="fragment" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="C.D. Friedrich: Ruine des Klosters Eldena bei Greifswald. 1824-25. Alte und neue Nationalgalerie, Museum Berggruen, Berlin." target="_blank">C.F. Friedrich: Ruine des Klosters Eldena (1824-25)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://cdn.gallerix.asia/sr/F/862540582/2764.jpg" data-background-size="cover" data-background-position="top" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[1 PS Prosa und Poesie (slides) SS 2025.md] -->
+> „Die Welt muss romantisirt werden. So findet man den urspr Sinn wieder. Romantisiren ist nichts, als eine qualit Potenzirung. \[…\] Indem ich dem Gemeinen einen hohen Sinn, dem Gewöhnlichen ein geheimnißvolles Ansehn, dem Bekannten die Würde des Unbekannten, dem Endlichen einen unendlichen Schein gebe so romantisire ich es” (Novalis: *Die Schriften Friedrich von Hardenbergs*, hg. von Paul Kluckhohn, Bd. 2, Darmstadt 1981, S. 545, no. 105)
+<!-- end::[1 PS Prosa und Poesie (slides) SS 2025.md] -->
+
+
+</div>
+
+ <!-- .element: style="background: #DFE1E190; border-radius: 5px; padding: 20px; text-align: left" class="fragment" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="C.D. Friedrich: Ruine des Klosters Eldena bei Greifswald. 1824-25. Alte und neue Nationalgalerie, Museum Berggruen, Berlin." target="_blank">C.F. Friedrich: Ruine des Klosters Eldena (1824-25)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://cdn.gallerix.asia/sr/F/862540582/2764.jpg" data-background-size="cover" data-background-position="top" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[1 PS Prosa und Poesie (slides) SS 2025.md] -->
+> „Die romantische Poesie ist eine **progressive Universalpoesie**. Ihre Bestimmung ist nicht bloß, alle getrennten Gattungen der Poesie wieder zu vereinigen und die Poesie mit der Philosophie und Rhetorik in Berührung zu setzen. Sie will und soll auch Poesie und Prosa, Genialität und Kritik, Kunstpoesie und Naturpoesie bald mischen, bald verschmelzen, die Poesie lebendig und gesellig und das Leben und die Gesellschaft poetisch machen, den Witz poetisieren und die Formen der Kunst mit gediegnem Bildungsstoff jeder Art anfüllen und sättigen und durch die Schwingungen des Humors beseelen.” (Athenäums-Fragment 116, Friedrich Schlegel: _Kritische Ausgabe_, Hg. von Ernst Behler (u. a.). Paderborn (u. a.). 1967. Bd. 2, S. 182f.)
+<!-- end::[1 PS Prosa und Poesie (slides) SS 2025.md] -->
+
+
+</div>
+
+ <!-- .element: style="background: #DFE1E190; border-radius: 5px; padding: 20px; text-align: left" class="fragment" -->
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="C.D. Friedrich: Ruine des Klosters Eldena bei Greifswald. 1824-25. Alte und neue Nationalgalerie, Museum Berggruen, Berlin." target="_blank">C.F. Friedrich: Ruine des Klosters Eldena (1824-25)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://eltraductorcatala.wordpress.com/wp-content/uploads/2021/03/wunderhorn11-2.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Romantik und Volkslied
+- Sammlungen von Volksliedern und -märchen
+	- Volkstum und Nationalgedanke
+	- schöpferisches Kollektiv vs. Individuum
+	- romantisierte Vormoderne vs. moderne Entfremdung
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Diskussion: „Volkspoesie” und „Kunstpoesie”
+	- J. Grimm: philologische Trennung, disziplinenbildend
+	- Arnim/Brentano: dichtungstheoretische Kategorien
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Problematik der Verschriftlichung
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; position: absolute; left: 0%; top: 15%; height: 70%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+notes:
+## Volkspoesie und Kunstpoesie
+- Arnim/Brentano: Volkspoesie muss individuell angeeignet und aktualisiert werden, volkstümliche „Naivität” kann nur ironisch nachgebildet werden (→ romantische Ironie)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://c8.alamy.com/compes/cp1aja/literatura-siglo-xix-des-knaben-wunderhorn-el-cuerno-magico-de-la-juventud-por-achim-von-arnim-y-clemens-brentano-primera-parte-titulo-heidelberg-frankfurt-en-el-meno-1806-derechos-adicionales-clearences-no-disponible-cp1aja.jpg" data-background-size="36%" data-background-position="right top 18%" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Romantische Ironie
+> Das Resultat ist eine von romantischer Ironie getragene Dichtung: Gemeint ist eine Märchenliteratur des doppelten Bodens, die auf einer vordergründigen Ebene sich den Anschein von Unbekümmertheit und Naivität gibt, an einzelnen Stellen jedoch ein dahinterliegendes modernes, ein nur zu oft zerrissenes Bewusstsein hervorschimmern lässt. Über sein Märchenwerk äußert Clemens Brentano: „ich hab es meist unter großem Leid geschrieben und durfte das Leid nicht einmal merkenlassen, und so hab ich kindlich getan zum Täuschen mit zerrissenem Herzen.” ([Drewes: Volksmärchen und Kunstmärchen, 2014](https://www.uni-frankfurt.de/63695490/2014-Maerchentagung.pdf))
+
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; font-size: smaller; position: absolute; left: 0%; top: 15%; height: 70%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://c8.alamy.com/compes/cp1aja/literatura-siglo-xix-des-knaben-wunderhorn-el-cuerno-magico-de-la-juventud-por-achim-von-arnim-y-clemens-brentano-primera-parte-titulo-heidelberg-frankfurt-en-el-meno-1806-derechos-adicionales-clearences-no-disponible-cp1aja.jpg" data-background-size="36%" data-background-position="right top 18%" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Des Knaben Wunderhorn (1806)
+- Titel: Lied vom Wunderhorn
+- Widmung an Goethe
+- Quellenangaben
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; font-size: smaller; position: absolute; left: 0%; top: 15%; height: 70%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+notes:
+- Quellen: „Altes fliegendes Blatt”, „Abgeschrieben vom Giebel eines Schweizer Hauses” (Tell), aus Büchern (z.B. Herder) zitiert, „mündlich” manche Lieder (wie das Titellied) auch ohne Quellenangaben
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gruppenarbeit
+
+Lesen Sie die zwei für Ihre Gruppe genannten Gedichte vergleichend und achten Sie dabei auf Ähnlichkeiten und Unterschiede. Welche Rolle spielt Ironie in den Gedichten?<!-- .element: style="text-align: left" -->
+
+- Gruppe 1: „Wenn ich ein Vöglein wär’” und Heine: „Ich stand auf des Berges Spitze”
+- Gruppe 2: Eichendorff: „In einem kühlen Grunde” und Dreves: „Das Mühlrad”
+- Gruppe 3: Eichendorff: „In einem kühlen Grunde” und Heine: „Mein Herz, mein Herz ist traurig”
+
+notes:
+Gruppenarbeit: je zwei Gedichte lesen und vergleichen (Volkslied/Heine, Eichendorff/Dreves, Eichendorff/Heine) – Bezüge unter den ausgewählten Liedern (Form, Mühlrad, Liebe und Tod, aber auch: Ironisierung (Heine, Dreves))
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Charakteristika eines romantischen Gedichts
+- Erlebnislyrik
+- Affekt und Individualismus
+- „Romantisieren”
+- Ironie
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; position: absolute; left: 0%; top: 0%; height: 100%; width: 48%; display: flex; flex-direction: column; align-items: start; justify-content: center" class="fragment" -->
+
+<div class="block">
+
+## Charakteristika eines barocken Gedichts
+- Gelegenheitsdichtung / topische Dichtung
+- Regelpoetik
+- Rhetorik (Gegenstände, Sprache)
+- komplexere Metrik (Hexameter, Sonettform)
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; position: absolute; left: 52%; top: 0%; height: 100%; width: 48%; display: flex; flex-direction: column; align-items: start; justify-content: center" class="fragment" -->
+
+notes:
+- [!] Abbildung?
+- Kontrastierung mit barockem Gedicht möglich
+	- Okkasionalität
+	- Regelpoetik
+	- Rhetorik (Gegenstände, Sprache)
+	- komplexere Metrik
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://cdn2.penguin.com.au/covers/original/9780141936109.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Ausblick auf die kommende Sitzung
+- Wordsworth/Coleridge: Lyrical Ballads (1798)
+
+notes:
+- [!] Abbildung: Cover Wordsworth
+- Hinweise zum Vorwort:
+	- „Naturpoesie”, einfache Sprache
+	- Prosa und Poesie
+	- Poesie/Kunst und Wissen/Wahrheit
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04,"mermaid":{"themeVariables":{"fontSize":"102px"},"theme":"neutral","look":"handDrawn"}}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
