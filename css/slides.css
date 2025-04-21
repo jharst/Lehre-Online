@@ -59,7 +59,7 @@
 
 /*Regel für embedded Blocks (Zitate)*/
 
-.embedded-quote-block li {
+.embedded-quote-block {
   list-style-type: none !important; /* Remove the default bullet */
   position: relative; /* Position the custom marker */
 /*  padding-left: 20px; /* Space for the custom marker */
