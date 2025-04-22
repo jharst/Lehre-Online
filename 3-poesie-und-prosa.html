@@ -104,14 +104,8 @@
 <!-- begin::[Autorinnen Englische Romantik.md] -->
 
 <div class="mermaid">
-%%{
-  init: {
-    'theme': 'neutral'
-    }
-}%%
-
 gantt
-    title Englische Romantik
+    title Dichter*innen der Englischen Romantik
     dateFormat YYYY
     axisFormat %Y
 
@@ -316,7 +310,7 @@ gantt
         // options from URL query string
         const queryOptions = Reveal().getQueryHash() || {};
 
-        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04,"mermaid":{"theme":"neutral"}}, queryOptions);
     </script>
 
     <script>
