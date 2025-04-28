@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Begriffsgeschichte prosaisch/poetisch</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://cdn.gallerix.asia/sr/F/862540582/2764.jpg'); background-size: cover; background-position: left;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" onclick="Reveal.getPlugins().notes.open();" style="align-items: flex-end;">Poesie und Prosa in der Romantik</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform: rotate(-78deg) translate(-10%, 60%); transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+4. Sitzung: Begriffsgeschichte prosaisch/poetisch
+
+notes:
+- Wordsworth über Poesie und Prosa (Zitate)
+- Vergleich Wordsworth/Heine: romantische Ironie? unter Bezug auf das Zitat aus der vorletzten Sitzung
+- Kommentar Handbücher/Lexika
+- Überblick Begriffsgeschichte
+- Gruppenarbeit mit Fragmenten
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Handbücher zur Romantik
+- *Romantik-Handbuch*. Hg. v. Helmut Schanze. 2. durchges. u. aktualisierte Auflage, Kröner 2003.
+- *Europäische Romantik*. Hg. von Karl Robert Mandelkow u.a., 3 Bde., Athenaion 1982.
+- Handbücher zu Autor:innen der Romantik, Bsp. *Bettina von Arnim Handbuch*, hg. von Barbara Becker-Cantarino, de Gruyter 2020.
+
+notes:
+- **Romantik-Handbuch**: Der Band besitzt vier Teile, die ersten drei Teile beinhalten 26 Beiträge. Die Teile sind überschrieben mit „Zeitkontext – Einflüsse und Wirkungen”, „Literarische Formen“ und „Künste und Wissenschaften“. Der vierte Teil enthält ca. 230 (!) Bio-Bibliographien.
+	- historische Kontexte
+	- Gattungstheorie, Kap. zu Lyrik und Fragment
+	- Rhetorik, Kap. zu Allegorie/Symbol, Ironie
+	- Kap. Europäische Einflüsse, aber Schwerpunkt auf Deutschland
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Lexika
+- *Reallexikon der deutschen Literaturwissenschaft.* 3 Bde., de Gruyter 1997–2003.
+- *Ästhetische Grundbegriffe. Historisches Wörterbuch in 7 Bänden*. Hg. von Karlheinz Barck u.a., Metzler 2005.
+- *Handbuch Komparatistik: Theorien, Arbeitsfelder, Wissenspraxis*. Hg. von Rüdiger Zymner und Achim Hölter, Metzler 2013.
+
+notes:
+- **Reallexikon**: umfassende und systematische Bestandsaufnahme des literaturwissenschaftlichen Sprachgebrauchs – Explikation, Wortgeschichte, Begriffsgeschichte, Sachgeschichte, Forschungsgeschichte, Bibliografie
+- **Ästhetische Grundbegriffe**: Schwerpunkt auf Begriffsgeschichte ab 1700/Neuzeit – Vorgänger: Geschichtliche Grundbegriffe – historische Semantik
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Überblick Begriffsgeschichte (Vorgeschichte)
+- Poesie = metrisch gebundene, Prosa = ungebundene Sprache? (87)
+- mediengeschichtliche Aspekte (Schrift, Buchdruck, 89)
+- Aufklärung: Frage nach poetischer Prosa (Fénélon, Sulzer) (91)
+- Klopstock: „höhere Poesie” (→ religiös/profan, real/ideal, 92f.)
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Überblick Begriffsgeschichte (Idealismus/Romantik)
+- Goethes *Wilhelm Meister*: prosaische Form vs. poetischer Geist? (92)
+- Hegel: Prosa der Verhältnisse vs. Poesie des Lebens (93)
+- Jean Paul: Roman als „poetische Prose” (94)
+- Goethes „Geistesepochen” (Schema 94)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="screenshots/Screenshot 2025-04-28 12-01-50.png" alt="" style="width: 1980px; object-fit: fill" justify-content="center">
+
+
+> Denn wie sich diese Sinnesart verbreitet, folgt sogleich die letzte Epoche, welche wir die prosaische nennen dürfen, da sie nicht etwa den Gehalt der frühern humanisieren, dem reinen Menschenverstand und Hausgebrauch aneignen möchte, sondern das Älteste in die Gestalt des gemeinen Tags zieht und auf diese Weise Urgefühle, Volks- und Priesterglauben, ja den Glauben des Verstandes, der hinter dem Seltsamen noch einen löblichen Zusammenhang vermutet, völlig zerstört. (zit. 94)
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gruppenarbeit
+1. Schlegel-Fragment 1 und 2
+2. Schlegel-Fragment 3 und 4
+3. Novalis-Fragmente
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Zusammenfassung Fragmente
+## Schlegel
+1. Poesie: Darstellung (unbestimmt), Prosa: Mitteilung (bestimmt); → Philosophie muss Kunst werden
+2. Antike/Mittelalter = poetisch, Moderne = prosaisch
+3. Roman („formlose Form”) als Vermittlung von Prosa und Poesie 
+## Novalis
+1. das gemeine Leben = prosaisch
+2. provisorische Rolle der Prosa, Ziel: Vereinigung von Prosa und Poesie in einem „wahrhaften Leben”
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
