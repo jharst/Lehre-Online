@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Wilhelm Meister (1)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://cdn.gallerix.asia/sr/F/862540582/2764.jpg'); background-size: cover; background-position: left;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" onclick="Reveal.getPlugins().notes.open();" style="align-items: flex-end;">Poesie und Prosa in der Romantik</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform: rotate(-78deg) translate(-10%, 60%); transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+5. Sitzung: Wilhelm Meister (1)
+ 
+notes:
+ - Figurenkonstellation
+ - Bildungsroman (→ Reallexikon)
+ - Prosa und Poesie in der Handlung
+ - Erzählerironie
+ - ein Roman über das Theater: Gattung, Theater als Ort der Hoffnung (Verbindung von Prosa und Poesie, Nationaltheater)
+ - Referat Herz
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 45%; height: 100%;"><p class="right-title-text" style="transform: rotate(-82deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Wilhelm Meister (1)</p>
+<div class="right-top-div" style="width: 85%; background-image: url('https://www.deutschestextarchiv.de/media/images/goethe_lehrjahre04_1796/goethe_lehrjahre04_1796_0007_400px.jpg'); background-size: contain; background-position: right;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Figurenkonstellation
+
+- Wilhelm
+- Werner
+- Mariane
+- Melina
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="mermaid">
+%%{
+  init: {
+    'theme': 'base',
+    'themeVariables': {
+      'primaryColor': '#BB2528',
+      'primaryTextColor': '#fff',
+      'primaryBorderColor': '#7C0000',
+      'lineColor': '#F8B229',
+      'secondaryColor': '#B4B4B4',
+      'tertiaryColor': '#fff',
+      'fontSize': '12px'
+    }
+  }
+}%%
+graph TD
+    subgraph Theater
+        Mariane
+        Melina
+    end
+    
+    subgraph Handel
+        Werner
+    end
+
+    Wilhelm -->|liebt| Mariane
+    Wilhelm -->|führt Streitgespräche mit| Werner
+    Wilhelm -->|reflektiert sich in| Melina
+
+</div>
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 45%; height: 100%;"><p class="right-title-text" style="transform: rotate(-82deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Wilhelm Meister (1)</p>
+<div class="right-top-div" style="width: 85%; background-image: url('https://www.deutschestextarchiv.de/media/images/goethe_lehrjahre04_1796/goethe_lehrjahre04_1796_0007_400px.jpg'); background-size: contain; background-position: right;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+## Bildungsroman
+- Bildung: des Autors, der Leser:in, des Protagonisten (s. Art. Bildungsroman, RdL)
+- Protagonist
+	- Entwicklung des Individuums
+	- jugendlicher Idealismus vs. gesellschaftliche Realität
+	- Ausgleich / Integration
+	- Zufall und Schicksal
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Art. Bildungsroman
+
+> Erzählerische Darstellung des Wegs einer zentralen Figur durch Irrtümer und Krisen zur Selbstfindung und tätigen Integration in die Gesellschaft. Der auf einen Ausgleich mit der Welt zulaufende Schluß ist oft nur mit ironischen Vorbehalten oder Brüchen geschildert; er ist jedoch als Ziel oder zumindest als Postulat notwendiger Bestandteil einer ,Bildungsgeschichte‘ (in der Regel eines geistig-künstlerisch tätigen Menschen). Durch die Orientierung auf diesen Zielpunkt bekommt der epische Vorgang eine teleologische Struktur, in der die einzelnen Phasen der Entwicklung funktionalen Wert für den Gesamtprozeß haben. (J. Jacobs, Art. Bildungsroman, *Reallexikon der Literaturwissenschaft*, Bd. 1, S. 230–233.)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hegel: Das Romanhafte
+
+> \[Die Protagonisten des Bilderungsromans\] stehen als Individuen mit ihren subjektiven Zwecken der Liebe, Ehre, Ehrsucht oder mit ihren Idealen der Weltverbesserung dieser bestehenden Ordnung und Prosa der Wirklichkeit gegenüber, die ihnen von allen Seiten Schwierigkeiten in den Weg legt. Da schrauben sich nun die subjektiven Wünsche und Forderungen in diesem Gegensatze ins Unermeßliche in die Höhe; denn jeder findet vor sich eine bezauberte, für ihn ganz ungehörige Welt, die er bekämpfen muß, weil sie sich gegen ihn sperrt und in ihrer spröden Festigkeit seinen Leidenschaften nicht nachgibt, sondern den Willen eines Vaters, einer Tante, bürgerliche Verhältnisse usf. als ein Hindernis vorschiebt. (G.W.F. Hegel: Ästhetik, Bd. 2, S. 220)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hegel: Das Romanhafte
+
+>Diese Kämpfe nun aber sind in der modernen Welt nichts Weiteres als die Lehrjahre, die Erziehung des Individuums an der vorhandenen Wirklichkeit, und erhalten dadurch ihren wahren Sinn. Denn das Ende solcher Lehrjahre besteht darin, daß sich das Subjekt die Hörner abläuft, mit seinem Wünschen und Meinen sich in die bestehenden Verhältnisse und die Vernünftigkeit derselben hineinbildet, in die Verkettung der Welt eintritt und in ihr sich einen angemessenen Standpunkt erwirbt. Mag einer auch noch soviel sich mit der Welt herumgezankt haben, umhergeschoben worden sein, zuletzt bekommt er meistens doch sein Mädchen und irgendeine Stellung, heiratet und wird ein Philister so gut wie die anderen auch \[…\]. (G.W.F. Hegel: Ästhetik, Bd. 2, S. 220)
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 45%; height: 100%;"><p class="right-title-text" style="transform: rotate(-82deg) translate(-15%, 60%); transform-origin: left top;">5. Sitzung: Wilhelm Meister (1)</p>
+<div class="right-top-div" style="width: 85%; background-image: url('https://www.deutschestextarchiv.de/media/images/goethe_lehrjahre04_1796/goethe_lehrjahre04_1796_0007_400px.jpg'); background-size: contain; background-position: right;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 33%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Poesie und Prosa
+- Handlung
+	- Theater vs. Handel
+	- Wilhelm vs. Melina
+- Form
+	- auktorialer Erzähler
+	- ironische Distanz und Mitgefühl
+	- *Roman* über das Theater
+
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Theater und Liebe
+
+<!-- begin::[Goethe -WM- 1. Buch.md] -->
+- die erste Liebe: „Auf den Flügeln der Einbildungskraft hatte sich Wilhelms Begierde zu dem reizenden Mädchen erhoben; nach einem kurzen Umgang hatte er ihre Neigung gewonnen, er fand sich im Besitz einer Person, die er so sehr liebte, ja verehrte; denn sie war ihm zuerst in dem günstigen Lichte theatralischer Vorstellung erschienen, und seine Leidenschaft zur Bühne verband sich mit der ersten Liebe zu einem weiblichen Geschöpfe. Seine Jugend ließ ihn reiche Freuden genießen, die von einer lebhaften Dichtung erhöht und erhalten wurden.” (14) <!-- .element: class="embedded-quote-block" -->
+<!-- end::[Goethe -WM- 1. Buch.md] -->
+<!-- .element: class="embedded-quote-block" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Theater und Liebe
+
+<!-- begin::[Goethe -WM- 1. Buch.md] -->
+- „Wie oft stand er auf dem Theater hinter den Wänden \[…\]! Dann war freilich die perspektivische Magie verschwunden, aber die viel mächtigere Zauberei der Liebe fing erst an zu wirken. Stundenlang konnte er am schmutzigen Lichtwagen stehen \[…\], nach der Geliebten hinausblicken und, wenn sie wieder hinein trat und ihn freundlich ansah, sich in Wonne verloren dicht an dem Balken- und Lattengrippe in einen paradiesischen Zustand versetzt fühlen. \[…\] Und so ist es gewiss, dass Liebe, welche Rosenlauben, Myrtenwäldchen und Mondschein erst beleben muss, auch sogar Hobelspänen und Papierschnitzeln einen Anschein belebter Naturen geben kann. Sie ist eine so starke Würze, daß selbst schale und ekle Brühen davon schmackhaft werden.” (57 f.) <!-- .element: class="embedded-quote-block" -->
+<!-- end::[Goethe -WM- 1. Buch.md] -->
+<!-- .element: class="embedded-quote-block" -->
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
