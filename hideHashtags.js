@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('div').forEach(div => {
-        div.innerHTML = div.innerHTML.replace(/#(\w+)/g, '<span class="hidden-tag">#$1</span>');
-        div.innerHTML = div.innerHTML.replace(/(\[\"\])/g, '<span class="hidden-tag">$1</span>');
+    document.querySelectorAll('div.embedded-quote-block').forEach(div => {
+        div.querySelectorALl('li').forEach(li => {
+            li.innerHTML = div.innerHTML.replace(/(?<!["'])#\w+/g, '<span class="hidden-tag">$&</span>');
     });
 });
