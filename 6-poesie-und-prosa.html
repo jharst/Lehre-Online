@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Wilhelm Meister (2)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://cdn.gallerix.asia/sr/F/862540582/2764.jpg'); background-size: cover; background-position: left;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" onclick="Reveal.getPlugins().notes.open();" style="align-items: flex-end;">Poesie und Prosa in der Romantik</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform: rotate(-78deg) translate(-10%, 60%); transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+6. Sitzung: Wilhelm Meister (2)
+
+notes:
+- Referat: Wilhelm Meister, 5. Buch, Hamlet-Inszenierung – Zusammenfassung
+- Diskussion Schlegel: Über Goethes Meister – Aspekte der Deutung
+	- Struktur: linearer, paraphrasierender Kommentar mit eingesprengten Exkursen; Versuch, eine selbstreflexive Rezension zu schreiben
+	- Erinnerung: Unterscheidung Mitteilung/Darstellung – man kann Denken (Bildung) nicht lehren – Anmerkung: Hegels Phänomenologie des Geistes?
+	- Verhältnis Wissenschaft/Kunst – Kunst/Leben
+	- der Roman als umfassende Kunstlehre (149)
+	- Vermittlung von Prosa und Poesie, Ironie
+	- Selbstreflexion: der Roman ist seine eigene Rezension – über Poesie lässt sich nur poetisch sprechen
+- Schluss: Kontrast zu Goethe/Schiller – Briefwechsel über Poesie/Prosa im Wilhelm Meister
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 45%; height: 100%;"><p class="right-title-text" style="transform: rotate(-82deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Wilhelm Meister (2)</p>
+<div class="right-top-div" style="width: 85%; background-image: url('https://www.deutschestextarchiv.de/media/images/goethe_lehrjahre04_1796/goethe_lehrjahre04_1796_0007_400px.jpg'); background-size: contain; background-position: right;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## *Hamlet* in *Wilhelm Meister*
+- Kürzung und Übersetzung
+- Besetzung und Interpretation der Figuren
+- Gespräch über das Verhältnis Roman/Drama
+- Darstellung der Proben, „Regeln für Schauspieler”
+- Aufführung: Vermischung von Theater und Wirklichkeit
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 45%; height: 100%;"><p class="right-title-text" style="transform: rotate(-82deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Wilhelm Meister (2)</p>
+<div class="right-top-div" style="width: 85%; background-image: url('https://www.deutschestextarchiv.de/media/images/goethe_lehrjahre04_1796/goethe_lehrjahre04_1796_0007_400px.jpg'); background-size: contain; background-position: right;">
+</div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Romantische Aspekte
+- Verhältnis Theater/Leben, Theater als Bildung
+- gattungsübergreifende Romanform
+- schwankende Erzählhaltung (Herausgeberfiktion vs. Ironie)
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">6. Sitzung: Wilhelm Meister (2)</p>
+<div class="right-top-div" style="width: 88%; background-image: url('http://www.goethezeitportal.de/fileadmin/Images/db/wissen/timeline/Schlegel_Friedrich_g.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Friedrich_Schlegel" title="Friedrich Schlegel um 1790, Kreidezeichnung von Caroline Rehberg." target="_blank">Fr. Schlegel (1772-1829)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+</div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 48%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Schlegel: Über Goethes Meister
+- formale Charakteristika
+- grundsätzlich: [Unterscheidung Mitteilung/Darstellung](#Mitteilung)
+- der Roman als umfassende [Kunstlehre](#Kunst)
+- Verhältnis Wissenschaft/Kunst, Kunst/Leben
+- [Vermittlung von Prosa und Poesie, Ironie](#Poesie)
+- [Rezension und poetische Kritik](#Rezension)
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Mitteilung" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Mitteilung und Darstellung
+
+> Der Unterschied der Prosa und der Poesie besteht darin, daß die Poesie darstellen, die Prosa nur mitteilen will. Zwar wie überall, so gibt es auch hier für das Entgegengesetzte einen Punkt, wo die Grenzen sich ineinander verlieren. Im Gespräch, im dialogischen Kunstwerke zum Beispiel, ist es eigentlich die gegenseitige Gedankenmitteilung der Redenden, welche selbst der Gegenstand der Darstellung ist. (An Fichte, Vorrede zu Lessings Gedanken und Meinungen aus dessen Schriften. Zusammengestellt und erläutert von Friedrich Schlegel, 3 Bde., Leipzig 1804, hier zit. nach Kritische Schriften, hg. von Wolfdietrich Rasch, München 1964, S. 386f.)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Kunst" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Schlegel – Über Goethes ›Meister‹.md] -->
+## Kunstlehre, Bildung
+- ["] Wenn wir auf die Lieblingsgegenstände aller Gespräche \[…\] sehen: so fällt in die Augen, dass sich alles um Schauspiel, Darstellung, Kunst und Poesie drehe. Es war so sehr die Absicht des Dichters, eine nicht unvollständige Kunstlehre aufzustellen, oder vielmehr in lebendigen Beispielen und Ansichten *darzustellen*, dass diese Absicht ihn sogar zu eigentlichen Episoden \[…\] verleiten kann. Ja man dürfte eine systematische Ordnung in dem Vortrag dieser poetischen Physik der Poesie finden; nicht eben das tote Fachwerk eines Lehrgebäudes, aber die lebendige Stufenleiter jeder Naturgeschichte und Bildungslehre. (Reclam, 149)
+- ["] Die Höhe, zu welcher das Werk noch steigen soll: „eine Höhe, auf der vielleicht die Kunst eine Wissenschaft und das Leben eine Kunst sein wird” (Reclam, 145)
+- ["] Wir sehen nun klar, dass es nicht bloß, was wir Theater oder Poesie nennen, sondern das große Schauspiel der Menschheit selbst und die Kunst aller Künste, die Kunst zu leben, umfassen soll. Wir sehen auch, daß diese Lehrjahre eher jeden anderen zum tüchtigen Künstler oder zum tüchtigen Mann bilden wollen und bilden können, als Wilhelmen selbst. Nicht dieser oder jener Mensch sollte erzogen, sondern die Natur, die Bildung selbst sollte in mannichfaltigen Beispielen dargestellt werden. (Reclam, 161).
+<!-- end::[Schlegel – Über Goethes ›Meister‹.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Poesie" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Schlegel – Über Goethes ›Meister‹.md] -->
+## Prosa und Poesie, Ironie
+- ["] obgleich es also den Anschein haben möchte, als sei das Ganze ebenso sehr eine historische Philosophie, der Kunst, als ein Kunstwerk oder Gedicht \[…\]: so ist doch alles Poesie, reine, hohe Poesie. \[…\]  was fehlt Werners und Wilhelms, Luibl des Handels und der Dichtkunst, als das Metrum, um von jedermann für erhabene Poesie anerkannt zu werden? Überall werden uns goldene Früchte in silbernen Schalen gereicht. Diese wunderbare Prosa ist Prosa und doch Poesie. (Reclam, 150).
+- ["] Nur dem, der vorlesen kann, und sie vollkommen versteht, muss es überlassen bleiben, die Ironie, die über dem ganzen Werke schwebt \[…\] ganz fühlbar zu machen. Dieser sich selbst belächelnde Schein von Würde und Bedeutsamkeit in dem periodischen Styl, diese scheinbaren Nachlässigkeiten und Tautologien welche \[…\] alles oder nichts zu sagen \[…\] scheinen, dieses höchst Prosaische mitten in der poetischen Stimmung des dargestellten oder komödierten Subjekts, der absichtliche Anhauch von poetischer Pedanterie bei sehr prosaischen Veranlassungen; sie beruhen oft auf einem einzigen Wort, ja auf einem Akzent. (Reclam, 155).
+<!-- end::[Schlegel – Über Goethes ›Meister‹.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Rezension" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Schlegel – Über Goethes ›Meister‹.md] -->
+## Rezension, Kritik
+- ["] Es ist schön und notwendig, sich dem Eindruck eines Gedichtes ganz hinzugeben \[…\]. Aber nicht minder notwendig ist es, von allem einzelnen abstrahieren zu können, das allgemeine schwebend zu fassen \[…\]. Wir müssen uns über unsere eigene Liebe erheben, und was wir anbieten, in Gedanken vernichten können: sonst fehlt uns \[…\] der Sinn für das Weltall. (Reclam, 148)
+- ["] Eine sogenannte Rezension des *Meister* würde uns immer erscheinen, wie der junge Mann, der mit dem Buche unter dem Arm in den Wald spazieren kommt, und den Philine mit dem Kuckuck vertreibt. Vielleicht soll man es also zugleich beurteilen und nicht beurteilen; welches keine leichte Aufgabe zu sein scheint. Glücklicherweise ist es eben eins von den Büchern, welche sich selbst beurteilen, und den Kunstrichter sonach aller Mühe überheben. Ja, es beurteilt sich nicht nur selbst, es stellt sich auch selbst dar. (Reclam, 151)
+- ["] Die in diesem \[…\] Buche zerstreute Ansicht des *Hamlet* ist nicht sowohl Kritik als hohe Poesie. Und was kann wohl anderes entstehen als ein Gedicht, wenn ein Dichter als solcher ein Werk der Dichtkunst anschaut und darstellt? \[…\] Der Dichter und Künstler hingegen wird die Darstellung von neuem darstellen, das schon Gebildete noch einmal bilden wollen. (Reclam, 157)
+<!-- end::[Schlegel – Über Goethes ›Meister‹.md] -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Schiller über *Wilhelm Meister* (1)
+
+<!-- begin::[WM-Schiller-Goethe über Prosa-Poesie.md] -->
+Auch den *Meister* habe ich ganz kürzlich wieder gelesen, und es ist mir noch nie so auffallend gewesen, was die äußere Form doch bedeutet. Die Form des Meisters, wie überhaupt jede Romanform, ist schlechterdings nicht poetisch, sie liegt ganz nur im Gebiete des Verstandes, steht unter allen seinen Forderungen und participirt auch von allen seinen Grenzen. Weil es aber ein ächt poetischer Geist ist, der sich dieser Form bediente, und in dieser Form die poetischsten Zustände ausdrückte, so entsteht ein sonderbares Schwanken zwischen einer prosaischen und poetischen Stimmung, für das ich keinen rechten Namen weiß. Ich möchte sagen: es fehlt dem Meister (dem Roman nämlich) an einer gewissen poetischen Kühnheit, weil er, als Roman, es dem Verstande immer recht machen will - und es fehlt ihm wieder an einer eigentlichen Nüchternheit (wofür er doch gewissermaßen die Forderung rege macht), weil er aus einem poetischen Geiste geflossen ist. Buchstabiren Sie das zusammen wie Sie können, ich theile Ihnen bloß meine Empfindung mit. <!-- .element: style="text-align: left" class="embedded-quote-block" -->
+<!-- end::[WM-Schiller-Goethe über Prosa-Poesie.md] -->
+<!-- .element: style="text-align: left" class="embedded-quote-block" -->
+
+Friedrich Schiller, Brief Nr. 367 an Goethe, Jena den 20. October 1797.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Schiller über *Wilhelm Meister* (2)
+
+<!-- begin::[WM-Schiller-Goethe über Prosa-Poesie.md] -->
+Da ich doch einmal im Kritisiren bin, so will ich noch eine Bemerkung machen, die mir bei dem neuen Lesen sich aufdrang. Es ist offenbar zu viel von der Tragödie im Meister; ich meine das Ahnungsvolle, das Unbegreifliche, das subjectiv Wunderbare, welches zwar mit der poetischen Tiefe und Dunkelheit, aber nicht mit der Klarheit sich verträgt, die im Roman herrschen muß und in diesem auch so vorzüglich herrscht. Es incommodirt, auf diese Grundlosigkeiten zu gerathen, da man überall festen Boden unter sich zu fühlen glaubt, und weil sich sonst alles so schön vor dem Verstand entwirret, auf solche Räthsel zu gerathen. Kurz mir däucht, Sie hätten sich hier eines Mittels bedient, zu dem der Geist des Werks Sie nicht befugte. <!-- .element: style="text-align: left" class="embedded-quote-block" -->
+<!-- end::[WM-Schiller-Goethe über Prosa-Poesie.md] -->
+<!-- .element: style="text-align: left" class="embedded-quote-block" -->
+
+Friedrich Schiller, Brief Nr. 367 an Goethe, Jena den 20. October 1797.
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
