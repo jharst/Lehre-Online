@@ -63,7 +63,7 @@
   list-style-type: none !important; /* Remove the default bullet */
 }
 
-ul.embedded-quote-block {
+.embedded-quote-block li {
   margin-bottom: 20px !important;
 }
 
