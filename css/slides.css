@@ -29,6 +29,7 @@
   line-height: 1.7 !important;
 }
 
+
 /*Versuch, ein Icon zu generieren, das einen Textblock als Zitat markiert (i.S.e. Initiale)*/
 .quote-block {
   position: relative;
@@ -42,14 +43,10 @@
 }
 
 .quote-block::before {
-  content: '“'; /* Typographisches Anführungszeichen */
-  width: 40px;
-  height: 40px;
-  font-size: 38px; /* Größe des Anführungszeichens */
+  content: ''; /* Typographisches Anführungszeichen */
   position: absolute;
   left: 0;
   top: 40%;
-  color: #772F8B; /* Farbe des Anführungszeichens */
   background-color: white; /* Hintergrundfarbe des Kreises */
   border-radius: 50%;
   display: flex;
@@ -59,12 +56,16 @@
 
 /*Regel für embedded Blocks (Zitate)*/
 
-.embedded-quote-block {
+ul.embedded-quote-block {
   list-style-type: none !important; /* Remove the default bullet */
-}
+ }
 
-.embedded-quote-block li {
-  margin-bottom: 20px !important;
+
+ul.embedded-quote-block li::before {
+  content: "<i class="fa fa-quote-right" aria-hidden="true"></i>"; /* Ersetzt durch das gewünschte Font Awesome Icon */
+  font-family: "Font Awesome 6 Free"; /* Font Awesome Schriftart */
+  font-weight: 900; /* Sicherstellen, dass das Icon angezeigt wird */
+  margin-right: 8px; /* Abstand zwischen Icon und Text */
 }
 
 .hidden-tag {
@@ -78,6 +79,7 @@
 
 
 /*====== MERMAID ===========*/
+
 .reveal .mermaid {   
   min-width: 80%; 
   max-height: auto;
@@ -85,6 +87,10 @@
 
 .reveal .mermaid svg {   
   max-width: 100% !important;
+   max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .reveal .mermaid svg .edgeLabel {   
@@ -109,8 +115,8 @@
   font-size: xxx-large !important;
 }
 
-.reveal h2, h3, h4 {
-  text-transform: none;
+.reveal h3, h4 {
+  text-transform: none !important;
 }
 
 .link-icon {
