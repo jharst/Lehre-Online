@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Heinrich von Ofterdingen (1)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://cdn.gallerix.asia/sr/F/862540582/2764.jpg'); background-size: cover; background-position: left;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" onclick="Reveal.getPlugins().notes.open();" style="align-items: flex-end;">Poesie und Prosa in der Romantik</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform: rotate(-78deg) translate(-10%, 60%); transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+7. Sitzung: Heinrich von Ofterdingen (1)
+
+notes:
+- Einführung Person Novalis (als Dichter, Philosoph und Wissenschaftler)?
+- Referat Klein
+- (Zitat Schiller über das Tragische im Wilhelm?)
+- Parallelen/Unterschiede Wilhelm/Heinrich
+	- Reise
+	- Entwicklung/Bildung
+	- Schicksal/Ahnung (Heinrich: der initiale Traum, die Sehnsucht, Dichtung als geahnte Bestimmung vs. Wilhelms Selbstgewissheit)
+	- Thema: Kunst (Heinrich schon früh als Dichter angesprochen) – bei Heinrich offenbar keine Opposition Handel/Kunst
+	- Prosa der Gegenwart (und Rückkehr goldenes Zeitalter)
+- Gespräch mit den Kaufmännern (Kap. 2): Verhältnis Wissenschaft und Dichtung
+	- weltliches vs. geistliches Denken (157), Gespräch über Wissenschaften und Dichter/Sänger (158); die Sänger der alten Welt: Stiftung einer poetischen Ordnung (161);
+- Gespräch mit dem Bergmann (Kap. 5)
+	- Natur und Besitz
+	- Bergmänner und Dichtung
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/0/08/Franz_Gareis_-_Novalis.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Novalis (1772-1801)
+- eigentl. Name: Georg Philipp Friedrich von Hardenberg
+- niedersächsisches Adelsgeschlecht, Vater Salinendirektor
+- Studium: Jura (Jena, 1790-94) und Montanwissenschaften (1797)
+- Verlobung mit Sophie von Kühn (1782-1797)
+- berufl. Tätigkeit: Salinenassessor
+- 1801: Tod an Schwindsucht
+</div>
+
+ <!-- .element: style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/0/08/Franz_Gareis_-_Novalis.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Novalis (1772-1801)
+- in Jena Bekanntschaft mit „Klassikern” (Schiller, Goethe) und Romantikern (Brüder Schlegel, Tieck)
+- philosophische Fragmente zu zahlreichen Wissensgebieten
+- Arbeit an einer universalen Enzyklopädie der Künste und Wissenschaften (*Allgemeines Brouillon*)
+- Romanfragmente (*Heinrich von Ofterdingen*, *Die Lehrlinge zu Sais*)
+- Gedichte (*Hymnen an die Nacht*)
+</div>
+
+ <!-- .element: style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://www.deutschestextarchiv.de/media/images/novalis_ofterdingen_1802/novalis_ofterdingen_1802_0007_1600px.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Heinrich von Ofterdingen
+- 1802 posthum als Romanfragment veröffentlicht
+- Protagonist: mhd. Sänger aus dem 13. Jhdt.
+- Gattung: Bildungsroman mit Reisemotiv (?)
+- Zweigeteilte Struktur: Die Erwartung / Die Erfüllung
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Prosa und Poesie
+- Traum von der blauen Blume (Kap. 1)
+- Vater: Verlorener Kontakt zu den Göttern (Kap. 1)
+- Gespräch mit den Kaufmännern (Kap. 2):
+	- Handel und Kunst (251f.)
+	- Wissenschaft und Dichtung (252f.)
+	- Sänger der Vergangenheit (254ff.)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Verlorener Kontakt zu den Göttern
+
+<!-- begin::[Novalis – Heinrich von Ofterdingen.md] -->
+- ["] Die Zeiten sind nicht mehr, wo zu den Träumen göttliche Gesichter sich gesellten, und wir können und werden es nicht begreifen, wie es jenen auserwählten Männern, von denen die Bibel erzählt, zumute gewesen ist. \[…\] In dem Alter der Welt, wo wir leben, findet der unmittelbare Verkehr mit dem Himmel nicht mehr statt. Die alten Geschichten und Schriften sind jetzt die einzigen Quellen, durch die uns eine Kenntnis von der überirdischen Welt \[…\] zuteil wird. (243)  <!-- end::[Novalis – Heinrich von Ofterdingen.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Sänger der Vergangenheit
+
+<!-- begin::[Novalis – Heinrich von Ofterdingen.md] -->
+- ["] So sollen vor uralten Zeiten \[…\]  Dichter gewesen sein, die durch den seltsamen Klag wunderbarer Werkzeuge das geheime Leben der Wälder, die in den Stämmen verborgenen Geister aufgeweckt \[…\] und selbst die totesten Steinen regelmäßige tanzende Bewegungen hingerissen haben. Sie sollen zugleich Wahrsager und Priester, Gesetzgeber und Ärzte gewesen sein \[…\]. Seitdem sollen, wie die Sage lautet, erst die mannigfaltigen Töne und die sonderbaren Sympathien und Ordnungen in die Natur gekommen sein \[…\]. Seltsam ist nur hiebei, daß zwar diese schönen Spuren \[…\] geblieben sind, aber entweder ihre Kunst, oder jene zarte Gefühligkeit der Natur verloren gegangen ist. (257) <!-- end::[Novalis – Heinrich von Ofterdingen.md] -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Besuch im Berg
+- Bergbau als romantische Metapher und Wissenschaft (293)
+- Innerlichkeit, Geheimnis, Wahrheit
+- Kunst vs. Besitz (Kapitalismuskritik, 291)
+- Entdeckung des Buches, das von Heinrich handelt (312)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Kunst vs. Besitz
+
+<!-- begin::[Novalis – Heinrich von Ofterdingen.md] -->
+- ["] Unentzündet von gefährlichem Wahnsinn, freut er sich mehr über ihre wunderlichen Bildungen \[…\] als über ihren alles verheißenden Besitz. Sie haben für ihn keinen Reiz mehr, wenn sie Waren geworden sind, und er sucht sie lieber unter tausend Gefahren und Mühseligkeiten den Festen der Erde, als daß er ihrem Ruf folgen, und auf der Oberfläche des Bodens durch täuschende, hinterlistige Künste nach ihnen trachten sollte. (291) <!-- end::[Novalis – Heinrich von Ofterdingen.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bergbau als romantische Metapher und Wissenschaft
+
+<!-- begin::[Novalis – Heinrich von Ofterdingen.md] -->
+- ["] Wahrhaftig, das muß ein göttlicher Mann gewesen seyn, der den Menschen zuerst die edle Kunst des Bergbaus gelehrt, und in dem Schooße der Felsen dieses ernste Sinnbild des menschlichen Lebens verborgen hat. (293) <!-- end::[Novalis – Heinrich von Ofterdingen.md] -->
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
