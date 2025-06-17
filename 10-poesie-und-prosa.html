@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>D. Schlegel – Florentin (2)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://cdn.gallerix.asia/sr/F/862540582/2764.jpg'); background-size: cover; background-position: left;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" onclick="Reveal.getPlugins().notes.open();" style="align-items: flex-end;">Poesie und Prosa in der Romantik</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform: rotate(-78deg) translate(-10%, 60%); transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 60%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+10. Sitzung: D. Schlegel – Florentin (2)
+
+notes:
+- Erzählsituation: Gegenwart und Vergangenheit – Frage nach deren Zusammenhang – Zukunft: Suche nach Florentins Bestimmung
+- Schlegels Bezug auf den „Meister” (Zitat) – können wir Parallelen erkennen? Handelt es sich bei „Florentin” um einen Bildungsroman? (Florentin als dilettierender Künstler, Suche nach Bestimmung/Herkunft, die Rolle Amerikas in beiden Romanen?)
+- Liebe, Ehe und Gender
+	- Rekapitulation: die bereits besprochenen Abschnitte (F. vor dem Gemälde: Liebe zur dargestellten Person, Liebe zwischen den dargestellten Personen; die Szene im Wald: Florentins Haltung zur Liebe, die Dreierbeziehung) – vorläufiges Fazit: der Roman diskutiert verschiedene Aspekte der Liebe
+	- die verwandtschaftliche Liebe (vgl. S. 17) – Idealzustand „goldene Zeit” (19)
+	- Verlöbnis und verzögerte Heirat zwischen Eduard und Juliane (vgl. S. 29)
+	- die Dreierbeziehung F–J-E (Kap. 6, S. ??); beim Müller, Andeutungen eines Zerwürfnisses zwischen J–E, E will mit F nach Amerika aufbrechen (Kap. 11)
+	- warum ist C. gegen die Ehe? Andeutungen, dass Liebe ihrer Meinung nach durch Ehe zu Ende gehe
+- die Figur Clementina
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Rekapitulation
+- Erzählsituation, Zeitverhältnis
+- *Florentin* und *Wilhelm Meister*
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[@Schlegel-1987.md] -->
+### D. Schlegel über Wilhelm Meister
+- ["] Für mich ist „der Meister” ein Buch, das ich verehre, studire, immer wieder und wieder lese, das mir nicht vom Tisch und nicht aus dem Gedächtniß kommt, das aber meiner innersten Natur so grade entgegen ist, daß ich wohl sagen muß: Ich verstehe es nicht. [zit. @Schlegel-1987, 232]
+<!-- end::[@Schlegel-1987.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Florentins Suche
+
+<!-- begin::[@Schlegel-1987.md] -->
+- ["] „Mich treibt etwas Unnennbares vorwärts, was ich mein Schicksal nennen muß. Es lebt etwas in mir, das mir zuruft, nicht zu verzagen, und nicht bloß zu leben, um zu leben, ich muß meinen Endzweck, ich muß das Glück, das ich ahnde, wirklich finden.” (82) <!-- end::[@Schlegel-1987.md] -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[5 PS Poesie und Prosa (slides) SS 2025.md] -->
+## Art. Bildungsroman
+
+> Erzählerische Darstellung des Wegs einer zentralen Figur durch Irrtümer und Krisen zur Selbstfindung und tätigen Integration in die Gesellschaft. Der auf einen Ausgleich mit der Welt zulaufende Schluß ist oft nur mit ironischen Vorbehalten oder Brüchen geschildert; er ist jedoch als Ziel oder zumindest als Postulat notwendiger Bestandteil einer ,Bildungsgeschichte‘ (in der Regel eines geistig-künstlerisch tätigen Menschen). Durch die Orientierung auf diesen Zielpunkt bekommt der epische Vorgang eine teleologische Struktur, in der die einzelnen Phasen der Entwicklung funktionalen Wert für den Gesamtprozeß haben. (J. Jacobs, Art. Bildungsroman, *Reallexikon der Literaturwissenschaft*, Bd. 1, S. 230–233.)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- end::[5 PS Poesie und Prosa (slides) SS 2025.md] -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/a/a7/KarthauseBuxheimAnnakapelle05.JPG" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Liebe, Ehe und Gender
+- verwandtschaftliche Liebe (vgl. S. 17, 19)
+- Verlöbnis und verzögerte Heirat zwischen Eduard und Juliane (vgl. S. 29)
+- die Dreierbeziehung F–J–E (Kap. 4, 30; Kap. 6, 36; Kap. 11, 93f.)
+- Gründe für die Verzögerung der Eheschließung (Kap. 14, 113)
+</div>
+
+ <!-- .element: style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Anna_lehrt_Maria_das_Lesen" title="Altarblatt in der St.-Anna-Kapelle im Kreuzgang der ehemaligen Kartause Buxheim bei Memmingen" target="_blank">St. Annakapelle/Buxheim<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Verwandtschaftliche Liebe
+- „Nicht leicht konnte man eine Familie finden, in der so wiein dieser jedes Verhaltnis zugleich so rein und so gebildet sich erhielt, die ganz durch einen gemeinschaftlichen Geist belebt zu sein schien, indem jeder einzelne zugleich seinem eignen Werte treu blieb.” (17)
+- „ihm war, als fände er hier die goldne Zeit, die er auf ewig entflohen geglaubt.” (19)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### Liebe, Ehe und Pflicht
+
+<!-- begin::[@Schlegel-1987.md] -->
+- ["] Meine teure Clementina schreibt von Pflichten, die mir nun aufgelegt werden, denen ich vielleicht nicht gewachsen sei. Was sind das für Pflichten? Gibt es noch andere, als die ich kenne: daß ich Eduard einzig und bis in den Tod lieben soll? (113) <!-- end::[@Schlegel-1987.md] -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Andrés_de_Concha_-_Saint_Cecilia_-_Google_Art_Project.jpg/1024px-Andrés_de_Concha_-_Saint_Cecilia_-_Google_Art_Project.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+## Die Figur Clementina
+- aufgeschobene Ehe: Betty und der Rittmeister (Kap. 16)
+- Clementinas Liebe und Wohltätigkeit (Kap. 16, 136)
+- die heilige Cäcilie: Musik, Ekstase und Gottesliebe (Kap. 18, 147f.)
+</div>
+
+ <!-- .element: style="position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Cäcilia_von_Rom" title="Andrés de Concha: Hl. Cäcilia (um 1580)" target="_blank">Andrés de Concha: Hl. Cäcilia (um 1580)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
