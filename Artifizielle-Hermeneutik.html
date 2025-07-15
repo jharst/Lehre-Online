@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Artifizielle Hermeneutik
+### Prof. Dr. Joachim Harst (Köln/Saarbrücken)
+
+<div class="block">
+
+<!-- .element: style="position: absolute; left: 0%; top: 80%; height: 10%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+<i class="fa fa-envelope" aria-hidden="true"></i> jharst@uni-koeln.de
+
+slides: [jharst.github.io/Lehre-Online/Artifizielle-Hermeneutik.html](jharst.github.io/Lehre-Online/Artifizielle-Hermeneutik.html)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Einleitung
+- Opposition zwischen Hermeneutik und Digitalisierung/artifizieller Kommunikation
+- Differenz im Sprachverständnis (formalistisch/sinnorientiert)
+- „artifizielle Hermeneutik” → Suche nach einer dritten Position
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Aspekte von „artifizieller Hermeneutik”
+- wie lese ich artifiziell generierte Texte?
+- welche Rolle spielen hermeneutische Prozesse bei der artifiziellen Generation von Texten?
+- Argumente für die Verschränkung von artifizieller Kommunikation und hermeneutischer Interpretation
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik und Sinnpräsenz (Schleiermacher)
+
+<!-- begin::[@Szondi-2012.md] -->
+- ["] Denn die unmittelbare Gegenwart des Redenden, der lebendige Ausdrukk welcher die Theilnahme seines ganzen geistigen Wesens verkündigt, die Art wie sich hier die Gedanken aus dem gemeinsamen Leben entwikkeln, dies alles reizt weit mehr als die einsame Betrachtung einer ganz isolirten Schrift dazu eine Reihe von Gedanken zugleich als einen hervorbrechenden Lebensmoment \[…\]  zu verstehen, und eben diese Seite ist es, welche bei der Erklärung der Schriftsteller \[…\] großentheils ganz vernachlässiget wird (zit. nach @Szondi-2012, 162) <!-- .element: class="fragment" -->
+<!-- end::[@Szondi-2012.md] -->
+<!-- .element: class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik und Sinnpräsenz (Schleiermacher)
+- Textverstehen und Fremdverstehen (psychologische Interpretation)
+- der Text als Lebensäußerung, Autor:in als Zielpunkt der Interpretation
+- psychologisierende Effekte der Interpretation
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutic Contract (Henrickson)
+- ["] „bezeichnet die Annahmen der Leser, dass die Autoren wollen, die Leser mögen sich für ihre Texte interessieren und sie verstehen”<!-- .element: class="embedded-quote-block; fragment fade-in-then-semi-out" -->
+- ["] „Es spielt keine Rolle, ob ein literarischer Text von einem Menschen oder einem Computer geschrieben wurde, denn ein Text ist weder ein Gespräch noch eine Verbindung. Er ist ein Katalysator für eine Verbindung”<!-- .element: class="embedded-quote-block; fragment fade-in-then-semi-out" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik des Verdachts (Ricœur)
+- Ausgang von irritierender Abwesenheit von Sinn (Verlust an Transparenz, Kontingenz)
+- Ricœur: Nietzsche, Marx, Freud als Vertreter einer Hermeneutik des Verdachts
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik des Verdachts (Ricœur)
+
+<!-- begin::[@Ricoeur-1974.md] -->
+- ["] Das Wesentliche ist, daß alle drei mit den vorhandenen Mitteln, d.h. mit und gegen die Vorurteile ihrer Zeit eine mittelbare Wissenschaft des Sinns schaffen, die nicht auf das unmittelbare Bewußtsein des Sinns zurückführbar ist #Quote #Freud #Hermeneutik  [(20)](hook://file/gk4ThEYif?p=Tm90ZXMvcGRm&n=Ric%C5%93ur%20%E2%80%93%20Versuch%20u%CC%88ber%20Freud%20%281974%29%2Epdf#p=20) <!-- end::[@Ricoeur-1974.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik des Verdachts (Freud)
+- Beispiel Freud: Psychopathologie des Alltagslebens (Freud’sche Versprecher)
+- Spaltung der Sprecher-Position: Sprecher-Intention vs. Diskurs des Unbewussten
+- Psychoanalyse und Spurenlesen (Ginzburg, Krämer)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik des Verdachts (Krämer)
+
+<!-- begin::[@Kramer-1998b.md] -->
+- ["] „Das Medium ist nicht einfach die Botschaft; vielmehr bewahrt sich an der Botschaft die Spur des Mediums.“ (81) #Quote #Spur  <!-- end::[@Kramer-1998b.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Prompting als Spurenproduktion (Groys)
+- artifizielle Kommunikation als „hermeneutische Herausforderung”
+
+<!-- begin::[@Groys-2023.md] -->
+- ["] So if, as a writer, I write a prompt and the AI produces a text or image prompted by this prompt, I can immediately see how my text is understood and interpreted at this particular historical moment—not by a particular individual or group but by the whole civilization in which I live. AI is nothing other than the embodied zeitgeist. And by prompting this zeitgeist-machine, I am able to analyze and diagnose the moment of history to which I am contemporary. #Quote #Hermeneutik #Spur <!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- end::[@Groys-2023.md] -->
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+
+<!-- begin::[@Groys-2023.md] -->
+- ["] To investigate and diagnose the mass of accumulated writing, one has to use not clear and distinct but paradoxical and provocative prompts that put the organizational principles of AI into question and reveal the chaos hidden behind the smooth surface of its results. #Quote #Spur #Spur <!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- end::[@Groys-2023.md] -->
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Prompting als Spurenproduktion (Bajohr)
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] Lässt sich mit KI-Modellen digitale Sprachkunst machen, die nicht einfach ein abstraktes Mittelmaß von ‚Literatur‘-Mustern reproduziert, sondern die spezifischen technischen Bedingungen von KI-Schreiben mitreflektiert? (244) <!-- end::[@Bajohr-2023a.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Prompting als Spurenproduktion (Bajohr)
+ - Nutzung eines Open-Source-Sprachmodells (GPT-J von EleutherAI)
+- Finetuning mit einem selektiven Korpus von Gegenwartsliteratur 
+- Arbeit mit next token prediction
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="main" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bajohr: Kieferling und Teichenkopf
+- [schemenhafte Gestalten](#Zitat-1)
+- unklare Verhältnisse von Zeit und Raum
+- [Verbindung mit Sprechen](#Zitat-2)
+- Erzählmuster: Kindheitserinnerung, Ausflug, Intrige
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Zitat-1" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bajohr: Kieferling und Teichenkopf
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] Als Kind hatte ich ein Gebiss, das eine unkonventionelle Einteilung zwischen einem Kieferling und einem Teichenkopf anzeigte. Der Kieferling war in der Kraft verwurzelt, der Teichenkopf durch eine äußerst schlanke Basis gefestigt, die den Kiefer in dem selben Moment, als die Beine sich schüttelten, aus dem Kieferling herauszog. (14) <!-- end::[@Bajohr-2023a.md] -->
+
+<div class="right-image-source"><a href="#main"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Zitat-2" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bajohr: Kieferling und Teichenkopf
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] Beide Köpfe nämlich, Kieferling und Teichenkopf, schwangen als die einzige Kraft, die mich als Kind getragen hatte, in die Höhe; sie waren wie die Rippen einer gespannten Gitarre. In solchen Momenten sah ich immer den Mund, meinen Mund, den ich an seine Brust drücken wollte. Die Worte schlürften ein, ein Bühnenläufer vermochte mir die Hand zu führen; ich hielt den ersten Satz, der kommunizierte vor mich hin, um zu schauen, wie er reagierte. Es war ein Satz, der so wenig mit dem zu tun hatte, was ich gerade von ihm erwartete, aber dennoch immer wieder in einer Kombination von Zuständen und Verhalten eine unverzichtbare Botschaft aussprach; aus dem Mund sprang dann eine unglaubliche Wucht. Das Gebiss wandelte sich zu einem zarten Lachen. (15) <!-- end::[@Bajohr-2023a.md] -->
+
+<div class="right-image-source"><a href="#main"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Bajohr: Kieferling und Teichenkopf
+- ["] Der Kieferling hatte wahrscheinlich die Aufgabe, dem \[sic!\] Teichenkopf zur Strecke zu bringen. (19)
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] Mein Vater erschoss den Kieferling später, auf einer anderen Wanderung, als der Teichenkopf es ihm riet. (20) <!-- end::[@Bajohr-2023a.md] -->
+
+<div class="right-image-source"><a href="#main"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Schluss" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Schluss: Wie kann man den Roman lesen?
+- [als Teil eines Experiments](#Experiment)
+- [auf der Ebene der Wortverknüpfung](#Wortverbindung)
+- [als Reflexion von Lesehaltungen](#Reflexion)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Experiment" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### …als Teil eines Experiments
+Welche signifikanten Fehler, welche deutbaren Spuren ergeben sich, wenn man versucht, Sprachmodellen das Erzählen beizubringen?<!-- .element: style="text-align: left" -->
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] zwar hatte ich beim Lesen immer das Gefühl, dass sich ein Plot entfaltet und auf einen entscheidenden Punkt zu bewegt; aber nie kommt es zu diesem Punkt. Meist tritt die Geschichte auf der Stelle (259). <!-- .element: class="fragment" -->
+<!-- end::[@Bajohr-2023a.md] -->
+<!-- .element: class="fragment" -->
+
+<div class="right-image-source"><a href="#Schluss"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Wortverbindung" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### …auf der Ebene der Wortverknüpfung
+Wie lässt sich der Sprachstil des Textes beschreiben? Welche Konsequenzen ergeben sich für das Verhältnis zwischen Hermeneutik und artifizieller Kommunikation?<!-- .element: style="text-align: left" -->
+
+<!-- begin::[@Bajohr-2022.md] -->
+- ["] Richtig ist, dass sich angesichts neuronaler Netze die binäre Unterscheidung zwischen Bedeutung (menschliche Welt) und Nichtbedeutung (digitale Systeme) immer schwerer aufrechterhalten lässt. Sie erlauben Zwischenstufen von gradierter Bedeutung, die als artifizielle Semantik keinen Geist mehr voraussetzt. #Quote (4) <!-- .element: class="fragment" -->
+<!-- end::[@Bajohr-2022.md] -->
+<!-- .element: class="fragment" -->
+<div class="right-image-source"><a href="#Schluss"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Reflexion" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+### …als Reflexion von Lesehaltungen
+Welche Lesehaltungen werden vom Text produziert?<!-- .element: style="text-align: left" -->
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] eine Lektüreform, die bereits weiß, dass sie vom Text keine Kohärenz zu erwarten braucht, und daher die Lust auf Sinnbildung, die Triebfeder allen Lesens ist, noch einmal maximiert” (260) <!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- end::[@Bajohr-2023a.md] -->
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+
+<!-- begin::[@Bajohr-2023a.md] -->
+- ["] Der Roman ist als klassisch erzählender gescheitert. Damit ist das Experiment aber geglückt. Lese ich ihn, lerne ich aus seinen Fehlern etwas über die Fähigkeiten und die Beschränkungen von Sprachmodellen für literarische Texte, auch über die merkwürdige Lesehaltung, die er hervorbringt. Der Text weiß etwas, was über das hinausgeht, was er unmittelbar sagt. (261) #Quote #Lesen #Lesegeschichte  <!-- .element: class="fragment fade-in-then-semi-out" -->
+<!-- end::[@Bajohr-2023a.md] -->
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+<div class="right-image-source"><a href="#Schluss"><i class="fas fa-chevron-circle-left" style="color: #772F8B75"></i></a></div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Auswahlbibliografie
+
+- Hannes Bajohr (2023): *(Berlin, Miami)*. Berlin: Rohstoff. 
+- Hannes Bajohr und Moritz Hiller, Hg. (2024): *Das Subjekt des Schreibens. Über große Sprachmodelle*, München: edition t+k. 
+- Leah Henrickson (2021): *Reading Computer-Generated Texts.* Cambridge: Cambridge UP. 
+- Sybille Krämer (1998): „Das Medium als Spur und als Apparat”, in: *Medien Computer Realität. Wirklichkeitsvorstellungen und Neue Medien*, hg. von Gianni Vattimo, München: Fink, 73-94.
+- Paul Ricœur (1965/1974): *Die Interpretation: Ein Versuch über Freud*. Frankfurt a.M: Suhrkamp.
+- Peter Szondi (1969/2012): *Einführung in die literarische Hermeneutik*. Berlin: Suhrkamp.
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
