@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Recht und Gerechtigkeit
+## Interdisziplinäre Einführung in die Kulturwissenschaften
+### Sektion AVL/Komparatistik
+Dr. phil. habil. Joachim Harst
+
+<aside class="notes"><ul>
+<li><input disabled="" type="checkbox"> Paul Celan, Meridian, und Beziehung zu Szondi/Derrida</li>
+<li><input disabled="" type="checkbox"> Textbeispiele aus Marc Aurel, Selbstbetrachtungen</li>
+<li><input disabled="" type="checkbox"> evtl. Ausstellungskatalog bestellen/anschauen – könnte auch für die Nachbesprechung wichtig sein</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://www.wallstein-verlag.de/media/cover/9783835338760l.png" data-background-size="contain" data-background-position="right" data-background-color="#E9DDEC" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+## Selbstbildnis als Komparatist
+- Komparatistik: vergleichende Analysen von Literaturen, Epochen und Diskursen (wie z.B. Literatur, Recht und Religion)
+- Gegenstand meiner Habilitationsschrift: 
+	- Ehebruchsnarrative und Leseszenen – Lesen und Lieben – Literatur und zwischenmenschliche Verbindlichkeit
+	- Untersuchung von Literatur aus Antike, Mittelalter, Neuzeit aus verschiedenen europäischen Literaturen
+	- Verbindung mit VL-Thema: Liebe und Recht, gesellschaftliche Ordnung (Nächstenliebe)
+</div>
+
+<aside class="notes"><h2 id="wer-bin-ich-und-was-ist-komparatistik">Wer bin ich und was ist Komparatistik?</h2>
+<p>Vorstellung des Fachs am Beispiel meiner Habil-Schrift</p>
+<ul>
+<li>Vergleich verschiedener Literaturen, Epochen und Diskursen (Literatur, Recht und Religion)</li>
+<li>Thema: Leseszenen, Ehebruchsnarrative – Lesen und Lieben – Literatur und zwischenmenschliche Verbindlichkeit</li>
+<li>Verbindung mit VL-Thema: Liebe und gesellschaftliche Ordnung – wie verhalten sich Liebe und Recht zu einander (Beispiel: Nächstenliebe/caritas und Prinzip der Billigkeit)</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 5%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+<div class="block">
+
+## Liebe, Recht und Gerechtigkeit 
+</div>
+
+
+</div>
+
+<div class="fragment" style="position: absolute; left: 0%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" data-fragment-index="0">
+
+<div class="block">
+
+### Die mosaischen Gesetze
+- vier biblische Bücher voller Gebote, Gesetze und Bundschlüsse 
+- „Gerechtigkeit” durch Gesetzesbefolgung?
+
+### Talionsrecht
+- ["] Ist weiterer Schaden entstanden, dann musst du geben: Leben für Leben, Auge für Auge, Zahn für Zahn, Hand für Hand, Fuß für Fuß, Brandmal für Brandmal, Wunde für Wunde, Strieme für Strieme. (2 Mose 21:23-25)
+</div>
+
+
+
+</div>
+
+<div class="fragment" style="position: absolute; left: 55%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" data-fragment-index="1">
+
+<div class="block">
+
+### Neutestamentarische Nächstenliebe
+- ["] Ihr habt gehört, dass gesagt ist: »Auge um Auge, Zahn um Zahn.« Ich aber sage euch, dass ihr nicht widerstreben sollt dem Bösen, sondern: Wenn dich jemand auf deine rechte Backe schlägt, dem biete die andere auch dar. Und wenn jemand mit dir rechten will und dir deinen Rock nehmen, dem lass auch den Mantel. Und wenn dich jemand eine Meile nötigt, so geh mit ihm zwei. Gib dem, der dich bittet, und wende dich nicht ab von dem, der etwas von dir borgen will. (Matthäus 5, 38-42)
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<aside class="notes"><ul>
+<li>zwei biblische Vorstellungen von Gerechtigkeit </li>
+<li>auch das <strong>Talionsrecht</strong> dient bereits einer Einhegung der Blutrache<ul>
+<li>Teil einer Gesetzessammlung im Anschluss an die 10 Gebote, d.h. Teil der mosaischen Bundes</li>
+<li>Der Rechtssatz wurde in der <a href="https://de.wikipedia.org/wiki/Kirchengeschichte" title="Kirchengeschichte">Kirchengeschichte</a> oft als „Auge <strong>um</strong> Auge, Zahn <strong>um</strong> Zahn…“ übersetzt und als <a href="https://de.wikipedia.org/wiki/Talion" title="Talion">Talionsformel</a> (von lateinisch <em>talio</em>, „<a href="https://de.wikipedia.org/wiki/Vergeltung" title="Vergeltung">Vergeltung</a>“) aufgefasst, die das Opfer oder seine Vertreter auffordere, dem Täter Gleiches mit Gleichem „heimzuzahlen“ bzw. sein Vergehen zu <a href="https://de.wikipedia.org/wiki/S%C3%BChne" title="Sühne">sühnen</a>(„wie du mir, so ich dir“).</li>
+<li>Stuttgarter Erklärungsbibel: „Dieses so genannte Talionsgesetz findet sich auch in 3Mo 24,20 und 5Mo 19,21. Es ist nicht ein primitives »Rachegesetz«, sondern bedeutet im Gegenteil einen wichtigen Schritt in der Entwicklung des Rechtswesens. Die private Vergeltung wird durch einen öffentlichen Rechtsgrundsatz abgelöst, der der persönlichen Willkür Schranken setzt (vgl. 1Mo 4,23-24). Außerdem schützt dieser Grundsatz gerade in seiner Unerbittlichkeit die Gleichheit aller vor dem Gesetz. Es ist nicht vorgesehen, dass die körperliche Strafe in eine Geldstrafe umgewandelt wird. Durch eine solche Ersatzregelung würden die Reichen vor den Armen begünstigt”</li>
+</ul>
+</li>
+<li>Nächstenliebe: Zitate aus der Bergpredigt</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 5%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+<div class="block">
+
+## Komparatistik und Gerechtigkeit – der Begriff Weltliteratur
+</div>
+
+
+</div>
+
+<div class="" style="position: absolute; left: 0%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+- ["] **Weltliteratur**. Gegenstandsbereich der Allgemeinen und Vergleichenden Literaturwissenschaft. [@Birus:2010] 
+<!-- begin::[@Corbineau-2013.md] -->
+- ["] Die **Komparatistik** beschäftigt sich mit all jenen Erscheinungsformen von Literatur, die Sprach- und Nationengrenzen, aber auch die akademischen Demarkationslinien der Künste und Wissenschaften überschreiten. [Sie] beginnt dort, wo die anderen Philologien enden; sie setzt grenzüberschreitend ein, wenn die Nationalphilologien an ihre Grenzen stoßen. Ist schon der Fremdsprachenphilologe in anderen Ländern zu Hause, scheint der Komparatist ein Weltbürger zu sein, dessen Heimat überall dort ist, wo es Literatur gibt. (12) <!-- end::[@Corbineau-2013.md] -->
+ 
+</div>
+
+
+
+</div>
+
+<div class="" style="position: absolute; left: 55%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+<div class="block">
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<aside class="notes"><p>Bild: Goethe mit Telefonhörer
+Zitat: Birus, Art. Weltliteratur, RLL @Birus:2010</p>
+<ul>
+<li>Entstehung der Komparatistik im Zeitalter der Nationalismen (19. Jhdt.) – Gegentendenz zu den Nationalphilologien?</li>
+<li>Goethes Begriff der „Weltliteratur” vs. Nationalliteratur<ul>
+<li>Literatur als Kommunikationsphänomen, das sich nicht an staatlichen Grenzen aufhält</li>
+<li>„Weltliteratur” als inklusives Modell? </li>
+<li>Probleme der Kanonisierung (Selektion und Gatekeeping-Effekte im Weltmarkt der Literatur) </li>
+<li>…und der wissenschaftlichen Kompetenz (Komparatistik bleibt oft eine regionale, i.e. eurozentrische Wissenschaft → @Etiemble:1964 )</li>
+</ul>
+</li>
+<li>Postkoloniale und dekoloniale Perspektiven auf Weltliteratur</div></li>
+</ul>
+</aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 5%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+<div class="block">
+
+## Literatur und Ethik: Zwei Perspektiven
+</div>
+
+
+</div>
+
+<div class="fragment" style="position: absolute; left: 0%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" data-fragment-index="0">
+
+<div class="block">
+
+### historische Perspektive
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Literatur als „Kind ihrer Zeit”, die zeitgenössische Ideale und Werte darstellt bzw. reflektiert
+- Hilfsmittel, um diese Ideale/Werte zu rekonstruieren und zu diskutieren
+- Beispiel: Brecht, *Leben des Galilei* (1939) und historisch-hermeneutische Literaturwissenschaft
+</div>
+
+
+
+</div>
+
+<div class="fragment" style="position: absolute; left: 55%; top: 15%; height: 70%; width: 45%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left" data-fragment-index="1">
+
+<div class="block">
+
+### systematische Perspektive
+- Literatur/Poesie als besondere Sprachform, die eine ethische Erfahrung ermöglicht
+- performative Kraft der Sprache
+- textimmanente Lektüren
+- Beispiel: Celan, *Der Meridian* (1960) und dekonstruktive Literaturtheorie
+</div>
+
+
+
+</div>
+
+
+
+
+
+<aside class="notes"><h2 id="literatur-und-ethikgerechtigkeit">Literatur und Ethik/Gerechtigkeit</h2>
+<p>Bild: Celan &amp; Szondi
+Zitat: Paul Celan, Der Meridian</p>
+<ul>
+<li>historische Perspektive auf Literatur: Literatur als „Kind ihrer Zeit”, die zeitgenössische Ideale und Werte darstellt bzw. reflektiert – Literatur kann dann zum Hilfsmittel werden, um diese Ideale/Werte zu rekonstruieren und zu diskutieren – Beispiel: Brecht, Leben des Galilei</li>
+<li>systematische Perspektive auf Literatur/Poesie: Literatur als besondere Diskursform, deren Umgang mit Sprache eine ethische Erfahrung ermöglicht (weil die Sprache nicht nur beschreibt, sondern sich etwas ereignen lässt) – textimmanente Lektüren, häufig unter Absehen vom historischen Kontext</div></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/c/c7/Paul_Celan_%281938%29.jpg" data-background-size="contain" data-background-position="right" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 45%; display: flex; flex-direction: column; align-items: center; justify-content: space-between" >
+
+## Literatur und Ethik
+
+<!-- begin::[Celan – Meridian (1960).md] -->
+- ["] Das Gedicht ist einsam. Es ist einsam und unterwegs. Wer es schreibt, bleibt ihm mitgegeben. Aber steht das Gedicht nicht gerade dadurch, also schon hier, in der Begegnung – *im Geheimnis der Begegnung?* Das Gedicht will zu einem Andern, es braucht dieses Andere, es braucht ein Gegenüber. Es sucht es auf, es spricht sich ihm zu. Jedes Ding, jeder Mensch ist dem Gedicht, das auf das Andere zuhält, eine Gestalt dieses Anderen. <!-- end::[Celan – Meridian (1960).md] -->
+
+Paul Celan (1920-1970): *Der Meridian*. Rede zur Verleihung des Büchner-Preises 1960
+</div>
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Paul_Celan" title="Paul Celan im Alter von 18 Jahren (Passfoto, 1938)" target="_blank">Paul Celan (1938)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+<aside class="notes"><ul>
+<li>Eingehen auf Celan und seine Bedeutung für die deutschsprachige Komparatistik (über Szondi)</div></li>
+</ul>
+</aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Franz_Kafka%2C_1923.jpg/960px-Franz_Kafka%2C_1923.jpg" data-background-size="contain" data-background-position="left" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="" style="font-size: smaller; position: absolute; left: 0%; top: 0%; height: 100%; width: 45%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+## Kafka: Vor dem Gesetz (1915)
+
+<!-- begin::[Kafka – Vor dem Gesetz (1915).md] -->
+- ["] Vor dem Gesetz steht ein Türhüter. Zu diesem Türhüter kommt ein Mann vom Lande und bittet um Eintritt in das Gesetz. Aber der Türhüter sagt, daß er ihm jetzt den Eintritt nicht gewähren könne. Der Mann überlegt und fragt dann, ob er also später werde eintreten dürfen. „Es ist möglich“, sagt der Türhüter, „jetzt aber nicht.“
+- ["] Nun lebt er nicht mehr lange. Vor seinem Tode sammeln sich in seinem Kopfe alle Erfahrungen der ganzen Zeit zu einer Frage, die er bisher an den Türhüter noch nicht gestellt hat. Er winkt ihm zu, da er seinen erstartenden Körper nicht mehr aufrichten kann Der Türhüter muß sich tief zu ihm hinunterneigen, denn der Größenunterschied hat sich sehr zuungunsten des Mannes verändert. „Was willst du denn jetzt noch wissen?“ fragt der Türhüter, „du bist unersättlich.“ „Alle streben doch nach dem Gesetz“, sagt der Mann, „wieso kommt es, daß in den vielen Jahren niemand außer mir Einlaß verlangt hat?“ Der Türhüter erkennt, daß der Mann schon an seinem Ende ist, und, um sein vergehendes Gehör noch zu erreichen, brüllt er ihn an: „Hier konnte niemand sonst Einlaß erhalten, denn dieser Eingang war nur für dich bestimmt. Ich gehe jetzt und schließe ihn.“
+<!-- end::[Kafka – Vor dem Gesetz (1915).md] -->
+
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Franz_Kafka" title="Franz Kafka (1923)" target="_blank">Franz Kafka (1923)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+<aside class="notes"><ul>
+<li>Dieser Text dauert gelesen ca. 5 Minuten: <a href="https://de.wikipedia.org/wiki/Datei:05_-_Franz_Kafka_-_Ein_Landarzt_-_Vor_dem_Gesetz_-_gelesen_von_-_Hans_Joerg_Grosse_-_Berlin_2010.ogg">Gelesen von H.J. Grosse bei wikipedia</a></li>
+<li>Volltext bei <a href="https://www.textlog.de/kafka/erzaehlungen/vor-dem-gesetz">textlog</a></li>
+<li>ich sehe ihn irgendwie als Antwort auf Celans Gedicht, das den Anderen sucht</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<aside class="notes"><h2 id="recht-und-gerechtigkeit-in-der-literatur">Recht und Gerechtigkeit in der Literatur</h2>
+<!-- begin::[RVL KuWi 25 – Notizen.md] -->
+<h2 id="sitzungsübersicht">Sitzungsübersicht</h2>
+<ol>
+<li>04.11. Was ist Komparatistik? Was hat sie mit Recht und Gerechtigkeit zu tun? → Geschichte des Fachs und heutige Entwicklungen (dekoloniale Komparatistik); Recht und Gerechtigkeit als Thema in den Literaturen (Beispiele: Homer, Odyssee; Bibel: AT/NT); Vorbereitung Exkursion: Wer war Marc Aurel und „was ist gute Herrschaft”?</li>
+<li>07.11. Exkursion Trier – Gute Herrschaft 1</li>
+<li>11.11. Gericht und Theatralität</li>
+<li>14.11. Nachbereitung Exkursion Trier – Gute Herrschaft 2 (via Teams)</li>
+<li>18.11. Rache und Gerechtigkeit</li>
+<li>21.11. <em>fällt aus</em><!-- end::[RVL KuWi 25 – Notizen.md] -->
+</div></li>
+</ol>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<aside class="notes"><p>Bild: Website Landesmuseum?</p>
+<h2 id="vorbereitung-der-exkursion">Vorbereitung der Exkursion</h2>
+<ul>
+<li>Infos zur Exkursion</li>
+<li>Zusammenhang: Herrschaft des Rechts = Gute Herrschaft?</li>
+<li>Hintergrund zu Marc Aurel (121–180)<ul>
+<li>„Philosophenkaiser” = philosophisch begründete Leitlinien der Selbstführung und Herrschaft – stoische Philosophie – gute Herrschaft setzt Selbstbeherrschung voraus – Seitenblick auf Senecas Herrscherfiguren? – philosophische Reflexion zur Bewahrung vor Versuchung der Tyrannei</li>
+<li><em>Selbstbetrachtungen</em> als philosophisches und literarisches Dokument – Auszüge zu Selbstdisziplin und Herrschaftsprinzipien (s. <a href="https://de.wikipedia.org/wiki/Mark_Aurel#Politische_Leits%C3%A4tze">wikipedia</a>) – Ideale: Gleichheit vor dem Recht, Selbstbeherrschung, Sachlichkeit, Pragmatismus</li>
+<li>Kontrastvergleich zu Macchiavelli, <em>Il Principe</em></div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
