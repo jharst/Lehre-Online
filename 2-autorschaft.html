@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Konzeptuelles Schreiben und Autorschaft</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('./Resources/images/Goethe-mit-Smartphone.jpg'); background-size: cover; background-position: left; transform: scaleX(-1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Autorschaft und digitale Literatur</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+
+
+
+2. Konzeptuelles Schreiben und Autorschaft
+
+<aside class="notes"><ul>
+<li>Übersicht über Autorschaftsbegriffe 1700-&gt;2000</li>
+<li>Beispiel für barocke Sprach-Kombinatorik (Enzensberger, Harsdörffer)</li>
+<li>Sol Le Witt</li>
+<li>Queneau: Cent mille milliards de poèmes</li>
+<li>Enzensberger</li>
+<li>Referate verteilen</li>
+<li>Bajohrs Text besprechen, Fragen in Gruppenarbeit entwickeln und danach diskutieren</div>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"></p>
+<div class="right-top-div" style="background-image: url('./Resources/images/Goethe-mit-Smartphone.jpg'); background-size: cover; background-position: right;">
+</div>
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Johann_Wolfgang_von_Goethe" title="Goethe mit Smartphone. Auf der Vorlage eines historischen Portraits von J.K. Stieler (1828) generiert durch ChatGPT." target="_blank">Goethe mit Smartphone (ChatGPT).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Seminarplan und Referate
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="mermaid">
+timeline
+    title Autorschaftskonzepte in der Literaturgeschichte
+
+    17. Jahrhundert: Regelpoetik (Barock und Klassizismus)
+    : Autorschaft als Handwerk, das festen Regeln folgt.
+
+    18. Jahrhundert: Geniekult (Sturm und Drang)
+    : Der Autor als schöpferisches Genie, das durch Inspiration und Originalität glänzt.
+
+    Frühes 19. Jahrhundert: Romantik
+    : Autorschaft als Ausdruck der inneren Welt des Künstlers.
+
+    Frühes 20. Jahrhundert: Dadaismus
+    : Der Autor als Provokateur, der die Rolle des Zufalls und der Absurdität betont.
+
+    Frühes bis mittleres 20. Jahrhundert: Surrealismus
+    : Der Autor als Medium des Unbewussten, automatisches Schreiben und Träume.
+
+    Mitte des 20. Jahrhunderts: Cut-Up-Techniken
+    : Fragmentierung und Zufälligkeit in der Literatur.
+
+    Mitte bis spätes 20. Jahrhundert: Konzeptkunst
+    : Die Idee oder das Konzept steht im Vordergrund, der Autor als Ideengeber.
+
+    1960er Jahre: Literatur als Diskursarchiv
+    : Literatur als Sammelbecken von Diskursen und Texten.
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://ap.chroniques.it/content/images/2019/09/T01766_10.jpg" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 2.5%; top: 90%; height: 10%; width: 95%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+## Sol LeWitt (1928–2007): Wall Drawings als Konzeptkunst
+</div>
+
+<div class="right-image-source"><a href="https://www.tate.org.uk/art/artists/sol-lewitt-1504" title="Sol LeWitt: A Wall Divided Vertically into Fifteen Equal Parts, Each with a Different Line Direction and Colour, and All Combinations, 1970" target="_blank">Sol LeWitt: Wall Drawing (1970)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://www.whitneyannetrettien.com/arscombinatoria/images/denckring.JPG" data-background-size="contain" data-background-position="center" background-color="lightgrey" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://directory.eliterature.org/individual-work/574" title="G.Ph. Harsdörffer: Fünffacher Deckring der Teutschen Sprache, 1651" target="_blank">Harsdörffer: Denckring (1651)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+- ["] \[I\]n using the Denckring the poet is not locating an item in a list, but dynamically generating meaning in the moment. That is, the very motion of the poet's hand assembles a whole word out of dissembled parts, engaging the baroque spirit of inventio. More than a mere storage device, then, the Denckring is a writing technology, mediating the relationship between the poet's physical body and the generated text.
+- ["] By replacing the text of an authored poem with the structure that produces it, it is an important \[…\] precursor to generative, combinatory, and reader-driven electronic poetry, and provides an early model for databases and human-computer interaction systems. ([Electronic Literature Directory](https://directory.eliterature.org/individual-work/574))
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+- ["] Ein gewisser Herr M. in Göttingen rühmt sich eine poetische Handmühle erfunden zu haben, durch welche man Oden von aller Gattung ganz mechanisch verfertigen könnte. Es sollen in verschiedenen Sammlungen schon Producten von derselben stehn, die kaum der Kenner von denen aus freyer Faust gemachten unterscheiden würde. Die Einrichtung der Maschine hat viele Aehnlichkeit mit einer großen Seidenzwirnmühle; die Kraft die sie in Bewegung sezt, ist der Wind. (Hessen-Darmstädtische privilegierte Landzeitung vom 30. Juli 1777; zit. nach @Enzensberger-2000, 11).
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://i.pinimg.com/originals/c3/1b/3c/c31b3c0f455a104153b11bd02ae4c1d3.png" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="background: #DFE1E175; border-radius: 5px; padding: 10px; position: absolute; left: 0%; top: 5%; height: 90%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+## Queneau: Cent mille millards de poèmes (1961)
+
+>The staggering result of this combinatory approach to the writing of a poem is made clear by Queneau in his preface to the original printing of the poem. Queneau notes that it would take more than a million centuries to finish the work, if one read at the rate of one sonnet per minute for eight hours a day, two hundred days per year.
+>The composition of "100,000,000,000,000 Poems" led, in part, to the founding of the OULIPO (_ouvroir de littérature potentielle_ or the workshop of potential literature). ([Electronic Literature Directory](https://directory.eliterature.org/individual-work/374))
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/b/b3/Der_Landsberger_Poesieautomat_von_Hans_Magnus_Enzensberger.jpg" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="background: #DFE1E175; border-radius: 5px; padding: 10px; position: absolute; left: 2.5%; top: 50%; height: 50%; width: 95%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+## Enzensberger: Poesie-Automat (1970/2000)
+
+Wer aus einer endlichen Menge von Sprachelementen, einem Lexikon, auf Grund eines Systems von Verfahrensregeln, deren Repertoire ebenfalls endlich ist, eine unendlich große Zahl von verschiedenen Sätzen zu erzeugen vermag, von dem sagt man, er spreche (oder schreibe) eine Sprache. Wenn man Lust dazu hat, kann man einen solchen Sprecher als einen Automaten betrachten, der mit Hilfe eines Programms, der Grammatik, und eines Speichers, des Lexikons, beliebig viele »richtige« Lösungen auswirft. (Enzensberger, *Einladung zu einem Poesieautomaten*, Frankfurt a.M. 2000, S. 17)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<split even gap="2" >
+<img src="https://hannesbajohr.de/wp-content/uploads/2017/10/Bajohr-Halbzeug-Cover.jpg" alt="Halbzeug" style="object-fit: scale-down">
+
+<img src="https://hannesbajohr.de/wp-content/uploads/2015/12/imgcodeundkonzeptcover.png" alt="Bajohr2" style="object-fit: scale-down">
+
+</split>
+
+## Hannes Bajohr (\*1984): Autor und Literaturwissenschaftler
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Konzeptuelles Schreiben und Autorschaft</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://hannesbajohr.de/wp-content/uploads/2015/12/imgcodeundkonzeptcover.png'); background-size: contain; background-position: right;"></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gruppenarbeit
+Lesen Sie eine Seite aus Bajohrs Aufsatz gemeinsam und notieren Sie sich mindestens eine Frage, die Sie zu dem Text haben. Im Anschluss werden wir diese Frage gemeinsam erörtern.
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Konzeptuelles Schreiben und Autorschaft</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://hannesbajohr.de/wp-content/uploads/2015/12/imgcodeundkonzeptcover.png'); background-size: contain; background-position: right;"></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Code und Konzept
+- was ist konzeptuelle Literatur? (7)
+- technische Bestimmung digitaler Literatur
+	- Produktions- und Rezeptionsform (8)
+	- These: Code:Output = Konzept:Werk (12)
+- historisch-epistemologische Bestimmung digitaler Literatur
+	- neuer Wirklichkeitsbegriff → „Abwendung von allem Kreativen” (13)
+	- Frage: Konzept:Werk = Geist:Maschine (16)?
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                RevealMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+                mangle: false,
+                pedantic: false,
+                smartLists: false,
+                smartypants: false,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04,"mermaid":{"theme":"forest"}}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
