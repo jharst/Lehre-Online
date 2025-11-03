@@ -7,6 +7,11 @@
   /* Enable pointer events so users can click and drag on scrollbars */
   pointer-events: auto !important;
 }
+
+.reveal .slides {
+  /*margin: 2% 0 0 2%;*/
+}
+
 .reveal mark {
   background-color: #772F8B75;
   border-radius: 2px;
@@ -81,16 +86,20 @@ ul.embedded-quote-block li::before {
 /*====== MERMAID ===========*/
 
 .reveal .mermaid {   
-  min-width: 80%; 
-  max-height: auto;
+  display: flex; /* Flexbox für die Zentrierung */
+  justify-content: center; /* Horizontale Zentrierung */
+  align-items: center; /* Vertikale Zentrierung */
+  height: 100vh; /* Höhe auf 95% des Viewports beschränken */
+  width: 100vw; /* Breite auf 95% des Viewports beschränken */
+  margin: 0 auto;
 }
 
 .reveal .mermaid svg {   
   max-width: 100% !important;
-   max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  font-size: 12px;
 }
 
 .reveal .mermaid svg .edgeLabel {   
@@ -293,3 +302,16 @@ ul.embedded-quote-block li::before {
   margin-bottom: 30px;
   padding-bottom: 30px;
   }
+
+/* IMAGE CAPTION */
+.testcap {
+  display: block;
+  margin-top: -.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: smaller;
+  font-family: sans-serif;
+  text-align: center;
+}
