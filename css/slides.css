@@ -23,6 +23,14 @@
   text-decoration: none;
 }
 
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  font-size: 0.8em;
+  background-color: lightslategray;
+  border-radius: 5px;
+  padding: 2px;
+}
 
 /*======= BLOCKQUOTES ==============*/
 /* Blockquote definition: white.css */
@@ -117,7 +125,8 @@ ul.embedded-quote-block li::before {
 /* ----------------------- */
 .reveal h1, h2, h3, h4 {
   font-family: 'Verdana', sans-serif !important;
-  margin-bottom: 1em !important;
+  margin-bottom: 0.5em !important;
+  margin-top: 1em !important;
 }
 
 .reveal h1, h2, h3 {
