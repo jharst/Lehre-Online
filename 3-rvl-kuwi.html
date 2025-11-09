@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Gericht und Theatralität</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('./Resources/images/RVL-KuWi-Justitia-marmor.jpg'); background-size: cover; background-repeat: no-repeat; background-position: 30% 0;  transform: scaleX(-1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Recht und Gerechtigkeit<br>Interdisziplinäre Einführung in die Kulturwissenschaften</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: center; justify-content: center" id="title">
+
+
+
+
+2. Gericht und Theatralität
+
+<aside class="notes"><ul>
+<li><input checked="" disabled="" type="checkbox"> Gerichtsszene auf dem Schild des Achilles <em>(Ilias)</em></li>
+<li><input checked="" disabled="" type="checkbox"> Hintergründe zur Orestie und zum Areopag</li>
+<li><input checked="" disabled="" type="checkbox"> Portias Rede über Recht, Rache und Gnade („when mercy seasons justice”); Greiner, Tragödienbuch?</li>
+<li><input disabled="" type="checkbox"> Szene aus Kleists Zerbrochnem Krug?</div>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="./Resources/images/RVL-KuWi-Justitia-marmor.jpg" data-background-size="cover" data-background-position="right" data-background-opacity="0.7" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[RVL KuWi 25 – Notizen.md] -->
+## Sitzungsübersicht
+1. 04.11. Einführung
+2. 07.11. Exkursion Trier – Gute Herrschaft 1
+3. 11.11. Gericht und Theatralität
+4. 14.11. Nachbereitung Exkursion Trier – Gute Herrschaft 2 (via Teams)
+5. 18.11. Rache und Gerechtigkeit
+6. 21.11. *fällt aus*
+<!-- end::[RVL KuWi 25 – Notizen.md] -->
+
+</div>
+
+<!-- .element: style="background-color: #DFE1E190; border-radius: 5px; position: absolute; left: 15%; top: 25%; height: 50%; width: 70%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('https://bilder.deutschlandfunk.de/08/32/13/e8/083213e8-90d7-44c1-be77-b31fdb6a09df/richter-am-bundes-verfassungs-gericht-100-1920x1080.jpg')">
+</div>
+
+#### Richter:innen am Bundesverfassungsgericht
+
+<aside class="notes"><ul>
+<li>Ausgang von einer realen Gerichtsszene: Warum tragen Richter Talare? → Analogie zwischen Richter (Amt/Mensch) und Schauspieler (Rolle/Mensch)</li>
+<li>Struktur der Sitzung<ul>
+<li>systematische Zusammenhänge zwischen Gericht/Prozess und Theater</li>
+<li>drei historische Beispiele für Dramen, in denen Gerichtsszenen zentral sind und die Theatralität des Gerichts reflektieren</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('https://bilder.deutschlandfunk.de/08/32/13/e8/083213e8-90d7-44c1-be77-b31fdb6a09df/richter-am-bundes-verfassungs-gericht-100-1920x1080.jpg'); opacity: 0.5;">
+</div>
+
+<div class="block">
+
+## Gericht und Theatralität
+- Talar: Unterscheidung zwischen Amts- und Privatperson
+- Prozess: „Wiederaufführung der Tat im symbolischen Raum” (Vismann 2011, 31)
+	- Verarbeitung des Vorgefallenen
+	- Abschluss mit der Vergangenheit
+- vs. nicht-symbolische Rechtspraktiken (Blutrache)
+
+Quelle: Vismann, Cornelia. (2011). *Medien der Rechtsprechung* (A. Kemmerer & M. Krajewski, Hrsg.). Fischer.
+</div>
+
+<!-- .element: style="background-color: #DFE1E195; border-radius: 5px; position: absolute; left: 10%; top: 25%; height: 50%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+<aside class="notes"><ul>
+<li>Verweis auf die grundlegenden Forschungen von Cornelia Vismann – „das Theater des Gerichts leistet die Wiederaufführung der Tat im symbolischen Raum” [@Vismann:2011, 31] und ermöglicht einen Abschluss mit der Vergangenheit – grundsätzlicher Unterschied gegenüber nicht-symbolischen Praktiken (Blutrache, Talionsrecht)</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Gericht und Theatralität</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/95/Angelo_monticelli_shield-of-achilles.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Shield_of_Achilles" title="Der Schild des Achilles nach der Interpretation von Angelo Monticelli aus Le Costume Ancien ou Moderne, um 1820." target="_blank">A. Monticelli: Der Schild des Achilles (1820)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Der Schild des Achilles
+- *Ilias*: homerisches Kriegsepos, 8 Jhdt. v.Chr., zentrale Stoffe bedeutend älter
+- *Der Schild*: symbolische Darstellung des griechischen Kosmos in einer geschlossenen Form
+	- Darstellung verschiedener kultureller Praktiken
+	- darunter: Eheschließung und Rechtsprechung
+
+<aside class="notes"><ul>
+<li>historische Perspektive: <ul>
+<li>→ antikes Griechenland, Schwurgericht (Szene aus <em>Ilias</em>), Rechtsprechung als sprachmagische Handlung, Bedeutung von Formeln und Rhythmen</li>
+<li>attische Demokratie und deliberative Prozessform, Instanzen des Prozesses, Bedeutung der Rhetorik, Sprache und Darstellung, „Evidenz” – hier keine Sprachmagie mehr, aber sprachliche Veranschaulichung – Stellenwert der Symbolisierung/Versprachlichung: Gerechtigkeit als Ersatzhandlung</li>
+<li>NB: fundamentale Bedeutung des römischen Rechts für unsere Rechtsvorstellung (Grundlage für BGB)</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[Homer – Ilias – Rundschild.md] -->
+## Rechtssprechung
+<p>Das Volk aber war auf dem Markt versammelt. Dort hatte ein Streit<br>
+Sich erhoben: zwei Männer stritten um das Wergeld<br>
+Für einen erschlagenen Mann. Der eine gelobte, dass er alles erstattet habe,<br>
+Und tat es dem Volke dar, der andere leugnete: nichts habe er empfangen. <br>
+Und beide begehrten, beim Schiedsmann einen Entscheid zu erlangen.<br>
+Und das Volk schrie beiden zu, hüben und drüben als Helfer.<br>
+Und Herolde hielten das Volk zurück, die Ältesten aber<br>
+Saßen auf geglätteten Steinen im heiligen Ring.<br>
+Und sie hielten die Stäbe von den Herolden, den Luftdurchrufenden, in den Händen;<br>
+Mit denen sprangen sie dann auf und taten abwechselnd ihren Spruch.<br>
+In der Mitte aber lagen zwei Pfunde Goldes,<br>
+Um sie dem zu geben, der unter ihnen das Recht am geradesten spreche.<br>
+</p>
+
+Ilias, 18, vv. 490–508. Übersetzung: Wolfgang Schadewaldt.
+<!-- end::[Homer – Ilias – Rundschild.md] -->
+
+</div>
+
+<!-- .element: style="font-size: smaller" id="poem" -->
+<aside class="notes"><ul>
+<li>Wie wird hier Recht gesprochen? Welche Aspekte erkennen wir wieder, welche sind fremd?</li>
+<li>Wergeld</li>
+<li>Verbindung von Recht und „rechts” bzw. „gerade”</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">3. Gericht und Theatralität</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/81/Orestes_Pursued_by_the_Furies_by_William-Adolphe_Bouguereau_%281862%29_-_Google_Art_Project.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Orestes" title="William Adolpge Bougereau: Orest, von den Furien verfolgt (1862). Öl auf Leinwand. 227 x 278 cm. Chrysler Museum of Art, Norfolk, Virginia" target="_blank">Bougereau: Orest (1862).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Aischylus: Orestie
+- Ursprünge des tragischen Theaters (Opferkult, Säkularisierung)
+- Aufführungspraxis (Gerichtssituation)
+- Aischylos (525–456 v.Chr.), *Orestie* (458 v.Chr.)
+- Handlung: 
+	- generationenübergreifende Blutrache
+	- personifizierte Schuld (Erinnyen)
+	- zuletzt durch Prozess gelöst (Athene)
+- Zusammenhang mit Institutionalisierung eines historischen Blutsgerichts (Areopag)
+
+<aside class="notes"><ul>
+<li>Aufführungspraxis von Tragödien (Gerichtssituation) und ihr Zusammenhang mit Dionysos-Kult – Performanz und Magie</li>
+<li>Aischylos (525–456 v.Chr.), Orestie (458 v.Chr.)</li>
+<li><em>Handlung der Orestie</em>: Rückbezug Ilias/Opferhandlung Agamemnons, Tötung Agamemnons, Tötung Kytaimnestras durch Orestes, Erinnyen fordern ihr Recht, Blutgericht (Areopag), entscheidende Stimme Athenes, Erinnyen werden zu Eumeniden und Schutzgöttinnen Athens → Blutschuld gelöst, Gericht institutionalisiert</li>
+<li>Zusammenhang mit historischer Institutionalisierung des Areopags</li>
+<li>wird hier eine gerechte Entscheidung propagiert oder geht es ums Prinzip?</div>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">3. Gericht und Theatralität</p>
+<div class="right-top-div" style="background-image: url('https://static.unotate.com/illustrations/falstaff/2/X/X/2XXwbfwM8tr3/full.png'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://www.unotate.com/shakespeare/merchant-of-venice/gallery/2XXwbfwM8tr3" title="Darstellung einer Inszenierung der Gerichtsszene. Um 1900. Keine weiteren Infos verfügbar" target="_blank">Merchant of Venice: Trial Scene (ca. 1900).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Shakespeare: Merchant of Venice (1596/98)
+**Figurenkonstellation und Handlung**
+
+- Verlobungsgeschichte (Bassanio, Portia)
+- Schuldgeschichte (Antonio, Shylock)
+- Inszenierter Prozess (Parteien: Antonio, Shylock; Richter: Portia/Balthasar)
+
+<aside class="notes"><ul>
+<li>William Shakespeare (1564–1616), <em>Merchant of Venice</em> (1596/1598, Druckausgabe 1600, Uraufführung 1605), Vorlagen: Gesta Romanorum</li>
+<li>zeitgenössische Aufführungspraxis?</li>
+<li><em>Figurenkonstellation und Handlung</em>: Hintergrund: Verhältnis Christen/Juden – Geldverleiher Shylock; Brautwerbung Bassanio → Portia; Antonio nimmt bei Shylock Schulden auf, um Bassanio unterstützen zu können; Schuldversprechen: ein Pfund Fleisch statt Zinsen; Antonios Schiffe gehen unter; Shylock fordert Geld; inszenierter Prozess mit Portia als verkleideter Advokat Balthasar<ul>
+<li>inszenierter Prozess am Hof des Dogen</li>
+<li>christlicher Begriff der Gnade und Nächstenliebe</li>
+<li>vs. „jüdischer” Wortglaube</li>
+<li>Demütigung, Konfiskation, Zwangskonversion</li>
+<li>Heirat Bassanio &amp; Portia sowie Lorenzo &amp; Jessica (die zum Christentum konvertiert → weitere Demütigung)</li>
+</ul>
+</li>
+</ul>
+</div>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- SHAKESPEARE: PORTIA ON MERCY-->
+
+<split even style="overflow: auto; text-align: left; font-size: smaller; padding-left: 20px !important;">
+<div style="font-size: smaller;">
+
+<!-- begin::[Shakespeare – Merchant 4.1.md] -->
+### Portia on Mercy
+PORTIA, ⌜as Balthazar⌝   
+ Is your name Shylock?  
+SHYLOCK   Shylock is my name.  
+PORTIA, ⌜as Balthazar⌝   
+ Of a strange nature is the suit you follow,  
+ Yet in such rule that the Venetian law  
+ Cannot impugn you as you do proceed.  
+ ⌜To Antonio.⌝ You stand within his danger, do you  
+ not?  
+ANTONIO   
+ Ay, so he says.  
+PORTIA, ⌜as Balthazar⌝   Do you confess the bond?  
+ANTONIO   
+ I do.  
+PORTIA, ⌜as Balthazar⌝   Then must the Jew be merciful.
+SHYLOCK   
+ On what compulsion must I? Tell me that.
+PORTIA, ⌜as Balthazar⌝   
+ The quality of mercy is not strained.  
+ It droppeth as the gentle rain from heaven  
+ Upon the place beneath. It is twice blest:  
+ It blesseth him that gives and him that takes.  
+ ’Tis mightiest in the mightiest; it becomes  
+ The thronèd monarch better than his crown.  
+ His scepter shows the force of temporal power,  
+ The attribute to awe and majesty  
+ Wherein doth sit the dread and fear of kings;  
+ But mercy is above this sceptered sway.  
+ It is enthronèd in the hearts of kings;  
+ **It is an attribute to God Himself;**  
+ **And earthly power doth then show likest God’s**  
+ **When mercy seasons justice. Therefore, Jew,**  
+ **Though justice be thy plea, consider this:**  
+ **That in the course of justice none of us**  
+ **Should see salvation. We do pray for mercy,**  
+ **And that same prayer doth teach us all to render**  
+ **The deeds of mercy.** I have spoke thus much  
+ To mitigate the justice of thy plea,  
+ Which, if thou follow, this strict court of Venice  
+ Must needs give sentence ’gainst the merchant  
+ there.  
+SHYLOCK   
+ My deeds upon my head! I crave the law,  
+ The penalty and forfeit of my bond.
+<!-- end::[Shakespeare – Merchant 4.1.md] -->
+
+</div>
+<div style="font-size: smaller;">
+
+<!-- begin::[Shakespeare – Merchant 4.1 dt.md] -->
+### Porzia über Gnade
+PORZIA.   
+ Eu'r Nam' ist Shylock?
+SHYLOCK.   
+ Shylock ist mein Name.
+PORZIA.   
+ Von wunderlicher Art ist Euer Handel,   
+ Doch in der Form, daß das Gesetz Venedigs   
+ Euch nicht anfechten kann, wie Ihr verfahrt. –   
+ Ihr seid von ihm gefährdet, seid Ihr nicht?   
+ANTONIO.   
+ Ja, wie er sagt.   
+PORZIA.   
+ Den Schein erkennt Ihr an?   
+ANTONIO.   
+ Ja.   
+PORZIA.   
+ So muß der Jude Gnad' ergehen lassen.   
+SHYLOCK.   
+ Wodurch genötigt, muß ich? Sagt mir das!   
+PORZIA.   
+ Die Art der Gnade weiß von keinem Zwang,   
+ Sie träufelt, wie des Himmels milder Regen,   
+ Zur Erde unter ihr; zwiefach gesegnet:   
+ Sie segnet den, der gibt, und den, der nimmt;   
+ Am mächtigsten in Mächt'gen, zieret sie   
+ Den Fürsten auf dem Thron mehr wie die Krone;   
+ Das Szepter zeigt die weltliche Gewalt,   
+ Das Attribut der Würd' und Majestät,   
+ Worin die Furcht und Scheu der Kön'ge sitzt.   
+ Doch Gnad' ist über diese Szeptermacht,   
+ Sie thronet in dem Herzen der Monarchen,   
+ **Sie ist ein Attribut der Gottheit selbst,**   
+ **Und ird'sche Macht kommt göttlicher am nächsten,**   
+ **Wenn Gnade bei dem Recht steht; darum, Jude,**   
+ **Suchst du um Recht schon an, erwäge dies:**   
+ **Daß nach dem Lauf des Rechtes unser keiner**   
+ **Zum Heile käm'; wir beten all' um Gnade,**   
+ **Und dies Gebet muß uns der Gnade Taten**   
+ **Auch üben lehren.** Dies hab' ich gesagt,   
+ Um deine Foderung des Rechts zu mildern:   
+ Wenn du darauf bestehst, so muß Venedigs   
+ Gestrenger Hof durchaus dem Kaufmann dort   
+ Zum Nachteil einen Spruch tun.   
+SHYLOCK.   
+ Meine Taten   
+ Auf meinen Kopf! Ich fodre das Gesetz,   
+ Die Buße und Verpfändung meines Scheins.
+<!-- end::[Shakespeare – Merchant 4.1 dt.md] -->
+
+</div>
+</split>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">3. Gericht und Theatralität</p>
+<div class="right-top-div" style="background-image: url('https://static.unotate.com/illustrations/falstaff/2/X/X/2XXwbfwM8tr3/full.png'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://www.unotate.com/shakespeare/merchant-of-venice/gallery/2XXwbfwM8tr3" title="Darstellung einer Inszenierung der Gerichtsszene. Um 1900. Keine weiteren Infos verfügbar" target="_blank">Merchant of Venice: Trial Scene (ca. 1900).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Shakespeare: Merchant of Venice (1596/98)
+**Diskussion**
+
+- Portias Rede: Rache, Recht und Gnade
+- ein Schauprozess?
+- Judentum und Christentum: Antisemitismus?
+- Gerechtigkeit oder Rache?<br>Komödie oder Tragödie?
+
+<aside class="notes"><ul>
+<li>das Judentum als Wortglaube – Paulus: Beschneidung des Herzens</div>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">3. Gericht und Theatralität</p>
+<div class="right-top-div" style="background-image: url('http://www.goethezeitportal.de/fileadmin/Images/db/wiss/bildende_kunst/illustrationen/kleist/der_zerbrochene_krug_menzel/42_Kleist_Ausschnitt_Krug_Menzel__700x580_.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="http://www.goethezeitportal.de/wissen/illustrationen/heinrich-von-kleist/heinrich-von-kleist-der-zerbrochene-krug-illustriert-von-adolph-menzel.html" title="Adolph Menzel: Illustration zum Zerbrochnen Krug (1877)." target="_blank">A. Menzel: Der Zerbrochne Krug (1877).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Kleist: Der zerbrochne Krug (1811)
+**Figurenkonstellation und Handlung**
+- Kombination von zwei Vorlagen: biblischer Sündenfall und *König Ödipus* (Sophokles)
+- Verlobungsgeschichte (Ruprecht, Eve)
+- Schuldgeschichte (Ruprecht, Adam, Eve)
+- inszenierter Prozess (Parteien: Marte, Ruprecht; Richter: Adam)
+- Zuschauer: Gerichtsrat Walter
+
+<aside class="notes"><ul>
+<li>Heinrich von Kleist (1777-1811), <em>Der zerbrochne Krug</em> (Druckfassung 1811, Uraufführung 1808 am Hoftheater in Weimar &gt; inszeniert durch Konkurrent Goethe, Flop!)</li>
+<li>zeitgenössische Aufführungspraxis?</li>
+<li>Vorlagen: König Ödipus (analytisches Gerichtsdrama, untersuchender Richter ist zugleich Schuldiger) und biblischer Sündenfall (hier: Verlust der Unschuld im geschlechtlichen Sinn, dargestellt im Zerbrechen des Kruges)</li>
+<li>Figurenkonstellation und Handlung (fokussiert auf Theatralität des Gerichts): <ol>
+<li>Marthe, Ruprecht, Eve, Adam – „Schauprozess”, Problem: Richter ist in die Tat verstrickt, sowohl Richter als auch Klägerin stehen der Symbolisierung/Versprachlichung entgegen</li>
+<li>Schreiber Licht, Gerichtsrat Walter – „Beurteilung des Prozesses”</div>
+</div></li>
+</ol>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">3. Gericht und Theatralität</p>
+<div class="right-top-div" style="background-image: url('http://www.goethezeitportal.de/fileadmin/Images/db/wiss/bildende_kunst/illustrationen/kleist/der_zerbrochene_krug_menzel/42_Kleist_Ausschnitt_Krug_Menzel__700x580_.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="http://www.goethezeitportal.de/wissen/illustrationen/heinrich-von-kleist/heinrich-von-kleist-der-zerbrochene-krug-illustriert-von-adolph-menzel.html" title="Adolph Menzel: Illustration zum Zerbrochnen Krug (1877)." target="_blank">A. Menzel: Der Zerbrochne Krug (1877).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Kleist: Der zerbrochne Krug (1811)
+**Diskussion**
+- scheiternde Symbolisierung
+- scheiternde Differenzierung (Amt/Mensch)
+- Rolle des Zuschauers
+
+<aside class="notes"><ul>
+<li>scheiternde Symbolisierung: der Schaden, um den es geht, ist bereits symbolisch (der zerbrochene Krug steht für den Verlust der Unschuld); das kann nicht weiter versprachlicht werden; zudem wirkt der schuldige Richter jeder sachlichen Versprachlichung entgegen; er ist als „Adam” „der Mensch” schlechthin, nicht der Richter</li>
+<li>Einbezug eines (urteilenden) Zuschauers in das Theater des Gerichts</li>
+<li>grundsätzliche Problematik: was ermächtigt/ermöglicht es einem Menschen, über andere zu richten?</div>
+</div></li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml-full.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
