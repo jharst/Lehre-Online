@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Konnektionistisches Paradigma (Passig, Guse/Becker)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('./Resources/images/Goethe-mit-Smartphone.jpg'); background-size: cover; background-position: left; transform: scaleX(-1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Autorschaft und digitale Literatur</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+
+
+
+5. Sitzung: Konnektionistisches Paradigma
+<aside class="notes"><ul>
+<li>Einführung: sequenzielles vs. konnektionistisches Paradigma<ul>
+<li>sequenziell: erläutert am Beispiel des Poesie-Automaten</li>
+</ul>
+</li>
+<li>Autorschaft problematisieren</div>
+</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-10%, 50%); transform-origin: left top;">3. Sequentielles Paradigma: Enzensberger</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.boell.de/sites/default/files/styles/var_larger/public/uploads/2014/10/hme_poesiautomat.jpg.webp?itok=bzQzpUES'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://www.boell.de/de/2014/11/11/von-hans-magnus-enzensberger-lernen" title="»Der Poesieautomat von Hans Magnus Enzensberger in Landsberg« Abbildung: Fabienne Wassermann." target="_blank">Enzensbergers Poesieautomat.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Sequentielles Paradigma
+- Beispiel [Poesie-Automat](https://github.com/jharst/Poesieautomat/)
+- Vergleich mit Montfort und Weichbrodt
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[@Bajohr-2022a.md] -->
+### Tabelle: Sequentiell vs. konnektionistisch
+| Sequenziell                               | Konnektionistisch                                                                                   |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| vorgegebene Regel                         | (un)supervised training durch rekursiven Vergleich von Eingabe und Ausgabe (Lernen durch Beispiele) |
+| top-down                                  | bottom-up                                                                                           |
+| Datenbank/Algorithmus                     | Zahlen, die Netzwerk und gewichtete Verbindungen repräsentieren                                     |
+| Regeln + Daten = Antworten                | Daten + Antworten = Regeln                                                                          |
+| deterministisch                           | probabilistisch/induktiv                                                                            |
+| das Ganze wird aus Teilen zusammengesetzt | emergente Eigenschaften (Erlernen von „Gestalten”)                                                  |
+| Wörter                                    | Übergangswahrscheinlichkeiten                                                                       |
+| digital (diskrete Zustände)               | quasi-analog (Kontinuitäten, Fließkommazahlen)                                                      |
+| Nachahmung als Konstruktion               | *imitatio naturae*                                                                                  |
+
+Nach: Hannes Bajohr (2022): Algorithmische Einfühlung. Für eine Kritik ästhetischer KI, in: ders. Schreibenlassen. Texte zur Literatur im Digitalen (S. 131–171). August.
+<!-- end::[@Bajohr-2022a.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-10%, 50%); transform-origin: left top;">4. Sequentielles Paradigma: Montfort</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://badquar.to/images/hwt_2018_cover.png'); background-size: contain; background-repeat: no-repeat; background-color: #BAC4CB; background-position: right;">
+
+<div class="right-image-source"><a href="https://badquar.to/publications/hard_west_turn.html" title="Montfort, N. (2018). Hard West Turn. badquar.to." target="_blank">Montfort (2018).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Autorschaft bei Weichbrodt/Montfort
+- Code
+- Wikipedia (natürliche Sprache und Maschinencode)
+- Output
+- formatiertes Output (Buchform)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Graduelle Abstufung von Autorschaft?
+| Grad     | Beschreibung                                                                                                       | Paradigma         |
+| -------- | ------------------------------------------------------------------------------------------------------------------ | ----------------- |
+| primär   | Mensch bedient Schreibapparatur                                                                                    | „natürlich”       |
+| sekundär | Mensch formuliert Konzept oder Code                                                                                | sequentiell       |
+| tertiär  | Mensch formuliert Konzept (Trainingsalgorithmus, Datensatz), nach dem die Maschine die Regeln für den Output lernt | konnektionistisch |
+| quartär  | Mensch formuliert Prompt (aber die Bedingungen seiner Verarbeitung sind ihm entzogen)                              | konnektionistisch |
+
+Nach: Hannes Bajohr (2023). Autorschaft und Künstliche Intelligenz. In S. Catani (Hrsg.), Handbuch Künstliche Intelligenz und die Künste (S. 265–280). de Gruyter.
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## K. Passig: Robot Gernhardt
+- https://mastodon.social/@robotgernhardt
+- https://techniktagebuch.tumblr.com/post/762042108111618048/18-september-2024
+- https://techniktagebuch.tumblr.com/post/780441011968262144/april-2025
+<aside class="notes"><ul>
+<li>Unbedingt dran denken: Fragen notieren</li>
+<li>Kontextualisierung von Literatur-Bots</li>
+<li>Vergleich mit Konzeptkunst – Arbeit mit Vorlage</li>
+<li>Vergleich mit Experimentalkunst</div></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[Gernhardt – Lied der Männer.md] -->
+## Lied der Männer
+<p>
+Die Trauer beim Betrachten großer Hecken<br>
+gleicht jener, die wir sonst nur dann empfinden<br>
+wenn wir den Lorbeer aus dem Haare winden,<br>
+weil es heißt »Fertig machen zum Verrecken« —<br>
+die Trauer beim Betrachten großer Hecken.<br>
+</p>
+<p>
+Das Frösteln beim Betasten kühler Eisen,<br>
+wir kennen es, seitdem wir jene sahen,<br>
+die in den Zug einstiegen, der sein Nahen<br>
+nur unterbrach, um kurz drauf zu entgleisen —<br>
+das Frösteln beim Betasten kühler Eisen.<br>
+</p>
+<p>
+Die Sehnsucht beim Betreten feuchter Planken,<br>
+sie wird uns bis an jenen Tag begleiten,<br>
+an dem wir schweigend durch die letzte Pforte reiten,<br>
+zu schwach zum Fluchen, doch zu stolz zum Danken —<br>
+die Sehnsucht beim Betreten feuchter Planken.<br>
+</p>
+
+Robert Gernhardt: Reim und Zeit. Gedichte. Stuttgart: Reclam, 2001. S. 32f.
+<!-- .element: id="poem" -->
+<!-- end::[Gernhardt – Lied der Männer.md] -->
+</div>
+
+<!-- .element: id="poem" -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">5. Konnektionistisches Paradigma</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://res.cloudinary.com/holtzbrinck-buchverlage/image/fetch/w_3840,c_fill,g_auto,q_auto,f_webp/https://bilder-fischer.s3.eu-central-1.amazonaws.com/s3fs-public/2023-11/magazin_guse_becker_neue_rundschau_rz_012x.jpg'); background-size: cover; background-position: 80% 10%;">
+
+<div class="right-image-source"><a href="https://www.fischerverlage.de/magazin/neue-rundschau/alpha-centauri-ewigkeit" title="Jenifer Becker und Juan S. Guse." target="_blank">J. Becker und J.S. Guse (2023)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Becker/Guse: Alpha Centauri in Ewigkeit
+
+<aside class="notes"><ul>
+<li>Arbeit mit Vorlage von Kathrin Passig („Sie befinden sich hier”, Bachmann-Preis 2006)</li>
+<li>Textgeneration durch reines Prompting, keine manuellen Eingriffe<ul>
+<li>Juans Anteil</li>
+<li>Jenifers Anteil</li>
+<li>Lektorat</li>
+</ul>
+</li>
+<li>Aspekte zur Diskussion:<ul>
+<li>prompting als einschränkende Regel</li>
+<li>das Unkontrollierbare</li>
+<li>„KI-Ästhetik”</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
