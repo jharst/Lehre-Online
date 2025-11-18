@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<style>
+
+h1, h2, h3 {
+	text-transform: none !important;
+}
+h4 {
+	margin-top: 2em !important;
+}
+blockquote {
+	line-height: 1.3 !important;
+	background-color: transparent !important;
+	border: none !important;
+	font-style: normal !important;
+	box-shadow: none !important;
+}
+ul {
+    list-style: none !important; /* Keine Standard-Bullets */
+    padding-left: 0; /* Entfernen Sie Standard-Padding */
+}
+
+ul li {
+    position: relative;
+    padding-left: 25px !important; /* Für Platz für die Bullet Points */
+}
+
+ul li::before {
+    content: ''; /* Erstellen eines benutzerdefinierten Bullets */
+    position: absolute;
+    left: 0;
+    top: 0.5em; /* Vertikaler Mittelpunkt */
+    width: 10px; /* Breite des Bullets */
+    height: 10px; /* Höhe des Bullets */
+    background-color: #000; /* Farbe des Bullets */
+    border-radius: 50%; /* Runde Form */
+}
+
+</style>
+# Fremdes Verstehen
+## Zur Hermeneutik artifizieller Texte (Bajohr, Parrish)
+Joachim Harst (Komparatistik, UdS)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Hermeneutik und Fremdverstehen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Das Verstehen ist ein Wiederfinden des Ich im Du. <br>(Wilhelm Dilthey)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<blockquote style="text-align: left;">Beide Köpfe nämlich, Kieferling und Teichenkopf, schwangen als die einzige Kraft, die mich als Kind getragen hatte, in die Höhe; sie waren wie die Rippen einer gespannten Gitarre. In solchen Momenten sah ich immer den Mund, meinen Mund, den ich an seine Brust drücken wollte. Die Worte schlürften ein, ein Bühnenläufer vermochte mir die Hand zu führen; ich hielt den ersten Satz, der kommunizierte vor mich hin, um zu schauen, wie er reagierte. Es war ein Satz, der so wenig mit dem zu tun hatte, was ich gerade von ihm erwartete, aber dennoch immer wieder in einer Kombination von Zuständen und Verhalten eine unverzichtbare Botschaft aussprach; aus dem Mund sprang dann eine unglaubliche Wucht. Das Gebiss wandelte sich zu einem zarten Lachen.</blockquote>
+
+(Hannes Bajohr, <em>Berlin Miami</em>, 2023)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Fremdes Verstehen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## „geistesabgewohnt” 
+### (Bajohr)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->„Oberflächenerzählung”
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Handlungsmuster und Deutungsangebote
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->sprachliche Faktur
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Poesie des Vektorraums
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Finetuning als literarische Strategie
+</div>
+
+<!-- .element: style="width: 45%; position: absolute; left: 0%; top: 50%" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## „geistesabgewohnt” (Bajohr)<!-- .element: style="margin-bottom: 2em !important" -->
+- „das Licht auf dem Herd brannte noch immer unter meinen Füßen” (29)
+- „seine Mauserkennung in der Hand zeigte aber keine Spur” (34)
+- „Gewehrschuhhandy” (34)
+- „Gedankenstrumpfhose” (61)
+- „gesündet” (28)
+- „geistesabgewohnt” (36)
+
+<div class="block">
+
+(Hannes Bajohr, <em>Berlin Miami</em>, 2023)
+</div>
+
+<!-- .element: style="margin-top: 2em !important" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## „tifrons”
+### (Parrish)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<img src="screenshots/Screenshot 2025-11-14 17-56-08.jpg" alt="" style="object-fit: scale-down">
+
+Alison Parrish (2016): Lossy Text Compression, For Some Reason, https://www.youtube.com/watch?v=meovx9OqWJc.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+$$W_{\text{king}} - W_{\text{man}} + W_{\text{woman}} \approx W_{\text{queen}}$$
+notes:
+- https://informatics.ed.ac.uk/news-events/news/news-archive/king-man-woman-queen-the-hidden-algebraic-struct
+- https://carl-allen.github.io/nlp/2019/07/01/explaining-analogies-explained.html
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+$$vec(Frankenstein)\times{0.75} + vec(Genesis) \times{0.25}$$
+<div class="block">
+
+#### 100% Frankenstein
+„Hateful day when I received life!” I exclaimed in agony. „Accursed creator! Why did you form a monster so hideous that even YOU turned from me in disgust?” 
+#### 80% Frankenstein, 20% Genesis
+**hateful day when I received incumbency you exclaimed Yikes agony. accursed creator! greedily did you form a monster ymmv hideous that we even turned from me in disgust?**
+#### 100% Genesis
+In the beginning God created the heaven and the earth. And the earth was without form, and void; and darkness was upon the face of the deep. And the Spirit of God moved upon the face of the waters.
+</div>
+
+<!-- .element: style="text-align: left" class="fragment" data-fragment-index="1" -->
+
+Allison Parrish (2016). „Frankenstein-Genesis”. *Vetch: A*
+*Journal of Trans Poetry and Poetics*.<!-- .element: style="text-align: center !important" class="fragment" data-fragment-index="1" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+| Operation                     | Result      |
+| ----------------------------- | ----------- |
+| $$Nn(vec(sub)+vec(marine))$$  | `submarine` |
+| $$Nn(vec(curious)+vec(lee))$$ | `curiously` |
+
+Allison Parrish (2021). *Poetic Sound Similarity Vectors Using Phonetic Features.* Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment, 13(2), 99–106. https://doi.org/10.1609/aiide.v13i2.12971
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+#### Genesis With a Cold
+Ind theed begiding Godde kreeded theed heave add theed earth.
+
+Add theed earth was whithoud forbe, add void; ad darkeds was upowed theed face ough theed deepe. Add theed Spiret ough Godd moved upohed theed face ough theed waters.
+
+Add Godde sawe theed light, that id was good: add Godde divided theed light frob theed darchase. 
+</div>
+
+<!-- .element: style="text-align: left" -->
+
+<div class="block">
+
+Allison Parrish (2020). *Compasses. Expressive Interpolations of Spelling and Sound*. https://stars.library.ucf.edu/elo2020/asynchronous/talks/1/
+</div>
+
+<!-- .element: style="position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="block">
+
+sameness<br>
+sainteous<br>
+saineros<br>
+tifrons<br>
+diphrons<br>
+diphrans<br>
+difference<br>
+</div>
+
+<!-- .element: style="font-size: 2em; position: absolute; left: 35%; top: 0%; height: 80%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+
+<div class="block">
+
+Allison Parrish (2020). *Compasses. Expressive Interpolations of Spelling and Sound.* https://stars.library.ucf.edu/elo2020/asynchronous/talks/1/
+</div>
+
+<!-- .element: style="position: absolute; left: 5%; top: 90%; height: 10%; width: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center" -->
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":"none","transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
