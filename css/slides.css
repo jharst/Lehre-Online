@@ -37,9 +37,10 @@
 .reveal blockquote {
   font-style: normal !important;
   text-align: left;
-  width: 85%;
+  width: 90%;
   box-shadow: none !important;
-  line-height: 1.7 !important;
+  background-color: transparent !important;
+  line-height: 1.5 !important;
 }
 
 
@@ -85,12 +86,11 @@ ul.embedded-quote-block li::before {
     display: none;
 }
 
-
-.reveal img {
-  object-fit: contain !important;
+/*====== Styles ===*/
+.transparent-bg {
+  background-color: rgba(223, 225, 225, 0.75) !important;
+  border-radius: 5px;
 }
-
-
 /*====== MERMAID ===========*/
 
 .reveal .mermaid {   
@@ -286,6 +286,10 @@ ul.embedded-quote-block li::before {
 #poem p {
   line-height: 1.5;
   margin-bottom: 15px;
+}
+
+#poem h2 {
+  text-align: center;
 }
 
 #poem h2:before {
