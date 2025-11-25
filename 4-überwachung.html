@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Narrating Surveillance</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://www.ppm-vertrieb.de/images/product_images/popup_images/314300-20210409140200.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat; background-color: rgba(119, 47, 139, 1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Überwachungsnarrative</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+
+
+
+4. Sitzung: Narrating Surveillance
+
+<aside class="notes"><h2 id="aus-der-einführung-von-wasihun-2019">Aus der Einführung von @Wasihun-2019</h2>
+<ul>
+<li>Einführung zum Panoptikon (Architektur; Vorlage Hieronymus Bosch; Foucaults Deutung)</li>
+<li>Unterschied zwischen visueller Überwachung und „dataveillance”/„liquid surveillance”?</li>
+<li>Kann Überwachung und (künstlerische) Beobachtung gleichgesetzt werden? Lyons Definition: Lyon has broadly defined surveillance as “any focused attention to personal details for the purpose of influence, management, or control” (Lyon 2007, 449)” (11)</li>
+<li>Kino und Überwachung – Kammerer: popular culture and surveillance discourse – Überwachung der Rezeption von Überwachungsfilmen (vgl. Streaming Dienste)<ul>
+<li>@Kammerer-2012: These, dass die Darstellung von surveillance in populären Medien diese nicht nur repräsentiert/reflektiert (und teilw. überhaupt erst sichtbar macht), sondern auch prägt – und den akademischen Diskurs mit Bildern/Metaphern versorgt</li>
+</ul>
+</li>
+<li>Analogie zwischen Narration und Überwachung: „Narrative is inherent to surveillance, and surveillance is a tool used in narrative – meaning, whatever has been surveilled will be narrated in order to be mediated. And because narrators are observers by nature, observation techniques in literature and film show analogies to forms and practices of real-world surveillance. But are narrative instances of surveillance also instances of surveillance and control in a realworld sense?” (14)</li>
+</ul>
+<h2 id="aus-dem-aufsatz-wasihun-2019">Aus dem Aufsatz @Wasihun-2019</h2>
+<!-- begin::[@Wasihun-2019.md] -->
+<ul>
+<li>Zeh: „Ist auktoriales Erzählen nicht irgendwie undemokratisch?” (171) <!-- end::[@Wasihun-2019.md] --></li>
+</ul>
+</div>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Das Panopticon (1791)
+
+<!-- begin::[Bentham – Panopticon (1791).md] -->
+> The Building circular – an iron cage, glazed – a glass lantern about the size of Ranelagh – The Prisoners in their Cells, occupying the Circumference – The Officers, the Centre. By Blinds, and other contrivances, the Inspectors concealed from the observation of the Prisoners: hence the sentiment of a sort of invisible omnipresence. – The whole circuit reviewable with little, or, if necessary, without any, change of place. [(10)](https://en.wikipedia.org/wiki/Panopticon#cite_note-10) <!-- end::[Bentham – Panopticon (1791).md] -->
+
+
+<aside class="notes"><ul>
+<li>Wichtig: Auch der Beobachter ist der Überwachung unterworfen!</li>
+</ul>
+</div>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> there was of course no way of knowing whether you were being watched at any given moment \[…\]  you had to live \[…\]  in the assumption that every sound you made was overheard, and, except in darkness, every movement scrutinised (Orwell, *1984*)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+## Das Panopticon (1791)
+
+<!-- begin::[Bentham – Panopticon (1791).md] -->
+> will be found applicable, I think, without exception to all establishments whatsoever, in which within a space not too large to be covered or commanded by buildings, a number of persons are meant to be kept under inspections. No matter how different or even opposite the purpose. [(25)](https://en.wikipedia.org/wiki/Panopticon#cite_note-25) <!-- end::[Bentham – Panopticon (1791).md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Foucaults Deutung
+- Panoptikon als Machtmechanismus und Diagramm politischer Technologie
+- Inbegriff der „Disziplinargesellschaft”
+- Sichtbarmachung des Einzelnen als Machtinstrument
+- Normalisierung des Individuums
+- Gefängnis, Krankenhaus, Schule, Fabrik
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Zusammenhang mit Narratologie
+- Alltagsbeobachtung und literarischer Realismus
+- Analogie zwischen zentralisierter auktorialer Erzählung und Überwachung (172)?
+- Parallele zwischen faktualer und fiktionaler Welt oder ontologische Differenz (173)?
+- symbolische Beziehung zwischen Überwachungsstrategien und Erzähltechniken (174)?
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> Narrative is inherent to surveillance, and surveillance is a tool used in narrative – meaning, whatever has been surveilled will be narrated in order to be mediated. And because narrators are observers by nature, observation techniques in literature and film show analogies to forms and practices of real-world surveillance. But are narrative instances of surveillance also instances of surveillance and control in a realworld sense? (14)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">4. Panoptisches Erzählen</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/11/Panopticon.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Panopticon" title="" target="_blank">Bentham/Revely: Panopticon (1791)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+- Kino und Überwachung (> D. Kammerer)
+- popular culture and surveillance discourse 
+- Überwachung der Rezeption von Überwachungsfilmen (vgl. Streaming Dienste)
+- These, dass die Darstellung von surveillance in populären Medien diese nicht nur repräsentiert/reflektiert (und teilw. überhaupt erst sichtbar macht), sondern auch prägt – und den akademischen Diskurs mit Bildern/Metaphern versorgt
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
