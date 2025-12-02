@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Hermeneutik (1)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('./Resources/images/Goethe-mit-Smartphone.jpg'); background-size: cover; background-position: left; transform: scaleX(-1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Autorschaft und digitale Literatur</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+
+
+
+7. Sitzung: Hermeneutik (1)
+
+<aside class="notes"><ul>
+<li><strong>Seminarplan</strong> – Referate – Sitzungen und Texte</li>
+<li>Überblick zur Hermeneutik: (Ast) – Schleiermacher – Dilthey – (Heidegger) – Gadamer</li>
+<li>Ast: Problem des Zirkels: BM2 SE Übersetzung – 2#- Schleiermacher<ul>
+<li>Hermeneutik als Theorie des Verstehens überhaupt, einschließlich mündlicher Kommunikation</li>
+<li>Minimal- und Maximalforderung</li>
+<li>grammatische und psychologische Interpretation</li>
+<li>der hermeneutische Zirkel</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Seminarplan
+- Studienleistungen
+- kommende Sitzungen und alternative Texte
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Ressourcenverbrauch von KI
+
+08.12., 16-18h: Vortrag im Rahmen der Ringvorlesung „Nachhaltigkeit in den Geisteswissenschaften”
+
+### Materialien
+- Kate Crawford: [The Atlas of AI](https://katecrawford.net/atlas) (2021)
+- Kate Crawford/Vladan Joler: [Anatomy of an AI System](http://anatomyof.ai) (2018)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="mermaid">
+%%{
+  init: {
+    'theme': 'neutral'
+    }
+}%%
+gantt
+    title Literarische und philosophische Hermeneutik
+    dateFormat YYYY
+    section Friedrich Ast
+    Friedrich Ast         :1778, 1841
+    Grundlinien der Grammatik, Hermeneutik und Kritik :milestone, 1808, 0d
+    section Friedrich Schleiermacher
+    Friedrich Schleiermacher :crit, 1768, 1834
+    Hermeneutik und Kritik :crit, milestone, 1838, 0d
+    section Wilhelm Dilthey
+    Wilhelm Dilthey      :crit, 1833, 1911
+    Einleitung in die Geisteswissenschaften :crit, milestone, 1883, 0d
+    section Martin Heidegger
+    Martin Heidegger     :1889, 1976
+    Sein und Zeit        :milestone, 1927, 0d
+    section Hans-Georg Gadamer
+    Hans-Georg Gadamer   :crit, 1900, 2002
+    Wahrheit und Methode :crit, milestone, 1960, 0d
+
+</div>
+
+<aside class="notes"><ul>
+<li>Hermeneutik und Differenzierung Geistes-/Naturwissenschaften</li>
+<li>Dilthey: „Lebensphilosophie”, Erlebnis, Einfühlung</li>
+<li>Heidegger: Hermeneutik und Existenz</li>
+<li>Gadamer: Wahrheit (Geisteswissenschaften) und Methode (Naturwissenschaften)</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Friedrich Schleiermacher (1768-1834)
+- evangelischer Theologe, Altphilologe, Philosoph
+- Übersetzer der Werke Platons ins Deutsche
+- Begründer der modernen Hermeneutik
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik als Theorie des Verstehens
+- Ursprung: Methodik zur Erklärung „dunkler” Textstellen, disziplinär gebunden (Altphilologie, Theologie)
+- Schleiermacher: Ausweitung zur Theorie des Verstehens schlechthin
+- Paradigma: Mündliche Kommunikation ([Zitat S. 162](#Mundlichkeit))
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Mundlichkeit" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[@Szondi-2012.md] -->
+- ["] Denn die unmittelbare Gegenwart des Redenden, der lebendige Ausdrukk welcher die Theilnahme seines ganzen geistigen Wesens verkündigt, die Art wie sich hier die Gedanken aus dem gemeinsamen Leben entwikkeln, dies alles reizt weit mehr als die einsame Betrachtung einer ganz isolirten Schrift dazu eine Reihe von Gedanken zugleich als einen hervorbrechenden Lebensmoment \[…\]  zu verstehen, und eben diese Seite ist es, welche bei der Erklärung der Schriftsteller \[…\] großentheils ganz vernachlässiget wird (zit. nach @Szondi-2012, 162) <!-- end::[@Szondi-2012.md] -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Hermeneutik als Theorie des Verstehens
+- Minimal- und Maximalforderung (S. 164)
+- grammatische und psychologische Interpretation ([„Hineinleben”, Zitat S. 167](#Hineinleben))
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Hineinleben" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Einfühlung und Sympathie
+
+<!-- begin::[@Szondi-2012.md] -->
+- ["] was hingegen von richtiger Auffassung des innern Herganges, als der Schriftsteller entwarf und componirte abhängt, was das Product seiner persönlichen Eigenthümlichkeit in die Sprache und in die Gesammtheit seiner Verhältnisse ist, das wird auch dem gewandtesten Ausleger nur bei den ihm verwandtesten Schriftstellern, nur bei den Lieblingen in die er sich am meisten hineingelebt hat am besten gelingen (167) #Liebe #Hermeneutik  <!-- end::[@Szondi-2012.md] -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Der hermeneutische Zirkel bei Ast
+
+<!-- begin::[Ast – Zirkel.md] -->
+- ["] Wenn wir nun aber den Geist des gesamten Altertums nur durch seine Offenbarungen in den Werken der Schriftsteller erkennen können, diese aber selbst wieder die Erkenntnis des universellen Geistes voraussetzen, wie ist es möglich, da wir immer nur das eine nach dem anderen, nicht aber das Ganze zu gleicher Zeit auffassen können, das Einzelne zu erkennen, da dieses die Erkenntnis des Ganzen voraussetzt? (Ast: Grundlinien, 1808) <!-- end::[Ast – Zirkel.md] -->
+
+## In den Worten Schleiermachers
+<!-- begin::[@Szondi-2012.md] -->
+- ["] Man muss den Menschen schon kennen um die Rede zu verstehen und doch soll man ihn erst aus der Rede kennen lernen (169) <!-- .element: class="fragment" data-fragment-index="1" -->
+<!-- end::[@Szondi-2012.md] -->
+<!-- .element: class="fragment" data-fragment-index="1" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Der hermeneutische Zirkel bei Ast
+
+<!-- begin::[@Szondi-2012.md] -->
+- ["] Und dies ist eben das Ziel der *philologischen* Bildung, den Geist vom Zeitlichen, Zufälligen und Subjektiven zu reinigen, und ihm diejenige Ursprünglichkeit und Allseitigkeit zu erteilen, die dem höheren und reinen Menschen notwendig ist, die *Humanität*: auf dass er das Wahre, Gute und Schöne in allen, wenn auch noch so fremden, Formen und Darstellungen auffasse, in sein eigenes Wesen es verwandelnd, und so mit dem ursprünglichen, rein menschlichen Geist, aus dem er durch die Beschränktheit seiner Zeit, seiner Bildung und Lage getreten ist, wiederum eins werde. (§ 70, Seite 168f.) [zit. n. @Szondi-2012, 144] <!-- end::[@Szondi-2012.md] -->
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Der hermeneutische Zirkel bei Schleiermacher
+- der Zirkel nicht als Problem, sondern als Bedingung von Verstehen
+- Ablehnung von Asts Identifikation von Einzelnem und Ganzen
+- für eine additive Rekonstruktion des Ganzen
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Der hermeneutische Zirkel bei Schleiermacher
+
+<!-- begin::[@Szondi-2012.md] -->
+- ["] der Sprachschaz und die Geschichte des Zeitalters eines Verfassers verhalten sich wie das Ganze aus welchem seine Schriften als das Einzelne müssen verstanden werden, und jenes wieder aus ihm. \[…\] Ueberall ist das vollkommene Wissen in diesem scheinbaren Kreise daß jedes Besondere nur aus dem Allgemeinen dessen Theil es ist verstanden werden kann und umgekehrt. Und jedes Wissen ist nur wissenschaftlich wenn es so gebildet ist. (§20, S. 88) (169f.) <!-- end::[@Szondi-2012.md] -->
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
