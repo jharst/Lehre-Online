@@ -1,0 +1,47 @@
+/* Styling for Vimeo background in .container */
+.container {
+  position: relative;
+  overflow: hidden; /* important so the video is clipped to the container */
+}
+
+/* Wrapper for the Vimeo iframe; ensures the iframe 'covers' the container */
+.bg-video-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* min-width/min-height trick ensures the iframe area fills the container */
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+
+  z-index: 0;
+  pointer-events: none; /* prevents clicks on the iframe (useful for decorative backgrounds) */
+}
+
+/* If you need the iframe to be interactive, remove pointer-events: none from .bg-video-wrapper */
+.bg-video-wrapper iframe {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 100%;
+  /* Ensures iframe scales with the wrapper */
+  min-width: 100%;
+  min-height: 100%;
+  transform: none;
+}
+
+/* Overlays must sit above the background */
+.left-bottom-div,
+.left-top-div,
+.left-top-div-text,
+.right-image-source {
+  z-index: 1;
+  position: absolute; /* as in your existing CSS */
+}
+
+/* Optional debug outlines while testing */
+/* .container { outline: 2px solid rgba(255,0,0,0.25); }
+.bg-video-wrapper { outline: 2px dashed rgba(0,0,255,0.25); } */
