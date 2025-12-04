@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>RVL Digitale Nachhaltigkeit</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/video-background.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+    <script defer src="plugin/load-mathjax.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container"><video style="width: 100%; height: 100%; overflow: hidden; justify-content: center; align-items: center; object-fit: cover;" autoplay muted loop id="background-video">
+        <source src="./Resources/images/Anadol-clip.mp4" type="video/mp4">
+</video>
+
+<div class="left-bottom-div"><div class="left-top-div">
+
+
+<div class="left-top-div-text fragment fade-out"><p class="slide-title-left">Nachhaltigkeit in digitalen Medien</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergl. Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out"><h2>Refik Anadol: Glacier Dreams (2023)</h2>
+
+<ul> 
+<li>„living data paintings” und „machine hallucinations”</li> 
+<li>Grundlage: Datenbank von Gletscherbildern</li> <li>Mustererkennung, machine learning und KI</li>
+<li>Algorithmus „erträumt” virtuelle Natur</li></ul>
+</div>
+
+
+<div class="left-top-div fragment fade-in-then-out">
+
+<h2 style="color: white">Refik Anadol: Glacier Dreams (2023)</h2>
+
+<blockquote>
+„I realized that because these forms are going away, my ability to capture them digitally with data and AI meant I could preserve nature.” (R. Anadol)</blockquote>
+
+<ul class="fragment fade-in-then-out" style="margin-top: 40px;"> 
+<li>Sensibilisierung für Klimawandel?</li> 
+<li>machine learning und Erderwärmung</li>
+<li>virtuelle vs. tatsächliche Verflüssigung der Gletscher</li> 
+</ul>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out">
+<h2>KI und Nachhaltigkeit</h2>
+<ul><li>Nachhaltigkeit von KI</li>
+<li>Nachhaltigkeit durch KI</li>
+<li>künstlerisch-investigative Auseinandersetzungen</il></ul></div>
+
+
+
+</div></div>
+
+<div class="right-image-source"><a href="https://www.glacierdreams.com" title="Refik Anadol: Glacier Dreams, Videoinstallation. Kunsthaus Zürich, Zürich, Schweiz. Schenkung Bank Julius Bär." target="_blank">R. Anadol: Glacier Dreams (2023)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url(https://images.prismic.io/verticalatlas/038e5416-926b-4ca9-bc1b-5171311c548c_1920x1180_QiuZhijie_Map-of-AI.jpg?auto=compress,format&rect=0,0,1920,1180&w=1920&h=1180); background-size: cover;">
+
+
+<div class="left-bottom-div fragment fade-in" style="background-color: rgba(119, 47, 139, 0.75); width: 50%"><div class="left-top-div" style="background-color: rgba(119, 47, 139); color: white; display-flex; justify-content: center; align-items: center; text-align: left; box-sizing: border-box; padding-left: 3%;">
+<h2>Eine Kartografie Künstlicher Intelligenz</h2>
+<ul> 
+<li>mythologische Landschaft</li> 
+<li>topografische Karte</li>
+<li>Mindmap</li>
+<li>Einschreibung von KI in materielle Welt</li></ul>
+</div></div>
+
+
+</div>
+<div class="right-image-source"><a href="https://verticalatlas.net/#qiu-zhijie-x-chen-stanley-qiufan" title="Qiu Zhijie: Map of Ai (2020). Kalligrafische Karte, fotografiert von Yan Haibo." target="_blank">Qiu Zhijie: Map of AI (2020).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<style> 
+a {
+	color: white !important;
+}
+
+#animatedBackground { 
+	background-size: cover; 
+	animation: backgroundChange 10s infinite; 
+	position: relative;
+} 
+	
+@keyframes backgroundChange { 
+	0%, 33% { background-image: url('https://images.prismic.io/verticalatlas/df60a55b-01c9-47c2-91f8-d7e15dd6b568_2015_Farm-CouncilBluffs_Gerrard_017.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080'); 
+	} 
+	34%, 66% { background-image: url('https://images.prismic.io/verticalatlas/d6551f3a-d924-4665-9a6b-14bdcc44e0d2_2015_Farm-CouncilBluffs_Gerrard_010.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080'); 
+	} 
+	67%, 100% { background-image: url('https://images.prismic.io/verticalatlas/19d40ba6-6068-4f81-a549-d65130c4b41e_2015_Farm-CouncilBluffs_Gerrard_011.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080'); } 
+} 
+</style>
+
+<div class="container" id="animatedBackground">
+
+
+<div class="left-bottom-div fragment fade-in-then-out" style="background-color: rgba(119, 47, 139, 0.75); width: 50%"><div class="left-top-div" style="background-color: rgba(119, 47, 139); color: white; display-flex; justify-content: center; align-items: center; text-align: left; box-sizing: border-box; padding-left: 3%;">
+<h2>Die Materialität der Cloud</h2>
+<ul><li>„hyperscale data centers”</li> 
+<li>Größe: bis zu 4km<sup>2</sup></li>
+<li>Stromverbrauch/Jahr: 176 TWh</li>
+<li>Wasserverbrauch/Jahr: 300 Mrd. Liter</li>
+<li>CO<sub>2</sub> -Emissionen/Jahr: 70,4 Mio. Tonnen CO<sub>2</sub></li>
+<li>rapide Steigerung erwartet</ul>
+<p style="font-size: smaller;">Quellen: <a href="https://www.greenpeace.de/ueber-uns/loesungen-finden/kuenstliche-intelligenz-energieverbrauch-und-umweltauswirkungen" title="Greenpeace: Künstliche Intelligenz: Energieverbrauch und Umweltauswirkungen. (2025, May 14).">Greenpeace-Report</a>,<br><a href="https://www.congress.gov/crs-product/R48646" title="Data Centers and Their Energy Consumption: Frequently Asked Questions. (2025, December 4).">US Library of congress</a></p>
+</div></div>
+
+
+<div class="fragment fade-in-then-out" style="width: 65%; height: auto;"><img src="/Resources/images/Data-Center-CO2-Verbrauch.jpg"></div>
+
+
+<div class="right-image-source"><a href="https://verticalatlas.net/#john-gerrard" title="John Gerrard: _FARM (COUNCIL BLUFFS, IOWA) 2015,_ 2015." target="_blank">J. Gerrard: Farm (2015)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.MathJax3,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: 120 * 1000,
+            mathjax3: {
+                mathjax: 'plugin/math/mathjax/tex-chtml.js',
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
