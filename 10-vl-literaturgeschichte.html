@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Empfindsamkeit</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://uploads1.wikiart.org/images/jean-honore-fragonard/young-girl-reading.jpg!HD.jpg'); background-position: 200%;"><div class="right-image-source"><a href="https://www.wikiart.org/en/jean-honore-fragonard/a-young-girl-reading-1776-1" title="Jean Honoré Fragonard: A Young Girl Reading. Öl auf Leinwand. National Gallery of Art, Washington, DC. 1776." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left">10. Sitzung: Empfindsamkeit / Sturm und Drang</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Einleitung
+- letzte Sitzung: höfische Kultur im frz. Klassizismus (Theater, Passion, 17. Jhdt.)
+- Thema heute: bürgerliche Kultur in der Empfindsamkeit (Briefroman, empfindsame Liebe, 18. Jhdt.)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Epochen Klassizismus.md] -->
+
+<div class="mermaid">
+%%{
+  init: {
+    'theme': 'neutral'
+    }
+}%%
+gantt
+	title Literarische Epochen und Schlüsselwerke
+	dateFormat YYYY
+	axisFormat %Y
+	tickInterval 10y
+section Epochen
+	Frz. Klassizismus (1660-1715) :a1, 1700, 1715
+	Aufklärung (1715-1789) :a2, 1715, 1789
+	Empfindsamkeit (1720-1789) :crit, a3, 1720, 1789
+	Sturm und Drang (1765-1785):crit, a4, 1765, 1785
+	Weimarer Klassik (1786-1832):a5, 1786, 1832
+section Werke
+	Richardson, Pamela, 1740 : milestone, m2, 1740, 0d
+	Rousseau, Julie, 1761 : milestone, m3, 1761, 0d
+	Goethe, Werther, 1774 : milestone, m4, 1774, 0d
+section Ereignisse
+	Französische Revolution :crit, milestone, m5, 1789, 1795
+
+</div>
+
+<!-- end::[Epochen Klassizismus.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Einleitung</p>
+<div class="right-top-div" style="background-image: url('https://uploads1.wikiart.org/images/jean-honore-fragonard/young-girl-reading.jpg!HD.jpg'); background-size: 120%; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://www.wikiart.org/en/jean-honore-fragonard/a-young-girl-reading-1776-1" title="Jean Honoré Fragonard: A Young Girl Reading. Öl auf Leinwand. National Gallery of Art, Washington, DC. 1776." target="_blank">Fragonnard: A Young Girl Reading (1776).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einleitung
+- Frühkapitalismus, Bürgertum, Buchkultur
+- Konjunktur des (Brief-)Romans
+	- mediale Voraussetzungen (Buchmarkt, Alphabetisierung)
+	- Formmerkmale (Multiperspektivität, mediale Vermittlung im Vordergrund)
+	- Rezeptionsbedingungen (Schriftlichkeit vs. Mündlichkeit)
+	- Konsequenzen: Individualisierung, Verinnerlichung
+- Lieben und Lesen als epochenspezifisches Thema
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Einleitung</p>
+<div class="right-top-div" style="background-image: url('https://uploads1.wikiart.org/images/jean-honore-fragonard/young-girl-reading.jpg!HD.jpg'); background-size: 120%; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://www.wikiart.org/en/jean-honore-fragonard/a-young-girl-reading-1776-1" title="Jean Honoré Fragonard: A Young Girl Reading. Öl auf Leinwand. National Gallery of Art, Washington, DC. 1776." target="_blank">Fragonnard: A Young Girl Reading (1776).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Höfische vs. bürgerliche Kultur
+- feudaler Klan vs. bürgerliche Kleinfamilie
+- Bürgerliche Werte [(Zitat)](#Zitat_Koschorke)
+	- Innerlichkeit vs. Äußerlichkeit
+	- Unterscheidung von Leidenschaft und Liebe
+	- Liebesehe → Institutionalisierung der Liebe
+	- Geschlechterbilder, bürgerliche Tugendideale
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Zitat_Koschorke" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightsteelblue; opacity: 0.5;">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Koschorke: Höfische vs. bürgerliche Kultur
+
+<div class="block">
+
+(Die Aufklärungsmoral) brandmarkt die Schauplätze des höfischen Vergnügens und seiner Nachahmungen, jene Welt der Opern, Bälle, Empfänge, Salons, als Stätten sittlicher Depravation. Das Zurschautragen des eigenen Körpers belegt sie mit einem scharfen Verdikt. Der geschminkten oder beim Ball sich maskierenden Schönheit, die ihre vorhandenen Absichten und Begehrlichkeiten verbirgt, stellt sich das offene, alle Regungen des Gemüts widerspiegelnde Gesicht gegenüber. (…)
+
+Man kann die Oppositionen fast schematisch auflisten: dort die Erwartung einer allseitigen erotischen Reizbarkeit, hier die in sich ruhende Scham; (…) dort das Zeremoniell mit seiner Hervorhebung der Außenseite, hier eine von Äußerlichkeit freie Intimität; dort die Konversationskultur mit ihren Anforderungen an Geistesgegenwart, Witz und Charme, hier schlichte Häuslichkeit und, darauf wird noch ausführlicher einzugehen sein, Bildungslektüre.
+
+
+Quelle: Koschorke, A. (1999). <em>Körperströme und Schriftverkehr. Mediologie des 18. Jahrhunderts</em>. München: Fink.
+</div>
+
+<!-- .element: style="text-align: left !important" -->
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Einleitung</p>
+<div class="right-top-div" style="background-image: url('https://uploads1.wikiart.org/images/jean-honore-fragonard/young-girl-reading.jpg!HD.jpg'); background-size: 120%; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://www.wikiart.org/en/jean-honore-fragonard/a-young-girl-reading-1776-1" title="Jean Honoré Fragonard: A Young Girl Reading. Öl auf Leinwand. National Gallery of Art, Washington, DC. 1776." target="_blank">Fragonnard: A Young Girl Reading (1776).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Empfindsame Liebe
+- Übersteigerung
+- Ausdruck in Klage und Tränen
+- Individualisierung
+- Streben nach dem Absoluten
+- Unterschiede gegenüber früheren Liebesdiskursen
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Bilddetail fragment.md] -->
+<div class="container" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Pamela%3B_or%2C_Virtue_Rewarded_title_page.jpg'); background-repeat: no-repeat; background-size: 41%; background-position: right 0;" >
+
+<div class="container fragment fade-up fade-in-then-out" data-fragment-index="1" style="width: 70%; height: 65%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/15/Pamela%3B_or%2C_Virtue_Rewarded_title_page.jpg'); background-repeat: no-repeat; background-size: cover; background-position: 0 61%; position: absolute; left: 10%; bottom: 10%; z-index: 3;"></div>
+
+<div class="" style="padding-left: 2%; position: absolute; left: 0%; top: 15%; height: 70%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+## Richardson: *Pamela* (1740)
+- Britische Polemik: *romance* vs. *novel* → selbstproklamierte Neubegründung des Romans 
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Aspekte des Briefromans
+	- Multiperspektivität
+	- Handlung vollzieht sich in der Gegenwart
+	- Inszenierung von Lesen und Schreiben
+	- Interpretation und Einfühlung
+</div></div>
+<!-- end::[Bilddetail fragment.md] -->
+
+
+notes:
+- Unmittelbarkeit *und* Mittelbarkeit: jeder Brief gibt unmittelbaren Einblick ins Gefühlsleben der schreibenden Person, gleichzeitig ist er schriftlich/medial vermittelt
+- Inszenierung von Lesen und Schreiben: Nachvollzug des Lesens (wenn Personen über ihre Reaktion auf Briefe berichten); schriftlicher Charakter kann auch zu Selbstreflexion der Person führen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Richardson</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d9/HighmorePamelaFainting.jpeg');  background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Pamela;_or,_Virtue_Rewarded" title="Joseph Highmore, Pamela Fainting, National Gallery of Victoria, Öl auf Leinwand, 1743." target="_blank">J. Highmore: Pamela Fainting (1743).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Richardson: Pamela (1740)
+- Hauptfiguren: Pamela (Dienstmädchen), Mr B. (Adeliger)
+- Handlung und Grundthemen: 
+	- Geschlechterrollen (männliches Begehren und weibliche Ohnmacht)
+	- weibliche Tugend, männliche Verführung
+	- sozialer Aufstieg, Ehe
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Richardson</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d9/HighmorePamelaFainting.jpeg');  background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Pamela;_or,_Virtue_Rewarded" title="Joseph Highmore, Pamela Fainting, National Gallery of Victoria, Öl auf Leinwand, 1743." target="_blank">J. Highmore: Pamela Fainting (1743).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Richardson Pamela (1740)
+- Rolle von Lesen und Schreiben (Introspektion, Wirklichkeitsordnung, Authentizität)
+- Geschlecht und Gattung: Mr B. *(romance)* und Pamela *(novel)* [(Zitate)](#Pamela-Zitate)
+- Briefkommunikation und Aufrichtigkeit (wahre Liebe)
+
+notes:
+- das spiegelt sich auf der Inhaltsebene: Mr B. will Pamela im Sinne der „romance” oder “novel of amorous …” [@Warner:1998] lesen, die wehrt sich dagegen und sucht, ihre eigene “novel” zu schreiben; zu Beginn missdeutet B. Pamelas Widerstand als romanzenhafte Intrige; die wahre Liebe zwischen den beiden entwickelt sich aber in dem Moment, in dem B. Pamelas Briefe zu lesen beginnt und damit auf die Seite der “novel” überwechselt; dies ist auch möglich, weil P. ihre Briefe nicht an ihn, sondern an ihre Eltern adressiert, so dass eine amouröse Verstellung ausgeschlossen ist (auch die erste Erklärung ihrer Liebe zu B. erfolgt gegenüber den Eltern); vom Leser erwartet R. eine ähnliche Bewegung.
+- im ersten Verführungsversuch spielt B. auf Lukrezia an; das versteht P. unerwarteterweise, und B. reagiert: „you are well read, I see; and we shall make out between us, before we have done, a pretty story for a romance” (XV; vgl. XVIII); dem widersetzt sich P. natürlich vehement, zuletzt fällt sie in Ohnmacht (ist das romanzenhaft? passiert Arabella auch immer wieder).
+- in B.s Brief an P.s Vater begründet er sein Eingreifen mit einer heimlichen Liebesgeschichte zwischen P. und einem clergyman: “<mark>she has given herself up to the Reading of novels and romances, and such Idee stuff, and now takes it into her head […] that every body who looks upon her is in love with her</mark>.” 
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Richardson</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d9/HighmorePamelaFainting.jpeg');  background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Pamela;_or,_Virtue_Rewarded" title="Joseph Highmore, Pamela Fainting, National Gallery of Victoria, Öl auf Leinwand, 1743." target="_blank">J. Highmore: Pamela Fainting (1743).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Romance and novel
+- Mr B.: „you are well read, I see; and we shall make out between us, before we have done, a pretty story for a romance” (letter XV)
+- Mr B.: „she has given herself up to the Reading of novels and romances \[…\] and now takes it into her head \[…\] that every body who looks upon her is in love with her.”
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Rousseau</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d6/LePrincePromenade.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Julie_ou_la_Nouvelle_Héloïse" title="Charles-Édouard Le Prince, Promenade de Julie et St Preux sur le lac Léman, Öl auf Leinwand, Montmorency, Musée Jean-Jacques Rousseau, 1824." target="_blank">Le Prince, Promenade (1824).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Rousseau: *Nouvelle Héloïse* (1761)
+- Hauptfiguren: St Preux (Hauslehrer), Julie, Wolmar (Adelige)
+- multiperspektivischer Briefroman
+- Handlung
+- Themen: 
+	- Tugend, Gefühlskultur, Natürlichkeit (Naturzustand vs. Gesellschaftsvertrag)
+	- bürgerliche Empfindsamkeit (Authentizität) vs. adelige Konventionen
+- Literatur als Medium dieser Gegenüberstellung
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">10. Sitzung: Empfindsamkeit | Rousseau</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/d/d6/LePrincePromenade.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://fr.wikipedia.org/wiki/Julie_ou_la_Nouvelle_Héloïse" title="Charles-Édouard Le Prince, Promenade de Julie et St Preux sur le lac Léman, Öl auf Leinwand, Montmorency, Musée Jean-Jacques Rousseau, 1824." target="_blank">Le Prince, Promenade (1824).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Rousseau: Nouvelle Héloïse (1761) 
+Vergleich mit ma. Briefwechsel
+- **Heloisa:** Transformation der passionalen Liebe (Ovid) zur christlichen/geistlichen Liebe (Hohelied); gemeinschaftsstiftend
+- **Rousseau:** Liebe literarisch geweckt und brieflich gesteigert, vs. Standesehe
+- Gründung einer irdischen Gemeinschaft im Zeichen der transformierten Liebe, scheitert zuletzt
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# Veranstaltungsevaluation
+<div class="block">
+
+Bitte nehmen Sie sich in jedem Fall Zeit, aussagekräftige Rückmeldung in den Freitextfelder zu geben. Ich werde in einer späteren Sitzung auf Ihre Rückmeldungen eingehen und ausgewählte Punkte mit Ihnen diskutieren. 
+
+[Link zur Evaluation](https://qualis.uni-saarland.de/eva/?l=159536&p=0cqd34)
+</div>
+
+<!-- .element: style="text-align: left" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+  <div class="bg-video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vhPr3A8Y-Wg?si=UKRTh7Oq_QJCGZgE&amp;start=15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg'); background-size: cover; background-position: left;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Goethe: Werther (1774/87)
+- autobiografische und zeitgeschichtliche Ebene (Charlotte Buff, Joh. Chr. Kestner, J.W. Goethe/K.W. Jerusalem)
+- Verknüpfung mit Aspekten von Empfindsamkeit und Sturm und Drang
+	- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Aufbegehren gegen gesellschaftliche Konventionen
+	- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Natur, Individualität, Gefühl/Sentimentalität
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Aufbegehren gegen Regelpoetik (Geniekult)
+notes:
+- Goethe: Jurastudium in Straßburg →Strum und Drang, erstes Drama: „Göetz von Berlichingen”
+- historische Personen im *Werther*:
+	1. **Lotte**: Die Figur der Lotte basiert auf Charlotte Buff, in die Goethe während seines Aufenthalts in Wetzlar verliebt war. Sie war jedoch mit Johann Christian Kestner verlobt, was die unerfüllte Liebe in "Werther" widerspiegelt.
+	2. **Albert**: Diese Figur basiert auf dem realen Johann Christian Kestner, dem Verlobten (und späteren Ehemann) von Charlotte Buff.
+	3. **Werther**: Obwohl Werther eine fiktive Figur ist, basiert seine emotionale und psychologische Verfassung teilweise auf Goethes eigenen Erfahrungen und Gefühlen sowie auf dem Schicksal von Karl Wilhelm Jerusalem, einem Bekannten Goethes, der sich aufgrund einer unglücklichen Liebe das Leben nahm.
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://recherche.smb.museum/images/4416058_2500x2500.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[Goethe – Werther (Notizen).md] -->
+- ["] Ich fand so viel Charakter in allem was sie sagte, ich sah mit jedem Wort neue Reize, neue Strahlen des Geistes aus ihren Gesichtszügen hervorbrechen, die sich nach und nach vergnügt zu entfalten schienen, weil sie an mir fühlte, daß ich sie verstand. / Wie ich jünger war, liebte ich nichts so sehr als Romanen. Weiß Gott wie wohl mir’s war, wenn ich ich Sonntags so in ein Eckchen setzen, und mit ganzem Herzen an dem Glück und Unstern einer Miß Jenny Theil nehmen konnte. (…) Doch da ich so selten an ein Buch komme, so müssen sie auch recht nach meinem Geschmack seyn. Und der Autor ist mir der liebste, in dem ich meine Welt wieder finde, bey dem es zugeht wie um mich. <br> Ich bemühte mich meine Bewegungen über diese Worte zu verbergen. Das ging freylich nicht weit: denn da ich sie mit solcher Wahrheit im Vorbeygehen vom Landpriester von Wakefield, vom \* reden hörte, kam ich ganz außer mich (…)<br> \[*Fußnote*: Man hat auch hier die Nahmen einiger vaterländischen Autoren weggelassen. Wer Theil an Lottens Beyfalle hat, wird es gewiß an seinem Herzen fühlen, wenn er diese Stelle lesen sollte, und sonst braucht es ja niemand zu wissen.\] (Brief vom 16. Junius, S. 43–54)
+<!-- end::[Goethe – Werther (Notizen).md] -->
+
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 2%" class="fragment fade-in-then-out" data-fragment-index="1" -->
+
+
+<div class="right-image-source"><a href="https://smb.museum-digital.de/object/143839?navlang=de" title="Wilhelm Amberg: Vorlesung aus Goethes Werther, Öl auf Leinwand, Staatliche Museen Berlin, 1870." target="_blank">W. Amberg: Vorlesung (1870).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://recherche.smb.museum/images/4416058_2500x2500.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[Goethe – Werther (Notizen).md] -->
+- ["] Wir traten an’s Fenster. Es donnerte abseitswärts, und der herrliche Regen säuselte auf das Land, und der erquickendste Wohlgeruch stieg in aller Fülle einer warmen Luft zu uns auf. Sie stand auf ihren Ellenbogen gestützt; ihr Blick durchdrang die Gegend, sie sah gen Himmel und auf mich, ich sah ihr Auge thränenvoll, sie legte ihre Hand auf die meinige und sagte – Klopstock! – Ich erinnerte mich sogleich der herrlichen Ode die ihr in Gedanken lag und versank in dem Strome von Empfindungen, den sie in dieser Losung über mich ausgoß. Ich ertrug’s nicht, neigte mich auf ihre Hand und küßte sie unter den wonnevollsten Thränen. (Brief vom 16. Junius, S. 53–55)
+<!-- end::[Goethe – Werther (Notizen).md] -->
+
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 2%" -->
+
+
+<div class="right-image-source"><a href="https://smb.museum-digital.de/object/143839?navlang=de" title="Wilhelm Amberg: Vorlesung aus Goethes Werther, Öl auf Leinwand, Staatliche Museen Berlin, 1870." target="_blank">W. Amberg: Vorlesung (1870).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://recherche.smb.museum/images/4416058_2500x2500.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[Klopstock – Frühlingsfeyer (1771).md] -->
+## Klopstock: Frühlingsfeyer (1771, Auszug)
+<p>
+Seht ihr den neuen Zeugen des Nahen, den fliegenden Strahl?<br>
+Höret ihr hoch in der Wolke den Donner des Herrn?<br>
+Er ruft: Jehova! Jehova!<br>
+Und der geschmetterte Wald dampft!<br>
+Aber nicht unsre Hütte!<br>
+Unser Vater gebot<br>
+Seinem Verderber,<br>
+Vor unsrer Hütte vorüberzugehn!<br>
+Ach, schon rauscht, schon rauscht<br>
+Himmel, und Erde vom gnädigen Regen!<br>
+Nun ist, wie dürstete sie! die Erd' erquickt,<br>
+Und der Himmel der Segensfüll' entlastet!<br>
+Siehe, nun komt Jehova nicht mehr im Wetter,<br>
+In stillem, sanftem Säuseln<br>
+Komt Jehova,<br>
+Und unter ihm neigt sich der Bogen des Friedens!<br></p>
+<!-- end::[Klopstock – Frühlingsfeyer (1771).md] -->
+
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 2%" id="poem" -->
+
+
+<div class="right-image-source"><a href="https://smb.museum-digital.de/object/143839?navlang=de" title="Wilhelm Amberg: Vorlesung aus Goethes Werther, Öl auf Leinwand, Staatliche Museen Berlin, 1870." target="_blank">W. Amberg: Vorlesung (1870).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+  <div class="bg-video-wrapper">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/wOF7obISa78?si=iJIscJI69OZAy1Ri&amp;start=627" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
