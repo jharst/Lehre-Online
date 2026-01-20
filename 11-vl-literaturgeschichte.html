@@ -69,7 +69,6 @@
             }
         }
 
-
         document.onreadystatechange = () => {
             fitElements();
             if (document.readyState === 'complete') {
@@ -90,7 +89,7 @@
 <body>
     <div class="reveal">
         <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg'); background-size: cover; background-position: left;"><div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
@@ -100,7 +99,7 @@
 <p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
 </div></div>
 </div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -108,7 +107,7 @@
 </div>
 <div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817." target="_blank">C.D. Friedrich: Über dem Nebelmeer (1817).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 
@@ -120,32 +119,31 @@ notes:
 - Opposition zu Klassik (Verhältnis zu Goethe), Umgang mit „Romanzen”, *Don Quijote* als „romantischer Roman”, Universalpoesie
 
 </div>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<div class="container" style="background: lightgrey">
-<div></div>
-</div>
-
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
-
-
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <!-- begin::[Literarische Epochen Romantik.md] -->
 
 <div class="mermaid">
+%%{
+  init: {
+    'theme': 'neutral'
+    }
+}%%
 gantt
 	title Literarische Epochen 18.-19. Jhdt.
 	dateFormat YYYY
 	axisFormat %Y
 	
 	section Epochen
+	Aufklärung (1650–1800) :a1, 1750, 1800 
 	Empfindsamkeit (1720-1789) :a3, 1750, 1789
     Sturm und Drang (1765-1785):a4, 1765, 1785
-    Frühromantik    :active, 1770, 1805
-    Hochromantik    :active, 1806, 1825
-    Spätromantik    :active, 1826, 1850
-    Französische Revolution :crit, milestone, m5, 1789, 1795
+    Frühromantik    :crit, 1795, 1805
+    Hochromantik    :crit, 1806, 1825
+    Spätromantik    :crit, 1826, 1850
+	Realismus      :a2, 1850, 1900
+    Französische Revolution :crit, milestone, m5, 1779, 1795
 
 	section Autor_innen
 	Ludwig Tieck           :active, 1773, 1853
@@ -157,23 +155,17 @@ gantt
 </div>
 
 <!-- end::[Literarische Epochen Romantik.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
-</div>
-</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<div class="container" style="background: lightgrey">
-<div></div>
-</div>
-
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
-
-
-
-
-<!-- begin::[Autorinnen Romantik.md] -->
+<!-- begin::[Autorinnen Europäische Romantik.md] -->
 
 <div class="mermaid">
+%%{
+  init: {
+    'theme': 'neutral'
+    }
+}%%
 gantt
     title Europäische Romantik
     dateFormat YYYY
@@ -222,14 +214,13 @@ gantt
 
 </div>
 
-<!-- end::[Autorinnen Romantik.md] -->
+<!-- end::[Autorinnen Europäische Romantik.md] -->
 
 notes:
 - Geografie und Periodisierung – Karte zu Romantik? in dtv-Atlas nur Deutschland dargestellt
-- [CSG](hook://file/ko9AbpgEz?p=TWF0ZXJpYWxpZW4gQ2hyaXN0aWFuZS9QcmHMiHNlbnRhdGlvbmVu&n=07%5F13%5F12%5F23%5FRomantik%2DPra%CC%88sentation%2Epdf#p=20) hat Überblicksfolie „Romantik als europäische Strömung” → mermaid Zeitstrahl Frühromantik/Hochromantik/Spätromantik 
-</div>
+- [CSG](hook://file/ko9AbpgEz?p=TWF0ZXJpYWxpZW4gQ2hyaXN0aWFuZS9QcmHMiHNlbnRhdGlvbmVu&n=07%5F13%5F12%5F23%5FRomantik%2DPra%CC%88sentation%2Epdf#p=20) hat Überblicksfolie „Romantik als europäische Strömung” → mermaid Zeitstrahl Frühromantik/Hochromantik/Spätromantik
 </div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -237,24 +228,24 @@ notes:
 </div>
 <div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 ## D: Romantische Liebe in Gedichten
 - Aspekte romantischer Liebe
-- Beispiele
-	- Eichendorff
-	- Heine
-	- (Tieck)
+- Beispiele (siehe Hinweisblatt)
+	- Eichendorff: Mondnacht (s. [Vertonung](https://youtu.be/kBGyJvHe0kc?si=vGbUFfcvg4PM9Raa))
+	- Heine: Lyrisches Intermezzo, LIV
+	- Tieck: Wunder der Liebe
 notes:
 - Aspekte romantischer Liebe (Frage an alle)
 </div>
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-visibility="hidden" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="block">
 
-<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2025-26.md] -->
 ### Eichendorff: Mondnacht (1835/37)
 <div id="poem"><p>Es war, als hätt’ der Himmel<br>
 Die Erde still geküßt,<br>
@@ -268,31 +259,6 @@ So sternklar war die Nacht.<br></p>
 Weit ihre Flügel aus,<br>
 Flog durch die stillen Lande,<br>
 Als flöge sie nach Haus.<br></p></div>
-<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
-
-</div>
-
-<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" id="poem" -->
-
-<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
-notes:
-- Aspekte romantischer Liebe (Frage an alle)
-- ### Eichendorff, Mondnacht (1835/37)
-	- Reimschema und Liedform → Volkslied in der Romantik
-	- Thema: Irdisches und Himmlisches verschränken sich, aber auch unendliche Sehnsucht (horizontale statt vertikale Bewegung der Seele)
-	- [Lied vorspielen](https://youtu.be/kBGyJvHe0kc?si=p8M_py-K2t3tzr3m) – Vertonung von Schumann (1840), gesungen von Friedrich Fischer-Dieskau; daneben zahlreiche andere Vertonungen
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<iframe width="1920" height="1080" src="https://www.youtube.com/embed/kBGyJvHe0kc?si=XKiNnbU-ezMdx968" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<div class="block">
-
-<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px" id="poem" -->
-
-<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
 ### Heine: Lyrisches Intermezzo, LIV (1822/1827)
 <div id ="poem"><p>Ich steh’ auf des Berges Spitze,<br>
 Und werde sentimental.<br>
@@ -313,28 +279,7 @@ Herab von der grünen Lind’.<br>
 So flög’ ich gleich an dein Herz;<br>
 Du bist ja hold den Gimpeln,<br>
 Und heilest Gimpelschmerz.<br>
-</p><div>
-<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
-
-</div>
-
-
-
-<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
-
-notes:
-### Heine, Lyrisches Intermezzo, LIV
-- Lied vorspielen
-- Reimschema und Liedform, Arbeit mit „Volkslied”
-- Wiederholung und Variation
-- Ironisierung
-- „Gimpel”
-</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
-
-<div class="block">
-
-<!-- begin::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+</p></div>
 ### Tieck: Wunder der Liebe (1803/21)
 <div id="poem"> <p>
 Mondbeglänzte Zaubernacht,<br>
@@ -386,14 +331,24 @@ Wird’s dem Himmel dargebracht,<br>
 Hat dich Liebe angenommen,<br>
 Auf dem Altar hell entglommen<br>
 Steig’ auf in der alten Pracht.<br></p></div>
-<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2024-25.md] -->
+<!-- end::[11 VL Literaturgeschichte (Hinweise) WS 2025-26.md] -->
 
 </div>
 
- <!-- .element: style="overflow-y: auto; font-size: smaller; background: #DFE1E175; border-radius: 5px; padding: 15px; padding-left: 30px" id="poem" -->
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 15px; overflow-y: auto" id="poem" -->
 
-<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Caspar_David_Friedrich" title="Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20." target="_blank">C.D. Friedrich: In Betrachtung des Mondes (1819/20).<i class="fas fa-external-link-alt link-icon"></i></a></div>
 notes:
+- Aspekte romantischer Liebe (Frage an alle)
+- ### Eichendorff, Mondnacht (1835/37)
+	- Reimschema und Liedform → Volkslied in der Romantik
+	- Thema: Irdisches und Himmlisches verschränken sich, aber auch unendliche Sehnsucht (horizontale statt vertikale Bewegung der Seele)
+	- [Lied vorspielen](https://youtu.be/kBGyJvHe0kc?si=p8M_py-K2t3tzr3m) – Vertonung von Schumann (1840), gesungen von Friedrich Fischer-Dieskau; daneben zahlreiche andere Vertonungen
+- ### Heine, Lyrisches Intermezzo, LIV
+	- Lied vorspielen
+	- Reimschema und Liedform, Arbeit mit „Volkslied”
+	- Wiederholung und Variation
+	- Ironisierung
+	- „Gimpel”
 - ### Tieck
 	- Reimschema und Form: Glosse
 		- Eine Glosse besteht aus einem Motto mit meist vier Versen und aus vier Strophen, die als Dezime bezeichnet werden, weil sie aus zehn Versen bestehen. Das vorangestellte Motto verdeutlicht den kurzen Leitgedanken. Die vier Verse des Mottos werden am Ende der korrespondierenden Strophen wiederholt 
@@ -403,7 +358,7 @@ notes:
 	- Liebe als religiös konnotierter, Grenzen überwindender Weg vom Dunkeln ins Licht
 	- Dichtung, Verzauberung, Märchenwelt
 </div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -411,7 +366,7 @@ notes:
 </div>
 <div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 ## UK: Jane Austen (1775-1817)
@@ -426,11 +381,11 @@ notes:
 	- musste ihre Werke anonym veröffentlichen (vgl. die männlichen Pseudonyme der Brontë-Schwestern oder die Schriftstellerin „George Eliot” etwa zur gleichen Zeit)
 </div>
 </div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://mermaid.ink/img/pako:eNqNk9-OojAUxl-l6dyiKYgomGwCArPZzFzNZDdZ8KLaIs3W1rQlyqhvM8-wL-CLbf27ejXSpNDy-75z2pyzgTNJKIzgXOFlDd7TUSmAfeLiFSuGhaAgxbpeSUkmoNP5tv1JFWd0aoBmsxowsQVJ8UPWAvxinMtmXk_bydkjuQr2n1qbLYgv5scf3ylT2FC7Py7GkktBOUgUFkSKi8NpTouMMyHVl5lkRUZWWBGQU6Ww0heb7MpLiy-YDZkXL82sBW-GUk4vXH7kXvZ_tQEnuhFza3tn8z_t9O6cNTYgrqr9p6KnEM-HtD_wpBQnTJuWU3v2yl5U9FT1sIc9Rxsl_9DoKYlRH_XPy86KEVNH7nJ9q0zPyt4wjvO8j67anheEcXyLJo-j48fR7HE0P6OJfxgWBdeD-lM7btnnL9nLDc441jqlFVCyEWQslaBKA7WOXOSo1s6jGw7ETuKkTubkd_gIOnBB1QIzYqt-cxCU0NR0QUsY2U9CK9xwU8JS7CyKGyPfWjGDkVENdaA6lDiMKsy1XTVLYkshZdh2z-K6u8QCRhu4hpHrom7Y91GAQvsaIM91YAujEHUHvQAFrue6HnL93s6BH1JaB9Qden4YhINg2Pd8NwhDB1LCjFSvpzY9dusxxO-j4JDV7h9ROCxD?type=png" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -438,14 +393,14 @@ notes:
 </div>
 <div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 ### Austen: Sense and Sensibility (1811)
 - Figurenkonstellation (die romantische Marianne/sensibility vs. die vernünftige Elinor/sense)
 - [Liebe und Seelenverwandtschaft](#Austen_Liebe)
 - [Literaturgespräche](#Austen_Literatur)
-</div>
+
 notes:
 
 <!-- begin::[Austen – Sense and Sensibility.md] -->
@@ -462,8 +417,8 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 <!-- end::[Austen – Sense and Sensibility.md] -->
 
 </div>
-</grid></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="block">
 
@@ -472,15 +427,18 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 
 
 <!-- begin::[Austen – Sense and Sensibility.md] -->
-- Willoughby/Marianne: „His person and air were equal to what her fancy had ever drawn for the hero of a favourite story; and in his carrying her into the house with so little previous formality, there was a rapidity of thought which particularly recommended the action to her.” (Ch. 9) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+- Willoughby/Marianne: „His person and air were equal to what her fancy had ever drawn for the hero of a favourite story; and in his carrying her into the house with so little previous formality, there was a rapidity of thought which particularly recommended the action to her.” (Ch. 9) #Quote
+<!-- end::[Austen – Sense and Sensibility.md] -->
 
 
 <!-- begin::[Austen – Sense and Sensibility.md] -->
-- Marianne: „You are mistaken, Elinor,” said she warmly, „in supposing I know very little of Willoughby. I have not known him long indeed, but I am much better acquainted with him than I am with any other creature in the world, except yourself an mamma. It is not time or opportunity that is to determine intimacy: it is disposition alone.” (Ch. 12) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+- Marianne: „You are mistaken, Elinor,” said she warmly, „in supposing I know very little of Willoughby. I have not known him long indeed, but I am much better acquainted with him than I am with any other creature in the world, except yourself an mamma. It is not time or opportunity that is to determine intimacy: it is disposition alone.” (Ch. 12) #Quote
+<!-- end::[Austen – Sense and Sensibility.md] -->
 
 
 <!-- begin::[Austen – Sense and Sensibility.md] -->
-- Colonel Brandon: „Your sister, I understand, does not approve of second attachments.” – „No,” replied Elinor, „her opinions are all romantic.” (Ch. 11) #Quote <!-- end::[Austen – Sense and Sensibility.md] -->
+- Colonel Brandon: „Your sister, I understand, does not approve of second attachments.” – „No,” replied Elinor, „her opinions are all romantic.” (Ch. 11) #Quote
+<!-- end::[Austen – Sense and Sensibility.md] -->
 
 
 </div>
@@ -489,7 +447,7 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 
 <div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div>
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="block">
 
@@ -497,7 +455,8 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 ### Austen: Sense and Sensibility (1811)
 
 <!-- begin::[Austen – Sense and Sensibility.md] -->
-- „Encouraged by this to a further examination of his opinions, she proceeded to question him on the subject of books; her favorite authors were brought forward and dwelt upon with so rapturous delight, that any young man of five-and-twenty must have been insensible indeed, not to become an immediate convert to the excellence of such works, however disregarded before. Their taste was strikingly alike. The same books, the same passages were idolised by each–or, if any difference appeared, any objection arose, it lasted no longer than till the force of her arguments and the brightness of her eyes could be displayed. He acquiesced in all her decisions, caught all her enthusiasm, and long before his visit concluded, they conversed with the familiarity of a long established acquaintance.” (Ch. 10) #Quote #Lesen #Liebe  <!-- end::[Austen – Sense and Sensibility.md] -->
+- „Encouraged by this to a further examination of his opinions, she proceeded to question him on the subject of books; her favorite authors were brought forward and dwelt upon with so rapturous delight, that any young man of five-and-twenty must have been insensible indeed, not to become an immediate convert to the excellence of such works, however disregarded before. Their taste was strikingly alike. The same books, the same passages were idolised by each–or, if any difference appeared, any objection arose, it lasted no longer than till the force of her arguments and the brightness of her eyes could be displayed. He acquiesced in all her decisions, caught all her enthusiasm, and long before his visit concluded, they conversed with the familiarity of a long established acquaintance.” (Ch. 10) #Quote #Lesen #Liebe 
+<!-- end::[Austen – Sense and Sensibility.md] -->
 
 </div>
 
@@ -505,7 +464,7 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 
 <div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Edmund_Leighton" title="Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906." target="_blank">E.B. Leighton: The Garden (1906).<i class="fas fa-external-link-alt link-icon"></i></a></div>
 </div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -513,7 +472,7 @@ Die Handlung ist von einer strengen Symmetrie gezeichnet: Elinor und Marianne ma
 </div>
 <div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Alessandro_Manzoni" title="Giuseppe Molteni: Ritratto di Alessandro Manzoni a 50 anni. Accademia di Brera. Öl auf Leinwand, 1835." target="_blank">G. Molteni: Manzoni (1835).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 ## I: Alessandro Manzoni (1785-1873)
@@ -528,7 +487,7 @@ notes:
 - programmatische Äußerungen zur romantischen Literatur in seinen theoretischen Schriften
 </div>
 </div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 <div class="container">
 <div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">11. Sitzung: Europäische Romantik</p>
@@ -536,7 +495,7 @@ notes:
 </div>
 <div class="right-image-source"><a href="https://it.wikipedia.org/wiki/Alessandro_Manzoni" title="Giuseppe Molteni: Ritratto di Alessandro Manzoni a 50 anni. Accademia di Brera. Öl auf Leinwand, 1835." target="_blank">G. Molteni: Manzoni (1835).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
 
-<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
 
 
 ## I Promessi Sposi (1827/40)
@@ -546,7 +505,7 @@ notes:
 - Thema: Liebe, Ehe und italienische Identität/Nationalgeschichte
 </div>
 </div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-size="contain" data-background-image="https://mermaid.ink/img/pako:eNqVkk9v2jAYh7-K5UrbxaD8gUDMNCklQZrUXrruMujBJG8Sq46NHFuFAF9rp974YjMQVfS25fDGtp7nfW3pt8e5KgBTXGm2qdFzOltJ5L5k-QSyU-hZs4ZVgkv1gr4NBt8Pb0oIkKgGrpkBeUD3ywebc4YelSxACPbSd5gvUyXRkyo0r5x8dtdQQa2Nc3omuzDJeu1c3kPd6U8F2qDOIqOZPY9I0JcPZbF8-PpDStVwyUyvgDTl6f1T5_l1IDcGDLIN-iUN6Nac3k1nZXVAixsMHVowncPODEq1zV8PKLsC19qanQAHl1wIeleGLGABaY1Wr0DvwjDs14M3Xpia-pvtrZb1WjaaBlkyGf-zuPjfedeaC9a2KZRIKyuLudLSvRzpLfU9oneuzm44lJB7MicpycjikzDDBDegG8YLl479WVlhU0MDK0zdsoCSWWFWeCWPDmXWqJ87mWNqtAWCXauqxrRkonU7uylcWFLOXMqaj9MNk5ju8RZT3_eG8XjkRV7sfhMv8AneYRp7w0kYeZEf-H7g-aPwSHCnlOvgDafBKI7iSTQdByM_imOCoeBG6cdrnC-pvoz4fRHOtzr-BY-m7wg?type=png" template="" -->
-<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
 
 notes:
 - ### Handlung
@@ -567,6 +526,7 @@ notes:
     <script src="dist/reveal.js"></script>
     <script src="plugin/notes/notes.js"></script>
     <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
     <script src="plugin/highlight/highlight.js"></script>
 
     <script src="plugin/zoom/zoom.js"></script>
@@ -622,29 +582,27 @@ notes:
             center: true,
             transition: 'default', // none/fade/slide/convex/concave/zoom
             plugins: [
-                RevealMarkdown,
+                ObsidianMarkdown,
                 RevealHighlight,
                 RevealZoom,
                 RevealNotes,
-                RevealMath.MathJax3,
+                RevealMath.KaTeX,
                 RevealMermaid,
                 RevealChart,
                 RevealCustomControls,
                 RevealMenu,
             ],
-            allottedTime: 120 * 1000,
-            mathjax3: {
-                mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
             },
             markdown: {
                 gfm: true,
-                mangle: true,
-                pedantic: false,
-                smartLists: false,
-                smartypants: false,
             },
             mermaid: {
-                theme: isLight ? 'default' : 'dark',
+                theme: isLight(bgColor) ? 'default' : 'dark',
             },
             customcontrols: {
                 controls: [
@@ -662,13 +620,25 @@ notes:
         // options from URL query string
         const queryOptions = Reveal().getQueryHash() || {};
 
-        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
     </script>
 
     <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
       Reveal.initialize(options);
     </script>
+    <!-- created with Slides Extended reveal.html template -->
 </body>
-
-<!-- created with Slides Extended -->
 </html>
