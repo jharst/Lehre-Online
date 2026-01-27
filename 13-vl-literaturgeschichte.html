@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Surrealismus</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">13. Sitzung: Surrealismus</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;">
+</div>
+<a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Einleitung
+- Romantik, Realismus und Surrealismus
+- Bedeutung des Namens
+
+<!-- „Automatisme psychique pur par lequel on se propose d’exprimer, soit verbalement, soit par écrit, soit de toute autre manière, le fonctionnement réel de la pensée. Dictée de la pensée, en l'absence de tout contrôle exercé par la raison, en dehors de toute préoccupation esthétique ou morale.” (Breton, Manifeste du Surréalisme, 1924)-->
+ 
+ <div class="block">
+
+> „Reiner psychischer Automatismus, durch den man die tatsächliche Funktionsweise des Denkens auszudrücken sucht – sei es mündlich, schriftlich oder auf andere Weise. Diktat des Denkens, ohne jegliche Kontrolle durch die Vernunft, außerhalb jeglicher ästhetischer oder moralischer Überlegungen.“ (Breton, Manifeste du Surréalisme, 1924)
+</div>
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[Literarische Epochen Surrealismus.md] -->
+
+<div class="mermaid">
+%%{
+  init: {
+    'theme': 'neutral'
+    }
+}%%
+gantt
+    title Literarische Epochen: Surrealismus und Magischer Realismus
+    dateFormat  YYYY
+    axisFormat  %Y
+    
+    section Epochen
+    Surrealismus (Europa)     : crit, s1, 1920, 1940
+    Magischer Realismus (Lateinamerika) : crit, m1, 1940, 1970
+    David Lynch : done, l1, 1946, 2025
+    
+    section Werke
+    Breton, "Manifest des Surrealismus" : milestone, ms1, 1924, 1d
+    Breton, "Nadia" : milestone, ms2, 1928, 1d
+    García Marquez, "Hundert Jahre Einsamkeit" : milestone, mr1, 1967, 1d
+    Borges, "Fiktionen" : milestone, mr2, 1944, 1d
+    Lynch, "Mulholland Drive" : milestone, ms3, 2001, 1d
+
+</div>
+
+
+### Legende
+* **1924**: Veröffentlichung des „Manifest des Surrealismus“ von André Breton
+* **1928**: Veröffentlichung von „Nadia“ von André Breton
+* **1944**: Veröffentlichung von „Fiktionen“ von Jorge Luis Borges
+* **1967**: Veröffentlichung von „Hundert Jahre Einsamkeit“ von Gabriel García Márquez
+* **2001**: Veröffentlichung des Films „Mulholland Drive“ von David Lynch als Adaption surrealistischen Stils
+<!-- end::[Literarische Epochen Surrealismus.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg" data-background-size="contain" data-background-position="center" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">de Chirico: Canto d’amore (1914)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+
+notes:
+- Zusammenstellung unzusammengehöriger Gegenstände
+- Realistische Darstellung
+- bedeutungsschwangere Atmosphäre
+- = der Surrealismus sucht nach dem „Überwirklichen” im Alltäglichen
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/en/9/90/DaliGreatMasturbator.jpg" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Salvador_Dalí" title="Salvador Dalì. The Great Masturbator. Öl auf Leinwand, 110 x 150 cm, Museo Nacional Centro de Arte Reina Sofía." target="_blank">Dalì: The Great Masturbator (1929).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+
+
+<div class="block">
+
+<!-- begin::[Lautréamont – Maldoror.md] -->
+- ["] Er ist schön \[…\] wie das zufällige Zusammentreffen einer Nähmaschine und eines Regenschirms auf einem Seziertisch!
+<!-- end::[Lautréamont – Maldoror.md] -->
+
+Comte de Lautréamont. Les Chants de Maldoror. 1874.<!-- .element: style="font-size: smaller; margin-top: 10px !important; padding-top: 10px !important; text-align: center" -->
+</div>
+
+<!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px; position: absolute; left: 10%; top: 40%; height: 20%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" class="fragment" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/E4FDVDRBPUI6HI2YCFCN5ZRW3U&w=1440&impolicy=high_res" alt="" style="object-fit: scale-down">
+
+René Magritte: La trahison des images (1929), 60 x 81 cm, Öl auf Leinwand, Los Angeles County Museum of Art.<!-- .element: style="font-size: smaller" -->
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+
+
+<div class="block">
+
+## Französischer Surrealismus
+- Sprache und Repräsentation von Realität (Objektivität)
+- Suche nach einem neuen Sprachgebrauch
+- Rausch, Traum und Unbewusstes als Quelle der künstlerischen Kreativität
+	- Techniken unbewusster Kreativität *(écriture automatique)*
+	- Poetisierung pathologischer Phänomene (Hysterie)
+- Ablehnung bürgerlicher Ästhetiken (Realismus)
+</div>
+
+<!-- .element: class="fragment" data-fragment-index="1" -->
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/en/7/7d/Masson_automatic_drawing.jpg" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+André Masson. *Automatic Drawing*. 1924. Ink on paper, 23.5 × 20.6 cm. Museum of Modern Art, New York.
+</div>
+
+<!-- .element: style="transform: rotate(270deg); position: absolute; left: 65%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;">
+</div>
+<a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+<div class="block">
+
+<!-- begin::[Surrealismus – Poetisierung der Hysterie.md] -->
+## Poetisierung der Hysterie
+Wir, Surrealisten, wollen hier das fünfzigjährige Jubiläum der Hysterie feiern, die größte dichterische Entdeckung des Endes des 19. Jahrhunderts, und zwar genau zu dem Zeitpunkt, an dem die Zerlegung des Hysterie-Begriffs als vollendet erscheint. 
+
+Neue Definition der Hysterie: Die Hysterie ist ein mehr oder weniger irreduzibler Geisteszustand, der sich durch die Umwälzung der Beziehungen auszeichnet, die sich zwischen dem Subjekt und der moralischen Welt, der es sich tatsächlich zugehörig glaubt, herstellen, außerhalb jedes Wahnsystems. […] Die Hysterie ist kein pathologisches Phänomen und kann in jeder Hinsicht als ein höchstes Ausdrucksmittel angesehen werden.
+
+aus: La révolution surréaliste (1928/11)
+<!-- end::[Surrealismus – Poetisierung der Hysterie.md] -->
+
+</div>
+
+<!-- .element: style="font-size: smaller; text-align: left" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Léona_Delcourt-010.jpg'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Nadja_(Roman)" title="Zeichnung von Léona Delcourt, abgebildet in Bretons Roman Nadja." target="_blank">”Wer ist sie?”.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Breton: Nadia (1928)
+- Flanieren und Dokumentieren: Wirklichkeit vs. „Surrealität”
+- nicht-lineare Erzählung, mit Tagebucheinträgen verschränkt
+- collagenartige Einarbeitung von Zeitungsartikeln und Fotografien
+- autofiktionales Spiel zwischen Fakt und Fiktion (Breton, Kreis der Surrealisten, Paris)
+
+notes:
+- Nadja besteht aus drei Teilen. Der erste Teil beginnt mit der Frage „Wer bin ich?“ Bretons Untersuchungsmethode besteht nicht in Selbstbeobachtung oder psychologischer Analyse, sondern in der Berichterstattung von Anekdoten, von scheinbar unbedeutenden Eindrücken, von „kleinen Tatsachen“, deren gemeinsames Merkmal darin besteht, zum Leben zu gehören, nicht zur Literatur. 
+- Er glaubt, dass diese Fakten mehr über Einzelpersonen aussagen als lange Erfahrungsberichte oder Kommentare. Breton lehnt sich gegen die Illusion von Romanautoren auf, die glauben, sie könnten Charaktere erschaffen, die sich von ihnen selbst oder anderen realen Wesen unterscheiden. Der erste Teil beschreibt daher zunächst nur das ziellose Herumtreiben durch die Straßen von Paris des Autors André Breton.
+- Klare Beobachtung und Dokumentation vs. literarische Erzählung: Einarbeitung von Fotos und Zeitungsartikeln in den Roman, die in ihrem Zusammenwirken auf bedeutsame Koinzidenzen hinweisen sollen. Absetzung des „epiphanische Wunderbaren” gegen den herrschenden Rationalismus.
+- Spiel mit Fakt und Fiktion: Im Roman kommen zahlreiche historische Figuren vor (Bretons Freunde) sowie die Stadt Paris.
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealismus</p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Léona_Delcourt-010.jpg'); background-size: cover; background-position: right;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Nadja_(Roman)" title="Zeichnung von Léona Delcourt, abgebildet in Bretons Roman Nadja." target="_blank">”Wer ist sie?”.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Breton: Nadia (1928)
+- Nadia: Kult einer „surrealen” Liebe
+	- zufälliges Treffen mit Patientin aus Psychiatrie
+	- Faszination und Obsession
+	- Liebe zu Nadia als Begegnung mit einer surrealen Wirklichkeit
+	- scharfe Trennung zwischen Liebe und Person („Muse”)
+
+notes: 
+- Zufällige Begegnung mit Nadja, einer intellektuellen, kreativen und rebellischen Schauspielerin. Beginn eines Gespräches. Zahlreiche zufällige Wiederbegegnungen. Obsession und Faszination (amour fou). Austausch von Zeichnungen und Briefen. Diskussionen über Surrealismus. Anekdoten über die Wirkung ihrer Schönheit auf andere. Das Buch als Dokumentation ihrer rätselhaften Existenz. 
+- Nadja = Nadeschda = Hoffnung.
+- „magische Kreatur” und psychische Erkrankung (Angstzustände, Halluzinationen, seherische Fähigkeiten). Einweisung in psychiatrische Klinik. []()Breton: Stilisierung als Muse.
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Magischer Realismus
+- Arturo Uslar Pietri: „realismo magico” (1948)
+- Miguel Ángel Asturias: *Hombres de maíz* (1949)
+- Alejo Carpentier: *El reino de este mundo* (1949)
+- Bekanntschaft mit Pariser Surrealisten, aber grundsätzlich Abgrenzung gegenüber europäischem Surrealismus
+- Rückgriff auf indigene südamerikanische Mythen
+
+notes:
+- Asturias: Darin wird die Wirklichkeit der Kultur und Geschichte Lateinamerikas aus der Sicht der indigenen Bevölkerung erzählt, deren Mythen (hier die der [Maya](https://de.wikipedia.org/wiki/Maya)) sich in ihr realisieren.
+- Carpentier: Begründung einer spezifisch lateinamerikanischen Literatur, die sich auf das „Wunderbar-Wirkliche Amerikas” _(lo real maravilloso de América)_ gründet
+- Kritik an europäischen Surrealisten – Rationalismus/Descartes/Aufklärung – „mechanische” Herbeiführung des Wunderbaren vs. indigine südamerikanische Mythen/Glauben
+	- Carpentier grenzte Lateinamerika stark von Europa ab und kritisiert den Surrealismus. Dieser leide unter dem „ermüdenden Anspruch […], das Wunderbare künstlich herbeizuführen.”[12] Der Versuch der Surrealisten, in ihren Werken künstlich magische Effekte zu erzeugen, sei gescheitert. Sie hätten das Wunderbare „durch Taschenspielertricks geschaffen, indem man Gegenstände miteinander verbindet, die nie zusammengefunden würden.“[13] Sie deformierten damit die Wirklichkeit. Carpentier zufolge ist „dem Europäer“ die Fähigkeit des Erlebens des wunderbar Wirklichen durch die [Aufklärung](https://de.wikipedia.org/wiki/Aufkl%C3%A4rung) verloren gegangen, während Mythen- und Geisterglaube in Lateinamerika noch immer natürlich im Alltag integriert weiterlebt. Carpentier beschreibt den Magischen Realismus als natürliche, nicht erzwungene Wirklichkeitsauffassung: die Einbettung des Wunderbaren in den Alltag. [wiki](https://de.wikipedia.org/wiki/Magischer_Realismus)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Magischer Realismus bei J.L. Borges
+- Kurzerzählungen: *Fiktionen* (1941) und *Das Aleph* (1949)
+- Philosophische Befragung von Wirklichkeit/Fiktion
+- Phantastische Gedankenexperimente (das Unendliche)
+- Auseinandersetzungen mit Weltliteratur (Bsp.: autofiktionales Spiel mit Dante und Beatrice)
+- Vorläufer der Postmoderne?
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Liebe und Poetik: Das Aleph (1949)
+- Figuren: Carlos Agentino Daneri, Beatriz Viterbo und „Borges”
+- unglückliche Liebe des Erzählers und seine Rache
+- Was ist ein Aleph?
+notes:
+## Zusammenfassung der Erzählung
+Wie in einigen Erzählungen von Borges hört auch der Protagonist von „Das Aleph“ auf denselben Namen wie sein Autor. Dieser fiktionalisierte Borges berichtet dem Leser zu Beginn der Geschichte vom Tod Beatriz Elena Viterbos, einer von ihm verehrten Bekannten. Um die Erinnerung an die Angebetete wach zu halten, besucht der Ich-Erzähler einmal jährlich Haus und Familie der Verstorbenen. So kommt er in Kontakt mit Viterbos Cousin Carlos Argentino Daneri, einem blasierten und untalentierten Lyriker, der es sich zur Aufgabe gemacht hat, ein episches Gedicht zu schreiben, das jeden Ort der Welt im Detail beschreibt. Daneri kommentiert in Gesprächen mit Borges das eigene Werk ausschweifend und bittet ihn gar, seine Beziehungen einzusetzen, um einen anderen Autor für das Vorwort des exorbitanten Gedichts zu gewinnen. Der Protagonist sagt ihm seine Hilfe lediglich zum Schein zu.
+
+Als eines Tages das Haus von Daneri abgerissen werden soll, offenbart sich dieser Borges: Im Keller seines Hauses befände sich ein Aleph, wobei es sich um einen Punkt im Raum handle, der alle Punkte der Welt in sich enthalte. Das Aleph dürfe jedoch unter keinen Umständen vernichtet werden, da Daneri sonst sein Gedicht nicht vollenden könne. Auch wenn er zunächst ungläubig bleibt, so macht Borges sich doch auf, um das vermeintliche Aleph selbst in Augenschein zu nehmen. Im Dunkel des Kellers erblickt er schließlich das Unglaubliche: „[Ich] sah das Aleph aus allen Richtungen zugleich, sah im Aleph die Erde und in der Erde abermals das Aleph und im Aleph die Erde, sah mein Gesicht und meine Eingeweide, sah dein Gesicht und fühlte Schwindel und weinte, weil meine Augen diesen geheimen und gemutmaßten Gegenstand erschaut hatten, dessen Namen die Menschen in Beschlag nehmen, den aber kein Mensch je erblickt hat: das unfaßliche Universum.“
+
+Borges behauptet entgegen seiner Wahrnehmung, Daneri müsse sich das Aleph einbilden. Daneris Haus wird schließlich abgerissen und das Aleph zerstört.
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightsteelblue; opacity: 0.5;">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+> [Ich] sah das Aleph aus allen Richtungen zugleich, sah im Aleph die Erde und in der Erde abermals das Aleph und im Aleph die Erde, sah mein Gesicht und meine Eingeweide, sah dein Gesicht und fühlte Schwindel und weinte, weil meine Augen diesen geheimen und gemutmaßten Gegenstand erschaut hatten, dessen Namen die Menschen in Beschlag nehmen, den aber kein Mensch je erblickt hat: das unfaßliche Universum (J.L. Borges, Das Aleph, 1949).
+
+> Borges ist besessen von der Vorstellung, der menschliche Geist habe ‚aus dem Nichts‘ eine Welt von Gedankensystemen geschaffen, die nun bis ins Unendliche fort weitere Gedankensysteme und dichterische Fiktionen erzeuge. (Marianne Kersting, Die Zeit, 1965)<!-- .element: class="fragment" data-fragment-index="1" -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;">13. Sitzung: Surrealealismus</p>
+<div class="right-top-div" style="background-image: url('https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg'); background-size: cover; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg" title="Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno." target="_blank">F. Kahlo: Las dos Fridas (1939).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Liebe und Poetik: Das Aleph (1949)
+- Adaption und Inversion von Dantes *Komödie*
+- Literatur als Aleph?
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://m.media-amazon.com/images/M/MV5BM2IyMGVmNjItNGZiMy00YmI1LTlmZWMtYzg2ZGZkMjlhZTQ0XkEyXkFqcGc@._V1_.jpg" alt="Poster" style="object-fit: scale-down">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## David Lynch (1946-2025)
+- Genre: Surrealismus, Film Noir, Horror
+- wichtige Filme: 
+	- *Eraserhead* (1977)
+	- *Mulholland Drive* (2001)
+	- *Twin Peaks* (TV-Serie, 1990-91/2017)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 60%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://m.media-amazon.com/images/M/MV5BMjExODczOTg1MV5BMl5BanBnXkFtZTYwMzkyOTc2._V1_.jpg" alt="Metafiktional" style="object-fit: scale-down">
+
+<img src="https://m.media-amazon.com/images/M/MV5BMjE0NDY3Mzc3Nl5BMl5BanBnXkFtZTYwNzkyOTc2._V1_.jpg" alt="Narzissmus" style="object-fit: scale-down">
+
+</div>
+
+## Mulholland Drive (2001)
+- metafiktionale Aspekte
+	- Schauspielerin in Hollywood sucht ihre Chance
+	- Detektivplot führt in die Filmwelt hinein
+	- zentrale Rolle einer „blue box””
+- Aspekte der Liebe
+	- (narzisstische) Liebesgeschichte
+	- audition scene: gespielte wird erlebte Liebe
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Audition Scene 1
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/u9CrynDBO84?si=-MguAuc242KFqc0m" title="Mulholland Drive: Audition Scene 1" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Audition Scene 2
+<div class="iframe-container">
+<iframe src="https://www.youtube.com/embed/lwY4d2utCIY?si=Y4Y0zYfMj8cXeu7M" title="Mulholland Drive Audition Scene 2" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

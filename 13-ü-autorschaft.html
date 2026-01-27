@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Différance und LLMs</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('Resources/images/Goethe-mit-Smartphone.jpg'); background-size: cover; background-position: left; transform: scaleX(-1);"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Autorschaft und digitale Literatur</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<div class="" style="color: white; transform-origin: left top; font-family: Impact; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 86%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+
+
+13. Sitzung: Différance und LLMs
+
+<aside class="notes"><ul>
+<li>Kontextualisierung der Sitzung: Zusammenführung von Poststrukturalistischer Literaturtheorie mit generativer KI</li>
+<li>Rede über Vorbereitung der Sitzung</li>
+<li>weiterer Aspekt: letzte Sitzung fällt aus, mögliche Hausarbeitsthemen besprechen<ul>
+<li>Fragestellungen zu Autorschaft und digitaler Literatur</li>
+<li>Untersuchung eines digital generierten Textes vor dem Hintergrund einer ausgewählten Literaturtheorie</div>
+</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gunkel: Poststructuralist Sign Theory
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->„Language is a system of \[graphic\] differences” (2)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Spatialization: each sign is a differential position in a net of references (2)
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Temporalization (2)
+	- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->meaning is anticipation of deferred significance
+	- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->there is no given transcendental signified
+	- &shy;<!-- .element: class="fragment" data-fragment-index="6" -->„Meaning is never fully present in any given moment; it is always postponed, always to come” (2f.)
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gunkel: Large Language Models
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Spatialization: Word embedding (meaning enocoded in high dimensional space) (3)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Temporalization: Next token prediction (every generated text is to be continued) (4)
+	- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Turing Test (is there a difference between man and machine?)
+	- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Chinese Room (do LLMs understand what they’re writing?)
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Intertextuality: There is nothing outside of the text (4)
+
+<aside class="notes"><ul>
+<li><h2 id="turing-test">Turing Test</h2>
+</li>
+<li>Im Zuge dieses Tests führt ein menschlicher Fragesteller, über eine Tastatur und einen Bildschirm, ohne Sicht- und Hörkontakt, eine Unterhaltung mit zwei ihm unbekannten Gesprächspartnern. Der eine Gesprächspartner ist ein Mensch, der andere eine Maschine. Kann der Fragesteller nach der intensiven Befragung nicht sagen, welcher von beiden die Maschine ist, hat die Maschine den Turing-Test bestanden und es wird der Maschine ein dem Menschen ebenbürtiges Denkvermögen unterstellt.</li>
+<li><h2 id="chinese-room">Chinese Room</h2>
+</li>
+<li>Bei dem Gedankenexperiment stellt man sich einen geschlossenen Raum vor, in dem ein Mensch, der keinerlei Chinesisch versteht, in chinesischer Schrift gestellte Fragen – anhand einer in seiner Muttersprache verfassten Anleitung – in chinesischer Schrift sinnvoll beantwortet. Personen außerhalb des Raums folgern aus den Ergebnissen, dass der Mensch in dem Raum Chinesisch beherrscht, obwohl das nicht der Fall ist.</li>
+<li>Das Experiment sollte zeigen, dass ein Computer ein Programm ausführen und regelbasiert Zeichenreihen verändern kann, ohne die Bedeutung der <a href="https://de.wikipedia.org/wiki/Zeichen" title="Zeichen">Zeichen</a> zu verstehen. Die Fähigkeit, <a href="https://de.wikipedia.org/wiki/Syntax" title="Syntax">Syntax</a> zu befolgen, soll nach Searle also nicht zu <a href="https://de.wikipedia.org/wiki/Semantik" title="Semantik">Semantik</a> befähigen. Nach Searle müsste ein Computer dafür <a href="https://de.wikipedia.org/wiki/Intentionalit%C3%A4t" title="Intentionalität">Intentionalität</a> aufweisen. (<a href="https://de.wikipedia.org/wiki/Chinesisches_Zimmer">wiki</a>)</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gunkel: Philosophical consequences
+- Deconstruction of logocentrism (speech/writing oppositon) (5)
+- „LLMs operationalize the deconstruction of logocentric metaphysics” (5): for them, writing is primary
+- „Death of the author” (6)
+- Reflecting on LLMs and deconstruction leads to a critical reappraisal of „intelligence” (6)
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
