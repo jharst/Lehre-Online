@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Surrealismen – Lynch</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg'); background-size: contain; background-position: right;"><div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Giorgio_de_Chirico" title="Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art." target="_blank">Abbildungsnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+<div class="left-bottom-div" style="width: 65%"><p class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">14. Sitzung: Neo-Surrealismus</p>
+<div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Lieben, Leben, Lesen<br>Einführung in die vergleichende<br>Literaturgeschichte</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/E4FDVDRBPUI6HI2YCFCN5ZRW3U&w=1440&impolicy=high_res" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+René Magritte: La trahison des images (1929), 60 x 81 cm, Öl auf Leinwand, Los Angeles County Museum of Art.<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+<aside class="notes"><h2 id="zu-magritte">Zu Magritte:</h2>
+<ul>
+<li>das Bild thematisiert die Kluft zwischen Objekt, bildlicher Repräsentation und sprachlicher Bezeichnung, obwohl es zugleich in „realistischer” oder illusionistischer Weise gemalt ist</li>
+<li>Magritte malt eine Pfeife, aber damit schafft er eben nur ein Abbild und nicht die Pfeife selber, ein Widerspruch, der durch die Bildunterschrift verdoppelt wird, da auch die Repräsentation der Pfeife als sprachliches Zeichen nicht ihre Präsenz, sondern genau genommen immer nur ihre Absenz markiert. Wo ein Abbild einer Pfeife ist, als bildliches oder als sprachliches Zeichen, ist eben nie eine Pfeife. </li>
+<li>Das wird durch die Vieldeutigkeit des deiktischen Artikels „ceci” noch verstärkt: Das Wort kann sich sowohl auf die bildliche als auf die sprachliche Repräsentation beziehen.</li>
+<li>Überhaupt ist der Einbezug der Bildunterschrift in das Bild selbst wichtig (Bild und Legende werden zusammengezogen)</li>
+<li>Übersetzungsbeziehung zwischen Bild und Sprache (wichtig für Szene bei Mulholland Drive)</div></li>
+</ul>
+</aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div style="background-image: url('https://ih1.redbubble.net/image.4936573451.3643/mp,840x830,matte,f8f8f8,t-pad,1000x1000,f8f8f8.jpg'); background-size: 100%; background-position: 50% 50%; width: 100%; height: 100%"></div>
+<aside class="notes"><h2 id="ceci-nest-pas-une-pepe">Ceci n&#39;est pas une pepe</h2>
+<ul>
+<li>Hier als ein Beispiel dafür, wie ein Meme eine Collage- oder Zitat-Technik aufgreift (auch hier kommt Unzusammengehöriges zusammen)</li>
+<li>Gattungszugehörigkeit: image-macro, Geschichte von Pepe-Memes<ul>
+<li>„Feels good man” (Matt Furie)</li>
+<li>kommerzieller Erfolg</li>
+<li>Vereinnahmung durch Alt-right-Bewegung</li>
+<li>Heterogenität und Diversität einer einzelnen Meme-Gattung</li>
+</ul>
+</li>
+<li>Bildunterschrift könnte nun auf Meme selbst bezogen werden (Pepe ist sich selbst nicht gleich) – zugleich möglich: Rückbezug auf „Fake News”, Infragestellung sinnlicher Evidenz (meine Idee) – Verbergen problematischer Kontexte in scheinbarer bildlicher Eindeutigkeit</div></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="flex-even" style="position: absolute; left: 0%; top: 5%; height: 90%; width: 100%; display: flex; flex-direction: row; align-items: start; justify-content: center" >
+
+<img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ijtPw94oM1eig9Ft4n7LEw.jpeg" alt="img" style="object-fit: scale-down">
+
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://miro.medium.com/v2/resize:fit:4800/format:webp/1*fMXfCoXrfHMPScPjFvq4jQ.png" alt="img" style="object-fit: scale-down">
+
+<img src="https://www.vatikanischemuseen.com/wp-content/uploads/2023/06/Die-Erschaffung-Adams-von-Michelangelo.jpg.webp" alt="img" style="object-fit: scale-down">
+
+</div>
+<aside class="notes"><ul>
+<li>Michaelangelo: Die Erschaffung Adams. Ausschnitt aus dem Deckenfresko der Sixtinischen Kapelle, Vatikan. 1508-1512.</div></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="flex-even" style="position: absolute; left: 0%; top: 5%; height: 90%; width: 100%; display: flex; flex-direction: row; align-items: start; justify-content: center" >
+
+<img src="https://pics.craiyon.com/2024-05-08/_QaaAyspQMGNC8DsTvwbpA.webp" alt="img2" style="object-fit: scale-down">
+<img src="https://cdn.openart.ai/published/n7JQfbQZihmWHq6gkTQU/O2bkaUWf_aj0e_1024.webp" alt="img3" style="object-fit: scale-down">
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<div class="block">
+
+<img src="https://m.media-amazon.com/images/M/MV5BM2IyMGVmNjItNGZiMy00YmI1LTlmZWMtYzg2ZGZkMjlhZTQ0XkEyXkFqcGc@._V1_.jpg" alt="Poster" style="object-fit: scale-down">
+
+</div>
+
+
+
+</div>
+
+<div class="" style="padding: 10px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## David Lynch (1946-2025)
+- Genre: Surrealismus, Neo Noir, Mystery
+- wichtige Filme: 
+	- *Eraserhead* (1977)
+	- *Mulholland Drive* (2001)
+	- *Twin Peaks* (TV-Serie, 1990-91/2017)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 60%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://cintilatio.com/wp-content/uploads/2021/06/Mulholland-Drive-1.1.jpg" alt="Metafiktional" style="object-fit: scale-down">
+
+<img src="https://cdn.mos.cms.futurecdn.net/MJDkKBsBY8TRdqoVHoQKQD-1539-80.jpg" alt="Narzissmus" style="object-fit: scale-down">
+
+<img src="https://static1.colliderimages.com/wordpress/wp-content/uploads/2022/04/mulholland-drive-feature.jpeg" alt="Narzissmus" style="object-fit: scale-down">
+
+</div>
+
+## Mulholland Drive (2001)
+- metafiktionale Aspekte
+	- Schauspielerin in Hollywood sucht ihre Chance
+	- Detektivplot führt in die Filmwelt hinein
+	- zentrale Rolle einer „blue box””
+- Aspekte der Liebe
+	- (narzisstische) Liebesgeschichte
+	- audition scene: gespielte wird erlebte Liebe
+<aside class="notes"><ul>
+<li>Im Hintergrund ist das Filmplakat von „Gilda” mit Rita Hayworth zu sehen</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container"><div class="bg-video-wrapper">
+<iframe src="https://www.youtube.com/embed/u9CrynDBO84?si=-MguAuc242KFqc0m" title="Mulholland Drive: Audition Scene 1" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+<aside class="notes"><h3 id="audition-scene-1">Audition scene 1</h3>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="overflow: hidden"><div class="bg-video-wrapper">
+<iframe src="https://www.youtube.com/embed/lwY4d2utCIY?si=Y4Y0zYfMj8cXeu7M" title="Mulholland Drive Audition Scene 2" width="1920" height="1080" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></div>
+<aside class="notes"><h3 id="audition-scene-2">Audition Scene 2</h3>
+</div></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="" style="position: absolute; left: 60%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+<img src="https://1.bp.blogspot.com/-yZcel4VjpV0/XrbhIdRE3TI/AAAAAAAAvgE/NAq8h85Z7BwhqM6hcabKQZJD4DNeniE6wCLcBGAsYHQ/s1600/Palace-MulhollandDr-104.jpg" alt="image" style="object-fit: scale-down">
+
+<img src="https://static1.srcdn.com/wordpress/wp-content/uploads/2020/07/Mulholland-Drive.jpg" alt="image" style="object-fit: scale-down">
+<img src="https://welcometotwinpeaks.com/wp-content/uploads/the-magician-mulholland-drive-e1527742236115.jpg" alt="image" style="object-fit: scale-down">
+
+</div>
+
+<div style="width: 50%;left: 0;"> 
+
+## Club Silencio: Word magic (~01:44:00)
+<div id="poem"><p>
+No hay banda</br>there is no band</br>il n’est pas de orchestra</br>it is all a tape recording</br></p>
+<p>no hay banda</br>and yet we hear a band</br>if we want to hear a clarinet</br>– listen! –</br>un trombone a coulisse</br>un trombone con sordina (…) </p> 
+<p>it’s all recorded</br>il n’est pas de orchestra</br>it is –– an illusion</p></div>
+
+<aside class="notes"><h3 id="club-silencio--014045">Club Silencio – 01:40:45</h3>
+<ul>
+<li>Spiel mit sprachlicher Übersetzung – zwischen den Sprachen permutierenden Rede </li>
+<li>Mit Bezug auf die aus den Kulissen ertönende Musik ruft der Zauberer aus: »No hay banda! – There is no band – Il n’est pas de orchestra – This is all a tape recording.« Die Mehrdeutigkeit des spanischen Wortes »banda« erlaubt, wie die Übersetzungen zeigen, eine widersprüchliche Auslegung: Die Behauptung »no hay banda«, es gebe keine Band, wird durch die aus ihr gezogene Konsequenz – die Musik aus den Kulissen kommt vom Band – widerlegt; und dieser Widerspruch wird wenig später auch direkt ausgesprochen: »No hay banda – and yet we hear a band.« Und darauf: »No hay banda – It is all a tape.« Gerade die Abwesenheit der Band belegt also, dass es ein Band – eben die Musik- und Filmaufzeichnung – gibt; das bedeutet aber auch, dass diese Feststellung nicht eine vorgebliche Realität (des Orchesters, des Films) als Illusion entlarvt, sondern umgekehrt die abgeklärte, realistische Feststellung (»no hay banda«) als innerlichen Widerspruch kenntlich macht. Mit diesem magischen Wortspiel, das der desillusionierenden Negation ihr spiegelverkehrtes Gegenteil entlockt, verliert die ﬁktionale Welt von Mulholland Dr. ihre Grenze, wird auch die Behauptung einer enttäuschten Realität von Fiktion durchsetzt. In diesem Sinn spricht der Magier die gewichtigen Worte »it is – an illusion« und verschwindet in einer grellblauen Rauchwolke.</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background: lightsteelblue; opacity: 0.5;">
+<div></div>
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 10%; top: 5%; height: 90%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+<!-- begin::[VL Literaturgeschichte Prüfungskriterien.md] -->
+## Präsentation (5 Min.)
+- der selbst gewählte Text wird sicher vorgestellt, in der literarischen Epoche kontextualisiert und in Bezug auf den jeweiligen Liebesdiskurs analysiert
+- es werden in diesem Zusammenhang die folgenden Fragen beantwortet:
+	- was zeichnet den Text aus?
+	- inwiefern ist er exemplarisch für seine Epoche und Liebesdiskurs?
+	- wie wird das Verhältnis Lesen/Lieben/Leben im Text dargestellt?
+- abschließend: welche Parallel- und Kontrasttexte sind nennenswert? 
+
+## Weiterer Prüfungsverlauf
+- sichere Beherrschung der Werke in ihrem Bezug zum Vorlesungsthema und zur jeweiligen Epoche
+- Kenntnis intertextueller Beziehungen (Motive, Zitate)
+- Fähigkeit, Parallelen und Kontraste zu anderen Werken herzustellen (selbständig oder auf Nachfrage)
+- sicherer Bezug auf übergeordnete Konzepte (Epochen, Gattungen, Lese- und Schreibpraktiken)
+<!-- end::[VL Literaturgeschichte Prüfungskriterien.md] -->
+
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
