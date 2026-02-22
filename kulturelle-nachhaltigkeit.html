@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="./css/video-background.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('https://luxiders.com/content/uploads/vertical-orchard-01.jpg'); background-position: center; background-size: cover;">
+
+<div class="left-bottom-div"><div class="left-top-div">
+
+
+<div class="left-top-div-text fragment fade-out"><p class="slide-title-left">KI als Teil einer Kultur der Nachhaltigkeit?</p><p class="slide-title-left" style="align-items: flex-start; font-size: smaller">Künstlerische Positionen zwischen<br> Kartografie und neuer Mythologie</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst, AVL<br>Universität des Saarlandes</p>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out"><h2>Einleitung</h2>
+
+<ul><li>KI als Teil einer „Kultur der Digitalität”</li> 
+<li>hoher Ressourcenverbrauch von LLMs (Red AI)</li>
+<li>eine Cloud aus Gestein, Lithiumsole und Rohöl</li> 
+<li>zwei Vortragsteile:</li>
+<ol><li>wissenschaftliche Kartografie von KI</li>
+<li>künstlerische Kartografie und neue Mythologie</li></ol></ul>
+</div>
+
+
+</div></div>
+
+<div class="right-image-source is-dark"><a href="https://liamyoung.org/projects/planet-city" title="" target="_blank">L. Young: Planet City (still, 2021)<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+
+
+<aside class="notes"><h2 id="einleitung">Einleitung</h2>
+<ul>
+<li>Ich möchte beginnen, indem ich mein Vortragsthema im Zusammenhang meiner Forschung kontextualisiere. In den letzten Jahren habe ich einen Schwerpunkt im Bereich der Medienkomparatistik ausgebildet. Klassisch verstanden, beschäftigt sich Medienkomparatistik z.B. mit dem Verhältnis zwischen Literatur und Film (Romanverfilmungen). In der heutigen Forschung treten jedoch auch stärker medienwissenschaftlich akzentuierte Themen in den Vordergrund wie z.B. die Medialität von Sprache im Vergleich zwischen mechanischen und digitalen Schreibmedien. In diesem Kontext habe ich mich mit digital generierter Literatur beschäftigt. Hier geht es um Texte, die teilweise oder vollständig von KI generiert werden – und um die Frage, ob und wie sich solche sprachlichen Artefakte literaturwissenschaftlich interpretieren lassen. Von Interesse sind dabei für mich vor allem solche Projekte, die sich als künstlerische Experimente mit KI verstehen. Solche Arbeiten haben eine investigative Seite, insofern sie die oft verborgenen Strukturen und Prozesse hinter maschineller Texterzeugung erkunden. Sie treten aber auch dafür ein, KI nicht nur als ein rein technisches Instrument zu betrachten, sondern im Rahmen einer „Kultur der Digitalität” (wie es Felix Stalder genannt hat) zu verorten. Ein Ausgangspunkt für meinen Vortrag heute ist daher die These, dass Medien wie KI nicht nur Gesellschaften bestimmen, sondern umgekehrt kulturell zu situieren sind <mark>(Belege)</mark>.</li>
+<li>Im Zusammenhang dieser Forschungen bin ich auf das Problem des hohen Ressourcenverbrauchs von Large Language Models gestoßen. Es ist mittlerweile Allgemeinwissen, dass die Erzeugung von LLMs geradezu sagenhafte Mengen an Energie und Wasser verbraucht, wie auch die Herstellung der erforderlichen Hardware und die Betreibung der Infrastruktur enorm ressourcenintensiv ist. Wenn man jedoch tiefer in das Thema einsteigt, stellt man schnell fest, dass genaue Zahlen selten vorliegen, weil es keine standardisierte Berichtspflicht für Entwickler und Betreiber gibt und diese aus naheliegenden Gründen genaue Angaben vermeiden. Aus diesem Grund ist der Ressourcenverbrauch von LLMs ein eigenes Forschungsthema, das Wissenschaftler und Künstler:innen gleichermaßen beschäftigt. Für beide Parteien ist ein investigativer Ansatz erforderlich, weil die Verbraucher selbst technische Daten unter Verschluss halten und der Zugang zu Datenzentren eingeschränkt ist.</li>
+<li>So haben z.B. Strubell et al. in einem Paper von 2019 gezeigt, dass die für das Training eines einzigen LLM erforderliche Energie 300 Tonnen CO2-Äquivalenten entspricht – was ungefähr der Verbrauch von 250 Linienflügen zwischen New York und Peking wäre (zit. bei @Dhar-2020 und @Crawford-2021). Forscher:innen sprechen daher auch von „Red AI“ [@Dhar-2020]: Künstliche Intelligenz schreibt rote Zahlen – sowohl in Bezug auf das nötige Investment von Ressourcen als auch von Kapital. Und mehr noch: Für eine lineare Steigerung der performance von LLMs ist zur Zeit eine exponentielle Steigerung der Rechenleistung erforderlich, so dass jeder kleine Fortschritt mit einer Vervielfachung des Ressourcenverbrauchs erkauft werden muss.</li>
+<li>Diese Erkenntnisse stehen natürlich quer zum Mythos von der Immaterialität des Digitalen, der aus den Jugendjahren des „Cyberspace” stammt, aber in Künstlicher Intelligenz und sogenanntem Cloud Computing zu einer neuen Blüte kommt: Was könnte schwereloser wirken als die Cloud, aus der KI-Agenten und Chatbots zu uns sprechen? Und doch besteht dieses „Rückgrat der KI-Industrie” aus Gestein, Lithiumsole und Rohöl [@Crawford-2021, 31]. Wie KC und VJ in einer bekannten Fallstudie zu Amazon Echo schreiben, ruht die Bequemlichkeit sprachgesteuerter „smart devices” auf einem „planetarischen Netzwerk” auf, das die Ausbeutung von Rohstoffen, Arbeitskraft und Daten umfasst und in seinen Ausmaßen unbekannt ist. Um so wichtiger sind alle Arbeiten in diesem Bereich, die diese Komplexität veranschaulichen und deutlich machen, dass KI gesellschaftlich und kulturell zu situieren ist.</li>
+<li>An dieser Stelle berühren sich wissenschaftliche mit künstlerischen Perspektiven, auf die ich im Folgenden eingehen werde. Ich möchte dabei heute zwei Formen eher künstlerischer Intervention vorstellen, die Text- und Bildmedien verknüpfen: <ul>
+<li>Ich beginne mit wissenschaftlichen Studien zur Materialität von KI, die ihre Grundlage in sprachlicher Darstellung haben, aber zugleich auf visuelle Präsentationsformen setzen. Neben Einsichten in die Komplexität der Produktionsprozesse von KI geht es hier um die These, dass eben diese Komplexität zu ihrer Erforschung und Vermittlung ein ästhetisch vermitteltes Verständnis erfordert, wie man es in Diagrammen und Karten findet.</li>
+<li>Im zweiten Teil meines Vortrags stelle ich dann künstlerische Arbeiten vor, die Investigation und Imagination verschränken, um einer technizistischen Reduktion des Phänomens entgegenzuwirken. Das Thema der Kartografie bleibt erhalten, wird aber durch die Verarbeitung lokaler Erzählungen zu einer neuen Mythologie erweitert. Solche Mythen verstehe ich als Versuche, ein neues Weltbild zu schaffen, das technizistische Grundannahmen hinterfragt.</li>
+</ul>
+</li>
+<li>Mit meinen Fallbeispielen möchte ich dafür argumentieren, dass Nachhaltigkeit von KI nicht nur „ressourcensparende Technik” (Green AI) heißen kann. Im Sinne unseres Tagungstitels sind vielmehr „Kulturen der Nachhaltigkeit” notwendig. Denn wie @Messner-2022 schreiben, ist „die eigentliche Herausforderung der Transformation zur Nachhaltigkeit keine technologische oder ökonomische, sondern eine kulturelle” (28). Es geht schließlich um einen grundlegenden Wandel von Denken und Handeln, der „unser Selbstverständnis als Menschen, das Verhältnis zwischen Mensch und Natur” und „unsere Verständnisse von lokalen, nationalen und globalen Verantwortlichkeiten” einschließt (27). Zu diesem Wandel gehört auch, KI als sozial und kulturell eingebettet zu denken und künstlerische Positionen als KI-Forschung wahrzunehmen.</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: #F5E0D6; background-image: url('https://m.media-amazon.com/images/I/71HGbZqJLaL._SL1500_.jpg'); background-size: contain; background-position: 90% bottom; background-repeat: no-repeat;">
+
+<div class="left-bottom-div" style="width: 55%"><div class="left-top-div"><div class="left-top-div-text">
+<h2>Kartografie und Kulturen der Nachhaltigkeit</h2>
+<ul><li>„die planetarischen Kosten vom KI”</li>
+<li>Verbindung von Wissenschaft und Kunst</li>
+<li>Gegenkartografie der KI-Imperien</li></ul>
+</div></div></div></div>
+
+
+<aside class="notes"><h2 id="materialität-und-kartografie">Materialität und Kartografie</h2>
+<ul>
+<li>Mein erster Vortragsteil beschäftigt sich mit der materiellen Dimension von KI und kartografischen Visualisationsverfahren. Ich beziehe mich dabei auf Publikationen von Kate Crawford, einer australischen Wissenschaftlerin, Publizistin und Künstlerin, die sich mit den sozialen und politischen Auswirkungen der künstlichen Intelligenz beschäftigt. In ihrer jüngsten Buchpublikation mit dem Titel „Atlas of AI” untersucht sie „die planetarischen Kosten Künstlicher Intelligenz”. Sie untersucht also das globale Netzwerk der KI, das neben digitaler Kommunikation und Datenverarbeitung auch Bergbau, ausbeuterische Arbeitsverhältnisse, undurchsichtige Lieferketten sowie die Verschränkung von KI-Entwicklung mit politischer und militärischer Macht umfasst. Die Erkenntnisse, die Crawford u.a. durch Vor-Ort-Recherchen und Interviews erarbeitet hat, sind für sich genommen denkwürdig; ich möchte mich hier jedoch auf den Titel konzentrieren, also auf den Begriff oder die Metapher „Atlas”. Was bedeutet dieser Bezug zur kartografischen Visualisation, die ja auch immer ein sinnliches, ja ästhetisches Element mit sich bringt?</li>
+<li>Unter einem Atlas verstehe ich eine strukturierte Sammlung von Karten mit unterschiedlichen Auflösungen und Schwerpunkten. Dabei geht es nicht nur um Geografie: Zu denken wäre auch an den anatomischen Atlas, der den menschlichen Körper und das medizinische Wissen kartiert. In beiden Fällen geht es darum, einen Gegenstand in verschiedene Ebenen zu zerlegen, um ein komplexeres Gesamtbild zu erhalten. Zugleich fordert der Atlas ein anderes Lesen als das Buch: Er ist nicht unbedingt zur linearen Lektüre gedacht, präsentiert Wissen visuell und zielt auf eine Schulung des Sehsinns ebenso wie des Intellekts. Mit dem französischen Kunsthistoriker Didi-Huberman schreibt Crawforad daher, dass der Atlas kreativer Akt und wissenschaftliche Sammlung zugleich ist und somit Wissenschaft und Kunst verbindet.<ul>
+<li>Bemerkenswert ist nun, dass Crawfords Buch selbst keinerlei Visualisationen enthält. Offenbar versteht sie den Begriff „Atlas” als Metapher für einen topografischen Ansatz auch in der sprachlichen Darstellung von Wissen. Vor allem bringt sie ihn mit der künstlerischen Strategie der „Gegen-Kartografie” in Verbindung, die Verflechtungen von Kartografie und Macht reflektiert. Während die KI-Industrie in Zusammenarbeit mit politischer und militärischer Macht dabei ist, die Welt in einem ganz konkreten Sinn neu zu kartieren, fordert Crawford mit ihrem „Atlas” neue Sichtweisen auf die KI-Imperien ein. Dabei will sie die Karte nicht nur als Repräsentation verstehen, sondern auch als Instrument, das Zusammenhänge handhabbar macht und somit neues Denken und Handeln ermöglicht. Sie soll ein umfassendes Wissen von KI ermöglichen, das zugleich offen bleibt für seine zahlreichen heterogenen und ungleichzeitigen Prozesse.</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container"><div class="bg-video-wrapper">
+<iframe src="https://anatomyof.ai/index.html" allowfullscreen></iframe></div>
+
+<div class="left-bottom-div fragment fade-out" style="z-index: 2;"><div class="left-top-div"><div class="left-top-div-text">
+<h2>Anatomy of an AI-System</h2>
+<ul><li>Fallstudie zum Lebenszyklus von Amazon Echo Dot</li>
+<li>komplexes Flussdiagramm, Infoboxen und blow-ups</li>
+<li>verschiedene Leserichtungen möglich</li></ul>
+</div></div></div>
+
+
+<div class="right-image-source is-dark"><a href="https://anatomyof.ai/index.html" title="Crawford/Joler: Anatomy of AI (2018)" target="_blank">Crawford/Joler: Anatomy (2018)<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+
+<aside class="notes"><h2 id="anatomy-of-an-ai-system">Anatomy of an AI-System</h2>
+<ul>
+<li>In einer weiteren Veröffentlichung mit dem Titel „Anatomy of an AI-System” setzt Kate Crawford die kartografische Metapher in Zusammenarbeit mit Vladan Joler auch visuell um. Die Veröffentlichung besteht aus einem Essay, einzelnen grafischen Elementen und einem komplexen Diagramm, das die im Essay angesprochenen Zusammenhänge in deutlich höherer Auflösung visualisiert. Dabei verhält sich „Anatomy” zu „Atlas” wie ein Teil zum Ganzen: Das Werk präsentiert eine Fallstudie, die am Beispiel der „smart speaker” namens Echo Dot von Amazon die Komplexität der Produktion von KI aufzeigt.</li>
+<li>Echo Dot ist ein digitales Endgerät, das eine sprachliche Interaktion mit der KI Alexa ermöglicht. Der Echo Dot ist winzig, gerade einmal so groß wie ein Eishockey-Puck, aber er sitzt auf einem weltumspannenden Produktionszusammenhang auf, über dessen Netzwerke auch die KI-Industrie selbst nicht vollständig Auskunft geben kann.</li>
+<li><mark>DIAGRAMM</mark> Die Grafik heißt „Anatomy of AI”, weil sie diesen Zusammenhang wie einen organischen Körper seziert. Sie zerschneidet nicht nur das Gerät selbst in mehrere Ebenen, sondern fächert auch Produktionsketten und Infrastrukturen auf. Detailansichten und Infoboxen ergänzen das Bild, wobei die Autor:innen einräumen, dass sich jede Ebene erneut aufteilen und detaillierter betrachten ließe. In jedem Fall dient die grafische Darstellung dazu, den nicht-linearen Charakter der Zusammenhänge zu unterstreichen. Es handelt sich eben nicht um eine einfache Kausalkette, die von einer Anfangsursache zu einem Endeffekt führt.</li>
+<li>Dieser Zusammenhang umfasst:<ul>
+<li><strong>die Fertigung von Hardware:</strong> Ausbeutung materieller Ressourcen (Minen, seltene Erden, prekäre Arbeitsbedingungen, Ko-Finanzierung von autoritären Regimen und militärischen Konflikten)</li>
+<li>komplexe Lieferketten mit tausenden Subunternehmen, weltumspannende Transportwege und undurchsichtigen Verantwortlichkeiten</li>
+<li><strong>die digitale Infrastruktur:</strong> Internet-Infrastruktur: Kabel, Router, Server, Rechenzentren</li>
+<li>Datensammlung, -aufbereitung und machine learning</li>
+<li><strong>die Interaktion mit dem digitalen Endgerät</strong>: Indienstnahme der Nutzer:in als Prosumer:in – jede Interaktion mit der KI wird zu weiteren Trainingsdaten verarbeitet – Privatisierung des durch Verarbeitung offener Daten gewonnenen Wissens →  <mark>Überwachungskapitalismus</mark></li>
+<li><strong>Entsorgung des Endgeräts</strong> – Recycling von Elektroschrott – verbunden mit neuerlichen Lieferketten und Transportwegen</li>
+</ul>
+</li>
+<li>Ich möchte exemplarisch zwei verschiedene Lesarten des Diagramms anführen. Ich kann das Diagramm von links unten anfangend lesen: Dann vollziehe ich die Fertigung, Lieferung und Bedienung eines Amazon Echo-Geräts nach. Oder ich lese es von Mitte oben nach unten: Dann setzt die sprachliche Interaktion mit Amazon Echo die Produktion und Aktualisierung von KI in Gang. Der Punkt ist einfach: Die Nutzung von KI ist nicht einfach der Gebrauch eines gefertigten Produkts. Die Nutzung von KI schreibt die Nutzer:in in den globalen Produktionszusammenhang von KI ein, macht sie zum Teil des Produkts. Poetisch gesagt: Wenn ich mit Amazon Echo spreche, geht meine Stimme in einen globalen Produktionszusammenhang ein. Sie hallt in entfernten Netzwerken wider, wird in Rechenzentren verarbeitet und wird selbst Teil der Datenbasis, mit der KI weiter entwickelt wird – und in der nächsten Version von Alexa kann ich dann mein eigenes Echo hören.</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url(https://images.prismic.io/verticalatlas/038e5416-926b-4ca9-bc1b-5171311c548c_1920x1180_QiuZhijie_Map-of-AI.jpg?auto=compress,format&rect=0,0,1920,1180&w=1920&h=1180); background-size: cover;">
+
+
+<div class="left-bottom-div fragment fade-in" style="background-color: rgba(119, 47, 139, 0.75); width: 50%"><div class="left-top-div" style="background-color: rgba(119, 47, 139); color: white; display-flex; justify-content: center; align-items: center; text-align: left; box-sizing: border-box; padding-left: 3%;">
+<h2>Qui Zhijie: Map of AI</h2>
+<ul> 
+<li>topografische Karte und Mindmap</li>
+<li>Einschreibung von KI in materielle Welt</li>
+<li>mythologische Landschaft</li></ul>
+
+<div class="fragment"><h2 style="margin-top: 2em !important">Chen Quifan: Seven Wonders of AI</h2>
+<ul><li>realistische Strategien und imaginative Verfahren</li>
+<li>Verarbeitung chinesischer Schöpfungsmythen</li>
+<li>Mythisierung von Technik und<br> Fortschritt</li>
+</div></div></div>
+
+
+</div>
+<div class="right-image-source is-light"><a href="https://verticalatlas.net/#qiu-zhijie-x-chen-stanley-qiufan" title="Qiu Zhijie: Map of Ai (2020). Kalligrafische Karte, fotografiert von Yan Haibo." target="_blank">Qiu Zhijie: Map of AI (2020).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+<aside class="notes"><h2 id="map-of-aiseven-wonders-of-ai">Map of AI/Seven Wonders of AI</h2>
+<ul>
+<li>Im zweiten Teil meines Vortrags möchte ich auf Projekte eingehen, die Kartografie und Imagination verbinden. Diese Beispiele stammen aus einer künstlerischen Internetpublikation von 2022 mit dem Titel <em>Vertical Atlas</em>, die den Begriff ähnlich wie Crawford als Paradigma für eine andere Form der Wissensvermittlung verwendet: Die Website bietet also keinen klassischen Atlas, sondern „eine Werkzeugsammlung” aus „Diagrammen, Interviews, Essays und Kunstwerken” [@Vertical-2022]. Die von mir ausgewählten Werke nehmen ebenfalls auf unterschiedliche Weise auf den Begriff der Kartografie Bezug, setzen sie aber mit einer dezidiert unwissenschaftlichen Weltsicht in Verbindung: Sie verarbeiten lokale Mythen, die der rational-technizistischen Weltanschauung widersprechen.</li>
+<li>Ich beginne mit einer Karte des chinesischen Kalligrafen Qiu Zhijie [Aussprache: Tschiu Dschi-dschie] mit dem Titel „Map of AI”. Sie ist Teil einer Werkserie, die komplexe Zusammenhänge in Kartenform aufbereitet. Die Karten können dabei verschiedene Größen haben. Sie werden u.a. als Wandgemälde und großformatige Projektionen auf Gebäuden inszeniert. In <em>Vertical Atlas</em> wird die Karte dagegen auf Bildschirmgröße reduziert und in Dialog mit einem fiktionalen Text des jungen Science-Fiction-Autors Chen Qiufan [Aussprache: Chen Tschiu-fan] gesetzt.</li>
+<li>Auf den ersten Blick fällt auf, dass Qiu Zhijies „Map of AI” unterschiedliche Aspekte der Kartografie aufgreift. Sie erinnert visuell an die topografische Karte, verzeichnet aber keine real existierenden Gebiete, sondern stellt eher eine Art Mindmap dar: Die in die abgebildete Landschaft eingetragenen Schriftzüge beziehen sich auf verschiedene Bereiche im Zusammenhang mit der Entwicklung und Produktion von KI – von einzelnen Programmiersprachen über Machine Learning Strategien bis hin zu Hardware und IT-Unternehmen. Dabei werden die einzelnen Begriffe mit natürlichen Gegenständen und Ressourcen verknüpft, wenn etwa vom „River of Artificial Intelligence” oder vom „Oil Field of Data” gesprochen wird. Letzteres nimmt Bezug auf die kursierende Metapher von Big Data als dem neuen Öl, also einer Ressource, die unsere Wirtschaft auf ähnlich einschneidende Weise transformiert wie die fossile Energie. In Verbindung mit Crawfords <em>Atlas of AI</em> sehe ich in der Karte daher zunächst einmal eine Darstellung der Einsicht, dass sich die Entwicklung von KI in die materielle Welt einschreibt, sie radikal verändert – und dies nicht nur dort, wo seltene Erden in Berg- und Tagebau gefördert werden. An die Notwendigkeit umweltethischer Richtlinien erinnert auch bei Qui Zhijie das „Island of Ethics of AI”, das dem „Oil Field of Data” benachbart ist.</li>
+<li>Ich muss allerdings einräumen, dass ich dennoch nicht sicher bin, ob der Künstler diese Interpretation unterstützen würde. Ein weiterer Aspekt der Karte geht in eine andere Richtung: Das Schwanken zwischen einer abstrakten und einer illusionistischen Darstellung, erkennbar besonders an der Darstellung von Gebirgszügen, erinnert mich zusammen mit Farbgebung und Kalligrafie an Kartenmaterial aus der Fantasy-Literatur – allen voran natürlich J.R.R. Tolkiens <em>Herr der Ringe</em>. Diese imaginäre Dimension der Karte wird von dem begleitenden Text unterstützt, der von dem jungen chinesischen Science-Fiction-Autor Chen Qiufan  [Aussprache: Tschen Tschiufan] stammt. Dessen Debutroman <em>The Waste Tide</em> spielt in einem fiktiven Abbild von Guangdong – jener chinesischen Provinz, die das größte Elektronikschrott-Recyclinggebiet der Welt beherbergt. Mit seiner Handlung, die unter Wanderarbeitern und Cyborgs spielt, verknüpft der Roman realistische Strategien und imaginative Verfahren, um ein neues Verhältnis zwischen Mensch, Maschinen und Umwelt zu denken <a href="https://books.google.com/books?id=iho1DQAAQBAJ&pg=PA559">(url)</a>. Ähnlich geht er in dem begleitenden Text zu „Map of AI” vor, den er „The Seven Wonders of AI” nennt. Während der Titel auf die sieben Weltwunder anspielt, stellt der Text eine Lektüre der Karte als mythisches Weltbild dar und verschränkt dabei chinesische Mythologie mit technischer Entwicklung. Die Region „Oil Field of Data” wird etwa mit einem Schöpfungsmythos verknüpft, der von einem vernichtenden Kampf zwischen den Göttern ZhuanXu [Dschwann-Schü] und GongGong erzählt; die Entdeckung und Nutzbarmachung von Big Data wird dagegen einer Prometheus-ähnlichen Figur namens „Candle Dragon” zugeordnet, die den Menschen den zündenden Funken zur Nutzung der Ressource bringt. Auf dem „Island of Ethics of AI” wird dagegen die Figur Shennong lokalisiert, ein weiterer Kulturstifter und mythischer König. Er wird als Vater der Landwirtschaft und der Medizin angesehen; letztere Eigenschaft wird von Chen Qiufan aufgegriffen, um ihn zum Diagnostiker und Mahner in Fragen der KI-Ethik zu erklären.</li>
+<li>Ich bin ehrlich gesagt noch unsicher, wie diese Verschmelzung von Technik und Mythologie zu bewerten ist. Trotz der Insel der KI-Ethik (die auf der Karte ja auch ziemlich marginialisiert erscheint), scheint Chen Quifans mythische Erzählung eher spielerischen Charakter zu haben – und der Gefahr einer Mythisierung von Technik und Fortschritt nicht gänzlich zu entgehen. Dennoch halte ich das angesprochene Kunstwerk in seiner Kombination von Kartografie und literarischem Text für ein bemerkenswertes Experiment, globale Zusammenhänge von KI jenseits eines technizistischen Blicks zu denken.</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('https://images.prismic.io/verticalatlas/c8b7780a-4c3c-4b36-a703-8833ce4d36d1_bolivia+lithium+mine+01+%281%29.jpg?auto=compress,format&rect=2,0,5155,3437&w=1920&h=1280'); background-position: center; background-size: cover;"><video id="background-video" autoplay muted loop style="">
+        <source src="./Resources/images/Unknown Fields – Breastmilk (Clip).mp4" type="video/mp4">
+</video>
+
+<div class="left-bottom-div fragment"><div class="left-top-div"><div class="left-top-div-text"><h2>Unknown Fields</h2>
+<ul><li>Literatur und spekulative Architektur</li>
+<li>zwischen Dokumentation und Fiktion</li></ul></div>
+
+<div class="left-top-div-text fragment fade-in-then-out" style="top: 25%"><blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>Tunupa, the Volcano, began to cry, spewing ash and rock from the depths of the planet. Tears rolled down her cheeks and breast milk flowed down her body, pooling at her feet. Millennia of meltwater from the snowcapped peaks seeped down through rocks, rich in light elements like magnesium, potassium, boron and lithium – leaching minerals into the lake below.</blockquote></div>
+
+<div class="left-top-div-text fragment fade-in-then-out" style="top: 25%"><blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i><strong>Around 50 milliliters of Tunupa’s tears and breast milk are poured into each of our phones.</strong> […] These are the first things we reach for as we wake, the last things we look at before we sleep. We keep them close, a part of us, warm to the touch. But if we look closely, reflected in the polished glass of our screens is the crystal white expanse of an ancient salt lake. […] <strong>We power our future with the breast milk of volcanoes.</strong></blockquote>
+</div></div></div>
+
+<div class="right-image-source is-light"><a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano" title="Unknown Fields: The Breastmilk of Volcanos (2016)" target="_blank">The Breastmilk of Volcanos<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+
+<aside class="notes"><h2 id="breastmilk-of-the-volcano">Breastmilk of the Volcano</h2>
+<ul>
+<li>Was ich meine, soll durch mein zweites Beispiel deutlicher werden. Das stammt von dem Künstler-Kollektiv „Unknown Fields”, das aus der Schriftstellerin Kate Davies und dem spekulativen Architekten Liam Young besteht. In seinem Projekt <em>Planet City</em> nutzt Young architektonische Design-Software, um Visionen nachhaltiger Stadtentwicklung in planetarischem Maßstab zu entwerfen – und verbindet neueste technische Entwicklungen mit kühnen Imaginationen. Auch in seiner Arbeit mit Kate Davies steht eine imaginäre Stadt im Mittelpunkt. Investigative und kreative Praktiken verweben sich, wenn etwa Recherchen zu toxischen Abfallprodukten der Hightech-Industrie mit ästhetischen Bildkompositionen verbunden werden. Sie beschreiben ihre Buchreihe <em>Tales from the Dark Side of the City</em> als Atlas einer weltumspannenden Stadt, der zwischen Dokumentation und Fiktion schwankt und aus found footage, Überwachungsmaterial, Interviews und spekulativen Erzählungen besteht.</li>
+<li>Im Folgenden möchte ich diesen Ansatz einer dokumentarischen Fiktion an einem Beispiel verdeutlichen, das Recherchen zur Lithium-Produktion mit lokalen Mythen verbindet. Wie auch Kate Crawford erläutert, ist Lithium ein wesentlicher Rohstoff für mobile digitale Geräte von der Smartwatch bis zum E-Auto. Und doch ist der Zusammenhang zwischen sogenannten grünen Technologien und enorm umweltschädlichem Abbau von Rohstoffen weitgehend unbekannt. Das Leichtmetall liegt meist nur in geringen Konzentrationen vor und muss aus Gestein mithilfe giftiger Substanzen wie Schwefelsäure extrahiert werden. </li>
+<li>In der Untersuchung <em>The Breastmilk of the Volcano</em> steht nun der Salar de Uyuni in Bolivien im Mittelpunkt, das größte Lithium-Reservoir der Welt. „Unknown Fields” haben diese Landschaft mit Kameradrohnen überflogen, um die dort befindlichen riesigen Verdunstungsbecken und ihre unwirkliche Farben zu dokumentieren. Wenn auch das Giftgrün der Salzlake auf diesem Foto nicht direkt mit toxischen Substanzen in Verbindung steht, haben die Verdunstungsbecken dennoch schädliche Auswirkungen auf die Umwelt – schon allein durch den Entzug von Wasser und die Rückführung der Reststoffe in die Umgebung. </li>
+<li>Dieser durchaus materielle Aspekt digitaler Technologien wird in <em>The Breastmilk of the Volcano</em> fotografisch dokumentiert, aber zugleich mit Mythen der indigenen Aymara verknüpft und zu einer „neuen Schöpfungsgeschichte” gestaltet. Das Werk wurde in verschiedenen medialen Formaten veröffentlicht: Neben einem Dokumentarfilm mit Sprechstimme aus dem Off wurde ein Fotobuch sowie eine Bild-Text-Collage für <em>Vertical Atlas</em> publiziert. Der in allen Versionen identische Titel des Werks spielt dabei auf eine mythische Ursprungserzählung (Aitiologie) der weißen Salzseen an. Sie erzählt, dass die den Salar umstehenden Berge einst eine Familie von Riesen waren, die den Zorn der Götter herausgefordert haben und zur Strafe zu Vulkanen versteinert wurden. Nun stehen Mutter und Kind einander ewig gegenüber und können einander dennoch nicht näherkommen. <ul>
+<li>[&quot;] Tunupa, the Volcano, began to cry, spewing ash and rock from the depths of the planet. Tears rolled down her cheeks and breast milk flowed down her body, pooling at her feet. Millennia of meltwater from the snowcapped peaks seeped down through rocks, rich in light elements like magnesium, potassium, boron and lithium – leaching minerals into the lake below. (<a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano">url</a>)</li>
+</ul>
+</li>
+<li>Die Darstellung verschränkt also bewusst einen mythischen Blick auf die ursprünglich belebte Landschaft mit einer modern-rationalistischen Perspektive: Die Muttermilch der Titanin und die Millennien von Schmelzwasser vermischen sich in der leichtmetallhaltigen Salzlake des Salars. Eben diese Überblendung liegt auch am Grund der geradezu poetischen Pointe des Erzählung, die auf Lithium als Teil unserer digitalen Umwelt anspielt: <ul>
+<li>[&quot;] Around 50 milliliters of Tunupa’s tears and breast milk are poured into each of our phones. […] These are the first things we reach for as we wake, the last things we look at before we sleep. We keep them close, a part of us, warm to the touch. But if we look closely, reflected in the polished glass of our screens is the crystal white expanse of an ancient salt lake. […] We power our future with the breast milk of volcanoes.</li>
+</ul>
+</li>
+<li>Ich erkenne in dieser Darstellung gewisse Ähnlichkeiten mit dem Diagramm <em>Anatomy of an AI-System</em>: Auch hier geht es darum, digitale Endgeräte nicht als technische Produkte zu betrachten, die von ihren Entstehungsbedingungen völlig losgelöst erscheinen. Stattdessen werden in dieser literarischen „Schöpfungsgeschichte” globale Produktionszusammenhänge aufgezeigt und mythische bzw. geologische Tiefenzeit angesprochen: Die Tatsache nämlich, dass die für digitale Endgeräte notwendigen Rohstoffe sich über Jahrtausende gesammelt haben, während sie nun unter hohen Kosten und in kürzester Zeit abgebaut werden – und in Geräten verbraucht werden, deren Lebensspanne oft nur wenige Jahre beträgt [cf. technological time, @Crawford-2021, 31, vgl. Jussi Parikka]. </li>
+<li>Die Überblendung von mythischer Zeit und technischer Entwicklung kann weiterhin zu einer Verfremdung unserer Alltagsgegenstände führen. Tunupas Muttermilch in meinem Smartphone zu erkennen, lässt diesen Gegenstand sicherlich in einem ungewohnten Licht erscheinen. Gleichzeitig scheint mir, dass die Autor:innen ähnlich wie Qiu Zhijie und Chen Quifan zu einer mythischen Überhöhung digitaler Technik neigen. So wird Lithium in ihrem Text als „grey gold” und „power in our pockets” verklärt, während der Salar als „the feeding ground of a global green revolution” bezeichnet wird. Die ökologischen und gesellschaftlichen Auswirkungen des Abbaus werden dagegen nicht thematisiert.</div></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('https://images.prismic.io/verticalatlas/c8b7780a-4c3c-4b36-a703-8833ce4d36d1_bolivia+lithium+mine+01+%281%29.jpg?auto=compress,format&rect=2,0,5155,3437&w=1920&h=1280'); background-position: center; background-size: cover;">
+
+<div class="left-bottom-div"><div class="left-top-div"><div class="left-top-div-text"><h2>Schluss</h2>
+<ul><li>Amalgamierung von wissenschaftlichen, dokumentarischen und ästhetischen Verfahren</li>
+<li>Künstlerische Gegenkartografien</li>
+<li>neue Schöpfungsgeschichten</li>
+<li>Situierung von KI und Nachhaltigkeit im Feld der Kultur</li></ul></div></div></div>
+
+<div class="right-image-source is-light"><a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano" title="Unknown Fields: The Breastmilk of Volcanos (2016)" target="_blank">The Breastmilk of Volcanos (2016)<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+
+<aside class="notes"><h2 id="schluss">Schluss</h2>
+<ul>
+<li>Dennoch würde ich auch diese mythischen Kartierungen für eine Untersuchung im Rahmen des Themas „Kulturen der Nachhaltigkeit” heranziehen. Aus dem Blickwinkel der Literatur- und Kulturwissenschaften kann es m.E. nicht darum gehen, eine inhaltliche Kritik an einzelnen investigativen Kunstwerken mit Bezug auf KI zu üben. Mich interessiert vielmehr die Amalgamierung von wissenschaftlichen, dokumentarischen und ästhetischen Verfahren an sich. In ihr sehe ich nämlich eine wichtige Voraussetzung für ein umfassenderes Verständnis von Nachhaltigkeit, wie es im Begriff „Kulturen der Nachhaltigkeit” verankert ist.</li>
+<li>In meinem Vortrag habe ich zwei Aspekte dieser Amalgamierung vorgestellt: Zum Einen Methode und Metapher der Kartografie, mittels derer Wissenschaft und Kunst, Epistemologie und Ästhetik neuerlich verbunden werden – in den Werken von Kate Crawford und Vladan Joler durchaus mit wissenschaftlichem Akzent, bei Qiu Zhijie und Chen Quifan sowie Unknown Fields mit (je unterschiedlich gewichteten) fiktionalen Einschlägen. Denn die letzteren Künstler:innen machen zum Zweiten Anleihen bei lokalen Kulturen, um neue Mythen der Technik zu kreieren – Schöpfungsgeschichten, die Rohstoffe nicht einfach als verfügbare Güter, sondern als Elemente komplexer ökologischer und geologischer Prozesse begreifen. Und die technischen Gadgets einen Ort innerhalb einer sowohl materiellen als auch ideellen Landschaft anweisen.</div></li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
