@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Einführung</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+# PS Memes und Mimesis
+## Einführung in die intermediale Literaturwissenschaft
+#### Dr. habil. Joachim Harst
+Sommersemester 2026
+
+<aside class="notes"><h2 id="einleitung">Einleitung</h2>
+<ul>
+<li>Kurze Selbstvorstellung: Literaturwissenschaft, Medienkomparatistik, digitale Literatur</li>
+<li><h2 id="wie-bin-ich-zum-seminargegenstand-gekommen">Wie bin ich zum Seminargegenstand gekommen?</h2>
+<ul>
+<li><strong>Ausgang von Leseszenen</strong>: Lesende ahmen Gelesenes nach (Don Quijote, Madame Bovary, …) – allgemeineres Beispiel: Erfindung der „romantischen Liebe” durch die Literatur</li>
+<li>mimetisches Verhältnis? Ansteckung? → Mimesis als grundlegender Begriff der Literaturwissenschaft – <strong>Beispiel Weegee</strong></li>
+<li>Begriff Meme bezieht sich auch auf diese Formen der Nachahmung</li>
+<li>zugleich: <strong>memetischer Aspekt von Kunst</strong> – gerade postmoderne Kunst steht häufig in komplexen Nachahmungs- und Zitatverhältnissen zu Vorgängern, Adaptionen, Remakes, Prequels, etc. – Intertextualität – explizite Beispiele aus Dada und Surrealismus unterstreichen das (Magritte)</li>
+<li><strong>Magritte</strong>: <ul>
+<li>eine Art Image-Macro?</li>
+<li>Reflexion auf Verhältnis Wirklichkeit/Abbildung – mimetischer Realismus?</li>
+<li>Variationen und Adaptionen falten diese Reflexion weiter aus</li>
+<li>Genre: Meta-Memes – Idee: anhand von Memes lässt sich Grundsätzliches über Mimesis (Verhältnis Wirklichkeit/Abbildung, Werke/Rezeption) lernen</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="zur-struktur-des-seminars">Zur Struktur des Seminars</h2>
+<ul>
+<li>Einführung in grundlegende Begriffe der intermedialen Literaturwissenschaft am Beispiel von Memes – wir werden <em>nicht</em> nur digitale Bilder anschauen, sondern uns in literatur- und medienwissenschaftliche Begriffe einarbeiten, die wir dann anhand von Memes anwenden werden</li>
+</ul>
+</li>
+</ul>
+<h2 id="modalitäten-des-seminars">Modalitäten des Seminars</h2>
+<ul>
+<li>Blick auf den Seminarplan</li>
+<li>Hinweisblatt zu Studienleistungen/Referate – Termine werden in der nächsten Sitzung besprochen</li>
+</ul>
+<h2 id="gruppenarbeit">Gruppenarbeit</h2>
+</div></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://edramatica.com/images/5/54/Weegee_3.png?20240522002127" data-background-size="contain" data-background-position="center" data-baclground-color="lightgrey" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+„What’s wrong?” Quelle: edramatica.com/Weegee [07.04.2026] .<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 55%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://edramatica.com/images/c/c6/Hillaweegee.jpg" data-background-size="contain" data-background-position="center" data-background-color="lightgray" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+„Weegee stares at Hillary Clinton.” Quelle: edramatica.com/Weegee [07.04.2026] .<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 45%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/001/217/305/1bb.jpg" alt="Magritte" style="object-fit: scale-down">
+
+René Magritte: La trahison des images (1929), 60 x 81 cm, Öl auf Leinwand, Los Angeles County Museum of Art.<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/002/485/348/9f3.jpg" alt="meme" style="object-fit: scale-down">
+
+„Ceci n’est pas une pipe.” Quelle: knowyourmeme.com/photos/2485348-this-is-not-a-pipe-parodies [07.04.2026].<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/002/341/160/9ce.jpg" alt="meme" style="object-fit: scale-down">
+
+„I just think it’s une pipe.” Quelle: knowyourmeme.com/memes/this-is-not-a-pipe-parodies [07.04.2026]. .<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/000/762/674/14b.jpg" alt="meme" style="object-fit: scale-down">
+
+„Bitch I might Be.” Quelle: knowyourmeme.com/memes/this-is-not-a-pipe-parodies [07.04.2026].<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/000/546/127/d63.jpg" alt="" style="width: 1500px; object-fit: fill">
+
+„Rapper Gucci Mane Responds With ‚Bitch I might Be” When Askes if Guilty.” Quelle: knowyourmeme.com/memes/bitch-i-might-be [07.04.2026].<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/001/219/882/b13.jpg" alt="" style="width: 1500px; object-fit: fill">
+
+„Ceci n’est pas un président.” Quelle: knowyourmeme.com/photos/2485348-this-is-not-a-pipe-parodies.<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<img src="https://i.kym-cdn.com/photos/images/original/002/326/100/e67.jpg" alt="" style="width: 1500px; object-fit: fill">
+
+
+„Ceci n’est pas une meme.” Quelle: knowyourmeme.com/memes/this-is-not-a-pipe-parodies [07.04.2026].<!-- .element: style="font-size: smaller; transform: rotate(270deg); position: absolute; left: 73%; top: 40%; height: 20%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Seminarstruktur
+1. Grundlagen: Postmoderne und Kultur der Digitalität
+2. Memesis und „Memesis”
+3. Rhetorik zwischen Bild und Text
+4. Erzählen in Text und Bild
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[PS Memes und Mimesis – Seminarplan.md] -->
+# Informationen zum Kurs
+- **Studienleistung**: mündliches Referat von ca. 10 Minuten (vgl. allgemeines Hinweisblatt bei Teams). Je nach Erfahrung und Interesse sind unterschiedliche Formen möglich:
+	1. Referat zum Sitzungstext: Einführende Infos, eingehende Diskussion ausgewählter Passagen, Verknüpfung mit eigenen Ideen/Beispielen, Diskussionsfragen.
+	2. Veranschaulichung von Aspekten des Sitzungsthemas oder -textes anhand von selbstgewählten Beispielen aus der digitalen Bildkultur
+	3. Referat zu ergänzenden Themen: Kurzdarstellung von Begriffen oder Beispielen, die in Bezug zum Sitzungsthema stehen, aber vom Sitzungstext nicht behandelt werden.
+- Alle **Seminarmaterialien** finden Sie im Teams-Ordner der Übung: 
+	- Hinweisblätter zur Vorbereitung der nächsten Sitzung (spätestens eine Woche vor der jeweiligen Sitzung). 
+	- Sitzungstexte und weiterführende Literatur
+	- laufende Sammlung von Memes mit Bezug zu Sitzungsthemen
+- Bitte melden Sie sich rechtzeitig bei mir per email (joachim.harst@uni-saarland.de), wenn die Seminarmaterialien einmal nicht zugänglich sein sollten!!
+<!-- end::[PS Memes und Mimesis – Seminarplan.md] -->
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Gruppenarbeit
+- schauen Sie sich die hier abgebildeten Memes genau an und sammeln Sie Stichpunkte für eine kritische Bildanalyse. Was wird dargestellt, wie verhält sich Bild und Text zueinander und was macht den Witz der Memes aus?
+- wählen Sie den wichtigsten Aspekt aus
+- eine Sprecher:in aus der Gruppe erläutert die Wahl im Anschluss
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
