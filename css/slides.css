@@ -165,6 +165,7 @@ ul.embedded-quote-block li::before {
   content: "Quelle: ";
 }
 
+/* CONTAINERS */
 .container {
   position: relative; 
   width: 100%; 
@@ -174,6 +175,51 @@ ul.embedded-quote-block li::before {
   border-width: 3px; 
   border-color: rgba(119, 47, 139); 
   border-radius: 5px;
+}
+
+.img-container {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  max-height: 100vh;
+  width: 100%;
+}
+
+.img-wrapper {
+  /* Vertikaler Wrapper: Bilder und Unterschrift */
+  display: block; 
+  text-align: center;
+  gap: 30px; 
+  /*align-items: center;
+  justify-content: center;
+  width: 100%;*/
+}
+
+.img-wrapper > img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 80vh;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-row {
+  /* Horizontaler Wrapper: Mehrere Bilder nebeneinander */
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  width: auto;
+}
+
+.img-row > img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 80vh;  
+  height: 700px; 
+  width: auto;
+  object-fit: contain;
 }
 
 /* RIGHT LAYOUT */
