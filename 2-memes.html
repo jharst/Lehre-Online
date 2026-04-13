@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg'); background-size: contain; background-position: right;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Memes und Mimesis<br>Einführung in die intermediale<br>Literaturwissenschaft</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li><h2 id="referate">Referate</h2>
+<ul>
+<li>Was möchte ich mit Referaten bezwecken?</li>
+<li>Welche Kriterien gibt es?</li>
+<li>Mitwirkung im Plenum</li>
+<li>Terminvergabe: Liste besprechen</li>
+</ul>
+</li>
+<li><h2 id="postmoderne-gumbrecht">Postmoderne (Gumbrecht)</h2>
+<ul>
+<li><h3 id="geschichtlich">geschichtlich</h3>
+<ul>
+<li>Ende der Moderne, Ende des geschichtlichen Bewusstseins</li>
+<li>(Digitalisierung und Zeitlichkeit)</li>
+<li>„breite Gegenwart”, Simultaneität, geschlossene Zukunft<ul>
+<li>[&quot;] (2)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h3 id="ästhetisch">ästhetisch</h3>
+<ul>
+<li>Zitierbarkeit</li>
+<li>(Ende der großen Narrative, Lyotard)</li>
+<li>Nivellierung High/Low Kunst, Oberfläche/Tiefe, Sprache/Metasprache, Wirklichkeit/Fiktion</li>
+<li>Verweis auf @Jameson-1984 (van Gogh vs. Warhol)<ul>
+<li>„aesthetic production today has become integrated into commodity production generally” (56) – von Kunst kann keine kritische Distanz/Quasi-Autonomie mehr verlangt werden</li>
+<li>Warhol: Warencharakter, Glaspulver</li>
+</ul>
+</li>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Schoenen_-_s0011V1962_-_Van_Gogh_Museum.jpg/1920px-Schoenen_-_s0011V1962_-_Van_Gogh_Museum.jpg">Van Gogh|Van Gogh, Schuhe, Öl auf Leinwand, 1886. Van Gogh Museum, Amsterdam.</a></li>
+<li><a href="https://www.artchive.com/wp-content/uploads/2024/08/Diamond-Dust-Shoes-Andy-Warhol-1980-.jpg">Andy Warhol, Diamond Dust Shoes, 1980. Siebdruck, Glaspulver.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="postmoderne-strategien-gude">Postmoderne Strategien (Gude)</h2>
+<ul>
+<li><p>kunstdidaktischer Ansatz – Entwicklung auf Basis von Arbeit mit Studierenden – Forderung, die 7 Elemente und Prinzipien der modernen Gestaltung durch Strategien zu ersetzen, die von den Studierenden selbst entwickelt wurden – Postulat, dass diese „postmodern” sind</p>
+<ul>
+<li>7 elements: Linie, Form, Farbe, Helligkeitswert, Textur, Gestalt, Raum</li>
+<li>7 principles: Ausgewogenheit, Kontrast, Emphase, Bewegung, Rhythmus, Muster, Einheit/Vielfalt</li>
+<li>postmodern principles (fusing visual forms and conceptual art making, = fusing principles and elements): appropriation, juxtaposition, recontextualization, hybridity, layering, text-image interaction, gazing, and representin’</li>
+</ul>
+</li>
+<li><p>für mich wichtig: diese Strategien sind sich sehr ähnlich; sie haben alle mit den zuvor genannten Aspekten postmoderner Ästhetik (Zitierbarkeit, Nivellierung, Warencharakter) zu tun und lassen sich am besten als deren Ausdifferenzierung verstehen</p>
+</li>
+<li><p>ebenso wichtig: die meisten dieser Strategien haben „Vorläufer” in modernistischen und avantgardistischen Kunstformen (Dada, Surrealimus, 1920er Jahre) – es könnte sinnvoll sein, mit ein paar materiellen Beispielen (Collage, Frottage, …) zu beginnen, um den Zusammenhang zu verdeutlichen – Verweis auf „hot modernity” am Ende des Aufsatzes</p>
+<ul>
+<li><img src="https://cdn.thecollector.com/wp-content/uploads/2023/11/hannah-hoch-dada.jpg?width=1200&quality=100&dpr=2" alt="Untitled (Dada) by Hannah Höch, ca. 1922, via MoMA, New York" style="object-fit: scale-down">
+</li>
+<li><img src="https://cdn.thecollector.com/wp-content/uploads/2023/11/raoul-hausmann-art-critic-dada.jpg?width=968&quality=100&dpr=2" alt="The Art Critic by Raoul Hausmann, 1919-1920, via Tate, London" style="object-fit: scale-down">
+</li>
+<li><img src="https://www.moma.org/media/W1siZiIsIjE3OTMwOCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=6f6cbb13b06bbbae" alt="Max Ernst. _The Fugitive_ (_L'Évadé_) from _Natural History_ (_Histoire Naturelle_). c. 1925, published 1926" style="object-fit: scale-down"></li>
+</ul>
+</li>
+<li><p>Umgang mit Material</p>
+<ul>
+<li><em>appropriation</em>: recycling imagery and print materials – „If one lives in a forest, wood will likely become one&#39;s medium for creative play. If one grows up in a world filled with cheap, disposable images, they easily become the stuff of one&#39;s own creative expression.” (10)</li>
+<li><em>Meme Beispiele</em>: You don’t say (Nick Cage in <em>Vampire Kiss</em> 1998), Renaissance Scumbag (ursprüngliches Gemälde von Botticelli)</li>
+<li><em>juxtaposition</em>: (instead of contrast): bringing together radically disparate elements (ex. <a href="https://www.moma.org/media/W1siZiIsIjYxNDY5NyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=203e557b7d43cc8e">M. Oppenheimer|Meret Oppenheim, Object. Paris, 1936</a>) – Analogie zu Schockerfahrung</li>
+<li><em>Meme Beispiele</em>: Erschaffung Adams/Pepperspray Cop; Weegee/Hillary Clinton </li>
+<li><em>recontextualisation and deconstruction</em>: recombining found imagery (ex. <a href="https://berliner-zeitung.imgix.net/2022/03/04/6830aceb-82f6-4ad6-8d66-d61cf53dd202.jpeg">Hannah Höch, Die Braut</a>, 1927; in diesem Fall wird das vorgefundene Material abgemalt) – weiterer Verweis: adbusters</li>
+<li><em>Meme Beispiele</em>: Mona Lisa and Friends (recombining found imagery); Mona Lisa/The Shining (deconstruction) </li>
+<li><em>layering</em>: Überfluss an Bildern/gestapelte Bilder, kreiert Tiefenstruktur und Komplexität –  ich muss hier als Beispiel an Gerhard Richter denken – Verweis auf digitale Bildproduktion (Photoshop)</li>
+<li><em>interaction of text and image</em>: Bsp. <a href="https://www.moca.org/storage/app/uploads/public/5cd/312/d1c/5cd312d1cdaf2983717804.jpg">Barbara Kruger</a> – keine illustrative/explizierende Funktion</li>
+<li><em>Meme Beispiele:</em> Scumbag Steve (einfach); You don’t say (cat, komplex)</li>
+<li><em>hybridity</em>: hier bezogen auf verwendete Materialien/Medien und „cultural blending” - ex. Mariko Mori</li>
+</ul>
+</li>
+<li><p>Identität und Politik</p>
+<ul>
+<li><em>gazing</em>: Thematisierung des Machtverhältnisses im Blick/Bild</li>
+<li><em>representin’</em>: „locating one’s artistic voice within one’s own personal history and culture of origin”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes).jpg'); background-size: cover; background-position: right; background-color: black;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Warhol: Diamond Dust Shoes (1980)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Organisatorisches: Referate
+- Warum gibt es Referate?
+- Welche Kriterien gibt es?
+- Mitwirkung des Plenums
+- Terminvergabe
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes).jpg'); background-size: cover; background-position: right; background-color: black;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Warhol: Diamond Dust Shoes (1980)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Postmoderne: geschichtlich
+- Ende der Moderne, Ende des geschichtlichen Bewusstseins
+- „Breite Gegenwart”, Simultaneität, geschlossene Zukunft
+- „Ende der großen Narrative” (Lyotard)
+
+<p class="source">Gumbrecht, <em>Art. Postmoderne</em> (2010).</p>
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Gumbrecht: Ende der Moderne als Ende eines bestimmten Zeitgefühls – nicht mehr Zukunft als offener Horizont, sondern eine sich ausweitende, saturierte Gegenwart</li>
+<li>Digitalisierung als Verstärker: Simultaneität aller Zeitschichten, Archive werden jederzeit abrufbar</li>
+<li>„Breite Gegenwart&quot;: Vergangenheit und Gegenwart koexistieren, Zukunft erscheint geschlossen</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes).jpg'); background-size: cover; background-position: right; background-color: black;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Warhol: Diamond Dust Shoes (1980)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Postmoderne: ästhetisch
+- Zitierbarkeit (von Geschichte und Kunst)
+- Nivellierung von High/Low Culture, Oberfläche/Tiefe, Sprache/Metasprache, Wirklichkeit/Fiktion
+- Jameson: „aesthetic production today has become integrated into commodity production generally” (1984, S. 56)
+- → von Kunst kann keine kritische Distanz / Quasi-Autonomie mehr verlangt werden
+<p class="source">Gumbrecht, <em>Art. Postmoderne</em> (2010).<br>Jameson: <em>Postmodernism, or the Cultural Logic of Late Capitalism.</em> New Left Review, 146 (1984), 53–92.</p>
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Lyotard: Legitimationskrise der großen Erzählungen (Fortschritt, Vernunft, Emanzipation)</li>
+<li>Jameson: ästhetische Produktion und Warenproduktion sind nicht mehr zu trennen</li>
+<li>Zitierbarkeit: kein Original mehr ohne gleichzeitigen Verweis auf Vorbilder, Kontexte, Vorgänger; das Zitierte steht gleichwertig und ahistorisch nebeneinander<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="darkgrey" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Schoenen_-_s0011V1962_-_Van_Gogh_Museum.jpg/1920px-Schoenen_-_s0011V1962_-_Van_Gogh_Museum.jpg"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Van Gogh: <em>Schuhe</em>, 1886, Öl auf Leinwand.
+  </figcaption>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Jameson liest Van Goghs Schuhe als hermeneutisches Objekt: das Gemälde fordert Interpretation, öffnet eine Tiefendimension</li>
+<li>Verweis auf Heideggers Analyse desselben Bildes: das Zeug-Sein des Schuhzeugs, das sich im Gemälde enthüllt</li>
+<li>Das Bild steht für eine Ästhetik der Tiefe, die die Postmoderne aufgibt</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="darkgrey" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;">
+  <img src="https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes).jpg"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Andy Warhol, <em>Diamond Dust Shoes</em>, 1980. Siebdruck, Glaspulver.
+  </figcaption>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Warhols Diamond Dust Shoes: Oberfläche, kein Innen – Warencharakter, Glaspulver als Material betont die Oberfläche selbst</li>
+<li>Keine Tiefendimension, keine Interpretation gefordert – das Bild verweigert die hermeneutische Geste</li>
+<li>Dieser Vergleich Van Gogh / Warhol ist für Jameson das Paradigma des Übergangs von Moderne zu Postmoderne</li>
+</ul>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes).jpg'); background-size: cover; background-position: right; background-color: black;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Warhol: Diamond Dust Shoes (1980)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Postmoderne Strategien
+- Gude: kunstdidaktischer Ansatz, entwickelt aus der Arbeit mit Studierenden
+- Forderung: Die 7 Elemente und Prinzipien der modernen Gestaltung ersetzen
+	- **7 elements** (modern): Linie, Form, Farbe, Helligkeitswert, Textur, Gestalt, Raum
+	- **7 principles** (modern): Ausgewogenheit, Kontrast, Emphase, Bewegung, Rhythmus, Muster, Einheit/Vielfalt
+- **postmoderne Prinzipien** (Gude): Fusion von visuellen Formen und konzeptuellen Kunststrategien
+<p class="source">Gude, O. (2004). Postmodern Principles: In Search of a 21st Century Art Education. <em>Art Education</em>, 57(1), 6–14.</p>
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Gude kritisiert die 7+7-Liste als modernistisches Erbe ohne kritische Reflexion</li>
+<li>Ihre Prinzipien sind empirisch aus Studierenden-Projekten abgeleitet, nicht top-down postuliert</li>
+<li>Wichtig: diese Strategien ähneln sich sehr; sie alle haben mit Zitierbarkeit, Nivellierung und Warencharakter zu tun – sie sind als Ausdifferenzierung postmoderner Ästhetik zu verstehen</li>
+<li>Wichtig: die meisten Strategien haben Vorläufer in der Avantgarde (Dada, Surrealismus, 1920er Jahre)</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;"><figure>
+  <img src="https://cdn.thecollector.com/wp-content/uploads/2023/11/hannah-hoch-dada.jpg?width=1200&quality=100&dpr=2"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Hannah Höch, <em>Untitled (Dada)</em>, ca. 1922. MoMA, New York.
+  </figcaption>
+  <h1>Exkurs: Avantgarde-Vorläufer („hot modernity”)</h1></figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Gude verweist am Ende ihres Aufsatzes auf „hot modernity&quot; (Duchamp, Dadaisten) als nicht ausreichend repräsentierten Strang der Moderne in der Kunsterziehung</li>
+<li>Höchs Collagen sind ein frühes Paradebeispiel für Appropriation und Recontextualization: vorgefundenes Bildmaterial (Magazinfotos, Pressebilder) wird zerschnitten und neu zusammengesetzt</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://cdn.thecollector.com/wp-content/uploads/2023/11/hannah-hoch-dada.jpg?width=1200&quality=100&dpr=2" data-background-size="contain" data-background-position="center" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="darkgrey" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;"><figure>
+  <img src="https://cdn.thecollector.com/wp-content/uploads/2023/11/raoul-hausmann-art-critic-dada.jpg?width=968&quality=100&dpr=2"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Raul Hausman: <em>The Art Critic</em> (1919–1920), Collage.
+  </figcaption>
+  <h1>Exkurs: Avantgarde-Vorläufer („hot modernity”)</h1></figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Hausmanns Fotomontage: Text und Bild werden nicht illustrativ kombiniert, sondern in spannungsvollem Widerspruch montiert</li>
+<li>Die Banknote im Mund des Kritikers ist ein direkter Kommentar auf den Warencharakter von Kunstkritik – Juxtaposition als politische Aussage</li>
+</ul>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="darkgray" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-image="https://cdn.thecollector.com/wp-content/uploads/2023/11/raoul-hausmann-art-critic-dada.jpg?width=968&quality=100&dpr=2" data-background-size="contain" data-background-position="center" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;">
+  <figure><img src="https://www.moma.org/media/W1siZiIsIjE3OTMwOCJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=6f6cbb13b06bbbae"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Max Ernst, <em>The Fugitive</em> aus <em>Natural History</em>, ca. 1925/1926. MoMA, New York.
+  </figcaption>
+  <h1>Exkurs: Avantgarde-Voläufer („hot modernity”)</h1></figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Max Ernsts Frottagen: eine weitere Technik der Appropriation – vorgefundene Texturen werden abgerieben und in neue Bildkontexte gesetzt</li>
+<li>Die Grenze zwischen dem „eigenen&quot; Bild und dem vorgefundenen Material wird bewusst aufgelöst</li>
+<li>Zusammenfassung: Appropriation, Juxtaposition und Recontextualization sind keine Erfindungen der Postmoderne, sondern Massenkulturalisierung avantgardistischer Praktiken, die durch digitale Techniken ermöglicht werden</li>
+</ul>
+</aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://d1hhug17qm51in.cloudfront.net/www-media/2022/05/02110414/98.291_01_b02-Large-TIFF_4000-pixels-long.jpg'); background-size: cover; background-position: center -20%;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Duchamp: Fountain (1917)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Strategie 1: Appropriation
+
+> „If one lives in a forest, wood will likely become one's medium for creative play. If one grows up in a world filled with cheap, disposable images, they easily become the stuff of one's own creative expression." — Gude (2004), S. 10
+
+- Vorgefundenes (künstlerisches, alltägliches, mediales) Material als Rohstoff kultureller  Produktion
+- Verwandt mit: Rekontextualisierung
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Appropriation ist bei Gude eng an den sozialen Kontext der Studierenden geknüpft: wer in einer Bilderwelt aufwächst, greift instinktiv auf diese Bilder zurück</li>
+<li>Verweis auf Romare Bearden (Kollage aus gefundenen Fotos zur Geschichte afroamerikanischer Erfahrung) und Kenny Scharf</li>
+<li>Entscheidend: das appropriierte Material ist nie neutral, es bringt seine eigene Geschichte mit</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+  <div class="bg-video-wrapper" style="background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/000/210/119/9b3.png'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/r8F47kmp7pI?si=cK7Gsig-7F5lUagu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+  </div>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Ein Filmstill aus einem Horrorfilm wird aus seinem ursprünglichen dramatischen Kontext gerissen und zur ironischen Reaktionsformel (Nick Cage, <em>Vampire Kiss</em>, 1998)</li>
+<li>Das Ausgangsmaterial bringt seinen Bedeutungskontext mit (Übertreibung, Horror, Cage&#39;s exzentrisches Spiel), der im Meme gezielt eingesetzt wird</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;"><figure>
+  <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/210/119/9b3.png"
+       style="width:90%; height:auto; object-fit:contain; border:none;">
+  <figcaption>
+    Appropriation von Nick Cages Mimik als Bild-Reaktionsformel „You Don’t Say”.
+  </figcaption></figure>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content: center; max-height: 90vh;"><figure style="margin: 0; padding: 0; width: 90%; display: flex; flex-direction: column; align-items: center;">
+  <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/097/938/B0Y.jpg"
+       style="width: 100%; max-height: 90vh; object-fit: contain; border: none;">
+  <figcaption>
+   Scumbag Steve-Meme, appropriiert Botticelli, <em>Portrait eines Jugendlichen</em> (1482)</figcaption></figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Ein Gemälde aus dem 15. Jahrhundert wird mit einem modernen „Scumbag Steve&quot;-Hut überblendet</li>
+<li>Das hochkulturelle Objekt wird appropriiert und komisch degradiert – die kulturelle Distanz zwischen Renaissance-Gemälde und Internet-Slang ist das eigentliche Sujet</li>
+<li>Vergleich mit Romare Bearden: dort Appropriation für politische Tiefe; hier Appropriation für komischen Effekt durch Nivellierung</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.moma.org/media/W1siZiIsIjYxNDY5NyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=203e557b7d43cc8e'); background-size: cover; background-position: 70% center;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">M. Oppenheimer: Object (1936)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Strategie 2: Juxtaposition
+- Zusammenbringen radikal disparater Elemente
+- Analogie zur Schockerfahrungen moderner Wirklichkeit
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Gude: Das modernistische Prinzip des Kontrasts ist nicht ausreichend, um die Energie zu beschreiben, die durch radikal disparate Elemente entsteht</li>
+<li>Oppenheims pelzbedeckte Tasse: Alltagsgegenstand + fremdes Material = surrealer Schock</li>
+<li>Juxtaposition ist strukturell: die Bedeutung liegt im Spalt zwischen den Elementen, nicht in den Elementen selbst</li>
+<li>Lautréamont (Quelle für viele surrealistische Juxtapositionen): „schön wie die zufällige Begegnung einer Nähmaschine und eines Regenschirms auf einem Seziertisch&quot;</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center; max-height: 90vh;"><figure style="margin: 0; padding: 0; width: 90%; display: flex; flex-direction: column; align-items: center;">
+  <img src="Leonardo-Pepperspray%20Cop.jpeg"
+       style="width: 90%; height: auto; object-fit: contain; border: none;">
+  <figcaption>Pepperspray-Cop (Lt. John Pike, UC Davis, 2011) juxtaponiert mit Leonardo: <em>Erschaffung Adams</em> (ca. 1512), Fresko, Sixtinische Kapelle.
+  </figcaption><h1>Juxtaposition: Meme-Beispiel</h1></figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Die ikonografische Dignität des Michelangelo-Freskos und das dokumentarische Polizeifoto erzeugen im Kontrast eine scharfe politische Aussage</li>
+<li>Das Göttliche und das Repressive begegnen sich – die Juxtaposition ist hier nicht dekorativ, sondern argumentativ</li>
+<li>Der Schock entsteht durch die Unvereinbarkeit der Zeitschichten (Renaissance / 2011) und der Sphären (Sakrales / Polizeigewalt)</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://berliner-zeitung.imgix.net/2022/03/04/6830aceb-82f6-4ad6-8d66-d61cf53dd202.jpeg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">H. Höch: Die Brat (1927)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Strategie 3: Recontextualization & Deconstruction
+
+- Bekannte Materialien in neuen Beziehungsrahmen setzen
+- zirkulierende Medien
+- Bsp: fotografisches Bildmaterial erhält durch Rekontextualisierung neue Aussagekraft
+- Zusammenhang mit „Dekonstruktion”
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Gude: Recontextualization = Platzierung eines vertrauten Bildes in ungewohntem Umfeld erzeugt neue Bedeutung</li>
+<li>Dekonstruktion (Derrida): präziser Begriff, meint das Freilegen von Widersprüchen und Ausschlüssen in Texten und Systemen – im Kunstdiskurs aber oft vereinfacht verwendet</li>
+<li><strong>Adbusters</strong>: Werbebilder werden durch minimale Eingriffe (hinzugefügter Text, veränderte Slogans) dekonstruiert – das System der Werbung wird mit seinen eigenen Mitteln untergraben</li>
+<li><strong>zu Höch</strong>: In „Die Braut&quot; wird der Kinderkopf an Stelle des Frauenkopfes gesetzt</li>
+<li>Die romantische Lesart des Brautpaares wird durch diese Recontextualization verschoben zur Kritik an gesellschaftlichen Konventionen (rechtliche, religiöse, kulturelle Normen bezüglich des Status der Frau)</li>
+<li>Das vorgefundene Material (Zeitungsfotos, Illustrationen) wird hier teilweise abgemalt – eine Intensivierung der Recontextualization</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;"><div style="display: flex; width: 100%; gap: 30px;">
+  <img src="https://i.kym-cdn.com/photos/images/original/000/451/628/424.png" style="flex: 1 1 0;  height: auto; object-fit: contain;">
+  <img src="https://i.kym-cdn.com/photos/images/masonry/001/313/812/1cc.png" style="flex: 1 1 0; height: auto; object-fit: contain;">
+    <img src="https://i.kym-cdn.com/photos/images/masonry/000/479/182/f61.png" style="flex: 1 1 0; height: auto; object-fit: contain;">
+  </div>
+<figcaption>Drei Beispiele für Rekontextualisierung von Leonardos <em>Mona Lisa</em></figcaption><h1>Recontextualization & Deconstruction: Meme-Beispiele</h1></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Durch Rekombination verschiedener kanonischer Gemälde entsteht ein neues Bedeutungsfeld</li>
+<li>Kein Bild ist mehr autonom, alle verweisen aufeinander – Intertextualität als Strukturprinzip</li>
+<li>Die Würde des Hochkultur-Ikonems wird nicht zerstört, sondern durch Neukombination befragte</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-visibility="hidden" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Strategie 4: Layering
+
+- Überfluss an Bildern → gestapelte Bilder
+- Erzeugt Tiefenstruktur und Komplexität
+- Analogie: Gerhard Richter (Übermalung)
+- Digitale Bildproduktion: Photoshop als technische Entsprechung
+</div>
+
+<aside class="notes"><ul>
+<li>Gude: Layering evoziert die Komplexität des Unbewussten (Surrealismus) und die Vielschichtigkeit zeitgenössischer Kulturproduktion</li>
+<li>Gerhard Richter: Übermalungen als materielles Layering – das Vorherige ist noch spürbar, aber überschrieben; das Bild trägt seine eigene Geschichte in sich</li>
+<li>Photoshop: Layering als Standardfunktion digitaler Bildbearbeitung – Transparenz, Überlagerung, Maskierung sind technisch trivial geworden</li>
+<li>Meme-Entsprechung: Deep-Fried Memes (extreme Kompression und Sättigung als sichtbares Layering der Zirkulationsgeschichte eines Bildes)</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 55%; height: 100%;"><p class="right-title-text" style="transform: rotate(-80deg) translate(-15%, 60%); transform-origin: left top;">2. Sitzung: Postmoderne</p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://www.moca.org/storage/app/uploads/public/5cd/312/d1c/5cd312d1cdaf2983717804.jpg'); background-size: contain; background-position: right; background-color: red; background-repeat: no-repeat;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Kruger: It’s a Small World<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Strategie 5: Interaction of Text & Image
+- Text illustriert nicht das Bild; Bild illustriert nicht den Text
+- Das Wechselspiel zwischen beiden erzeugt Bedeutung
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Kruger: Text und Bild sind nicht illustrativ aufeinander bezogen, sondern erzeugen im Widerspruch zueinander Bedeutung</li>
+<li>Das Prinzip ist für Meme-Analyse zentral: Bildunterschriften im Meme-Format sind fast nie rein deskriptiv, sondern immer bedeutungsverschiebend</li>
+<li>Zwei Modi: (1) Text verstärkt das Bild (einfaches Verhältnis), (2) Text konterkariert das Bild (komplexes Verhältnis)<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items: center; justify-content: center; max-height: 80vh !important!;"><div style="display: flex; width: auto; gap: 30px; justify-content: center;">
+  <img src="https://i.kym-cdn.com/photos/images/original/000/094/544/grandpa-gets-surgery-steal-pain-meds.jpg" style="flex: 1 1 0; height: 100%; object-fit: contain;">
+  <img src="https://i.kym-cdn.com/photos/images/original/000/476/943/c89.jpeg" style="flex: 1 1 0; height: 100%; object-fit: contain;">
+  </div>
+<figcaption>Zwei Beispiele für Text-Bild-Beziehungen in Image-Macros</figcaption><h1>Text-Image-Interaction: Meme-Beispiele</h1></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Einfaches Text-Bild-Verhältnis: die Beschriftung benennt, was das Bild zeigt; Text und Bild verstärken sich gegenseitig</li>
+<li>Die Körperhaltung, der schief sitzende Hut, der Gesichtsausdruck werden durch den Text „Scumbag Steve&quot; kodiert und fixiert</li>
+<li>Kein Widerspruch zwischen Text und Bild – das Bild illustriert den Text, der Text erklärt das Bild</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-visibility="hidden" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Strategie 6: Hybridity
+
+- Verwendung verschiedener Medien/Materialien in einem Werk
+- „Cultural blending" als kulturelle Dimension
+- Referenzbeispiel: Mariko Mori (Fotografie, Video, buddhistische Tradition, Cyberkultur)
+</div>
+
+<aside class="notes"><ul>
+<li>Gude: Hybridity beschreibt sowohl die Medien-Hybridisierung (Skulptur + Video + Sound) als auch die kulturelle Hybridisierung (Traditionen verschiedener Kulturen in einem Werk)</li>
+<li>Mariko Mori: Costuming, Make-up, Popkultur und buddhistischer Glaube werden in komplexen fotografischen und Video-Installationen zusammengeführt</li>
+<li>Für Memes relevant: das Internet-Meme ist strukturell hybrid – es kombiniert Bild, Text, oft auch Sound und Animation; GIFs, Video-Memes und Reaction-Memes sind hybride Medienformen</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center;"><div style="display: flex; gap: 30px; width: auto; gap: 30px; justify-content: center;">
+	<img src="https://i.kym-cdn.com/photos/images/newsfeed/001/308/858/2f1.jpg">
+	<img src="https://i.kym-cdn.com/photos/images/newsfeed/001/363/046/bf2.jpg">
+</div>Zwei Beispiele für die Thematisierung von Blickregimen in Internet-Memes</figcaption><h1>Gazing: Meme-Beispiele</h1></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Der Begriff stammt aus der feministischen Filmtheorie (Laura Mulvey, „Visual Pleasure and Narrative Cinema&quot;, 1975) und der postkolonialen Theorie</li>
+<li>Für Memes: Welche Blickregimes reproduzieren Memes? Welche stellen sie in Frage?</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: transparent; border: none; display:flex !important; flex-direction:column !important; align-items:center; justify-content:center max-height: 90vh;"><figure>
+  <img src="./Milhouse Meme.jpeg"
+       style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border: none;">
+  <figcaption>
+    Weiteres Beispiel für Blickregime: Wessen Blick macht das Meme?
+  </figcaption></figure>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-visibility="hidden" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Strategie 8: Representin'
+
+- „Locating one's artistic voice within one's own personal history and culture of origin" (Gude)
+- Kunst als Selbstverortung in Geschichte und Gemeinschaft
+- Beispiele: David Wojnarowicz, Tracey Emin, Shirin Neshat
+</div>
+
+<aside class="notes"><ul>
+<li>Representin&#39; ist die Strategie, die am stärksten Identitätspolitik berührt</li>
+<li>David Wojnarowicz: Kunst gegründet in Erfahrungen als junger schwuler Mann in New York während der AIDS-Krise</li>
+<li>Tracey Emin: Biographische Mixed-Media-Werke, die alle Aspekte des eigenen Lebens thematisieren</li>
+<li>Shirin Neshat: Videoinstallationen zu den psychologischen Bedingungen von Frauen in islamischen Gesellschaften</li>
+<li>Für das Seminar: Meme-Kulturen wie Black Twitter oder indigene Meme-Traditionen als Formen von Representin&#39; – Selbstverortung durch das verfügbare Bildmaterial des Internets</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Zusammenfassung: Postmoderne Strategien und Memes
+
+|Strategie|Kernoperation|Meme-Beispiel|
+|---|---|---|
+|Appropriation|Bildrecycling|You Don't Say, Renaissance Scumbag|
+|Juxtaposition|Disparate Elemente|Erschaffung Adams / Pepper Spray Cop|
+|Recontextualization|Neuer Rahmen|Mona Lisa and Friends|
+|Deconstruction|Systemkritik von innen|Mona Lisa / The Shining|
+|Text-Image Interaction|Spannung Text/Bild|Scumbag Steve / You Don't Say (Cat)|
+|Gazing|Blickkritik|–|
+</div>
+
+<aside class="notes"><ul>
+<li>Diese Tabelle kann als Diskussionsgrundlage dienen</li>
+<li>Zentrale Frage: Sind Memes postmoderne Kunstformen – oder demokratisieren sie lediglich avantgardistische Strategien, ohne das kritische Potential zu bewahren?</li>
+<li>Weiterführende Frage: Was fehlt dem Meme gegenüber der Kunst? (Intentionalität, institutioneller Rahmen, Autorschaft?)</li>
+<li>Verbindung zur nächsten Sitzung: Dawkins&#39; Mem-Begriff und die Frage, ob kulturelle Replikation und künstlerische Strategie dieselbe Logik haben</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            let hex = color.replace('#', '');
+
+            // convert #fff => #ffffff
+            if (hex.length == 3) {
+                hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+            }
+
+            const c_r = parseInt(hex.substr(0, 2), 16);
+            const c_g = parseInt(hex.substr(2, 2), 16);
+            const c_b = parseInt(hex.substr(4, 2), 16);
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            }
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

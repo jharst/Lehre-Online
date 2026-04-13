@@ -97,16 +97,16 @@ ul.embedded-quote-block li::before {
   display: flex; /* Flexbox für die Zentrierung */
   justify-content: center; /* Horizontale Zentrierung */
   align-items: center; /* Vertikale Zentrierung */
-  height: 100vh; /* Höhe auf 95% des Viewports beschränken */
-  width: 100vw; /* Breite auf 95% des Viewports beschränken */
+  /*height: 100vh; /* Höhe auf 95% des Viewports beschränken */
+  width: 100%; /* Breite auf 95% des Viewports beschränken */
+  maxwidth: 100%;
   margin: 0 auto;
 }
 
 .reveal .mermaid svg {   
-  max-width: 100% !important;
-  max-height: 100%;
-  width: auto;
+  width: 100% !important;
   height: auto;
+  display: block;
   font-size: 12px;
 }
 
@@ -141,6 +141,28 @@ ul.embedded-quote-block li::before {
   margin-left: 5px;
   font-size: smaller;
   vertical-align: middle;
+}
+
+.figcaption{
+  display:block !important; 
+  width:90% !important; 
+  min-width:90% !important; 
+  text-align:center; 
+  margin-top:0.5em;
+}
+
+.source {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: smaller;
+  color: #555;
+  margin-top: auto;
+  padding-top: 0.5em;
+}
+
+.source:before{
+  content: "Quelle: ";
 }
 
 .container {
