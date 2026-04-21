@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Kultur der Digitalität</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg'); background-size: contain; background-position: right;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Memes und Mimesis<br>Einführung in die intermediale<br>Literaturwissenschaft</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div><div class="right-image-source"><a href="https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg" title="This is not a Meme. Image Macro. Know Your Meme, <20.04.2026>" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+
+<div class="slide-subtitle-left" style="padding: 5px; box-sizing: border-box; position: absolute; left: 45%; top: 85%; height: 10%; width: 55%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title" onclick="Reveal.getPlugins().notes.open();">
+
+
+
+3. Sitzung: Kultur der Digitalität
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Rekapitulation der letzten Sitzung<ul>
+<li>Erwähnung der Bilder und Links</li>
+<li>„Gazing”: Blickregime</li>
+<li>Großes Thema: Formen und Folgen der „Appropriation” →  Brücke zu @Stalder-2016</li>
+<li>bei Stalder zentral:<ul>
+<li>Kultur als Praxis, nicht als Produkt (Prozessualität)</li>
+<li>diese Praxis verändert sich durch die Digitalisierung (Avantgarde-Praktiken werden Mainstream) → Referentialität</li>
+<li>Digitalisierung und Gemeinschaftlichkeit: bezogen auf unser Thema wichtig, dass Memes Produkte sozialer Praxis sind</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>eigene Arbeit mit Texten vorstellen</li>
+<li>vor dem Teil: Gemeinschaftlichkeit kurze Gruppengespräche einbauen<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="background-image: url('https://res.cloudinary.com/suhrkamp/images/v1742192174/64239/kultur-der-digitalitaet_9783518126790_cover.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat; background-color: #4396AD">
+</div>
+<div class="right-image-source"><a href="https://www.suhrkamp.de/buch/felix-stalder-kultur-der-digitalitaet-t-9783518126790" title="Buchcover" target="_blank">Cover<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Sitzungszusammenhang
+- Rückblick: postmoderne Strategien und Appropriation
+- heute: 
+	- Digitalität und Appropriation (Referentialität)
+	- Digitalität und Gemeinschaftlichkeit 
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- STRUKTUR: .container → Folien-Wrapper (lila Rahmen + Hintergrund aus slides.css) 
+.right-bottom-div → Diagonalschnitt rechts (clip-path, lila Farbfläche) .img-grid → 2x2-CSS-Grid hinter dem Schnitt; object-fit:cover schneidet Bilder zu – Randmotive können abgeschnitten werden .img-caption-left → Caption-Block links, absolut positioniert, vertikal zentriert CLIP-PATH-LOGIK: polygon(20% 0, 100% 0, 100% 100%, 0 100%) Die vier Punkte beschreiben die Ecken des sichtbaren Bereichs: oben-links (20% vom linken Rand), oben-rechts, unten-rechts, unten-links (0%) → erzeugt die Diagonale, die zum System der anderen Templates passt --> 
+
+<div class="container"> 
+<!-- RECHTE SEITE: Bildteppich hinter Diagonalschnitt --> 
+<div class="right-bottom-div" style="width: 72%; height: 100%;"> <div style="position: absolute; top: 0; right: 0; width: 90%; height: 99%; clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 3px; "> <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/754/309/86d.png" style="height: 100%; width: 100%; object-fit:cover; min-height: 0; min-width: 0;"> <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/754/306/7fb.jpg" style="height: 100%; width: 100%; object-fit:cover; min-height: 0; min-width: 0;"> <img src="https://i.kym-cdn.com/photos/images/newsfeed/000/754/270/fa3.jpg" style="height: 100%; width: 100%; object-fit:cover; min-height: 0; min-width: 0;"> <img src="https://img.huffingtonpost.com/asset/5d0207bc2400008c178b94b4.jpeg" style="height: 100%; width: 100%;object-fit:cover; object-position: top; min-height: 0; min-width: 0;"> </div> </div> <!-- LINKE SEITE: Caption, vertikal zentriert --> <div style=" position: absolute; top: 50%; left: 2%; width: 26%; transform: translateY(-50%); font-family: Verdana, sans-serif; font-size: smaller; text-align: left; line-height: 1.5;"> <p>Conchita Wurst und ihr Bart als Photoshop-Memes (Eurovision 2014)</p> <p style="margin-top: 0.5em; color: #555;">Vgl. Stalder: <em>Kultur der Digitalität</em>, 2006, S. 7–9.</p> </div> </div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="Screenshot_2026-04-21 at 10.54.20.jpg" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="background-image: url('https://res.cloudinary.com/suhrkamp/images/v1742192174/64239/kultur-der-digitalitaet_9783518126790_cover.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat; background-color: #4396AD">
+</div>
+<div class="right-image-source"><a href="https://www.suhrkamp.de/buch/felix-stalder-kultur-der-digitalitaet-t-9783518126790" title="Buchcover" target="_blank">Cover<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+
+## Stalder: Kultur der Digitalität (2016)
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Kultur als soziale Praxis, nicht als Produkt
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Digitalität: „Set von Relationen”, Materialität, Verknüpfung von menschlichen und nichtmenschlichen Akteuren
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->„Kultur der Digitalität” löst „Gutenberg-Galaxis” (McLuhan) ab
+
+<p class="source">Stalder, F. (2016). Kultur der Digitalität. Suhrkamp. Einleitung. | McLuhan, M. (1962). The Gutenberg Galaxy: The Making of Typographic Man. University of Toronto Press.</p>
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Digitalität und Postdigitalität: bei Bedarf erläutern; Materialität; digitale Kommunikation und neue Formen der Gemeinschaftlichkeit</li>
+<li>Zusammenhang und Bruch: Buchdruck / Digitalität<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="background-image: url('https://cdn.thecollector.com/wp-content/uploads/2023/11/hannah-hoch-dada.jpg?width=1200&quality=100&dpr=2'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://en.wikipedia.org/wiki/Hannah_Höch" title="Hannah Höch: Untitled (Dada), Collage, ca. 1922, via MoMA, New York" target="_blank">H. Höch: Untitled (1922)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; font-size: larger; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Referentialität
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->modernistische Montage vs. postmoderne Referentialität (98)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->basale Operationen: Auswählen und Ordnen (117f.)
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Ausweitung der „Kulturschaffenden”
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->„Schlaufe durch den Körper” (Aufmerksamkeit, Lebenszeit, 118ff.)
+
+<p class="source">Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.1.</p>
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>postmoderne Referentialität: synthetisierender Akt, der verschiedene Quellen zu einem neuen und ephemeren Ganzen zusammenführt (Beispiel Conchita Wurst!); „Schaffung von Authentizität”; moderne Montage stelle dagegen die Bruchlinien heraus (Beispiel: <em>Berlin Alexanderplatz</em>)</li>
+<li>Auswählen und Ordnen als basale Operation der „Kulturschaffenden”: gilt auch für die Facebook-Seite, Statusupdates, Teilen/Posten von Fotos, Gestaltung der Foto-Sammlung etc. <!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="background-image: url('https://res.cloudinary.com/suhrkamp/images/v1742192174/64239/kultur-der-digitalitaet_9783518126790_cover.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat; background-color: #4396AD">
+</div>
+<div class="right-image-source"><a href="https://www.suhrkamp.de/buch/felix-stalder-kultur-der-digitalitaet-t-9783518126790" title="Buchcover" target="_blank">Cover<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Gemeinschaftlichkeit
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Gemeinschaft und Gesellschaft (Tönnies, 131ff.)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->bürgerlicher Liberalismus: Gegensatz Einzelner/Gesellschaft
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->postmoderner Neoliberalismus: 
+	+ „das Selbst wird nicht mehr essentialistisch, sondern performativ verstanden” (143)
+	+ „Verzahnung von persönlicher Identität und Gemeinschaftlichkeit” *(networked individualism)*
+
+<p class="source">Tönnies, F. (1887). <em>Gemeinschaft und Gesellschaft</em>, Leipzig: Fues Verlag. | Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.2.</p>
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+## Networked Individualism
+- ["] Individualisierung und Atomisierung gehen hier nicht mehr notwendigerweise Hand in Hand. Im Gegenteil, die Verzahnung von persönlicher Identität und Gemeinschaftlichkeit wird auf einer alltäglichen Ebene erfahrbar, weil beides durch persönliche Kommunikation kontinuierlich hergestellt, angepasst und affirmiert wird. (144)
+
+<p class="source">Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.2.</p>
+
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="width: 90%; background-image: url('https://d1hhug17qm51in.cloudfront.net/www-media/2022/05/02110414/98.291_01_b02-Large-TIFF_4000-pixels-long.jpg'); background-size: cover; background-position: center -20%;">
+
+<div class="right-image-source"><a href="" title="" target="_blank">Duchamp: Fountain (1917)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-79deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Stalder: gemeinschaftliche Formationen
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Wissenschaft als geschlossenes System: „peer review” (151f.)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Kunst als geschlossenes System (153ff.)
+	+ modernistische Avantgarde (Duchamp, 153)
+	+ postmoderne Kuration (Szeemann, 153)
+	+ heute: Ausweitung des Kuratorischen (Kunst, Alltag, 154f.)
+
+<p class="source">Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.2.</p>
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Wissenschaft: auch hier Referentialität (vgl. eigenes wissenschaftliches Arbeiten), daneben „geschlossenes System” der Validierung und Autorisierung</li>
+<li>Kunst:<ul>
+<li>Szeemann 1969: Ausstellung, die zugleich Performanz war</li>
+<li>„Reenactment” Venedig 2013 Appropriation und Distanzierung</li>
+<li>Künstler arbeiten als Kuratoren</li>
+</ul>
+</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+ - ["] inzwischen arbeiten auch Künstler als Kuratoren, wenn sie „den Kontext ihrer Werke explizit mitproduzieren, indem sie eine Vielzahl von offensiv eingesetzten Referenzen in ihre Arbeiten einbauen” (155)
+
+<p class="source">Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.2.</p>
+
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="background-image: url('https://res.cloudinary.com/suhrkamp/images/v1742192174/64239/kultur-der-digitalitaet_9783518126790_cover.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat; background-color: #4396AD">
+</div>
+<div class="right-image-source"><a href="https://www.suhrkamp.de/buch/felix-stalder-kultur-der-digitalitaet-t-9783518126790" title="Buchcover" target="_blank">Cover<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" id="title">
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Ambivalente Freiwilligkeit
+- Souveränität („Du musst”) vs. Soziabilität („Du kannst”, 160)
+- Protokolle als Formen der Netzwerkmacht (ebd.)
+- Homogenität, Differenz und Autorität (162ff.)
+
+<p class="source">Stalder, F. (2016). <em>Kultur der Digitalität.</em> Suhrkamp. Kap. 2.2.</p>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;">
+<div class="right-top-div" style="width: 90%; background-image: url('./Milhouse Meme.jpeg'); background-size: cover; background-position: center -20%;">
+
+<div class="right-image-source"><a href="https://doi.org/10.14361/9783839477014-006" title="Milhouse is not a Meme. Meta-Meme. Quelle: Pauliks (2025). Die Medienpraxeografie als Methode der Meme Studies. In Denker Kai & N. Nestler (Eds.), Digitale Bilderkämpfe (pp. 105–119). transcript." target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="slide-subtitle-left" style="transform: rotate(-78deg) translate(-10%, 0%); transform-origin: left top; padding: 5px; box-sizing: border-box; position: absolute; left: 42%; top: 88%; height: 10%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+3. Sitzung: Kultur der Digitalität
+</div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Konsequenzen für Memes
+- Memes als Teil sozialer Kulturproduktion (= Kultur der Digitalität)
+- Memes als Effekt von *networked individualism* (Affirmation des Selbst als Teil einer Gemeinschaft)
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Memes werden sozial hergestellt und sind referentiell:<ul>
+<li>sie sind ein Kommunikationsmittel</li>
+<li>Einschreibung in Kommunikationszusammenhang (Genre-Konventionen)</li>
+<li>Teilhabe an Gruppenidentität, Identifikation und Selbstaffirmation</li>
+<li>Was ein Meme ist, wird durch die Gemeinschaft (oft nachträglich) definiert (Bildmaterial kann zu Memes gemacht werden)</li>
+<li>die Grenzen der Gemeinschaft werden in der Praxis immer wieder neu verhandelt<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/dynamic_title.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
