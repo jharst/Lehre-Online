@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Antike Mimesis</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg'); background-size: contain; background-position: right;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>4. Sitzung: </span><span>Antike Mimesis</span>
+</div><div  class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Einführung in die intermediale<br>Literaturwissenschaft</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div><div class="right-image-source"><a href="https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg" title="This is not a Meme. Image Macro. Know Your Meme, <20.04.2026>" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li><h2 id="gegenüberstellung-platon--aristoteles">Gegenüberstellung Platon – Aristoteles</h2>
+<ul>
+<li><h2 id="form">Form</h2>
+</li>
+<li>Dialog vs. Vorlesung</li>
+<li>„Maieutik” vs. dozierende Lehre (analytisch)</li>
+<li>Kontext: Staatslehre (gesellschaftliche Ordnung, gerechte Herrschaft, Wächter) vs. Analyse der Kunstgattungen</li>
+<li>These: Nachahmung wirkt negativ auf die Seele vs. Nachahmung macht Freude und erlaubt Erkenntnis</li>
+<li><h2 id="mimesis-begriff">Mimesis-Begriff</h2>
+</li>
+<li><h4 id="platon">Platon:</h4>
+<ul>
+<li>Diegesis (Erzählung, Lyrik: ein Erzähler spricht, ohne sich zu „verstellen”) vs. Mimesis (Nachahmung, dramatischer Dialog)</li>
+<li><strong>Kritikpunkte Buch III</strong>: „Ansteckung” durch Nachahmung (219), Vielfalt der Nachahmung widerspricht „Professionalität” (man kann immer nur in <em>einer</em> Sache gut sein), daher ist der vielfach begabte Dichter nur als Gast in der Stadt erlaubt</li>
+<li><strong>Kritikpunkte Buch X:</strong> <ul>
+<li>Ideen- und Abbildlehre; Abbilder sind Schein, nicht Wahrheit; Malerei ahmt äußere Erscheinung nach, nicht die Idee; Nachahmung ist daher von der Wahrheit zweifach entfernt; Wissen entsteht aber im Gebrauch, nicht in der Nachahmung oder Herstellung (825)</li>
+<li>Seelenlehre: Ratio (Innerlichkeit, innere Ruhe) und Affekt (Körperlichkeit); Nachahmung bezieht sich auf Äußerliches und spricht den Affekt an; der Genuss der Nachahmung wirkt auf die Seele zurück</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="aristoteles">Aristoteles:</h4>
+<ul>
+<li>Mimesis Oberbegriff, zu differenzieren nach Mittel, Gegenstand und Modus (Bericht oder Handlung)</li>
+<li>Ursachen der Dichtung: natürliche, angeborene menschliche Fähigkeit, Lernen durch mimetische Darstellung anderer → Zitat (6)</li>
+</ul>
+</li>
+<li>Schluss: Platons Dialoge als Beispiel für Mimesis!<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Antike Mimesis</span></p>
+<div class="right-top-div" style="background-image: url('https://edramatica.com/images/5/54/Weegee_3.png?20240522002127'); background-size: 100%; background-position: bottom;">
+</div>
+<div class="right-image-source"><a href="https://edramatica.com/Weegee" title="What’s wrong? Weegee-Meme. edramatica.com/Weegee. 07.04.2026." target="_blank">Weegee-Meme.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Memes und Mimesis
+- etymologische Nähe der Begriffe
+- Mimesis
+	- Modus der Darstellung: illusionistische Nachahmung 
+	- Modus der Rezeption: Ansteckung
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="slide-bg-vignette has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- .slide: data-background-image="https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/aristotle-and-plato-school-of-athens-raphael.jpg" data-background-opacity="0.75" data-background-size="cover" -->
+
+<div class="fragment img-wrapper" style="background-color: #FFFFFF80; border-radius: 5px; padding: 2em;">
+
+<!-- begin::[Gegenüberstellung Platon Aristoteles.md] -->
+|                 | Platon                                              | Aristoteles                                              |
+| --------------- | --------------------------------------------------- | -------------------------------------------------------- |
+| **Form**        | sokratischer Dialog                                 | akademische Vorlesung                                    |
+| **Methode**     | Maieutik: Erkenntnis im Gespräch                    | Analysis: Erkenntnis durch begriffliche Systematisierung |
+| **Philosophie** | idealistisch                                        | empirisch-analytisch                                     |
+| **Kontext**     | Staatslehre                                         | Kunstlehre (Poetik)                                      |
+| **These**       | Mimesis wirkt negativ auf die Seele der Rezipientin | Mimesis erfreut und befördert Erkenntnis                 |
+<figcaption style="margin-top: 1em">Gegenüberstellung der platonischen und aristotelischen Philosophie</figcaption></div>
+<!-- end::[Gegenüberstellung Platon Aristoteles.md] -->
+
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Die_Schule_von_Athen" title="Raffael. Die Schule von Athen. 1510–1511. Fresko. Vatikan" target="_blank">Platon und Aristoteles<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span>Antike Mimesis</p>
+<div class="right-top-div" style="background-image: url(https://m.media-amazon.com/images/I/71sDDtECr2L._AC_SY879_.jpg); background-size: 100%; background-position: 15% center;">
+</div>
+<div class="right-image-source"><a href="https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates" title="Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v." target="_blank">Platon und Sokrates<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Platon: Politeia III
+- Diegesis vs. Mimesis
+- Einteilung der Gattungen (Lyrik, Epik, Drama)
+- Kritikpunkte an Mimesis
+	- Ansteckung durch Nachahmung
+	- Vielfalt der Nachahmung widerspricht Professionalität
+- Vorzug der Epik als Mischform
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+## Nachahmung steckt an
+
+<!-- begin::[@Platon-2011.md] -->
+- ["] Wenn wir also unseren ersten Grundsatz aufrecht erhalten wollen, daß nämlich unsere Wächter aller anderen Berufe enthoben und in genauem Sinne nur Wahrer der Freiheit der Stadt sein und sonst nichts betreiben sollen, was nicht diesem Zwecke dient, dann dürfen sie eben gar nichts anderes tun und auch nichts nachahmen. Ahmen sie aber etwas nach, dann soll es schon von Jugend an nur das sein, was sich für sie schickt: tapfere, besonnene, fromme und freie Männer und alles derartige; was aber eines freien Mannes unwürdig ist, das sollen sie weder zu tun noch nachzuahmen geschickt sein, überhaupt nichts Schimpfliches, damit sie nicht infolge der Nachahmung dann wirklich so werden. Oder hast du nicht bemerkt, daß die Nachahmungen, die man von Jugend an beständig betreibt, zur Gewohnheit und zur anderen Natur werden, ob das nun den Leib oder die Stimme oder die Denkart betrifft? (395e, 219)
+<!-- end::[@Platon-2011.md] -->
+
+
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span>Antike Mimesis</p>
+<div class="right-top-div" style="background-image: url(https://m.media-amazon.com/images/I/71sDDtECr2L._AC_SY879_.jpg); background-size: 100%; background-position: 15% center;">
+</div>
+<div class="right-image-source"><a href="https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates" title="Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v." target="_blank">Platon und Sokrates<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Politeia X – Ideenlehre
+- Ideen, Gegenstände und deren Abbilder
+- Mimesis schafft Abbilder (bildlich oder sprachlich)
+- Abbilder sind zweifach von Ideen entfernt
+- Wissen entsteht durch Gebrauch, nicht durch Nachahmung
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="slide-bg-vignette drop" data-background-image="https://pngimg.com/uploads/chair/chair_PNG6862.png" data-background-size="25%" data-background-position="left" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container">
+<figure class="img-wrapper" style="background-color: #FFFFFF80; border-radius: 5px; padding: 2em;" >
+<img src="Excalidraw/Platon – Ideenlehre.svg" alt="" style="object-fit: scale-down">
+
+<figcaption>
+    Diagrammatische Darstellung von Platons Ideenlehre.
+  </figcaption>
+  </figure>
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+## Ideenlehre
+
+<!-- begin::[@Platon-2011.md] -->
+- ["] Erwäge nun folgendes: Was bezweckt die Malerei bei jedem ihrer Gegenstände? Will sie das Seiende nachbilden, wie es ist, oder das Erscheinende, wie es erscheint? Ist sie Nachahmung des Erscheinungsbildes oder der Wahrheit? (598d, 815)
+<!-- end::[@Platon-2011.md] -->
+
+
+<!-- begin::[@Platon-2011.md] -->
+- ["] Die Nachahmekunst ist also von der Wahrheit weit entfernt. Und wenn sie alles mögliche zustande bringt, so offenbar deshalb, weil sie nur ein wenig von jeglichem erfaßt, nämlich sein (äußeres) Bild. So malt uns, sagen wir, zum Beispiel der Maler einen Schuster, einen Schreiner oder einen anderen Handwerker, ohne daß er von einem dieser Berufe etwas versteht. (598d, 815)
+<!-- end::[@Platon-2011.md] -->
+
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span>Antike Mimesis</p>
+<div class="right-top-div" style="background-image: url(https://m.media-amazon.com/images/I/71sDDtECr2L._AC_SY879_.jpg); background-size: 100%; background-position: 15% center;">
+</div>
+<div class="right-image-source"><a href="https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates" title="Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v." target="_blank">Platon und Sokrates<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Politeia X: Seelenlehre
+- zwei Teile der Seele: Ratio und Affekt
+- Affekt folgt äußerer Erscheinung 
+- Ratio urteilt anhand wesentlicher Eigenschaften
+- mimetische Darstellung folgt äußerer Erscheinung und wirkt affektiv
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span>Antike Mimesis</p>
+<div class="right-top-div" style="background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/aristotle-and-plato-school-of-athens-raphael.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Die_Schule_von_Athen" title="Raffael. Die Schule von Athen. 1510–1511. Fresko. Vatikan" target="_blank">Platon und Aristoteles<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Aristoteles: Poetik
+- Mimesis zu differenzieren hinsichtlich
+	- Medium
+	- Gegenstand
+	- Modus
+- Dichtung = Vers + Mimesis
+- Drama als mimetische Gattung
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span>Antike Mimesis</p>
+<div class="right-top-div" style="background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/aristotle-and-plato-school-of-athens-raphael.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Die_Schule_von_Athen" title="Raffael. Die Schule von Athen. 1510–1511. Fresko. Vatikan" target="_blank">Platon und Aristoteles<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Aristoteles: Poetik
+- Nachahmung als natürliche menschliche Eigenschaft
+- löst im Rezipienten Freude aus
+- Ursache der Freude ist Erkenntnisgewinn
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+
+<!-- begin::[@Aristoteles-2006.md] -->
+- ["] Allgemein scheinen zwei Ursachen die Dichtkunst hervorgebracht zu haben \[…\] : Denn sowohl das Nachahmen selbst ist den Menschen angeboren \[…\]  als auch de Freude, die jedermann an Nachahmungen hat. Als Beweis hierfür kann eine Erfahrungstatsache dienen. Denn von Dingen, die wir in der Wirklichkeit nur ungern erblicken, sehen wir mit Freude möglichst getreue Abbildungen, z.B. Darstellungen von äußerst unansehnlichen Tieren und von Leichen. (11)
+<!-- end::[@Aristoteles-2006.md] -->
+
+
+<!-- begin::[@Aristoteles-2006.md] -->
+- ["] Ursache hiervon ist folgendes: Das Lernen bereitet nicht nur den Philosophen großes Vergnügen, sondern in ähnlicher Weise auch den übrigen Menschen \[…\]. Sie freuen sich also deshalb über den Anblick von Bildern, weil sie beim Betrachten etwas lernen und zu erschließen suchen, was ein jedes sei, z.B. dass diese Gestalt den und den darstelle. (11f.)
+<!-- end::[@Aristoteles-2006.md] -->
+
+</div>
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/dynamic_title.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Double Indemnity (1944)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_020.jpg" data-background-size="contain" data-background-position="center" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<h2>Ü Noir</h2>
+<h3>Dr. habil. Joachim Harst</h3>
+Sommersemester 2026
+<p><span>2. Sitzung: </span><span>Double Indemnity (1944)</span></p>
+</div>
+
+ <!-- .element: style="background: #DFE1E195; border-radius: 5px; padding: 20px; position: absolute; left: 0%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div>
+
+<aside class="notes"><p>@Keith-Booker-2025 zu <em>Double Indemnity</em>:</p>
+<ul>
+<li>Hauptthese: der Film als Kritik an der kapitalistischen Moderne, insbes. in Bezug auf „amerikanischen Traum” (Subjekte folgen in ihrem Begehren einer Chimäre), Warencharakter und Vergegenständlichung der Frau, Inversion einer „tragischen” Dynamik zu einer mechanischen Fließband-Logik („Abfertigung der Figuren”)<ul>
+<li>das Haus von Phyllis Dietrichsen als Vergegenständlichung des „amerikanischen Traums” als Mittelklasse-Idyll – Entfremdung des Subjekts</li>
+</ul>
+</li>
+<li>weiterer wichtiger Aspekt: der Beginn mit dem Ende, zirkuläre Struktur, Off-Narration → Ausweglosigkeit</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://s3.amazonaws.com/criterion-production/films/b415e7735c3b593f2fb714c2c6831a26/So0yJBlzFXZG1ganHAXLtpJPhBnmg4_large.jpg'); background-size: contain; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Cover der DVD in der Criterion Collection" target="_blank">DVD Cover.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Organisatorisches
+- Termine
+- Filme
+- Studienleistungen
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="slide-bg-vignette has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container">
+<figure class="img-wrapper" style="border: 1px solid black; border-radius: 5px; padding: 20px;">
+<img src="Excalidraw/Double Indemnity Figurenkonstellation 1.svg" alt="" style="object-fit: scale-down">
+
+<figcaption style="margin-top: 1em">
+    Figurenkonstellation zu Beginn von <em>Double Indemnity</em>
+</figcaption>
+</figure>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://s3.amazonaws.com/criterion-production/films/b415e7735c3b593f2fb714c2c6831a26/So0yJBlzFXZG1ganHAXLtpJPhBnmg4_large.jpg'); background-size: contain; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Cover der DVD in der Criterion Collection" target="_blank">DVD Cover.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Grundmotive der Handlung
+- der amerikanische Traum / Kapitalisierung des Begehrens
+- daraus folgende sinnliche und finanzielle Begierde
+- das perfekte Verbrechen
+- mechanischer Determinismus (Schicksalhaftigkeit; Beispiel: Umwandlung der Worte „to the end of the line” von kalkulierender Beherrschung des Geschehens bis zum Ausgeliefertsein)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://s3.amazonaws.com/criterion-production/films/b415e7735c3b593f2fb714c2c6831a26/So0yJBlzFXZG1ganHAXLtpJPhBnmg4_large.jpg'); background-size: contain; background-position: top;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Cover der DVD in der Criterion Collection" target="_blank">DVD Cover.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Kapitalismus und Versicherung
+- Amerikanischer Traum und Ölindustrie
+- Unfallversicherung: Statistik und Spekulation
+- Versicherungsagent verdrängt Detektiv und Polizei
+- Verbrechen und Aufklärung verdanken sich der Logik des Kapitalismus
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Ehemann nicht mehr liquide, seit er ins Ölgeschäft einstieg (Erbe allein würde nichts bringen)</li>
+<li>daher Unfallversicherung nötig (Statistik und Spekulation: Unwahrscheinlichkeit eines Unfalltodes wird „kapitalisiert” → Höhe der Prämie)</li>
+<li>Anreiz für Versicherungsagenten: Verdopplung der Prämie bei besonders unwahrscheinlichem Unfall (Zugunglück) – Verdopplung und Spekularität: kehrt im doppelten double cross wieder</li>
+<li>Versicherungsanstalt als aufklärende Instanz aus ökonomischem Interesse (im ganzen Film keine Rede von polizeilicher Investigation)</li>
+<li>Verbrechen und Aufklärung verdanken sich beide der Logik des Kapitalismus/der Spekulation – wird von Figuren als moralischer Niedergang teilweise reflektiert („how rotten we are”)</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_047.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Filmstill aus der Criterion Collection." target="_blank">Filmstill.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gender: Walter und Phyllis
+- Phyllis: stereotype femme fatale?
+- Walter: naiver Antiheld?
+- ein Verbrechen aus Leidenschaft?
+- erste Begegnung
+	- Inszenierung von Weiblichkeit und männlichem Blick
+	- hardboiled style dialogue
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li><h3 id="heterosexuell">Heterosexuell</h3>
+<ul>
+<li>Phyllis als femme fatale: selbständig, setzt Erotik als Waffe ein, hat offenbar die erste Ehefrau ihres Manns umgebracht; aber: ihre Erotik ist nur Initialzündung; </li>
+<li>Walter scheint weniger von ihr fasziniert als von der Idee des perfekten Verbrechens, der doppelten Prämie und der Gelegenheit, Keyes zu übertrumpfen</li>
+<li>Walter als Antiheld; ohne soziale Bindungen (außer Keyes); berechnend und naiv?</li>
+<li>Inszenierung von Weiblichkeit und „männlichem Blick” in der ersten Begegnung: <strong>CLIP ANSEHEN</strong> <ul>
+<li>Neffs Blick wandert an Phyllis’ Körper entlang – Fußkettchen, Beine, Gesicht. Das ist klassisch voyeuristischer Blick (<em>male gaze</em> nach Mulvey), der ein erotisches Objekt konstitutiert (Agent, Vergegenständlichung, Abhängigkeit und Unterlegenheit als konstruiert). </li>
+<li>Entscheidend ist aber, was Wilder dann tut: Phyllis erwidert den Blick direkt, was desorientieren wirkt. Die Kamera, die eigentlich maskuline Kontrollinstanz, wird selbst als instrumentalisierbar entlarvt – Phyllis nutzt das Blickregime.</li>
+<li>still: <a href="https://criterion-production.s3.amazonaws.com/carousel-files/CZxEhQggbssSVzydxloXdjufl6IN7uAxY9fOB7XI.jpeg">Walter und Phyllis gegenüber, Jalousien werfen Schatten</a></li>
+</ul>
+</li>
+<li>das <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_047.jpg?bwg=1598952474">Spiel mit hierarchischen Positionen</a> bei der zweiten Begegnung (Walter verbirgt seine Faszination, Phyllis spielt ihre Abhängigkeit, beide inszenieren Leidenschaft/Dialoge/double entendre)</li>
+</ul>
+</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_012.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Filmstill aus der Criterion Collection." target="_blank">Filmstill.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gender: Walter und Keyes
+- „I love you, too”
+- subkutane Rivalität
+- Diktaphon als verbindendes Medium
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li><h3 id="homosexuell-verhältnis-walterkeyes">Homosexuell: Verhältnis Walter/Keyes</h3>
+<ul>
+<li>„<a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_012.jpg">I love you, too</a>”: rauher Ton, spielerische Herzlichkeit, Verbundenheit im Gestus (Streichholz)</li>
+<li>subkutane Rivalität und Aggression: Bedürfnis, Keyes zu übertrumpfen, dem „Allwissenden” eins auszuwischen</li>
+<li>die Rolle des <a href="https://criterion-production.s3.amazonaws.com/carousel-files/ny7mzUefO7bb0IQk41zCQWopFlJoQ12QE6WjsxE0.jpeg">Diktaphons</a> als mediale Ermöglichung von Aufrichtigkeit (Keyes’ Lob von Walter, Walters Geständnis)</li>
+</ul>
+</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+<div class="right-top-div" style="background-image: url('https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_056.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://www.criterion.com/films/30460-double-indemnity" title="Double Indemnity (1944). Filmstill von film-grab.com (27.04.2026)." target="_blank">Filmstill.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Genre: Inhaltlich
+- Verbrechen und Leidenschaft
+- double cross und fall guys 
+- Metareferentialität 
+	- Szene im Hollywood-Bowl
+	- Detektiv-Topoi
+	- stilisierte Sprache
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>double cross und fall guys (sowohl Walter als auch Nino Zacchetti)</li>
+<li>Szene im <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_055.jpg">Hollywood-Bowl</a> – <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_056.jpg">2</a></li>
+<li>Dupin-Anspielung (Detektiv)</li>
+<li>Dialoge</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container"> 
+<!-- RECHTE SEITE: Bildteppich hinter Diagonalschnitt --> 
+<div class="right-bottom-div"> 
+	<p class="right-title-text" style="transform: rotate(-76deg) translate(-10%, 60%); transform-origin: left top;"><span>2. Sitzung: </span><span> Double Indemnity (1944)</span></p>
+	<div class="img-grid"> 
+		<img src="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_039.jpg"> 
+		<img src="https://criterion-production.s3.amazonaws.com/carousel-files/CZxEhQggbssSVzydxloXdjufl6IN7uAxY9fOB7XI.jpeg"> 
+		<img src="https://criterion-production.s3.amazonaws.com/carousel-files/MgJU4yuorEP4Mid80uNzYPun6gxRJrWMOcMacVac.jpeg" > 
+		<img src="https://criterion-production.s3.amazonaws.com/carousel-files/IekoZNwxtnzoxWYb4R3MXUbdTz69akSvi1H0Om6R.jpeg">
+	</div> 
+</div> 
+
+<!-- LINKE SEITE --> 
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Genre: Formal
+- subjektive Kamera und Erzählung
+- Lichtregie: low key
+- geschlossene Bildkompositionen
+- shooting on location
+- zirkuläre Struktur
+- doppelte Erzählebene
+- jump cuts zwischen Zeitebenen
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>subjektive Kamera, subjektive Erzählung</li>
+<li>Lichtregie: <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_039.jpg">Jalousie wirft Schatten auf Walter Neff</a>; <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_059.jpg">Neff erscheint als Schatten im Türrahmen</a>; <a href="https://criterion-production.s3.amazonaws.com/carousel-files/IekoZNwxtnzoxWYb4R3MXUbdTz69akSvi1H0Om6R.jpeg">Phyllis am Steuer?</a>; volle Artifizialität: <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_001.jpg">Schatten mit Krücken</a></li>
+<li>Bildkomposition: Dominanz der geschlossenen Szenen in Innenräumen; Bsp. <a href="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_053.jpg">Supermarkt-Szene</a>; Türrahmen als Frame (Bsp.: <a href="https://criterion-production.s3.amazonaws.com/carousel-files/MgJU4yuorEP4Mid80uNzYPun6gxRJrWMOcMacVac.jpeg">zweite Begegnung in Walters Apartment</a>)</li>
+<li>shooting on location</li>
+<li>Kamera- und Blickführung</li>
+<li>zirkuläre Struktur, Off-Narration, doppelte Erzählebene, jump cuts zwischen Zeitebenen →  vs. continuity<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_039.jpg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_059.jpg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://criterion-production.s3.amazonaws.com/carousel-files/IekoZNwxtnzoxWYb4R3MXUbdTz69akSvi1H0Om6R.jpeg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_001.jpg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_053.jpg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://criterion-production.s3.amazonaws.com/carousel-files/MgJU4yuorEP4Mid80uNzYPun6gxRJrWMOcMacVac.jpeg" data-background-position="contain" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div>
+
+<aside class="notes"><h1 id="filmstills">Filmstills</h1>
+<pre><code class="language-dataviewjs">const page = dv.current();
+const lists = (page.file?.lists ?? []);
+
+const urls = new Set();
+const re = /\((https?:\/\/&lt;sup id=&quot;fnref:\s)&quot; role=&quot;doc-noteref&quot;&gt;1&lt;/sup&gt;+)\)/g;
+
+for (const li of lists) {
+  const text = li?.text ?? &quot;&quot;;
+  let m;
+  while ((m = re.exec(text)) !== null) urls.add(m[1]);
+}
+
+const sorted = [...urls].sort();
+
+dv.table(
+  [&quot;Vorschau&quot;, &quot;URL&quot;],
+  sorted.map(u =&gt; [
+    dv.el(&quot;img&quot;, &quot;&quot;, { attr: { src: u, style: &quot;max-height:150px; max-width:300px;&quot; } }),
+    dv.el(&quot;a&quot;, &quot;URL&quot;, { attr: { class: &quot;figcaption&quot;, href: u, target: &quot;_blank&quot;, rel: &quot;noopener&quot; } })
+  ])
+);
+</code></pre>
+<div class="footnotes" role="doc-endnotes">
+<ol>
+</ol>
+</div></aside></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/dynamic_title.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
