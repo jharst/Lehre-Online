@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Girard – Mimetisches Begehren</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg'); background-size: contain; background-position: right;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>5. Sitzung: </span><span>Girard – Mimetisches Begehren</span>
+</div><div  class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Einführung in die intermediale<br>Literaturwissenschaft</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div><div class="right-image-source"><a href="https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg" title="This is not a Meme. Image Macro. Know Your Meme, <20.04.2026>" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Anwesenheitsregelung</li>
+<li>Referat: Cifuentes<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-15%, 60%); transform-origin: left top;"><span>5. Sitzung: </span><span>Girard – Mimetisches Begehren</p>
+<div class="right-top-div" style="background-image: url('https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/aristotle-and-plato-school-of-athens-raphael.jpg'); background-size: cover; background-position: center;">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Die_Schule_von_Athen" title="Raffael. Die Schule von Athen. 1510–1511. Fresko. Vatikan" target="_blank">Platon und Aristoteles<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einleitung
+- Rückblick: „Mimesis” als Aspekt literarischer Form
+- heute: „Mimesis” als psychische Struktur
+- Was heißt: „Begehren”?
+
+
+</div>
+</div>
+
+<aside class="notes"><h2 id="einleitung">Einleitung</h2>
+<ul>
+<li>Rückblick: Antike Mimesis – die wichtigsten Punkte bei Platon und Aristoteles – hier geht es um Mimesis als literarische Strategie: wirklichkeitsgetreue Darstellung, Unterdrückung des medialen Charakters, Problematik des Abbildes (von Original entfernt)</li>
+<li>heute: „Mimetisches Begehren” – Mimesis als unbewusstes menschliches Verhalten, das von Literatur aufgedeckt werden kann → Umkehrung der Perspektive</li>
+<li>kurze Erläuterung zum Begriff Begehren: Herkunft Psychoanalyse, für uns übersetzbar mit: Streben nach etwas, Vorstellung von dem, was wünschenswert ist = etwas, was wir landläufig als im Kern individuell auffassen<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5.: </span><span>Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Gustave_Doré_-_Miguel_de_Cervantes_-_Don_Quixote_-_Part_1_-_Chapter_1_-_Plate_1_%22A_world_of_disorderly_notions%2C_picked_out_of_his_books%2C_crowded_into_his_imagination%22.jpg'); background-size: contain; background-repeat: no-repeat; background-position: right; mask-image: linear-gradient(to left, black 60%, transparent 90%)">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Don_Quijote" title="Quelle: The History of Don Quixote, by Cervantes. The Text edited by J. W. Clark, M.A. Illustrated by Gustave Doré. In Two Parts. Part I. Cassell & Company, Limited, London, Paris, New York & Melbourne. All Rights Reserved. MCMVI" target="_blank">G. Doré: Illustration zu Don Quijote (1863).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Girards literarische Beispiele
+- Cervantes, *Don Quijote* (1600): ein Leser von Ritterbüchern zieht aus, um die höfische Ordnung wiederherzustellen 
+- Flaubert, *Madame Bovary* (1856): eine Leserin von „romantischer” Literatur vermisst den höfischen Glanz in ihrem Leben
+- Stendhal, *Le Rouge et le Noir* (1830): ein Bewunderer von Napoleon strebt nach gesellschaftlichem Aufstieg
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5.: </span><span>Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Gustave_Doré_-_Miguel_de_Cervantes_-_Don_Quixote_-_Part_1_-_Chapter_1_-_Plate_1_%22A_world_of_disorderly_notions%2C_picked_out_of_his_books%2C_crowded_into_his_imagination%22.jpg'); background-size: contain; background-repeat: no-repeat; background-position: right; mask-image: linear-gradient(to left, black 60%, transparent 90%)">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Don_Quijote" title="Quelle: The History of Don Quixote, by Cervantes. The Text edited by J. W. Clark, M.A. Illustrated by Gustave Doré. In Two Parts. Part I. Cassell & Company, Limited, London, Paris, New York & Melbourne. All Rights Reserved. MCMVI" target="_blank">G. Doré: Illustration zu Don Quijote (1863).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Formen der Mediation
+- *Don Quijote*: externe Mediation, Mittler unerreichbar, Imitation naiv und offen
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container"><figure class="img-wrapper">
+<img src="./Excalidraw/Girard externe Mediation.svg">
+</figure>
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li><strong>Schema interne/externe Mediation</strong> (der Mittler als Rivale, Ambivalenz von Bewunderung und Feindseligkeit, Analyse von Hass und Eifersucht)</li>
+<li>das Problem des romantischen Individualismus („krankhafte Beschäftigung mit dem Anderen” (22))</li>
+<li>„die Lüge des spontanen Begehrens”</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%; height: 100%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5.: </span><span>Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/40/Gustave_Doré_-_Miguel_de_Cervantes_-_Don_Quixote_-_Part_1_-_Chapter_1_-_Plate_1_%22A_world_of_disorderly_notions%2C_picked_out_of_his_books%2C_crowded_into_his_imagination%22.jpg'); background-size: contain; background-repeat: no-repeat; background-position: right; mask-image: linear-gradient(to left, black 60%, transparent 90%)">
+</div>
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Don_Quijote" title="Quelle: The History of Don Quixote, by Cervantes. The Text edited by J. W. Clark, M.A. Illustrated by Gustave Doré. In Two Parts. Part I. Cassell & Company, Limited, London, Paris, New York & Melbourne. All Rights Reserved. MCMVI" target="_blank">G. Doré: Illustration zu Don Quijote (1863).<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Formen der Mediation
+- *Madame Bovary*: interne Mediation, literarische und intradiegetisch reale Mittler, Imitation unbewusst (sentimentale Selbsttäuschung)
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->*Julien Sorel*: interne Mediation, historische und intradiegetisch reale Mittler, Imitation bewusst, aber verleugnet; 
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->besonders: Rivalität als Strategie eingesetzt, als autonomer Ehrgeiz rationalisiert (Abhängigkeit vom Blick des Anderen)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container"><figure class="img-wrapper">
+<img src="./Excalidraw/Girard interne Mediation.svg">
+<figcaption></figcaption></figure>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://www.geschichte-abitur.de/wp-content/uploads/2022/06/karikatur-weimarer-republik.jpg" data-src-size="contain" data-src-position="right" data-src-href="https://www.geschichte-abitur.de/quellenmaterial/quellen-weimarer-republik/karikatur-zur-weimarer-republik" data-src-label="Simplicissimus" data-src-title="Thomas Theodor Heine, Sie tragen die Buchstaben der Firma – aber wer trägt den Geist? (Simplicissimus, 21.3.1927)" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5. Sitzung: </span><span> Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Zeitkritik und Gesellschaftsanalyse
+### Scheler: *Das Ressentiment* (1915)
+- Ressentiment: Ohnmacht und unterdrückte Aggression
+- Abwertung des ursprünglich Begehrten, Verlust von Authentizität
+- Entlarvung von bürgerl. Humanismus und säkularer Nächstenliebe als verkappter Hass auf Überlegene (<Nietzsche)
+- pathologisches Phänomen demokratischer Gesellschaft
+- lässt sich durch Rückbesinnung auf unvermitteltes Begehren heilen
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>pathologisches Phänomen demokratischer Gesellschaft (scheinbare Gleichheit, Verlust der Ständeordnung, verallgemeinerter Vergleich)</li>
+<li>lässt sich durch Rückbesinnung auf unvermitteltes Begehren (und Rückkehr zu Katholizismus und Ständeordnung) heilen</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://upload.wikimedia.org/wikipedia/commons/0/06/Keeping_up_with_the_Joneses_panel.png" data-src-size="contain" data-src-position="right" data-src-href="https://en.wikipedia.org/wiki/Keeping_Up_with_the_Joneses_(comics)" data-src-label="Keeping Up with the Joneses" data-src-title="Arthur R. „Pop” Momand, „Keeping Up with the Joneses”, New York World / Associated Newspapers, 1920." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5. Sitzung: </span><span> Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+### Girard: Übereinstimmungen mit Scheler 
+- ambivalente Grundstruktur des Ressentiments
+- Moderne verstärkt Ressentiment und mimetisches Begehren 
+	- Zunahme interner Mediation (Immanenz)
+	- bspw. Werbung institutionalisiert Nachahmung
+	- Ideologie des autonomen Subjekt wirkt verschleiernd
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://upload.wikimedia.org/wikipedia/commons/0/06/Keeping_up_with_the_Joneses_panel.png" data-src-size="contain" data-src-position="right" data-src-href="https://en.wikipedia.org/wiki/Keeping_Up_with_the_Joneses_(comics)" data-src-label="Keeping Up with the Joneses" data-src-title="Arthur R. „Pop” Momand, „Keeping Up with the Joneses”, New York World / Associated Newspapers, 1920." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5. Sitzung: </span><span> Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+### Girard: Abweichungen/Kritik von Scheler
+- Mimesis als anthropologische Konstante, Individualität als Illusion
+- = die Vorstellung autonomer Wertung ist „romantische Lüge”
+- Mediation ist konstitutiv, nicht pathologisch
+- kein nostalgischer Rückweg möglich
+- **=> Nähe zu Postmoderne?**
+</div>
+</div></script></section><section ><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>5. Sitzung: </span><span> Girard – Mimetisches Begehren</span></p>
+<div class="right-top-div" style="background-image: url('https://edramatica.com/images/5/54/Weegee_3.png?20240522002127'); background-size: 100%; background-position: bottom;">
+</div>
+<div class="right-image-source"><a href="https://edramatica.com/Weegee" title="What’s wrong? Weegee-Meme. edramatica.com/Weegee. 07.04.2026." target="_blank">Weegee-Meme.<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Diskussion: Zusammenhang mit Memes?
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->mimetische Reproduktion
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Vehikel von Begehren
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->postdemokratische Kultur der Partizipation
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Agenten von Ressentiment
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->interne Mediation (aber: distribuierte Mittler)
+
+</div>
+</div>
+
+<aside class="notes"><h2 id="zusammenhang-mit-memes">Zusammenhang mit Memes</h2>
+<ul>
+<li>mimetische Reproduktion (Verbreitung durch Nachahmung, Rivalität um Aufmerksamkeit und Gemeinschaft, Teilhabe an Affekt)</li>
+<li>Vehikel von Begehren (Trends, Produkte, Lifestyles werden durch Memes begehrenswert <em>gemacht</em>, nicht abgebildet)</li>
+<li>Agenten von Ressentiment (Empörung, Entrüstung, moralische Überlegenheit)</li>
+<li>Rolle von Influencern (identifizierbar), aber v.a. Netzwerken und Algorithmen als Mittlern (nicht identifizierbar)</li>
+<li>=&gt; insgesamt: postdemokratische Kultur der Partizipation, = interne Mediation</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section data-separator="
+?
+---
+?
+" data-separator-vertical="
+?
+--
+?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+- ["] **Memetic desire** also derives from elsewhere, but is not born in imitation, but rather infection or contagion. It retains traces of the original and essential triangular structure (desirer–mediator–desired), but fractalizes this throughout the network — to the degree that a specific mediator can no longer be confidently ascribed. The subject is therefore less an ape of established ideological patterns, and more the reflex, medium, or host, through which memetic currents flow or grow. \[…\] So to say, where the posthumans of the pre-Internet age desired what other people already found desirable (e.g., Don Quixote, Emma Bovary), the posthumans of today desire to be told what to desire — and indeed how to desire — by trending algorithms and recommendation engines \[…\]. Indeed, we ourselves now function as semi-organic nodes of the memetic network.” (Petman 2019, 31)
+</div>
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/debug.js"></script>
+    <script src="Resources/js/slide-img.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/dynamic_title.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
