@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Marino, La Galeria</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: black">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: center;"></div>
+<div class="left-bottom-div" style="width: 60%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>6. Sitzung: </span><span>Marino, La Galeria</span>
+</div><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Echo und Narziss<br>Figurationen der Selbstreflexion</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+</div>
+
+<aside class="notes"><!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>6. Sitzung: </span><span> Marino, La Galeria</span></p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Michelangelo_Merisi_da_Caravaggio" title="Caravaggio: Narziss, Öl auf Leinwand, 1597–99, Galleria Nazionale d’Arte Antica, Rom." target="_blank">Caravaggio: Narciso (1597–99)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Rückblick und Einführung
+- Narziss und Medienreflexion
+- Barocke Malerei und Illusionismus; optische Reflexe; Selbstreflexion
+- heute: 
+	- Marinos Gedichte über Gemälde als Beispiele für poetische Medien- und Kunstreflexion (Dichtung, Metaphorik und Visualität) 
+	- im Fall der Gedichte auf Narziss: Dichtung über das täuschende Verhältnis Kunst/Natur
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>6. Sitzung: </span><span> Marino, La Galeria</span></p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Michelangelo_Merisi_da_Caravaggio" title="Caravaggio: Narziss, Öl auf Leinwand, 1597–99, Galleria Nazionale d’Arte Antica, Rom." target="_blank">Caravaggio: Narciso (1597–99)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Barocke Sprachtheorie
+- der Pfeil ohne Ziel: „es wurde alles schon gesagt”
+- Verhältnis Worte/Dinge: Ablösung vom „aptum”
+- concetto und acutezza (pointierter, frappierender Ausdruck vs. mimetische Repräsentation; Pfeil als deren Sinnbild auch bei Ovid); 
+- auch rhetorisch Freude an der Verzerrung (ungewöhnliche, befremdliche Bilder) →  Paralogismus
+- = postmodernes Sprachbewusstsein?
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>„aptum” und Stilhöhe regelt Verhältnis res/verba</li>
+<li>pointe/concetto: „plötzliche Erkenntnis von sinnstiftenden Zusammenhängen zwischen nicht zusammenpassenden Konzepten” – erkenntnistheoretischer Status, Wahrnehmung von Ähnlichkeiten zwischen Gegenständen<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Aristoteles, *Poetik*, c. 21
+
+<!-- begin::[Aristoteles – Analogie-Metapher.md] -->
+- ["] Unter einer Analogie verstehe ich eine Beziehung, in der sich die zweite Größe zur ersten ähnlich verhält wie die vierte zur dritten. Dann verwendet der Dichter statt der zweiten Größe die vierte oder statt der vierten die zweite; und manchmal fügt man hinzu, auf was sich die Bedeutung bezieht, für die das Wort eingesetzt ist. So verhält sich z. B. eine Schale ähnlich zu Dionysos wie ein Schild zu Ares; der Dichter nennt also die Schale »Schild des Dionysos« und den Schild »Schale des Ares« \[…\]. (Aristoteles, *Poetik*, c. 21, 1457b16–25)
+<!-- end::[Aristoteles – Analogie-Metapher.md] -->
+
+<!-- begin::[Aristoteles – Analogie-Metapher.md] -->
+- ["] In manchen Fällen fehlt eine der Bezeichnungen, auf denen die Analogie beruht; nichtsdestoweniger verwendet man den analogen Ausdruck. So heißt z. B. das Ausstreuen von Samen »säen«; für die Tätigkeit der Sonne hingegen, die ihr Licht ausstreut, gibt es keine spezielle Bezeichnung. Doch verhält sich diese Tätigkeit ähnlich zum Sonnenlicht wie das Säen zum Samen; man hat daher gesagt: »Säend das göttliche Licht«. (Aristoteles, *Poetik*, c. 21, 1457b25–30) 
+<!-- end::[Aristoteles – Analogie-Metapher.md] -->
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[Aristoteles – Metapher.md] -->
+## Lerneffekt der Metapher
+
+- ["] »Smart and popular sayings« können entweder »by genius« oder durch Übung hervorgebracht werden. »Easy learning is naturally pleasant to all, and words mean something, so that all words which make us learn something are most pleasant. … It is metaphor, therefore, that above all produces this effect … all style and enthymemes that give us rapid information are smart« (Aristoteles, _Rhetorik_ 3,10,1-4)
+
+- ["] Most smart sayings are derived from metaphor, and also from misleading the hearer beforehand. For it becomes more evident to him that he has learnt something, when the conclusion turns out contrary to his expectation. (Aristoteles, *Rhetorik*, 3,11,6)
+<!-- end::[Aristoteles – Metapher.md] -->
+
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="auto-fragments has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Aristoteles/Tesauro: Metapher und Paralogismus
+
+<!-- begin::[@Aristoteles-2006.md] -->
+- ["] Ursache hiervon ist folgendes: Das Lernen bereitet nicht nur den Philosophen großes Vergnügen, sondern in ähnlicher Weise auch den übrigen Menschen \[…\]. Sie freuen sich also deshalb über den Anblick von Bildern, weil sie beim Betrachten etwas lernen und zu erschließen suchen, was ein jedes sei, z.B. dass diese Gestalt den und den darstelle. (c. 4, 1448b13, S. 11f.)
+<!-- end::[@Aristoteles-2006.md] -->
+
+
+<!-- begin::[Tesauro -CA- Paralogismus und Portrait.md] -->
+- ["] »Wenn du das vollkommene Abbild einer bekannten Person betrachtest, begehst du selbst einen Trugschluss, indem du das Wahrscheinliche mit dem Wahren gleichsetzt und daraus folgerst: _Das ist wirklich jener_. Wenn du jedoch später über deinen Irrtum und über die Kunstfertigkeit des Schöpfers nachdenkst, erfreust du dich daran und spendest Beifall.« (CA 12)
+<!-- end::[Tesauro -CA- Paralogismus und Portrait.md] -->
+
+
+<!-- begin::[Tesauro -CA- Paralogismus.md] -->
+- ["] Und dies ist jener Paralogismus, den unser Autor als „schöne Lüge der Dichter“ bezeichnet und den uns der gute Homer gelehrt hat. Denn auf diesem Paralogismus gründet sich die gesamte Kunst der göttlichen Dichter und Maler; und der vollkommenste Dichter und Maler ist derjenige, der uns am besten dazu zu bringen versteht, uns täuschen zu lassen, indem er uns das Wahrscheinliche als wahr ausgibt. (CA 641; vgl. 491)
+<!-- end::[Tesauro -CA- Paralogismus.md] -->
+
+
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="../Resources/images/Baglione – Hl Sebastian 1 (1603).jpeg" data-src-size="cover" data-src-position="right" data-src-href="#title" data-src-label="Baglione: Hl. Sebastian (1603)" data-src-title="Giovanni Baglione: Der Hl. Sebastian von einem Engel geheilt, um 1603, Öl auf Leinwand, 95,9 cmx 75,5 cm, Pennsylvania State University, Palmer Museum of Art" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>6. Sitzung: </span><span> Marino, La Galeria</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## San Bastiano de Tiziano
+- Pfeil als implizites Subjekt des Gedichtes, drei Bedeutungsebenen
+	- Metapher für die Macht der Kunst
+	- tötende und belebende Wirkung von Repräsentation
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Beispielanalysen nach @Ott-2013: <em>San Bastiano de Tiziano</em><ul>
+<li>Pfeil als Metapher für die Macht der Kunst (115)</li>
+<li>Pfeil als (implizites) Subjekt des Gedichtes, drei Bedeutungsebenen, Unsichtbar-Werden des Pfeils (116)</li>
+<li>der Pfeil im [Gemälde Baglionis](Resources/images/Baglione – Hl Sebastian 1 (1603).jpeg): Pinsel/Feder?  → mise en abyme – vgl. auch [](Resources/images/Baglione – Hl Sebastian 2 (1632).jpeg) (116)</li>
+<li>tötende und belebende Wirkung von Malerei/Sprache  (119)</li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[@Ott-2013.md] -->
+- ["] So gesehen erscheint die geflügelte Gestalt auf Bagliones Bild mit ihrer rätselhaften Geste als eine ,mise en abyme’ der ambivalenten Tätigkeit der Kunst: Sie tötet das Wirkliche, indem sie es auf die Leinwand bannt (stößt also gleichsam einen tödlichen Pfeil in den abzubildenden Gegenstand) - zugleich erweckt sie das Tote im Gemälde zum Leben (sie zieht den tödlichen Pfeil aus der Wunde). #Quote (118)
+<!-- end::[@Ott-2013.md] -->
+
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://kunstanalysen.de/assets/images/f/Abb.%201_Pygm%20u%20Gala-3530c448.jpg" data-src-size="cover" data-src-position="right" data-src-href="https://kunstanalysen.de/analyse/pygmalion-und-galatea-von-jacopo-da-pontormo-und-agnolo-bronzino" data-src-label="Bronzino: Pigmalione (1530)" data-src-title="Agnolo Bronzino/Jacopo da Pontormo: Pygmalion und Galatea, Öl auf Leinwand, 1529/30, Florenz, Uffizien." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>6. Sitzung: </span><span> Marino, La Galeria</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Statua di bella donna 
+- Überblendung verschiedener Attribute der Geliebten 
+- wer ist die lebendige, wer die leblose Frau?
+- Kunst belebt das Unbelebte (→ Pygmalion)
+- zugleich aber: Unverfügbarkeit des Kunstwerks
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li><em>Statua di bella donna</em> und Pygmalion: Kunst belebt das Unbelebte<ul>
+<li>Überblendung verschiedener Attribute der Geliebten (positiv/negativ) (125)</li>
+<li>Vergleich der lebendigen und der leblosen Frau – Wortspiele – Sieg der Kunst über die Natur <em>aufgrund</em> ihrer medialen Differenz (125)</li>
+<li>Amor soll die „steinerne Lende” der Frau beleben (126)</li>
+<li>Unverfügbarkeit des Kunstwerks (128)</li>
+<li>Marino: Undurchdringlichkeit  der Donna, Rezeptionsästhetik</li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>6. Sitzung: </span><span> Marino, La Galeria</span></p>
+<div class="right-top-div" style="width: 90%; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: right;">
+
+<div class="right-image-source"><a href="https://de.wikipedia.org/wiki/Michelangelo_Merisi_da_Caravaggio" title="Caravaggio: Narziss, Öl auf Leinwand, 1597–99, Galleria Nazionale d’Arte Antica, Rom." target="_blank">Caravaggio: Narciso (1597–99)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="position: absolute; left: 3%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Narziss-Gedichte
+- Status der beschriebenen Gemälde
+- Verhältnis Natur/Kunst: Spiegelbild als natürliches Kunstwerk, mit dem das Gemälde rivalisiert
+- Verhältnis Narziss/Echo, Malerei/Sprache
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Status der beschriebenen Gemälde: wirklich oder imaginär? sind die Gedichte deskriptiv oder poetologisch?</li>
+<li>ich sehe in den Narziss-Gedichten v.a. das Verhältnis Natur/Kunst reflektiert: wie bei Alberti wird das Spiegelbild als natürliches Kunstwerk aufgefasst, mit dem das Gemälde rivalisiert<ul>
+<li>7a: recht einfach und deutlich; Beispiel für Chiasmus</li>
+<li>7b: deutlich komplexer: „auf die Leinwand, in die das Bild gewoben ist, starrt verblüfft die Natur, um sich […] selbst zu bewundern”</li>
+</ul>
+</li>
+<li>daneben scheint aber auch das Verhältnis Narziss/Echo als ein Reflexionsverhältnis gestaltet zu sein, aber das verstehe ich noch nicht richtig<ul>
+<li>7: das Gedicht endet mit der Erwähnung Echos, spielt aber schon vorher auf Stummheit/Lautlichkeit an</li>
+<li>8: hier wird ausdrücklich auf die Stummheit Echos (auch im Gemälde) hingewiesen („Stimme kann man nicht malen” als Lob für die lebendige Darstellung)</li>
+<li>7b: hier wird ausdrücklich auf die Beredtheit von Narziss’ Augen hingewiesen<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/debug.js"></script>
+    <script src="Resources/js/slide-img.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/dynamic_title.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
