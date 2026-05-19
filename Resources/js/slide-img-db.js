@@ -1,7 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Bilddatenbank laden
-  fetch('../Resources/js/slide-images.json')
+  const paths = [
+    './slide-images.json',                        // GitHub Pages: JS und JSON im selben Ordner
+    './Resources/js/slide-images.json',           // Obsidian: relativ zum Vault-Root
+    '../Resources/js/slide-images.json'           // zur Sicherheit
+  ];
+
+  async function loadDb() {
+    for (const path of paths) {
+      try {
+        const response = await fetch(path);
+        if (response.ok) {
+          console.log('Geladen von:', path);
+          return await response.json();
+        }
+      } catch (e) {
+        // weiter zum nächsten Pfad
+      }
+    }
+    throw new Error('Bilddatenbank nicht gefunden');
+  }
+  
+  .loadDb()
     .then(response => {
       console.log('Geladen:', response.url); // ← neu
       return response.json();
