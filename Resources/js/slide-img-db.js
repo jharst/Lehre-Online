@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Bilddatenbank laden
-  const paths = [
-    './slide-images.json',                        // GitHub Pages: JS und JSON im selben Ordner
-    './Resources/js/slide-images.json',           // Obsidian: relativ zum Vault-Root
-    '../Resources/js/slide-images.json'           // zur Sicherheit
-  ];
-
   async function loadDb() {
     // Obsidian-Kontext: app API verwenden
     if (typeof app !== 'undefined' && app.vault) {
@@ -25,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(path);
         if (!response.ok) throw new Error(`404: ${path}`);
         console.log('Geladen von:', path);
-        return await response.json();
+        const data = await response.json();
+        console.log('JSON geparst:', typeof data, Object.keys(data).length);
+        return data;
       } catch (e) {
         console.log('Nicht gefunden:', path, e.message);
       }
