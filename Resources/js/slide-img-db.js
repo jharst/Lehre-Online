@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
     
   loadDb()
-    .then(response => {
-      console.log('Geladen:', response.url); // ← neu
-      return response.json();
-    })  
     .then(db => {
       console.log('Slides gefunden:', document.querySelectorAll('section[data-url], section[data-img-id]').length);
       document.querySelectorAll('section[data-url], section[data-img-id], section[data-background-image]').forEach(slide => {
