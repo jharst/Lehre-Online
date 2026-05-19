@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
           const caption = slide.querySelector('.img-wrapper figcaption');
           if (caption && merged['src-title']) caption.textContent = merged['src-title'];
         } else {
-          // Template mit Hintergrundbild
-          if (url) {
+          // Template mit Hintergrundbild(kein .right-top-div, kein .img-wrapper)
+          if (url && !slide.querySelector('.right-top-div')) {
             slide.style.setProperty('--slide-img', `url(${url})`);
             if (!slide.dataset.backgroundImage) {
               slide.setAttribute('data-background-image', url);
