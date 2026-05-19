@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Mimesis und Remix</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg'); background-size: contain; background-position: right;"></div>
+<div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>7. Sitzung: </span><span>Mimesis und Remix</span>
+</div><div  class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Einführung in die intermediale<br>Literaturwissenschaft</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div><div class="right-image-source"><a href="https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg" title="This is not a Meme. Image Macro. Know Your Meme, <20.04.2026>" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Einleitung<ul>
+<li>Erinnerung an Thema/Referat aus der letzten Sitzung – send dunes/<a href="https://i.kym-cdn.com/photos/images/newsfeed/001/289/193/ff0.jpg">distracted boyfriend mit Girard</a> – vier Analyseschritte – Bedeutung der kontextuellen Analyse: Rolle von Plattformen und ihrer Gemeinschaften für die soziale Produktion von Memes – Erinnerung an Stalder (Referentialität, Gemeinschaftlichkeit, Algorithmizität) – insgesamt Vorlage für Hausarbeit</li>
+<li>Thema heute: Fortsetzung der Meme-Analyse – Begriffe: Mimesis und Remix – Gegenstand: Art Memes – auch hier Anspruch, Gegenstände für Hausarbeiten zu umreißen</li>
+</ul>
+</li>
+<li>Zum Aufsatz <ul>
+<li>von einer Doktorandin – grobe Struktur (beispielhaft): Forschungsfragen – Methode – Ergebnisse – Zusammenfassung</li>
+<li>Gegenstand: <a href="https://i.kym-cdn.com/photos/images/newsfeed/000/203/420/UCDavis_pepperspray.jpg">Pepperspray Cop</a> – Kontext: Occupy UC Davis 2011, Kontrast zwischen friedlichem Widerstand und polizeilicher Reaktion – Photoshop Meme – Fotografie, Dokumentation, Zirkulation von Bildern – auf kym ist auch ein „mimetisches” Video verlinkt</li>
+<li>Methode: Kombination einer semiotischen und thematischen Analyse (2289) – semiotisch meint: das Meme als Text (syntagmatische und paradigmatische Achse)</li>
+<li>Unterteilung in Inhalt, Form und Autor – Erinnerung an die ähnlich kategorial gedachte Unterteilung bei Aristoteles! – content, form, stance (author) – Signifikat, Signifikant (composition and style), ??? (der Gestus des Autors?)<ul>
+<li>Idee dazu: Gruppenarbeit? Fragen: 1. Thematische Ebene erläutern; 2. Begriff „Mimesis” und „Remix” reflektieren; 3. Politische Dimension diskutieren</li>
+</ul>
+</li>
+<li>Grobe Klassifizierung: Remix (heterogene Bildelemente werden neu zusammengefügt) vs. Mimesis (Akteure stellen Kunstwerke nach) – vgl. Zitat @Aharoni-2019#^9232e9 – weiterführende Diskussion bei @Shifman-2014, Zitat<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://i.kym-cdn.com/photos/images/newsfeed/001/308/858/2f1.jpg" data-src-size="contain" data-src-position="right" data-src-href="https://knowyourmeme.com/memes/distracted-boyfriend" data-src-label="Distracted Boyfriend" data-src-title="The Tables Have Turned. Distracted Boyfriend Meme. Zugriff: 18.05.2026." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>7. Sitzung: </span><span> Mimesis und Remix</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einleitung
+- Erinnerung an letzte Sitzung
+	- Stalder 2016: Referentialität, Gemeinschaftlichkeit, Algorithmizität
+	- Nowotny/Reidy 2022: „Memesis”, vier Analyseebenen
+	- distracted boyfriend mit Girard
+- Thema heute: Mimesis und Remix als memetische Strategien
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://i.kym-cdn.com/photos/images/newsfeed/000/203/420/UCDavis_pepperspray.jpg" data-src-size="cover" data-src-position="center" data-src-href="https://knowyourmeme.com/memes/casually-pepper-spray-everything-cop" data-src-label="Pepperspray Cop" data-src-title="Image showing the pepper spraying of UC Davis students by campus security officer Lt. John Pike. Foto by Louise Macabitas, 11.04.2012." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>7. Sitzung: </span><span> Mimesis und Remix</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Infos zum Aufsatz
+- Struktur des Aufsatzes
+- Hintergrund: Pepperspray Cop-Meme
+	- politisch-historischer Kontext
+	- formale Aspekte: Photoshop-Meme
+	- Fotografie, Dokumentation, Zirkulation
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://i.kym-cdn.com/photos/images/original/000/203/449/tumblr_luzy5fkc4T1qafo3wo1_500.png" data-src-size="cover" data-src-position="left" data-src-href="https://knowyourmeme.com/memes/casually-pepper-spray-everything-cop" data-src-label="Pepperspray Cop" data-src-title="Pepperspray Cop on the Constitution. Quelle: knowyourmeme.com. 18.05.2025." data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>7. Sitzung: </span><span> Mimesis und Remix</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+	
+## Methodischer Ansatz
+- kulturelle Artefakte als Texte
+- semiotische Analyse (paradigmatische und syntagmatische Achse, nach Milner 2016)
+- thematische Analyse (nach Shifman 2013, vgl. Aristoteles!)
+	- content („Inhalt”, Signifikat)
+	- form (Signifikant)
+	- stance (Autorschaft?)
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>@Aristoteles-2006 differenzierte Mimesis hinsichtlich Medium (Sprache, Musik, Rhythmus), Gegenstand (gute oder schlechte Menschen) und Modus (erzählend, dramatisch)</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/1920px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg" data-background-size="contain" data-background-position="center" data-src-href="https://de.wikipedia.org/wiki/Das_Abendmahl_(Leonardo_da_Vinci)" data-src-label="Leonardo: Das Abendmahl (1495–98)" data-src-title="Leonardo da Vinci: Das  Abendmahl. 1495–98. Fresko, Santa Maria delle Grazie, Milan." -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<!-- begin::[@Aharoni-2019.md] -->
+- ["] For example, a meme based on Leonardo da Vinci’s *The Last Supper* may relate to the content of the work, namely Jesus’ pre-Crucifixion dinner. Alternatively, it may address the painting itself, replicating recognizable “key signifiers” (Burgess, 2008), such as the masterpiece’s distinct mise-en-scène. (2289)
+<!-- end::[@Aharoni-2019.md] -->
+
+</div>
+
+ <!-- .element: style="background: #DFE1E175; border-radius: 5px; padding: 20px" class="fragment" data-fragment-index="1" -->
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="auto-fragments has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Mimesis und Remix
+
+<!-- begin::[@Shifman-2014.md] -->
+- ["] Mimicry and remix are thus conquering the Web, and the term “meme” seems particularly suitable to describe this glut of reworks, as the concept—deliberately connoting “mimesis”—is flexible enough to capture a wide range of communicative intentions and actions, spanning all the way from naive copying to scornful imitation. #Quote (22)
+<!-- end::[@Shifman-2014.md] -->
+
+<!-- begin::[@Aharoni-2019.md] -->
+- ["] Imitation, the basis of nondigital meme distribution (Blackmore, 1999), involves practices of re-creation and embodiment of a text. Remix, a newer practice, enables the re-editing of an existing artifact via technological manipulation (Shifman, 2013). #Quote (2286)
+<!-- end::[@Aharoni-2019.md] -->
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Gruppenarbeit
+<div class="block">
+
+Lesen Sie den Ihnen zugewiesenen Textabschnitt und bearbeiten Sie die folgenden Fragen:
+1. Wie verstehen Sie die in ihrem Abschnitt beschriebene „thematische Ebene”?
+2. Wie würden Sie die Begriffe „Mimesis” und „Remix” anhand Ihrer Beispiele näher definieren?
+3. Welche politische Bedeutung würden Sie den Remixes aus ihrem Abschnitt zusprechen?
+</div>
+
+<!-- .element: style="text-align: left" -->
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="amberg" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container">
+<figure class="img-wrapper">
+  <img src="">
+  <figcaption style="width: 80% !important;">
+    CAPTION
+  </figcaption >
+  </figure>
+</div>
+</div>
+
+<aside class="notes"><!-- .slide: class="has-light-background" data-img-id="fragonnard" data-background-color="lightgrey" --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+Ende
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

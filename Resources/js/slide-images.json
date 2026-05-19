@@ -1,0 +1,1232 @@
+{
+  "mattotti": {
+    "url": "https://i.pinimg.com/564x/ea/ff/cb/eaffcb1ebca1897991f576030e239a81.jpg",
+    "src-href": null,
+    "src-title": "Lorenzo Mattotti",
+    "src-label": "L. Mattotti: Lesendes Paar",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": null,
+    "author": [
+      "Lorenzo Mattotti"
+    ],
+    "keywords": [
+      "Dante",
+      "Francesca",
+      "Lesen"
+    ]
+  },
+  "amberg": {
+    "url": "https://recherche.smb.museum/images/4416058_2500x2500.jpg",
+    "src-href": "https://smb.museum-digital.de/object/143839?navlang=de",
+    "src-title": "Wilhelm Amberg: Vorlesung aus Goethes Werther, Öl auf Leinwand, Staatliche Museen Berlin, 1870.",
+    "src-label": "W. Amberg: Vorlesung (1870).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1870,
+    "author": [
+      "Wilhelm Amberg",
+      "Johann Wolfgang von Goethe"
+    ],
+    "keywords": [
+      "Werther"
+    ]
+  },
+  "fragonnard": {
+    "url": "https://uploads1.wikiart.org/images/jean-honore-fragonard/young-girl-reading.jpg!HD.jpg",
+    "src-href": "https://www.wikiart.org/en/jean-honore-fragonard/a-young-girl-reading-1776-1",
+    "src-title": "Jean Honoré Fragonard: A Young Girl Reading. Öl auf Leinwand. National Gallery of Art, Washington, DC. 1776.",
+    "src-label": "Fragonnard: A Young Girl Reading (1776).",
+    "src-size": "120%",
+    "src-position": "left",
+    "year": 1776,
+    "author": [
+      "Jean Honoré Fragonard"
+    ],
+    "keywords": []
+  },
+  "friedrich": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Caspar_David_Friedrich",
+    "src-title": "Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817.",
+    "src-label": "C.D. Friedrich: Über dem Nebelmeer (1817).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1817,
+    "author": [
+      "Caspar David Friedrich"
+    ],
+    "keywords": []
+  },
+  "richardson": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HighmorePamelaFainting.jpeg",
+    "src-href": "https://en.wikipedia.org/wiki/Pamela;_or,_Virtue_Rewarded",
+    "src-title": "Joseph Highmore, Pamela Fainting, National Gallery of Victoria, Öl auf Leinwand, 1743.",
+    "src-label": "J. Highmore: Pamela Fainting (1743).",
+    "src-size": null,
+    "src-position": "left",
+    "year": 1743,
+    "author": [
+      "Joseph Highmore"
+    ],
+    "keywords": []
+  },
+  "rousseau": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/LePrincePromenade.jpg",
+    "src-href": "https://fr.wikipedia.org/wiki/Julie_ou_la_Nouvelle_Héloïse",
+    "src-title": "Charles-Édouard Le Prince, Promenade de Julie et St Preux sur le lac Léman, Öl auf Leinwand, Montmorency, Musée Jean-Jacques Rousseau, 1824.",
+    "src-label": "Le Prince, Promenade (1824).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1824,
+    "author": [
+      "Charles-Édouard Le Prince"
+    ],
+    "keywords": []
+  },
+  "friedrich-mond": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Caspar_David_Friedrich",
+    "src-title": "Caspar David Friedrich: Zwei Männer in Betrachtung des Mondes. Öl auf Leinwand. Dresden: Galerie neuer Meister, 1819/20.",
+    "src-label": "C.D. Friedrich: In Betrachtung des Mondes (1819/20).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1819,
+    "author": [
+      "Caspar David Friedrich"
+    ],
+    "keywords": []
+  },
+  "friedrich-nebelmeer": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Caspar_David_Friedrich",
+    "src-title": "Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817.",
+    "src-label": "C.D. Friedrich: Über dem Nebelmeer (1817).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1817,
+    "author": [
+      "Caspar David Friedrich"
+    ],
+    "keywords": []
+  },
+  "leighton-vollbild": {
+    "url": "https://farm6.staticflickr.com/5245/29918621396_eb5353e1d8_o.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Edmund_Leighton",
+    "src-title": "Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906.",
+    "src-label": "E.B. Leighton: The Garden (1906).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1906,
+    "author": [
+      "Edmund Blair Leighton"
+    ],
+    "keywords": []
+  },
+  "leighton": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Edmund_Leighton",
+    "src-title": "Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906.",
+    "src-label": "E.B. Leighton: The Garden (1906).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1906,
+    "author": [
+      "Edmund Blair Leighton"
+    ],
+    "keywords": []
+  },
+  "manzoni": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Molteni_Giuseppe%2C_Alessandro_Manzoni.jpg",
+    "src-href": "https://it.wikipedia.org/wiki/Alessandro_Manzoni",
+    "src-title": "Giuseppe Molteni: Ritratto di Alessandro Manzoni a 50 anni. Accademia di Brera. Öl auf Leinwand, 1835.",
+    "src-label": "G. Molteni: Manzoni (1835).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1835,
+    "author": [
+      "Giuseppe Molteni",
+      "Alessandro Manzoni"
+    ],
+    "keywords": [
+      "Manzoni"
+    ]
+  },
+  "degas-absinthe": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e8/Edgar_Degas_-_In_a_Café_-_Google_Art_Project_2.jpg",
+    "src-href": "https://fr.wikipedia.org/wiki/L%27Absinthe",
+    "src-title": "Edgar Degas. Dans un café (L’Absinthe). Öl auf Leinwand, 92 x 68,5cm, Paris, Musée d’Orsay, 1875-76.",
+    "src-label": "Degas: L’Absinthe (1875/76).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1875,
+    "author": [
+      "Edgar Degas"
+    ],
+    "keywords": []
+  },
+  "flaubert": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Gustave_Flaubert.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Gustave_Flaubert",
+    "src-title": null,
+    "src-label": "Nadar: Fotoportrait G. Flaubert (~1865).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1865,
+    "author": [
+      "Nadar",
+      "Gustave Flaubert"
+    ],
+    "keywords": []
+  },
+  "tissot": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/James_Tissot_-_A_Woman_of_Ambition.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/James_Tissot",
+    "src-title": "James Tissot: A Woman of Ambition, Öl auf Leinwand, 142 x 101cm, Buffalo AKG Art Museum, 1883.",
+    "src-label": "Tissot: Woman of Ambition (1883).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1883,
+    "author": [
+      "James Tissot"
+    ],
+    "keywords": []
+  },
+  "dali-vollbild": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/9/90/DaliGreatMasturbator.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Salvador_Dalí",
+    "src-title": "Salvador Dalì. The Great Masturbator. Öl auf Leinwand, 110 x 150 cm, Museo Nacional Centro de Arte Reina Sofía.",
+    "src-label": "Dalì: The Great Masturbator (1929).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1929,
+    "author": [
+      "Salvador Dalì"
+    ],
+    "keywords": []
+  },
+  "de-chirico": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": "contain",
+    "src-position": "right",
+    "year": 1914,
+    "author": [
+      "Giorgio de Chirico"
+    ],
+    "keywords": []
+  },
+  "nadja": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Léona_Delcourt-010.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Nadja_(Roman)",
+    "src-title": "Zeichnung von Léona Delcourt, abgebildet in Bretons Roman Nadja.",
+    "src-label": "”Wer ist sie?”.",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": null,
+    "author": [],
+    "keywords": []
+  },
+  "de-chirico-vollbild": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/1/1b/De_Chirico%27s_Love_Song.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Giorgio_de_Chirico",
+    "src-title": "Giorgio de Chirico: The Song of Love, 1914, New York, Museum of Modern Art.",
+    "src-label": "de Chirico: Canto d’amore (1914)",
+    "src-size": "contain",
+    "src-position": "center",
+    "year": 1914,
+    "author": [
+      "Giorgio de Chirico"
+    ],
+    "keywords": []
+  },
+  "echo-cranach": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Lucas_Cranach_d.%C3%84._-_Die_Fr%C3%BCchte_der_Eifersucht_%28Das_silberne_Zeitalter%29%2C_National_Gallery%2C_London.jpg/500px-Lucas_Cranach_d.%C3%84._-_Die_Fr%C3%BCchte_der_Eifersucht_%28Das_silberne_Zeitalter%29%2C_National_Gallery%2C_London.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "L. Cranach: Das Silberne Zeitalter (1530)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1530,
+    "author": [
+      "Lucas Cranach d.Ä."
+    ],
+    "keywords": []
+  },
+  "memes-fountain": {
+    "url": "https://d1hhug17qm51in.cloudfront.net/www-media/2022/05/02110414/98.291_01_b02-Large-TIFF_4000-pixels-long.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "Duchamp: Fountain (1917)",
+    "src-size": "cover",
+    "src-position": "center -20%",
+    "year": 1917,
+    "author": [
+      "Marcel Duchamp"
+    ],
+    "keywords": []
+  },
+  "memes-hoch": {
+    "url": "https://berliner-zeitung.imgix.net/2022/03/04/6830aceb-82f6-4ad6-8d66-d61cf53dd202.jpeg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "H. Höch: Die Brat (1927)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1927,
+    "author": [
+      "Hannah Höch"
+    ],
+    "keywords": []
+  },
+  "memes-kruger": {
+    "url": "https://www.moca.org/storage/app/uploads/public/5cd/312/d1c/5cd312d1cdaf2983717804.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "Kruger: It’s a Small World",
+    "src-size": "contain",
+    "src-position": "right",
+    "year": null,
+    "author": [
+      "Barbara Kruger"
+    ],
+    "keywords": []
+  },
+  "memes-oppenheimer": {
+    "url": "https://www.moma.org/media/W1siZiIsIjYxNDY5NyJdLFsicCIsImNvbnZlcnQiLCItcXVhbGl0eSA5MCAtcmVzaXplIDIwMDB4MjAwMFx1MDAzZSJdXQ.jpg?sha=203e557b7d43cc8e",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "M. Oppenheimer: Object (1936)",
+    "src-size": "cover",
+    "src-position": "70% center",
+    "year": 1936,
+    "author": [
+      "Max Oppenheimer"
+    ],
+    "keywords": []
+  },
+  "memes-van-gogh": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": 1886,
+    "author": [
+      "Vincent van Gogh"
+    ],
+    "keywords": []
+  },
+  "memes-warhol": {
+    "url": "https://www.christies.com/img/LotImages/2018/NYR/2018_NYR_15877_0058_000(andy_warhol_diamond_dust_shoes",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "Warhol: Diamond Dust Shoes (1980)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1980,
+    "author": [
+      "Andy Warhol"
+    ],
+    "keywords": []
+  },
+  "hohelied": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg/1280px-Egon_Tschirch-_Hohelied_Nr._10_%28high_resolution%29.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Das_Hohelied_Salomos",
+    "src-title": "Egon Tschirch: Das Hohelied Salomos. Bilderzyklus (1927). Gouache auf Karton. Kunstmuseum Aarenshoop.",
+    "src-label": "E. Tschirsch: Hohelied Nr. 10",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1927,
+    "author": [],
+    "keywords": []
+  },
+  "titel": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Egon Tschirch"
+    ],
+    "keywords": []
+  },
+  "autorschaft-bajohr": {
+    "url": "https://hannesbajohr.de/wp-content/uploads/2015/12/imgcodeundkonzeptcover.png",
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": "contain",
+    "src-position": "right",
+    "year": 2016,
+    "author": [
+      "Hannes Bajohr"
+    ],
+    "keywords": []
+  },
+  "memes-conchita-grid": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [],
+    "keywords": []
+  },
+  "memes-duchamp": {
+    "url": "https://d1hhug17qm51in.cloudfront.net/www-media/2022/05/02110414/98.291_01_b02-Large-TIFF_4000-pixels-long.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": "Duchamp: Fountain (1917)",
+    "src-size": "cover",
+    "src-position": "center -20%",
+    "year": 1917,
+    "author": [
+      "Duchamp"
+    ],
+    "keywords": []
+  },
+  "memes-hoch-2": {
+    "url": "https://cdn.thecollector.com/wp-content/uploads/2023/11/hannah-hoch-dada.jpg?width=1200&quality=100&dpr=2",
+    "src-href": "https://en.wikipedia.org/wiki/Hannah_Höch",
+    "src-title": "Hannah Höch: Untitled (Dada), Collage, ca. 1922, via MoMA, New York",
+    "src-label": "H. Höch: Untitled (1922)",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1922,
+    "author": [
+      "Hannah Höch"
+    ],
+    "keywords": []
+  },
+  "memes-milhouse": {
+    "url": "./Milhouse Meme.jpeg",
+    "src-href": "https://doi.org/10.14361/9783839477014-006",
+    "src-title": "Milhouse is not a Meme. Meta-Meme. Quelle: Pauliks (2025). Die Medienpraxeografie als Methode der Meme Studies. In Denker Kai & N. Nestler (Eds.), Digitale Bilderkämpfe (pp. 105–119). transcript.",
+    "src-label": "Quelle",
+    "src-size": "cover",
+    "src-position": "center -20%",
+    "year": 2025,
+    "author": [],
+    "keywords": []
+  },
+  "tpl-philosophie": {
+    "url": "https://m.media-amazon.com/images/I/71sDDtECr2L._AC_SY879_.jpg",
+    "src-href": "https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates/",
+    "src-title": null,
+    "src-label": "Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v.",
+    "src-size": "100%",
+    "src-position": "center",
+    "year": null,
+    "author": [
+      "Platon",
+      "Sokrates"
+    ],
+    "keywords": []
+  },
+  "tpl-symposion": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Banquet_cup-bearer_Louvre_G467.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Symposion_(Platon)#/media/Datei:Banquet_cup-bearer_Louvre_G467.jpg",
+    "src-title": null,
+    "src-label": "Symposion-Szene auf rotfigurigem Kylix (5. Jhdt. v.Chr.)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": null,
+    "author": [
+      "Unbekannt (Griechische Vasenmalerei)"
+    ],
+    "keywords": []
+  },
+  "tpl-tragoedie": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Oedipus.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Tragödie#/media/Datei:Oedipus.jpg",
+    "src-title": null,
+    "src-label": "Louis Bouwmeester als geblendeter Ödipus (1896)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1896,
+    "author": [
+      "Louis Bouwmeester"
+    ],
+    "keywords": []
+  },
+  "tpl-ovid": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Amor_Vincet_Omnia.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Amor_Vincit_Omnia_(Caravaggio)",
+    "src-title": null,
+    "src-label": "Caravaggio: Amor Vincit Omnia (1601/02)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1601,
+    "author": [
+      "Michelangelo Merisi da Caravaggio"
+    ],
+    "keywords": []
+  },
+  "tpl-symposion-2": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Banquet_cup-bearer_Louvre_G467.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Symposion_(Platon)#/media/Datei:Banquet_cup-bearer_Louvre_G467.jpg",
+    "src-title": null,
+    "src-label": "Symposion-Szene auf rotfigurigem Kylix (5. Jhdt. v.Chr.)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": null,
+    "author": [
+      "Unbekannt (Griechische Vasenmalerei)"
+    ],
+    "keywords": []
+  },
+  "tpl-tristan": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Tristan_und_Isolde",
+    "src-title": "Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance.",
+    "src-label": "Szene aus der Uraufführung von Wagners Tristan (1865).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1865,
+    "author": [
+      "Joseph Albert",
+      "Ludwig Schnorr von Carolsfeld",
+      "Malvina Schnorr von Carolsfeld"
+    ],
+    "keywords": []
+  },
+  "autorschaft-montfort": {
+    "url": "https://badquar.to/images/hwt_2018_cover.png",
+    "src-href": "https://badquar.to/publications/hard_west_turn.html",
+    "src-title": "Montfort, N. (2018). Hard West Turn. badquar.to.",
+    "src-label": "Montfort (2018).",
+    "src-size": "contain",
+    "src-position": "right",
+    "year": 2018,
+    "author": [
+      "Nick Montfort"
+    ],
+    "keywords": []
+  },
+  "tpl-heloisa": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Abelard_and_Heloise.jpeg",
+    "src-href": "https://de.wikipedia.org/wiki/Heloisa",
+    "src-title": "Abaelardus und Héloïse in einer Handschrift des Rosenromans (14. Jahrhundert)",
+    "src-label": "Das Paar in einer Handschrift des Rosenromans (14. Jhdt.).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": null,
+    "author": [
+      "Peter Abaelard",
+      "Héloïse d'Argenteuil"
+    ],
+    "keywords": []
+  },
+  "tpl-tristan-2": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Joseph_Albert_-_Ludwig_und_Malwine_Schnorr_von_Carolsfeld_-_Tristan_und_Isolde%2C_1865f.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Tristan_und_Isolde",
+    "src-title": "Ludwig Schnorr von Carolsfeld and his wife Malvina starring as Tristan and Isolde in the first performance.",
+    "src-label": "Szene aus der Uraufführung von Wagners Tristan (1865).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1865,
+    "author": [
+      "Joseph Albert",
+      "Ludwig Schnorr von Carolsfeld",
+      "Malvina Schnorr von Carolsfeld"
+    ],
+    "keywords": []
+  },
+  "autorschaft-alpha": {
+    "url": "https://res.cloudinary.com/holtzbrinck-buchverlage/image/fetch/w_3840,c_fill,g_auto,q_auto,f_webp/https://bilder-fischer.s3.eu-central-1.amazonaws.com/s3fs-public/2023-11/magazin_guse_becker_neue_rundschau_rz_012x.jpg",
+    "src-href": "https://www.fischerverlage.de/magazin/neue-rundschau/alpha-centauri-ewigkeit",
+    "src-title": "Jenifer Becker und Juan S. Guse.",
+    "src-label": "J. Becker und J.S. Guse (2023)",
+    "src-size": "cover",
+    "src-position": "80% 10%",
+    "year": 2023,
+    "author": [
+      "Jenifer Becker",
+      "Juan S. Guse"
+    ],
+    "keywords": []
+  },
+  "literaturgeschichte-titel": {
+    "url": null,
+    "src-href": "https://en.wikipedia.org/wiki/Paolo_and_Francesca_(Ingres)",
+    "src-title": "J.A.D. Ingres: Gianciotto entdeckt Paolo und Francesca (1819), Musée des beaux arts, Angers",
+    "src-label": "Abbildungsnachweis",
+    "src-size": null,
+    "src-position": null,
+    "year": 1819,
+    "author": [
+      "Jean Auguste Dominique Ingres"
+    ],
+    "keywords": []
+  },
+  "tpl-dante": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/395px-Portrait_de_Dante.jpg",
+    "src-href": "https://it.wikipedia.org/wiki/Dante_Alighieri",
+    "src-title": "Sandro Botticelli, Porträt Dantes, Tempera auf Leinwand, 1495, Genf, Privatsammlung.",
+    "src-label": "Botticelli: Porträt Dantes (1495).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1495,
+    "author": [
+      "Sandro Botticelli",
+      "Dante Alighieri"
+    ],
+    "keywords": []
+  },
+  "tpl-petrarca": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Petrarch_by_Bargilla.jpg",
+    "src-href": "https://it.wikipedia.org/wiki/Francesco_Petrarca",
+    "src-title": "Andrea del Castagno, Francesco Petrarca, Ausschnitt, Fresko, 1450, Uffizien, Florenz.",
+    "src-label": "Castagno: Porträt Petrarcas (1450).",
+    "src-size": "fill",
+    "src-position": "right top",
+    "year": 1450,
+    "author": [
+      "Andrea del Castagno",
+      "Francesco Petrarca"
+    ],
+    "keywords": []
+  },
+  "tpl-reinmar": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Codex_Manesse_Reinmar_der_Alte.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Reinmar_der_Alte",
+    "src-title": "Herr Reinmar der Alte (Codex Manesse, frühes 14. Jhdt.)",
+    "src-label": "Reinmar der Alte, Codex Manesse, 14. Jhdt.",
+    "src-size": "cover",
+    "src-position": "bottom",
+    "year": null,
+    "author": [
+      "Reinmar der Alte"
+    ],
+    "keywords": []
+  },
+  "decamerone-illumination": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Decameron_V_9.jpg",
+    "src-href": "https://upload.wikimedia.org/wikipedia/commons/1/18/Decameron_V_9.jpg",
+    "src-title": "Illumination zu Decameron V 9, Kodex Palatus Latinus, 15. Jhdt.",
+    "src-label": "Abbildungsnachweis",
+    "src-size": "cover",
+    "src-position": "top left",
+    "year": null,
+    "author": [
+      "Unbekannt (Buchmalerei, Kodex Palatus Latinus)"
+    ],
+    "keywords": []
+  },
+  "tpl-pest": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Arnold_Böcklin_-_Die_Pest.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Pest",
+    "src-title": "Arnold Böcklin: Die Pest. Tempera auf Holz. 1898. Kunstmuseum Basel.",
+    "src-label": "A. Böcklin: Die Pest (1889).",
+    "src-size": "cover",
+    "src-position": "50% 40%",
+    "year": 1898,
+    "author": [
+      "Arnold Böcklin"
+    ],
+    "keywords": []
+  },
+  "celestina-1": {
+    "url": "../Resources/images/Celestina4.jpg",
+    "src-href": "https://museupicassobcn.cat/index.php/en/node/809",
+    "src-title": "Quelle: Fernando de Rojas (1500/1989). La Celestina oder Tragikomödie von Calisto und Melibea. Übers. von Fritz Vogelgsang. Illustriert von Pablo Picasso. Frankfurt a.M.: Insel.",
+    "src-label": "Picasso: Illustration zu La Celestina (1968).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1500,
+    "author": [
+      "Pablo Picasso"
+    ],
+    "keywords": []
+  },
+  "celestina-2": {
+    "url": "../Resources/images/Celestina3.jpg",
+    "src-href": "https://museupicassobcn.cat/index.php/en/collection/artwork/young-woman-showing-her-sex-two-grotesque-prostrated-courtiers",
+    "src-title": "Quelle: Fernando de Rojas (1500/1989). La Celestina oder Tragikomödie von Calisto und Melibea. Übers. von Fritz Vogelgsang. Illustriert von Pablo Picasso. Frankfurt a.M.: Insel.",
+    "src-label": "Picasso: Illustration zu La Celestina (1968).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1500,
+    "author": [
+      "Pablo Picasso"
+    ],
+    "keywords": []
+  },
+  "celestina-3": {
+    "url": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/369483/753263/restricted",
+    "src-href": "https://www.metmuseum.org/art/collection/search/369483",
+    "src-title": "Picasso: \nCelestina mit einer Frau, einem Ritter und seinem Diener, Linolschnitt, 1968, Metropolitan Museum, New York. ",
+    "src-label": "Picasso: Illustration zu La Celestina (1968).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1968,
+    "author": [
+      "Pablo Picasso"
+    ],
+    "keywords": []
+  },
+  "don-quijote-doré": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Gustave_Doré_-_Miguel_de_Cervantes_-_Don_Quixote_-_Part_1_-_Chapter_1_-_Plate_1_%22A_world_of_disorderly_notions%2C_picked_out_of_his_books%2C_crowded_into_his_imagination%22.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Don_Quijote",
+    "src-title": "Quelle: The History of Don Quixote, by Cervantes. The Text edited by J. W. Clark, M.A. Illustrated by Gustave Doré. In Two Parts. Part I. Cassell & Company, Limited, London, Paris, New York & Melbourne. All Rights Reserved. MCMVI",
+    "src-label": "G. Doré: Illustration zu Don Quijote (1863).",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1863,
+    "author": [
+      "Gustave Doré"
+    ],
+    "keywords": [
+      "Quijote"
+    ]
+  },
+  "don-quijote-2": {
+    "url": "https://www.cervantesvirtual.com/s3/BVMC_OBRAS/027/8a6/788/2b2/11d/fac/c70/021/85c/e60/64/mimes/imagenes/0278a678-82b2-11df-acc7-002185ce6064_2.jpg",
+    "src-href": "https://www.cervantesvirtual.com/obra-visor/cervantes-bulletin-of-the-cervantes-society-of-america--7/html/0278a678-82b2-11df-acc7-002185ce6064_17.html",
+    "src-title": "P. Picasso: Illustration zu Don Quijote (1955), in: Les lettres françaises, August 18-24, 1955.",
+    "src-label": "Picasso: Don Quijote (1955)",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1955,
+    "author": [
+      "Pablo Picasso"
+    ],
+    "keywords": [
+      "Quijote"
+    ]
+  },
+  "velazquez-meninas": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Las_Meninas_%281656%29%2C_by_Velazquez.jpg/960px-Las_Meninas_%281656%29%2C_by_Velazquez.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Las_Meninas",
+    "src-title": "Diego Velazquez: Die königliche Familie, genannt: *Las Meninas*, 1656, Öl auf Leinwand; Prado, Madrid.",
+    "src-label": "Velazquez: Las Meninas (1656).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1656,
+    "author": [
+      "Diego Velázquez"
+    ],
+    "keywords": []
+  },
+  "auerbach": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/6/65/ErichAuerbach.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Erich_Auerbach",
+    "src-title": "Erich Auerbach (1892-1957), Romanist und nach Auswanderung in die USA Mitbegründer der amerikanischen Komparatistik (Yale University).",
+    "src-label": "Erich Auerbach (1892-1957)",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1892,
+    "author": [
+      "Erich Auerbach"
+    ],
+    "keywords": []
+  },
+  "cabanel": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Alexandre_Cabanel_Phèdre.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Phaedra_(Cabanel)",
+    "src-title": "Alexandre Cabanel, Phèdre, 1880, Öl auf Leinwand, Paris, Louvre.",
+    "src-label": "Cabanel: Phèdre (1880).",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1880,
+    "author": [
+      "Alexandre Cabanel"
+    ],
+    "keywords": []
+  },
+  "racine": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/77/Recto_d%27un_billet_de_50_francs_de_1967.JPG",
+    "src-href": "https://fr.wikipedia.org/wiki/Jean_Racine",
+    "src-title": "Jean Racine auf der Vorderseite einer 50-Franc-Note von 1967.",
+    "src-label": "Racine auf frz. Banknote (1967).",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1967,
+    "author": [
+      "Jean Racine"
+    ],
+    "keywords": []
+  },
+  "rigaud": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Louis_XIV_of_France.jpg",
+    "src-href": "https://fr.wikipedia.org/wiki/Portrait_de_Louis_XIV_en_costume_de_sacre",
+    "src-title": "Hyacinthe Rigaud: Portrait de Louis XIV (1701), Öl auf Leinwand, Paris, Louvre.",
+    "src-label": "Rigaud: Portrait de Louis XIV (1701).",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1701,
+    "author": [
+      "Hyacinthe Rigaud",
+      "Ludwig XIV."
+    ],
+    "keywords": []
+  },
+  "alberti-zentralperspektive": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Della_Pittura_Alberti_perspective_pillars_on_grid.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/De_pictura",
+    "src-title": null,
+    "src-label": "De pictura\" target=\"_blank\">Säulen in Perspektivdarstellung.",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": null,
+    "author": [
+      "Leon Battista Alberti"
+    ],
+    "keywords": []
+  },
+  "bilddetail-fragment": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/15/Pamela%3B_or%2C_Virtue_Rewarded_title_page.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Samuel Richardson"
+    ],
+    "keywords": []
+  },
+  "caravaggio-narciso-1597-99": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Michelangelo_Merisi_da_Caravaggio",
+    "src-title": "Caravaggio: Narziss, Öl auf Leinwand, 1597–99, Galleria Nazionale d’Arte Antica, Rom.",
+    "src-label": "Caravaggio: Narciso (1597–99)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1597,
+    "author": [
+      "Michelangelo Merisi da Caravaggio"
+    ],
+    "keywords": []
+  },
+  "double-indemnity-close-up": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_047.jpg",
+    "src-href": "https://www.criterion.com/films/30460-double-indemnity",
+    "src-title": "Double Indemnity (1944). Filmstill aus der Criterion Collection.",
+    "src-label": "Filmstill.",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1944,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir",
+      "low_key"
+    ]
+  },
+  "double-indemnity-filmposter": {
+    "url": "https://s3.amazonaws.com/criterion-production/films/b415e7735c3b593f2fb714c2c6831a26/So0yJBlzFXZG1ganHAXLtpJPhBnmg4_large.jpg",
+    "src-href": "https://www.criterion.com/films/30460-double-indemnity",
+    "src-title": "Double Indemnity (1944). Cover der DVD in der Criterion Collection",
+    "src-label": "DVD Cover.",
+    "src-size": "contain",
+    "src-position": "top",
+    "year": 1944,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir",
+      "low_key"
+    ]
+  },
+  "double-indemnity-hollywood-bowl": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_056.jpg",
+    "src-href": "https://www.criterion.com/films/30460-double-indemnity",
+    "src-title": "Double Indemnity (1944). Filmstill von film-grab.com (27.04.2026).",
+    "src-label": "Filmstill.",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1944,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir"
+    ]
+  },
+  "double-indemnity-lighting-grid": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir",
+      "low_key"
+    ]
+  },
+  "double-indemnity-walter-jalousie-schatten": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_039.jpg",
+    "src-href": "https://www.criterion.com/films/30460-double-indemnity",
+    "src-title": "Double Indemnity (1944). Filmstill von film-grab.com (27.04.2026).",
+    "src-label": "Filmstill.",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1944,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir",
+      "low_key"
+    ]
+  },
+  "double-indemnity-walter-und-keyes": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/Double_Indemnity_012.jpg",
+    "src-href": "https://www.criterion.com/films/30460-double-indemnity",
+    "src-title": "Double Indemnity (1944). Filmstill aus der Criterion Collection.",
+    "src-label": "Filmstill.",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1944,
+    "author": [
+      "Billy Wilder"
+    ],
+    "keywords": [
+      "Film/Noir",
+      "low_key"
+    ]
+  },
+  "memes-und-mimesis-titelfolie": {
+    "url": null,
+    "src-href": "https://i.kym-cdn.com/photos/images/newsfeed/001/217/335/291.jpg",
+    "src-title": null,
+    "src-label": "\" target=\"_blank\">Bildnachweis",
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Unbekannt (Internet-Meme)"
+    ],
+    "keywords": []
+  },
+  "poesie-und-prosa-titelfolie": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [],
+    "keywords": [
+      "Romantik",
+      "Prosa"
+    ]
+  },
+  "parmigianino-madonna": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Parmigianino_-_Madonna_dal_collo_lungo_-_Google_Art_Project.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Manierismus",
+    "src-title": "Parmigianino: Madonna mit dem langen Hals, 1534. Öl auf Leinwand, Uffizien, Florenz",
+    "src-label": "Parmigianino: Madonna (1534).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1534,
+    "author": [
+      "Parmigianino"
+    ],
+    "keywords": []
+  },
+  "parmigianino-selbstbildnis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Parmigianino_Selfportrait.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Selbstportr%C3%A4t_im_konvexen_Spiegel",
+    "src-title": "Parmigianino: Selbstporträt im konvexen Spiegel, Öl auf Pappelholz, 1523/24. Kunsthistorisches Museum, Wien.",
+    "src-label": "Parmigianino: Selbstporträt (1523/24).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1523,
+    "author": [
+      "Parmigianino"
+    ],
+    "keywords": []
+  },
+  "platon-und-aristoteles": {
+    "url": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/aristotle-and-plato-school-of-athens-raphael.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Die_Schule_von_Athen",
+    "src-title": "Raffael. Die Schule von Athen. 1510–1511. Fresko. Vatikan",
+    "src-label": "Platon und Aristoteles",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1510,
+    "author": [
+      "Aristoteles",
+      "Platon",
+      "Raffael"
+    ],
+    "keywords": []
+  },
+  "platon-und-sokrates": {
+    "url": "https://m.media-amazon.com/images/I/71sDDtECr2L._AC_SY879_.jpg",
+    "src-href": "https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates",
+    "src-title": "Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v.",
+    "src-label": "Platon und Sokrates",
+    "src-size": "100%",
+    "src-position": "15% center",
+    "year": null,
+    "author": [
+      "Platon",
+      "Aristoteles",
+      "Derrida"
+    ],
+    "keywords": []
+  },
+  "kuwi-25-1-rilke": {
+    "url": null,
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [],
+    "keywords": [
+      "Rilke"
+    ]
+  },
+  "nachhaltigkeit-anatomy": {
+    "url": null,
+    "src-href": "https://anatomyof.ai/index.html",
+    "src-title": "Crawford/Joler: Anatomy of AI (2018)",
+    "src-label": "Crawford/Joler: Anatomy (2018)",
+    "src-size": null,
+    "src-position": null,
+    "year": 2018,
+    "author": [
+      "Kate Crawford",
+      "Vladan Joler"
+    ],
+    "keywords": []
+  },
+  "nachhaltigkeit-breast-milk": {
+    "url": null,
+    "src-href": "https://verticalatlas.net/#the-breast-milk-of-the-volcano",
+    "src-title": null,
+    "src-label": "Unknown Fields (2016)",
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Unbekannt (Fotografie, Vertical Atlas)"
+    ],
+    "keywords": []
+  },
+  "nachhaltigkeit-zhijie": {
+    "url": "https://images.prismic.io/verticalatlas/038e5416-926b-4ca9-bc1b-5171311c548c_1920x1180_QiuZhijie_Map-of-AI.jpg?auto=compress,format&rect=0,0,1920,1180&w=1920&h=1180",
+    "src-href": "https://verticalatlas.net/#qiu-zhijie-x-chen-stanley-qiufan",
+    "src-title": "Qiu Zhijie: Map of Ai (2020). Kalligrafische Karte, fotografiert von Yan Haibo.",
+    "src-label": "Qiu Zhijie: Map of AI (2020).",
+    "src-size": null,
+    "src-position": null,
+    "year": 2020,
+    "author": [
+      "Qiu Zhijie",
+      "Yan Haibo"
+    ],
+    "keywords": []
+  },
+  "raffael-scuola-di-atene-1510": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/La_scuola_di_Atene.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Die_Schule_von_Athen",
+    "src-title": "Raffael: Die Schule von Athen. Fresko, Stanzen des Raffael, Vatikan. ",
+    "src-label": "Raffael: Die Schule von Athen.",
+    "src-size": "contain",
+    "src-position": "center",
+    "year": null,
+    "author": [
+      "Raffael"
+    ],
+    "keywords": []
+  },
+  "datenflut-anadol-2": {
+    "url": "https://newinzurich.com/wp-content/uploads/2025/01/Screenshot-2025-01-22-at-23-compressed-2.jpg",
+    "src-href": "https://newinzurich.com/2025/01/glacier-dreams-immersive-art-by-refik-anadol-kunsthaus-zurich/",
+    "src-title": "Installationsansicht/Kunsthaus Zürich",
+    "src-label": "Installationsansicht (Zürich).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 2025,
+    "author": [
+      "Refik Anadol"
+    ],
+    "keywords": []
+  },
+  "datenflut-anadol-video-div": {
+    "url": null,
+    "src-href": "https://newinzurich.com/2025/01/glacier-dreams-immersive-art-by-refik-anadol-kunsthaus-zurich/",
+    "src-title": "Installationsansicht/Kunsthaus Zürich",
+    "src-label": "Installationsansicht (Zürich).",
+    "src-size": null,
+    "src-position": null,
+    "year": null,
+    "author": [
+      "Refik Anadol"
+    ],
+    "keywords": []
+  },
+  "datenflut-anadol": {
+    "url": "./Resources/images/Anadol-Unsupervised.jpg",
+    "src-href": "https://youtu.be/G2XdZIC3AM8?feature=shared",
+    "src-title": "Visualisation des algorithmischen Latent Space",
+    "src-label": "MoMa Feature (Screenshot).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": null,
+    "author": [
+      "Refik Anadol"
+    ],
+    "keywords": []
+  },
+  "datenflut-einfuhrung": {
+    "url": "https://wallpaper-house.com/data/out/6/wallpaper2you_86592.gif",
+    "src-href": "https://en.wikipedia.org/wiki/The_Matrix",
+    "src-title": "Raining Data Animation from wallpaper-house.com",
+    "src-label": "Matrix: Raining Data.",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": null,
+    "author": [],
+    "keywords": []
+  },
+  "datenflut-steyerl-1": {
+    "url": "./Resources/images/iterative-lowlevel-feature-layer.jpg",
+    "src-href": "https://research.google/blog/inceptionism-going-deeper-into-neural-networks/",
+    "src-title": "Iterative Low Level Feature Layer (Nutzer:innengrafik)",
+    "src-label": "Google: Deep Dreaming.",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": null,
+    "author": [
+      "Google (Deep Dream)"
+    ],
+    "keywords": []
+  },
+  "datenflut-steyerl-2": {
+    "url": "https://pbs.twimg.com/media/CJCkF7dWgAAixVL?format=jpg&name=small",
+    "src-href": null,
+    "src-title": "Twitter Post, @thornebrandt, 2025-03-19",
+    "src-label": "Twitter-Inceptionism.",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 2025,
+    "author": [
+      "Unbekannt (@thornebrandt)"
+    ],
+    "keywords": [
+      "Big Data"
+    ]
+  },
+  "velazquez-las-meninas": {
+    "url": "https://cdn.britannica.com/03/4903-050-47B912D8/Las-meninas-oil-canvas-Diego-Velazquez-Prado-1656.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Las_Meninas",
+    "src-title": "Diego Velázquez: Die königliche Familie, genannt: *Las Meninas*, 1656, Öl auf Leinwand; Prado, Madrid.",
+    "src-label": "Velázquez: Las Meninas (1656).",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1656,
+    "author": [
+      "Diego Velázquez"
+    ],
+    "keywords": [
+      "Barock",
+      "Quijote"
+    ]
+  },
+  "augustine": {
+    "url": "./Resources/images/Bourneville-Regnard-Augustine.jpg",
+    "src-href": null,
+    "src-title": "Bourneville/Regnard: Iconographie photographique de la Salpêtrière, Bd. 2, Paris 1878, Planche XXIX: Hystéro-Épilepsie, Contracture.",
+    "src-label": "Bourneville/Regnard: Contracture (Augustine). 1878.",
+    "src-size": "fill",
+    "src-position": "right",
+    "year": 1878,
+    "author": [
+      "Désiré-Magloire Bourneville",
+      "Paul Regnard",
+      "Augustine"
+    ],
+    "keywords": [
+      "Hysterie",
+      "Augustine"
+    ]
+  },
+  "vortrag-heilkunst-heilung": {
+    "url": "./Resources/images/Bacon-Hysterisches_Portrait.jpg",
+    "src-href": null,
+    "src-title": "Francis Bacon: Three Portraits (Ausschnitt). Posthumous Portrait of George Dyer, Self-Portrait, Portrait of Lucian Freud, 1973, Privatsammlung.",
+    "src-label": "Bacon: Three Portraits (1973), ",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1973,
+    "author": [
+      "Francis Bacon",
+      "George Dyer",
+      "Lucian Freud"
+    ],
+    "keywords": [
+      "Hysterie"
+    ]
+  },
+  "vortrag-heilkunst-rhetorik": {
+    "url": "./Resources/images/Schiele-Hysterischer_Akt.jpg",
+    "src-href": null,
+    "src-title": "Egon Schiele, Sitzender weiblicher Akt mit geneigtem Kopf und erhobenen Händen, 1910, Privatsammlung.",
+    "src-label": "Egon Schiele: Weiblicher Akt (1910).",
+    "src-size": "cover",
+    "src-position": "left top",
+    "year": 1910,
+    "author": [
+      "Egon Schiele"
+    ],
+    "keywords": [
+      "Hysterie"
+    ]
+  },
+  "weegee": {
+    "url": "https://edramatica.com/images/5/54/Weegee_3.png?20240522002127",
+    "src-href": "https://edramatica.com/Weegee",
+    "src-title": "What’s wrong? Weegee-Meme. edramatica.com/Weegee. 07.04.2026.",
+    "src-label": "Weegee-Meme.",
+    "src-size": "100%",
+    "src-position": "bottom",
+    "year": 2026,
+    "author": [
+      "Anonymous"
+    ],
+    "keywords": [
+      "Meme",
+      "Mimesis"
+    ]
+  },
+  "picasso-celestina": {
+    "url": "https://www.pablopicasso.org/assets/img/paintings/celestina.jpg",
+    "src-href": "https://www.pablopicasso.org/celestina.jsp",
+    "src-title": "Pablo Picasso: La Celestina, 1904. Öl auf Leinwand. Paris, Musée National Picasso.",
+    "src-label": "Abbildungsnachweis",
+    "src-size": "cover",
+    "year": 1904,
+    "author": [
+      "Pablo Picasso"
+    ],
+    "keywords": [
+      "La Celestina",
+      "Picasso"
+    ]
+  }
+}

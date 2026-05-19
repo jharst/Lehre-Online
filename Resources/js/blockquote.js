@@ -6,10 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
         if (ul.innerHTML.includes('["]')) {
             ul.classList.add('fa-ul');
             ul.classList.add('embedded-quote-block');
+
             ul.querySelectorAll('li').forEach(li => {
                 li.innerHTML = li.innerHTML.replace(/\[\"\]/g, '<i class="fa-li fa fa-quote-right" style="color: #772F8B75; font-size: smaller;"></i>');
                 li.innerHTML = li.innerHTML.replace(/(?<!")(#[a-zA-Z_]+\b)(?!")/g, '');
             });
         };
+    });
+
+    // Fragments: alle Zitat-li einer Slide mit Klasse 'auto-fragments'
+    document.querySelectorAll('section.auto-fragments .embedded-quote-block li').forEach((li, index) => {
+        li.classList.add('fragment', 'fade-in');
+        li.setAttribute('data-fragment-index', index);
     });
 });
