@@ -11,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     for (const path of paths) {
       try {
         const response = await fetch(path);
-        if (response.ok) {
-          console.log('Geladen von:', path);
-          return await response.json();
+        if (!response.ok) throw new Error(`404: ${path}`);
+        console.log('Geladen von:', path);
+        return await response.json();
         }
       } catch (e) {
+        console.log('Nicht gefunden:', path, e.message);
         // weiter zum nächsten Pfad
       }
     }
