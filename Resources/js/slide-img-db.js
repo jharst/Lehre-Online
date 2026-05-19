@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     throw new Error('Bilddatenbank nicht gefunden');
   }
   
-  .loadDb()
+  loadDb()
     .then(response => {
       console.log('Geladen:', response.url); // ← neu
       return response.json();
