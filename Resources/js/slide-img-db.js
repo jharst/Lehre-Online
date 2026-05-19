@@ -8,6 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   async function loadDb() {
+    // Obsidian-Kontext: app API verwenden
+    if (typeof app !== 'undefined' && app.vault) {
+      const file = await app.vault.adapter.read('Resources/js/slide-images.json');
+      return JSON.parse(file);
+    }
+    
+    // GitHub Pages / localhost: fetch verwenden
+    const paths = [
+      './Resources/js/slide-images.json',
+      '../Resources/js/slide-images.json'
+    ];
+    
     for (const path of paths) {
       try {
         const response = await fetch(path);
@@ -16,12 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return await response.json();
       } catch (e) {
         console.log('Nicht gefunden:', path, e.message);
-        // weiter zum nächsten Pfad
       }
     }
+    
     throw new Error('Bilddatenbank nicht gefunden');
   }
-  
+    
   loadDb()
     .then(response => {
       console.log('Geladen:', response.url); // ← neu
