@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Nicht gefunden:', path, e.message);
         // weiter zum nächsten Pfad
       }
+    }
     throw new Error('Bilddatenbank nicht gefunden');
   }
   
