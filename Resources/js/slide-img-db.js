@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             slide.style.setProperty('--slide-img', `url(${url})`);
             if (!slide.dataset.backgroundImage) {
               slide.setAttribute('data-background-image', url);
+              if (merged['src-size']) slide.setAttribute('data-background-size', merged['src-size']);
+              if (merged['src-position']) slide.setAttribute('data-background-position', merged['src-position']);
               Reveal.sync();
             }
           }
