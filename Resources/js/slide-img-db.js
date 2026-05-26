@@ -40,7 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
               // 1. Basis: Eintrag aus JSON (falls data-img-id gesetzt)
         const imgId = slide.dataset.imgId;
         const base = imgId && db[imgId] ? db[imgId] : {};
-
+        // Warnung wenn img-id angegeben, aber nicht in der DB gefunden
+        if (imgId && !db[imgId]) {
+          console.warn(`slide-img-db: ID "${imgId}" nicht in der Datenbank gefunden.`);
+        }
         // 2. Nur data-src-* Attribute als Overrides sammeln
         const overrides = {};
         Object.entries(slide.dataset).forEach(([key, value]) => {
@@ -66,23 +69,22 @@ document.addEventListener('DOMContentLoaded', () => {
           if (caption && merged['src-title']) caption.textContent = merged['src-title'];
 
         } else if (url && rightTopDiv) {
-          // Template mit .right-top-div → Bild als Hintergrund ins Div
-          rightTopDiv.style.backgroundImage = `url(${url})`;
-          console.log('backgroundImage gesetzt:', rightTopDiv.style.backgroundImage);
-          rightTopDiv.style.backgroundSize = merged['src-size'] || 'cover';
-          rightTopDiv.style.backgroundPosition = merged['src-position'] || 'center';
-
-          // Quellenangabe setzen
-          const srcLink = slide.querySelector('.right-image-source a');
-          if (srcLink) {
-            if (merged['src-href']) srcLink.href = merged['src-href'];
-            if (merged['src-title']) srcLink.title = merged['src-title'];
-            if (merged['src-label']) srcLink.childNodes[0].textContent = merged['src-label'];
-          }
-
+          // Template mit .right-top-div → CSS-Variablen am section-Element setzen,
+          // damit vl-slides.css sie per var(--slide-img) im .right-top-div abrufen kann.
+          // Direktes backgroundImage vermeiden – CSS-Variablen umgehen Probleme
+          // mit Sonderzeichen wie %20 und Klammern in der URL.
+          slide.style.setProperty('--slide-img', `url("${url}")`);
+          slide.style.setProperty('--slide-img-size', merged['src-size'] || 'cover');
+          slide.style.setProperty('--slide-img-position', merged['src-position'] || 'center');
+          console.log('--slide-img gesetzt:', slide.style.getPropertyValue('--slide-img'));
+          console.log('url:', url);
+          console.log('merged url:', merged['url']);
+          console.log('slide.dataset.url:', slide.dataset.url);
+          console.log('rightTopDiv:', rightTopDiv);
+          console.log('imgEl:', imgEl);
         } else if (url && !rightTopDiv) {
           // Template ohne .right-top-div → Bild als section-Hintergrund
-          slide.style.setProperty('--slide-img', `url(${url})`);
+          slide.style.setProperty('--slide-img', `url("${url}")`);
           if (!slide.dataset.backgroundImage) {
             slide.setAttribute('data-background-image', url);
             if (merged['src-size']) slide.setAttribute('data-background-size', merged['src-size']);
