@@ -1241,5 +1241,70 @@
     "keywords": [
       "Narziss"
     ]
+  },
+  "viola-surrender": {
+    "url": "https://www.creativeboom.com/upload/articles/da/da26fc6344e58651489086d0e65c37db6a551380_944.jpg",
+    "author": [
+      "Bill Viola"
+    ],
+    "year": 2001,
+    "src-size": "cover",
+    "src-position": "right",
+    "src-href": "https://www.nationalgalleries.org/art-and-artists/67593",
+    "src-title": "Bill Viola, Surrender, Colour video diptych on flat panel display, 1990, National Galleries of Scotland.",
+    "src-label": "Bill Viola: Surrender (2001)",
+    "keywords": [
+      "Narziss",
+      "Postmoderne"
+    ]
+  },
+  "viola-surrender-landscape": {
+    "url": "https://www.cellophaneland.com/wp-content/uploads/2015/11/bill-viola-surrender-2001.jpg",
+    "author": [
+      "Bill Viola"
+    ],
+    "year": 2001,
+    "src-size": "cover",
+    "src-position": "right",
+    "src-href": "https://www.nationalgalleries.org/art-and-artists/67593",
+    "src-title": "Bill Viola, Surrender, Colour video diptych on flat panel display, 1990, National Galleries of Scotland.",
+    "src-label": "Bill Viola: Surrender (2001)",
+    "keywords": [
+      "Narziss",
+      "Postmoderne"
+    ]
+  },
+  "sunset-1": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/27%20(984).jpg",
+    "author": [
+      "Billy Wilder",
+      "Gloria Swanson"
+    ],
+    "year": 1950,
+    "src-label": "Still",
+    "src-title": "Standbild aus Billy Wilder, Sunset Boulevard, film-grab.com.",
+    "src-position": "center",
+    "src-size": "cover",
+    "keywords": [
+      "Film/Noir"
+    ]
+  },
+  "laokoon": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Laocoon_and_His_Sons_black.jpg",
+    "author": [
+      "Hagesandros",
+      "Polydoros",
+      "Athanadoros"
+    ],
+    "src-label": "Laokoon-Gruppe",
+    "src-title": "Lakoon und seine Söhne, auch als Lakoon-Gruppe bekannt. Marmor, Nachbildung aus hellenistischem Original von 200 v.Chr., gefunden auf dem Esquilin in Rom im Jahr 1506.",
+    "src-href": "https://de.wikipedia.org/wiki/Laokoon_(Lessing)",
+    "src-position": "center",
+    "keywords": [
+      "Laokoon",
+      "Lessing",
+      "Bild",
+      "Rhetorik"
+    ]
   }
 }
