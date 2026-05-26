@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Sunset Boulevard (1950)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/03%20(960).jpg" data-background-size="contain" data-background-position="center" data-background-color="black" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<h2>Ü Noir</h2>
+<h3>Dr. habil. Joachim Harst</h3>
+Sommersemester 2026
+<p><span>4. Sitzung: </span><span>Sunset Boulevard (1950)</span></p>
+</div>
+
+ <!-- .element: style="background: #DFE1E195; border-radius: 5px; padding: 20px; position: absolute; left: 0%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div>
+
+<aside class="notes"><ul>
+<li>Einführung: <ul>
+<li>der Film <em>Sunset Boulevard</em> (1950) und sein Verhältnis zum Kino – Meta-Film, dies gilt teilweise auch für Film Noir – Themen: der Traum vom Glück (Swimmingpool, Stardom), geschaffen von der Hollywood-Industrie – noir-typische Gender-Rollen (der naive junge Mann, die Diva als <em>femme fatale</em>, das unschuldige, aufrichtige junge Mädchen) – noir-typische Erzählweise: Off, Rückschau, hier überspitzt durch Tod des Erzählers; der Versuch, mit der Vergangenheit zu brechen und neu anzufangen (Gillis: sofort vereitelt)</li>
+<li>Meta-Ebenen des Films<ul>
+<li>„Verkaufsgespräche” (Gillis, Produzent)</li>
+<li>Arbeiten am Drehbuch (Gillis, Norma)</li>
+<li>Inszenierung der Filmproduktion (deMill, Norma, Studio)</li>
+<li>improvisierte Filmdialoge (Betty, Joe)</li>
+<li>intradiegetisches Filmskript beeinflusst Handlung („untitled love story”)</li>
+<li>Normas Chaplin-Imitation</li>
+<li>Arbeit mit historischen Akteuren (Gloria Swanson, Erich von Strohheim, Cecil B. DeMille, …)</li>
+</ul>
+</li>
+<li>zur Darstellung der Diva<ul>
+<li>Körpersprache des Stummfilms<ul>
+<li>Stummfilm und „Expressionismus”</li>
+<li>Beispiele: weit aufgerissene Augen, theatral gerahmte Blicke; ausladende Arm- und Handbewegungen; überdeutliche Körperhaltungen (Aufrichtung, Zusammenbruch); langsame, ritualisierte Bewegungsabläufe</li>
+<li>Norma Desmond <em>kann</em> nicht anders kommunizieren als in der Sprache des Stummfilms; das führt zu komischen Kontrasten/gespenstischen Effekten im Tonfilm</li>
+</ul>
+</li>
+<li>„celluloid self”</li>
+<li>film screening: „cast out this wicked dream”</li>
+<li>beauty treatments</li>
+<li>das finale close-up</li>
+</ul>
+</li>
+<li>Gender-Rollen<ul>
+<li>Gegenüberstellung Norma/Betty</li>
+<li>Gegenüberstellung Joe/Max</li>
+</ul>
+</li>
+<li>Genre-Rollen: Schauspielerische Diskurse<ul>
+<li>Gloria Swanson: expressionistischer Stummfilm</li>
+<li>William Holden: hard-boiled Film Noir</li>
+</ul>
+</li>
+<li>Genre-Elemente und -Brüche<ul>
+<li>Themen</li>
+<li>Erzählweise</li>
+<li>Bildkomposition (Interieur)</li>
+<li>schwarze Komik</li>
+<li>metareflexive Brüche (Bsp. Schlussszene)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="sunset-3" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+ 
+## Einführung
+- *Sunset Boulevard* und sein Verhältnis zum Hollywood Kino
+	- Themen
+	- Gender-Rollen
+	- Form
+
+
+</div>
+</div>
+
+<aside class="notes"><p>der Film <em>Sunset Boulevard</em> (1950) und sein Verhältnis zum Kino – Meta-Film, dies gilt teilweise auch für Film Noir – Themen: der Traum vom Glück (Swimmingpool, Stardom), geschaffen von der Hollywood-Industrie – noir-typische Gender-Rollen (der naive junge Mann, die Diva als <em>femme fatale</em>, das unschuldige, aufrichtige junge Mädchen) – noir-typische Erzählweise: Off, Rückschau, hier überspitzt durch Tod des Erzählers; der Versuch, mit der Vergangenheit zu brechen und neu anzufangen (Gillis: sofort vereitelt)</p>
+</aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://www.asharperfocus.com/images/Sunset09.jpg" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Meta-Ebenen des Films
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Arbeit mit historischen Akteuren (Gloria Swanson, Eich von Strohheim, Cecil B. DeMille, …)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->„Verkaufsgespräche” (Gillis, Produzent)
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Arbeiten am Drehbuch (Gillis, Norma)
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Inszenierung der Filmproduktion (deMill, Norma, Studio)
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->improvisierte Filmdialoge (Betty, Joe)
+- &shy;<!-- .element: class="fragment" data-fragment-index="6" -->intradiegetisches Filmskript beeinflusst Handlung („untitled love story”)
+- &shy;<!-- .element: class="fragment" data-fragment-index="7" -->Normas Chaplin-Imitation
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://www.asharperfocus.com/images/Sunset29.jpg" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Zur Darstellung der Diva
+- Körpersprache des (expressionistischen) Stummfilms (clip)
+- Filmindustrie und „celluloid self” ([still](#celluloid))
+- film screening: „cast out this wicked dream” (clip)
+- beauty treatments ([still](#beauty))
+- das finale close-up (clip)
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Stummfilm und expressionistische Körpersprache<ul>
+<li>weit aufgerissene Augen, theatral gerahmte Blicke; ausladende Arm- und Handbewegungen; überdeutliche Körperhaltungen (Aufrichtung, Zusammenbruch); langsame, ritualisierte Bewegungsabläufe</li>
+<li>Norma Desmond <em>kann</em> nicht anders kommunizieren als in der Sprache des Stummfilms; das führt zu komischen Kontrasten/gespenstischen Effekten im Tonfilm</li>
+</ul>
+</li>
+<li>die Zeile (title card) „cast out this wicked dream…” stammt aus dem historischen Film <em>Queen Kelly</em> (1929) mit Gloria Swanson und directed by Erich von Stroheim – Parallelen zur Diegese (<a href="https://www.asharperfocus.com/Sunset.html#:~:text=He%20and%20Wilder,seized%20my%20heart.">url</a>)</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" id="celluloid" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/21%20(984).jpg" data-background-size="contain" data-background-position="center" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" id="beauty" data-background-image="https://film-grab.com/wp-content/uploads/photo-gallery/48%20(952).jpg" data-background-size="contain" data-background-position="center" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://derekwinnert.com/wp-content/uploads/2013/08/61730-050-981B6E1B.jpg" data-src-size="cover" data-src-position="center" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Gender-Rollen
+- Joe und Norma ([still](#boy-toy))
+- Gegenüberstellung Norma/Betty (clip)
+- Gegenüberstellung Joe/Max
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" id="boy-toy" data-background-image="https://www.asharperfocus.com/images/Sunset15.jpg" data-background-size="contain" data-background-position="center" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://www.asharperfocus.com/images/Sunset17.jpg" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Genre-Rollen:  Schauspielerische Diskurse
+- Gloria Swanson: expressionistischer Stummfilm
+- William Holden: hard-boiled Film Noir
+- [tabellerische Übersicht](#tabelle)
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Holden spielt im Stil des <em>hardboiled</em> Noir-Protagonisten: lakonisch, zynisch-distanziert, mit minimaler emotionaler Expressivität. Das ist die Schauspielsprache des frühen Tonfilms – cool, verbal, ironisch.</li>
+<li>Überzeichnungen<ul>
+<li>nicht körperlich, sondern <strong>rhetorisch</strong>: das Voice-over ist pointiert, schlagfertig, fast zu clever – ein bisschen zu sehr der selbstbewusste Noir-Erzähler</li>
+<li>Holden spielt Joe als jemanden, der sich selbst als Noir-Figur <em>liest</em> – die Distanziertheit wirkt wie eine Pose</li>
+<li>Das erzeugt eine leichte <strong>Selbstgefälligkeit</strong>, die den Charakter untergräbt: Joe ist kein tragischer Held, sondern ein mittelmäßiger Mann, der die Noir-Rolle nicht wirklich ausfüllt</li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="tabelle" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+|               | Norma                  | Joe                             |
+| ------------- | ---------------------- | ------------------------------- |
+| Stil          | Stummfilm-Pantomime    | Hardboiled-Lakonismus           |
+| Überzeichnung | körperlich             | rhetorisch                      |
+| Zeitbezug     | vergangene Filmsprache | zeitgenössische Noir-Konvention |
+| Wirkung       | gespenstisch + komisch | ironisch + selbstentlarvend     |
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://www.asharperfocus.com/images/Sunset01.jpg" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>4. Sitzung: </span><span> Sunset Boulevard (1950)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Genre-Elemente und -Brüche
+- Themen
+- Erzählweise
+- Bildkomposition (klaustrophobisches Interieur)
+- schwarze Komik
+- metareflexive Brüche (Bsp. Schlussszene)
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

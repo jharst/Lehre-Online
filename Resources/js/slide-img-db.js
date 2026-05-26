@@ -37,46 +37,57 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('data-url:', slide.dataset.url);
         console.log('--slide-img:', slide.style.getPropertyValue('--slide-img'));
 
-        // 1. Basis: Eintrag aus JSON (falls data-img-id gesetzt)
+              // 1. Basis: Eintrag aus JSON (falls data-img-id gesetzt)
         const imgId = slide.dataset.imgId;
         const base = imgId && db[imgId] ? db[imgId] : {};
-        console.log('imgId:', imgId);
-        console.log('base:', base);
 
-        // 2. data-src-* aus dem Slide zusammensammeln
+        // 2. Nur data-src-* Attribute als Overrides sammeln
         const overrides = {};
         Object.entries(slide.dataset).forEach(([key, value]) => {
-          // camelCase → kebab-case: srcHref → src-href
+          if (!key.startsWith('src')) return;
           const kebab = key.replace(/([A-Z])/g, '-$1').toLowerCase();
           overrides[kebab] = value;
         });
 
         // 3. Merge: JSON-Defaults, überschrieben durch data-src-*
         const merged = { ...base, ...overrides };
-        console.log('merged:', merged);
-        // 4. Bild-URL setzen
-        const url = merged['url'];
-        if (url) {
-          slide.style.setProperty('--slide-img', `url(${url})`);
-        }
 
-        // Bild-URL setzen: <img> oder background-image
+        // 4. URL bestimmen
+        const url = slide.dataset.url || merged['url'];
+
+        // 5. Bild setzen
         const imgEl = slide.querySelector('.img-wrapper img');
+        const rightTopDiv = slide.querySelector('.right-top-div');
+
         if (imgEl) {
           // Template mit <img>-Tag
           if (url) imgEl.setAttribute('src', url);
           const caption = slide.querySelector('.img-wrapper figcaption');
           if (caption && merged['src-title']) caption.textContent = merged['src-title'];
-        } else {
-          // Template mit Hintergrundbild(kein .right-top-div, kein .img-wrapper)
-          if (url && !slide.querySelector('.right-top-div')) {
-            slide.style.setProperty('--slide-img', `url(${url})`);
-            if (!slide.dataset.backgroundImage) {
-              slide.setAttribute('data-background-image', url);
-              if (merged['src-size']) slide.setAttribute('data-background-size', merged['src-size']);
-              if (merged['src-position']) slide.setAttribute('data-background-position', merged['src-position']);
-              Reveal.sync();
-            }
+
+        } else if (url && rightTopDiv) {
+          // Template mit .right-top-div → Bild als Hintergrund ins Div
+          rightTopDiv.style.backgroundImage = `url(${url})`;
+          console.log('backgroundImage gesetzt:', rightTopDiv.style.backgroundImage);
+          rightTopDiv.style.backgroundSize = merged['src-size'] || 'cover';
+          rightTopDiv.style.backgroundPosition = merged['src-position'] || 'center';
+
+          // Quellenangabe setzen
+          const srcLink = slide.querySelector('.right-image-source a');
+          if (srcLink) {
+            if (merged['src-href']) srcLink.href = merged['src-href'];
+            if (merged['src-title']) srcLink.title = merged['src-title'];
+            if (merged['src-label']) srcLink.childNodes[0].textContent = merged['src-label'];
+          }
+
+        } else if (url && !rightTopDiv) {
+          // Template ohne .right-top-div → Bild als section-Hintergrund
+          slide.style.setProperty('--slide-img', `url(${url})`);
+          if (!slide.dataset.backgroundImage) {
+            slide.setAttribute('data-background-image', url);
+            if (merged['src-size']) slide.setAttribute('data-background-size', merged['src-size']);
+            if (merged['src-position']) slide.setAttribute('data-background-position', merged['src-position']);
+            Reveal.sync();
           }
         }
         // 5. Bekannte src-* Properties als CSS-Variablen setzen
