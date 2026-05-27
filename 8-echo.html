@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Postmoderne – Narzisstische Literatur?</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="css/slides-tokens.css" />
+    <link rel="stylesheet" href="css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: black">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: center;"></div>
+<div class="left-bottom-div" style="width: 60%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>8. Sitzung: </span><span>Postmoderne – Narzisstische Literatur?</span>
+</div><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Echo und Narziss<br>Figurationen der Selbstreflexion</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li><h2 id="einleitung-metafiction-and-postmodernism">Einleitung: metafiction and postmodernism</h2>
+<ul>
+<li>Definition und Beispiele für metafiction – Unterschiede: diegesis (Don Quijote, Mme Bovary, À la recherche) vs. language (Finnegan’s Wake, Un homme qui dort) – Konflikte zwischen realistischer mimesis (Geschlossenheit der fiktionalen Welt, „heterocosm”) und dem „Durchbrechen der vierten Wand” sowie nicht-mimetischem Erzählen</li>
+<li>Geschichte und Bestimmung von Postmodernismus<ul>
+<li>@Gumbrecht-2010: Postmoderne vs. Moderne; Zusammenbrechen der Unterscheidung zwischen Populär- und Hochkultur (Pop-Art); Eklektizismus</li>
+<li>@Jameson-1984: spiegelnde Oberflächlichkeit, Eklektizismus und Ahistorizität, Bsp. Architektur</li>
+<li>Barth: „literature of exhausted possibility” (&lt; Manierismus/Marino); Bezug auf Borges und die Unoriginalität allen Schreibens; (→ Zitat)</li>
+<li>Hutcheons Gründe gegen eine Aufnahme des Begriffs: Metafiktion hat keinen historischen Index</li>
+<li>Gegenbegriff lateinamerikanischer Neo-Barock (Severo Sarduy (15))</li>
+</ul>
+</li>
+<li>weitere Aspekte<ul>
+<li>mimesis of process and of product – relation of life and art (18)</li>
+<li>metafiction and metalanguage</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h2 id="narcissus-episode">Narcissus-Episode</h2>
+<ul>
+<li>systematische und historische Aspekte (einerseits Entwicklung, andererseits „immer schon” narzisstisch) – Todorov: jeder Roman erzählt seine eigene Entstehung (25)</li>
+<li>Barthes: Roman und bürgerliches Bewusstsein Barthes – Essais critiques (1964).pdf#page=129</li>
+<li>Chronologie: novel and romance – Bildungs- und Künstlerromane des späten 18. und 19. Jahrhunderts (Wilhelm Meister, Heinrich von Ofterdingen, William Lovell) – (Ästhetizismus, l’art pour l’art: Baudelaire, Wilde) – modernistische Literatur (Virginia Woolf, Marcel Proust) – nouveau roman (Robbe-Grillet) und Tel Quel (Barthes?)</li>
+<li>Stationen der Lektüre<ul>
+<li>Geburt</li>
+<li>Abweisung Echos</li>
+<li>Faszination mit der eigenen Schönheit</li>
+<li>Tod (Schwinden des Romans)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- .slide: class="has-light-background" data-background-color="lightgrey" --></aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+	
+
+<!-- begin::[@Hutcheon-2013.md] -->
+- ["] „Metafiction,” as it has now been named, is fiction about fiction – that is, fiction that includes within itself a commentary on its own narrative and/or linguistic identity. #Quote (14)
+<!-- end::[@Hutcheon-2013.md] -->
+
+- Beispiele und Unterschiede (diegesis vs. language)
+	- Cervantes, *Don Quijote* (1600)
+	- Flaubert, *Madame Bovary* (1857)
+	- Proust, *A la recherche du temps perdu* (1913-1927)
+	- Joyce, *Finnegans Wake* (1939)
+	- Perec, *Un homme qui dort* (1975)
+- Konflikte zwischen mimesis und Metafiktion
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+
+The fall (bababadalgharaghtakamminarronnkonnbronntonnerronntuonnt-hunntrovarrhounawnskawntoohoohoordenenthurnuk!) of a once wallstrait oldparr is retaled early in bed and later on life down through all christian minstrelsy. The great fall of the offwall entailed at such short notice the pftjschute of Finnegan, erse solid man, that the humptyhillhead of humself prumptly sends an unquiring one well to the west in quest of his tumptytumtoes. (Joyce, *Finnegan’s Wake*, 1939, S. 1)
+
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>8. Sitzung: </span><span> Postmoderne – Narzisstische Literatur?</span></p>
+<div class="right-top-div" style="background-image: url('https://www.cellophaneland.com/wp-content/uploads/2015/11/Surrender-1.jpg'); background-size: cover; background-position: right; ">
+</div>
+<div class="right-image-source"><a href="https://www.nationalgalleries.org/art-and-artists/67593" title="Bill Viola, Surrender, Color video diptych on flat panel display, 2001, National Galleries of Scotland." target="_blank">Bill Viola: Surrender (2001)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Postmodernismus
+- Postmoderne und Moderne
+- Populär- und Hochkultur (Pop-Art)
+- Barth: „literature of exhausted possibility”, [Vorbild Borges](#barth)
+- Postmoderne vs. Metafiktion
+- [lateinamerikanischer Neo-Barock](#neo-baroque) 
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="neo-baroque" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## The Neo-Baroque
+- ["] What Sarduy calls contemporary neo-baroque still uses the technical devices of the baroque – that is, linguistic artifice, inter- and intra-textuality, and narrative mirroring. The change in the present usage of these techniques is in intention: the baroque search for consonance is replaced by a willed neo-baroque lack of harmony and homogeneity which is literally, and figuratively revolutionary in its transgressions of contemporary, literary and linguistic norms. (15f.)
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="barth" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+- ["] For Borges no one has claim to originality in literature; all writers are more or less faithful amanuenses of the spirit, translators and annotators of pre-existing archetypes. (Barth, zit. in Riese: Art Postmoderne, Ästhetische Grundbegriffe, Metzler, 2010, 33)
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>8. Sitzung: </span><span> Postmoderne – Narzisstische Literatur?</span></p>
+<div class="right-top-div" style="background-image: url('https://www.cellophaneland.com/wp-content/uploads/2015/11/Surrender-1.jpg'); background-size: cover; background-position: right; ">
+</div>
+<div class="right-image-source"><a href="https://www.nationalgalleries.org/art-and-artists/67593" title="Bill Viola, Surrender, Color video diptych on flat panel display, 2001, National Galleries of Scotland." target="_blank">Bill Viola: Surrender (2001)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Weitere Aspekte
+- Kritik am Begriff Postmoderne
+- mimesis of process and product
+- relation of life and art
+- metafiction and metalanguage
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span>8. Sitzung: </span><span> Postmoderne – Narzisstische Literatur?</span></p>
+<div class="right-top-div" style="background-image: url('https://www.cellophaneland.com/wp-content/uploads/2015/11/Surrender-1.jpg'); background-size: cover; background-position: right; ">
+</div>
+<div class="right-image-source"><a href="https://www.nationalgalleries.org/art-and-artists/67593" title="Bill Viola, Surrender, Color video diptych on flat panel display, 2001, National Galleries of Scotland." target="_blank">Bill Viola: Surrender (2001)<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Allegorische Lektüre der Narziss-Episode
+- systematische Aspekte ([Todorov](#todorov))
+- historische Aspekte ([Barthes](#barthes), Foucault)
+- Literaturgeschichte als narzisstische Entwicklung
+	- Geburt
+	- Abweisung Echos
+	- Faszination mit der eigenen Schönheit
+	- Tod (Schwinden des Romans)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="todorov" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Todorov: Littérature et signification (1957)
+
+<!-- begin::[@Hutcheon-2013.md] -->
+- ["] Toute oeuvre, tout roman raconte, à travers la trame événementielle, l’histoire de sa propre création, sa propre histoire. Des oeuvres comme celles de Laclos ou de Proust ne font que rendre explicite une vérité sous-jacente à toute création littéraire. Ainsi apparaît la vanité des recherches du sens dernier de tel roman, de tel drame; le sens d’une oeuvre consiste à se dire, à nous parler de sa propre existence. Ainsi le roman tend à nous amener à lui-même; et nous pouvons dire qu’il commence en fait là où il se termine; car l’existence même du roman est le dernier chaînon de son intrigue, et là où finit l’histoire racontée, l’histoire de la vie, là exactement commence l’histoire racontante, l’histoire littéraire. #Quote #Strukturalismus (25)
+<!-- end::[@Hutcheon-2013.md] -->
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="barthes" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Barthes: Littérature et métalanguage (1959)
+
+<!-- begin::[@Barthes-1964a.md] -->
+- ["] Et puis, probablement avec les premiers ébranlements de la bonne conscience bourgeoise, la littérature s’est mise à se sentir double : à la fois objet et regard sur cet objet, parole et parole de cette parole, littérature-objet et méta-littérature #Quote (129)
+<!-- end::[@Barthes-1964a.md] -->
+
+</div>
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const [_, c_r, c_g, c_b] = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       * 
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing 
+       * equation numbers to change randomly.
+       * 
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       * 
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+      
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
