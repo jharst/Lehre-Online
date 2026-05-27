@@ -1306,5 +1306,18 @@
       "Bild",
       "Rhetorik"
     ]
+  },
+  "sunset-swimmingpool": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/03%20(960).jpg",
+    "author": [
+      "Billy Wilder"
+    ],
+    "year": 1950,
+    "src-label": "Still aus Sunset Boulevard (1950)",
+    "src-title": "Still aus Sunset Boulevard (1950)",
+    "src-href": "https://de.wikipedia.org/wiki/Sunset_Boulevard",
+    "keywords": [
+      "Film/Noir"
+    ]
   }
 }

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap');
+
+/* ============================================================
+   slides-tokens.css
+   Design Tokens für das reveal.js-Präsentationssystem
+   
+   EINBINDUNG: Vor slides.css laden, nach white.css
+   HTML-Export:  <link rel="stylesheet" href="slides-tokens.css">
+   Obsidian:     css: [slides-tokens.css, slides.css]
+   
+   SCHRIFTEN: Oswald muss separat eingebunden werden:
+   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+   ============================================================ */
+
+:root {
+
+  /* ----------------------------------------------------------
+     MARKENFARBE
+     Basis-Lila, das bisher überall als rgba(119, 47, 139, ...)
+     hardcodiert war. HSL erlaubt es, alle Transparenzvarianten
+     aus einer einzigen Quelle abzuleiten.
+     ---------------------------------------------------------- */
+
+  --vl-brand-h: 291;
+  --vl-brand-s: 49%;
+  --vl-brand-l: 36%;
+
+  /* Fertige Varianten für unterschiedliche Verwendungszwecke   */
+  --vl-brand:        hsl(var(--vl-brand-h), var(--vl-brand-s), var(--vl-brand-l));
+  --vl-brand-75:     hsla(var(--vl-brand-h), var(--vl-brand-s), var(--vl-brand-l), 0.75);  /* Farbflächen vorn  */
+  --vl-brand-50:     hsla(var(--vl-brand-h), var(--vl-brand-s), var(--vl-brand-l), 0.50);  /* Farbflächen hinten */
+  --vl-brand-25:     hsla(var(--vl-brand-h), var(--vl-brand-s), var(--vl-brand-l), 0.25);  /* Hintergründe, Container */
+
+  /* ----------------------------------------------------------
+     NEUTRALE FARBEN
+     --vl-text-muted: bewusste Ausnahme vom automatischen
+     dark-bg-text-color-Mixin aus white.css. Nur für
+     Metainformationen (Quellenangaben, Bildunterschriften),
+     die absichtlich zurücktreten sollen.
+     ---------------------------------------------------------- */
+
+  --vl-text-muted:   #555;
+  --vl-bg-subtle:    rgba(223, 225, 225, 0.75);  /* .transparent-bg, Zitatblöcke */
+  --vl-bg-slide:     lightgrey;                   /* Folien-Hintergrundfarbe      */
+  --vl-img-caption:  rgba(255, 255, 255, 0.31);   /* Bildunterschriften auf Foto  */
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHIE
+     Oswald ersetzt sowohl Impact (Display) als auch Verdana
+     (Heading). Gewicht und Größe erzeugen die Hierarchie,
+     nicht verschiedene Schriften.
+     
+     Gewichte:
+       700 → Display: rotierte Titel auf Titelfolien
+       600 → Heading: Folientitel (h1–h3)
+     ---------------------------------------------------------- */
+
+  --vl-font-display:  'Oswald', Impact, sans-serif;   /* Titelfolien, rotiert      */
+  --vl-font-heading:  'Oswald', 'Trebuchet MS', sans-serif; /* Folientitel h1–h3  */
+  --vl-font-body:     Georgia, 'Book Antiqua', Palatino, serif; /* Fließtext, Listen */
+  --vl-font-code:     var(--r-code-font);             /* reveal.js-eigene Variable */
+
+  --vl-weight-display: 700;
+  --vl-weight-heading: 600;
+  --vl-weight-body:    400;
+
+  /* Schriftgrößen – relativ zur reveal.js-Basis (42px in white.css) */
+  --vl-size-xl:   2.2em;    /* Folientitel                          */
+  --vl-size-lg:   1.4em;    /* Zwischenüberschriften                */
+  --vl-size-md:   1em;      /* Fließtext                            */
+  --vl-size-sm:   0.8em;    /* Quellenangaben, Bildunterschriften   */
+  --vl-size-xs:   0.65em;   /* Fußnoten, sehr kleine Labels         */
+
+  /* ----------------------------------------------------------
+     ABSTÄNDE
+     Einheitliche Abstände verhindern willkürliche px-Werte
+     im Layout. Basis ist 1em (= aktuelle Schriftgröße).
+     ---------------------------------------------------------- */
+
+  --vl-space-xs:  0.25em;
+  --vl-space-sm:  0.5em;
+  --vl-space-md:  1em;
+  --vl-space-lg:  2em;
+  --vl-space-xl:  3em;
+
+  /* ----------------------------------------------------------
+     GEOMETRIE
+     ---------------------------------------------------------- */
+
+  --vl-radius-sm:   3px;
+  --vl-radius-md:   5px;
+  --vl-radius-lg:   10px;
+  --vl-border-width: 3px;
+
+  /* Diagonale Layouts (clip-path)
+     Steuern den Winkel der Farbflächen auf Titelfolien.
+     Änderung hier wirkt auf alle right-*/left-* Elemente. */
+  --vl-clip-diagonal-right: 20%;  /* Diagonale beginnt bei 20% von links  */
+  --vl-clip-diagonal-left:  80%;  /* Diagonale endet bei 80% von links    */
+}

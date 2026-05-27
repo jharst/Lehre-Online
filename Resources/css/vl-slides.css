@@ -1,0 +1,530 @@
+/* ============================================================
+   vl-slides.css  –  Version 0.2 (konservativ)
+   
+   Geändert gegenüber slides.css:
+     - Farbwerte → CSS-Variablen aus slides-tokens.css
+     - Schriftarten → CSS-Variablen aus slides-tokens.css
+   
+   Nicht geändert:
+     - Alle Layout-Werte (clip-path, position, width, height …)
+     - Alle !important-Deklarationen
+     - Selektoren (inkl. bekannter Fehler – werden separat angegangen)
+   
+   Voraussetzung: slides-tokens.css muss vorher geladen sein.
+   ============================================================ */
+
+.reveal {
+  --r-main-font: var(--vl-font-body);
+  --r-heading-text-transform: none;
+  --r-heading-font-weight: var(--vl-weight-heading);
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  pointer-events: auto !important;
+}
+
+.reveal .slides {
+  /*margin: 2% 0 0 2%;*/
+}
+
+.reveal mark {
+  background-color: var(--vl-brand-25);
+  border-radius: 2px;
+  padding: 10px;
+}
+
+.reveal a {
+  color: var(--vl-brand);
+  text-decoration: none;
+}
+
+.reveal code {
+  font-family: var(--vl-font-code);
+  text-transform: none;
+  font-size: 0.8em;
+  background-color: lightslategray;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+
+
+/*======= BLOCKQUOTES ==============*/
+/* Blockquote definition: white.css */
+.reveal blockquote {
+  font-style: normal !important;
+  text-align: left;
+  width: 90%;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  line-height: 1.5 !important;
+}
+
+.quote-block {
+  position: relative;
+  display: flex;
+  padding: 20px 20px 20px 60px;
+  border-radius: 10px;
+  text-align: justify;
+  width: 40%; 
+  height: auto;  
+  background-color: var(--vl-bg-subtle);
+}
+
+.quote-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40%;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Regel für embedded Blocks (Zitate)*/
+ul.embedded-quote-block {
+  list-style-type: none !important;
+}
+
+.hidden-tag {
+  display: none;
+}
+
+/*====== Styles ===*/
+.transparent-bg {
+  background-color: var(--vl-bg-subtle) !important;
+  border-radius: 5px;
+}
+
+/* ZITATFOLIE: Hintergrund mit diagonaler Farbfläche links
+   ::before erzeugt die Diagonale als Pseudo-Element –
+   kein zusätzlicher <div> im Template nötig.
+   position: relative ist Voraussetzung damit ::before
+   sich relativ zu diesem Element positioniert. */
+.quote-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f0eaf4;                              /* helles Lila */
+  border-left: 10px solid var(--vl-brand-50);        /* linke Akzentlinie */
+  overflow: hidden;
+  border-radius: var(--vl-radius-md);
+}
+ 
+/* Helle Diagonale – breitere Fläche im Hintergrund links */
+.quote-bg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--vl-brand-25);                   /* 25% Deckkraft */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+/* schmalere Fläche im Hintergrund rechts */
+.quote-bg::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 8%;
+  height: 100%;
+  background: var(--vl-brand-25);                   
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/*====== MERMAID ===========*/
+.reveal .mermaid {   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.reveal .mermaid svg {   
+  width: 100% !important;
+  height: auto;
+  display: block;
+  font-size: 12px;
+}
+
+.reveal .mermaid svg .edgeLabel {   
+  background-color: rgba(0,0,0,0) !important;   
+  color: var(--r-main-color) !important;   
+  font-size: smaller;
+}
+
+/* ---% SLIDE LAYOUTS %--- */
+/* ----------------------- */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  font-family: var(--vl-font-heading) !important;
+  margin-bottom: 0.5em !important;
+  margin-top: 1em !important;
+}
+
+.reveal h1, h2, h3 {
+  font-size: xxx-large !important;
+}
+
+.reveal h3, h4 {
+  text-transform: none !important;
+}
+
+.link-icon {
+  margin-left: 5px;
+  font-size: smaller;
+  vertical-align: middle;
+}
+
+.figcaption {
+  display: block !important; 
+  width: 90% !important; 
+  min-width: 90% !important; 
+  text-align: center; 
+  margin-top: 0.75em !important;
+}
+
+.source {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: var(--vl-size-xs);
+  color: var(--vl-text-muted);
+  margin-top: auto;
+  padding-top: 0.5em;
+}
+
+.source:before {
+  content: "Quelle: ";
+}
+
+/* CONTAINERS */
+.container {
+  position: relative; 
+  width: 100%; 
+  height: 100%; 
+  background-color: var(--vl-brand-25); 
+  border-style: solid; 
+  border-width: 3px; 
+  border-color: var(--vl-brand); 
+  border-radius: 5px;
+}
+ 
+/* --- NEU: .img-container zentriert Bilder vertikal ---
+   align-items: center zentriert den figure-Block
+   auf der vollen Slide-Höhe (height: 100%).
+   Ohne height: 100% hat der Container keine Referenzgröße
+   und center hat keinen Effekt.
+*/
+.img-container {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  align-self: stretch;
+  justify-content: center;      /* horizontal zentrieren */
+  height: 100%;                 /* volle Slide-Höhe als Referenz */
+  width: 100%;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;        /* ← schon drin? */
+  flex: 1 1 auto;      /* ← neu: figure selbst als Flex-Child strecken */
+  min-height: 0;
+  gap: 10px;
+}
+
+.img-wrapper > img {
+  flex: 1 1 auto;
+  min-height: 0;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain !important;
+}
+
+.img-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: center;
+  width: auto;
+}
+
+.img-row > img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 65vh;   /* war: height: 700px – jetzt responsiv */
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}
+
+.img-source {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: smaller;
+  color: #555;
+  margin-top: 0em !important;
+}
+
+/* img grid */
+.img-grid {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  width: 90%; 
+  height: 99%; 
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 3px; 
+}
+
+.img-grid > img {
+  height: 100%; 
+  width: 100%; 
+  object-fit: cover; 
+  min-height: 0; 
+  min-width: 0;
+}
+
+/* RIGHT LAYOUT */
+.right-bottom-div {
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  width: 70%; 
+  height: 100%; 
+  background-color: var(--vl-brand-75); 
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.right-title-text {
+  position: absolute; 
+  bottom: 0; 
+  left: 0; 
+  white-space: no wrap; 
+  padding: 10px; 
+  color: white; 
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+}
+
+.right-top-div {
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  width: 90%; 
+  height: 100%; 
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%); 
+  background-image: var(--slide-img);
+  background-size: var(--slide-img-size, cover);
+  background-position: var(--slide-img-position, top);
+  background-repeat: var(--slide-img-repeat, no-repeat);
+  overflow: hidden;
+}
+
+.right-image-source {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #FFFFFF50;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  padding: 10px;
+  font-size: var(--vl-size-sm);
+  max-width: 85%;
+  text-align: center;
+}
+
+.right-image-source a {
+  color: black;
+  text-decoration: none;
+}
+
+/* LEFT LAYOUT */
+.left-bottom-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  overflow: hidden;
+  border: none;
+  background-color: var(--vl-brand-75); 
+}
+
+.left-top-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+  overflow: hidden;
+  border: none;
+}
+
+.left-title-text {
+  /* to be added */
+}
+
+.slide-title-left {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  height: 50%;
+  width: 100%;
+  white-space: no wrap;
+  padding: 5%; 
+  color: white; 
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: larger;
+}
+
+.slide-subtitle-left {
+  position: absolute; 
+  bottom: 0;
+  left: 71%; 
+  width: 100%; 
+  text-align: left; 
+  padding-left: 20px; 
+  color: white; 
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: larger;
+  transform: rotate(-78deg) translate(-5%, 50%); 
+  transform-origin: left top; 
+}
+
+/*POEM*/
+#poem { 
+  width: 70%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px 0;
+  text-align: left;
+  font: Baskerville, "Palatino Linotype", "Times New Roman", Times, serif;
+}
+
+#poem p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+#poem h2 { text-align: center; }
+#poem h2:before { content: '— '; }
+#poem h2:after  { content: ' —'; }
+
+#poem h2 + p:first-letter {
+  float: left;
+  font-size: 3em;
+  line-height: 1;
+  margin: 2px 5px 0 0;
+}
+
+#poem p:first-line {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+#poem p:last-child {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
+/* IMAGE CAPTION */
+.testcap {
+  display: block;
+  margin-top: -.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: smaller;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+/*=== VIDEO BACKGROUND =====*/
+.container video#background-video,
+.container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  display: block;
+  background-size: cover;
+  background-position: center;
+}
+
+.iframe-container {
+  border-style: solid; 
+  border-width: 3px; 
+  border-color: var(--vl-brand); 
+  border-radius: 5px;
+}
+
+.bg-video-wrapper { 
+  position: absolute; 
+  inset: 0; 
+}
+
+.bg-video-wrapper iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+}
+
+/* ======== VIGNETTE BACKGROUND FÜR DIAGRAMME ======== */
+/* Verwendung: <!-- .slide: class="slide-bg-vignette" -->
+   Geeignet für Folien mit S/W-Diagrammen oder Filmstills.
+   Das radial-gradient erzeugt eine Vignette: helles Zentrum,
+   dunklere Ränder – der Blick wird zur Bildmitte gelenkt. */
+
+.slide-bg-vignette {
+  /* Vignette: weißes Zentrum, mittelgrauer Rand */
+  background: radial-gradient(
+    ellipse at center,
+    #f5f5f5 40%,
+    #c8c8c8 100%
+  ) !important;
+}
+
+/* Überschriften: leicht abgedunkelt, damit sie auf dem
+   grauen Rand nicht verblassen */
+.slide-bg-vignette h1,
+.slide-bg-vignette h2,
+.slide-bg-vignette h3 {
+  color: #1a1a1a !important;
+}
+
+/* .source-Klasse: Standard #555 wird auf dem Rand zu hell –
+   hier auf Dunkelgrau erhöht */
+.slide-bg-vignette .source {
+  color: #333 !important;
+}
+

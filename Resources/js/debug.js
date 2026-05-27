@@ -1,7 +1,7 @@
 document.addEventListener('ready', () => {
   console.log('Event gefeuert');
   
-  const slides = document.querySelectorAll('.slide[data-url]');
+  const slides = document.querySelectorAll('.section[data-url]');
   console.log('Slides mit data-url gefunden:', slides.length);
   
   slides.forEach(slide => {

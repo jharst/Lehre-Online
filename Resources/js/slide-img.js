@@ -1,5 +1,5 @@
 document.addEventListener('ready', () => {
-  document.querySelectorAll('section[data-url]').forEach(slide => {
+  document.querySelectorAll('section[data-url], section[data-img-id], section[data-background-image]').forEach(slide => {
     
     // Bild
     const url = slide.dataset.url;
@@ -19,10 +19,12 @@ document.addEventListener('ready', () => {
 
     // Quellenangabe
     const sourceEl = slide.querySelector('.right-image-source a');
-    if (sourceEl && slide.dataset.srcHref) {
-      sourceEl.href = slide.dataset.srcHref;
-      sourceEl.title = slide.dataset.srcTitle || '';
-      sourceEl.childNodes[0].textContent = slide.dataset.srcLabel || '';
-    }
+    if (sourceEl) {
+      sourceEl.href = slide.dataset.srcHref || slide.dataset.url;
+      sourceEl.title = slide.dataset.srcTitle || 'Abbildung aus dem Netz';
+      // Ersten reinen Textknoten finden
+      const textNode = [...sourceEl.childNodes].find(n => n.nodeType === 3);
+      if (textNode) textNode.textContent = slide.dataset.srcLabel || 'Quelle';
+    };
   });
 });
