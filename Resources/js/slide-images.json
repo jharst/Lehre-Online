@@ -1319,5 +1319,56 @@
     "keywords": [
       "Film/Noir"
     ]
+  },
+  "warburg-mnemosyne": {
+    "url": "https://warburg.library.cornell.edu/images/warburg-exhibit.png",
+    "author": [
+      "Aby Warburg"
+    ],
+    "year": 1924,
+    "src-label": "Warburg: Mnemosyne (Ausschnitt)",
+    "src-title": "Warburg, Bilderatlas Mnemosyne, panel 39 (recovered, detail) | Photo: Wootton / fluid; Courtesy The Warburg Institute, London",
+    "src-href": "https://warburg.library.cornell.edu",
+    "src-position": "center",
+    "src-size": "contain",
+    "keywords": [
+      "Rhetorik",
+      "Bild"
+    ]
+  },
+  "arcimboldo-bibliothekar": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Bibliotekarien_konserverad_-_Skoklosters_slott_-_97136.tif/lossy-page1-1280px-Bibliotekarien_konserverad_-_Skoklosters_slott_-_97136.tif.jpg",
+    "year": 1562,
+    "src-label": "Arcimboldo: Bibliothekaar (1532)",
+    "src-title": "The Librarian (1562). Oil on canvas, 98.0 x 71.0 cm. Skokloster Castle, Sweden. Depicted person: Wolfgang Lazius (1514-1565)",
+    "src-href": "https://de.wikipedia.org/wiki/Giuseppe_Arcimboldo",
+    "keywords": [
+      "Bild",
+      "Rhetorik"
+    ]
+  },
+  "expanding-brain": {
+    "url": "https://i.kym-cdn.com/photos/images/newsfeed/001/217/719/10a.jpg",
+    "src-label": "Expanding Brain Meme",
+    "src-href": "https://knowyourmeme.com/memes/galaxy-brain",
+    "src-position": "right",
+    "src-size": "contain",
+    "keywords": [
+      "Meme"
+    ]
+  },
+  "panzani": {
+    "url": "https://3.bp.blogspot.com/-uofE8SYPY6g/UxRhqzlfslI/AAAAAAAAADw/r8V7UYYMbVk/s1600/Panzani.jpg",
+    "year": 1963,
+    "src-label": "Panzani-Werbung",
+    "src-title": "Panzani-Werbung, ca. 1963, zit. n. Roland Barthes, Rhétorique de l'image, in: Communications 4 (1964), S. 40–51.",
+    "src-href": "https://de.wikipedia.org/wiki/Rhetorik_des_Bildes",
+    "src-position": "right",
+    "src-size": "cover",
+    "keywords": [
+      "Barthes",
+      "Rhetorik",
+      "Bild"
+    ]
   }
 }
