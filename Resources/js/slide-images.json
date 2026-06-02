@@ -1370,5 +1370,22 @@
       "Rhetorik",
       "Bild"
     ]
+  },
+  "beckett-krapp": {
+    "url": "https://theater-kr-mg.de/wp-content/uploads/2021/11/085_LetzteBand_HP1-Copy-1800x0-c-center.jpg",
+    "author": [
+      "Samuel Beckett"
+    ],
+    "year": 2021,
+    "src-label": "J. Henschke als Krapp (2021)",
+    "src-title": "Joachim Henschke als Krapp in einer Inszenierung von Matthias Gehrt, Theater Krefeld/Mönchengladbach, 2021.",
+    "src-href": "https://theater-kr-mg.de/spielplan/das-letzte-band/",
+    "src-position": "center",
+    "src-size": "cover",
+    "keywords": [
+      "Beckett",
+      "Narziss",
+      "Echo"
+    ]
   }
 }
