@@ -1387,5 +1387,87 @@
       "Narziss",
       "Echo"
     ]
+  },
+  "vertigo-frisur": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/14%20(1299).jpg",
+    "author": [
+      "Alfred Hitchcock"
+    ],
+    "year": 1958,
+    "src-label": "Screenshot",
+    "src-href": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "keywords": [
+      "Hitchcock",
+      "Vertigo",
+      "Film Noir"
+    ]
+  },
+  "vertigo-treppe": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/32%20(1296).jpg",
+    "author": [
+      "Alfred Hitchcock"
+    ],
+    "year": 1958,
+    "src-label": "Still",
+    "src-href": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "keywords": [
+      "Hitchcock",
+      "Vertigo",
+      "Film Noir"
+    ]
+  },
+  "vertigo-judy": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/52%20(1239).jpg",
+    "author": [
+      "Alfred Hitchcock"
+    ],
+    "year": 1958,
+    "src-label": "Still",
+    "src-href": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "keywords": [
+      "Hitchcock",
+      "Vertigo",
+      "Film Noir"
+    ]
+  },
+  "vertigo-scottie": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/10%20(1299).jpg",
+    "author": [
+      "Alfred Hitchcock"
+    ],
+    "year": 1958,
+    "src-label": "Still",
+    "src-href": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "keywords": [
+      "Hitchcock",
+      "Vertigo",
+      "Film Noir"
+    ]
+  },
+  "vertigo-ernies": {
+    "url": "https://film-grab.com/wp-content/uploads/photo-gallery/08%20(1274).jpg",
+    "author": [
+      "Alfred Hitchcock"
+    ],
+    "year": 1958,
+    "src-label": "Still",
+    "src-href": "https://en.wikipedia.org/wiki/Vertigo_(film)",
+    "keywords": [
+      "Hitchcock",
+      "Vertigo",
+      "Film Noir"
+    ]
+  },
+  "nietzsche-leipzig": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e6/Rohde_Gersdorff_Nietzsche-2.JPG",
+    "author": [
+      "Anonym"
+    ],
+    "year": 1871,
+    "src-title": "Erwin Rohde mit Carl von Gersdorff und Friedrich Nietzsche (v. l.), Oktober 1871 auf der Leipziger Messe",
+    "src-href": "https://de.wikipedia.org/wiki/Friedrich_Nietzsche",
+    "keywords": [
+      "Nietzsche"
+    ]
   }
 }
