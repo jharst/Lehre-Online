@@ -26,10 +26,28 @@
   /*margin: 2% 0 0 2%;*/
 }
 
-.reveal mark {
+/*.reveal mark {
   background-color: var(--vl-brand-25);
   border-radius: 2px;
   padding: 10px;
+}*/
+.reveal mark {
+  /* Kein background-color – stattdessen ein leicht schräger Gradient,
+     der an den Rändern weich ausläuft (transparente Enden = "Pinselkanten") */
+  background: linear-gradient(
+    -2deg,                          /* minimale Neigung = Handauftrag */
+    transparent 2%,
+    var(--vl-brand-25) 4%,
+    var(--vl-brand-25) 96%,
+    transparent 98%
+  );
+
+  /* Multipliziert Highlight-Farbe mit dem Untergrund –
+     Text bleibt lesbar, Wirkung = echter Textmarker */
+  mix-blend-mode: multiply;
+
+  border-radius: 2px;
+  padding: 0.1em 0.4em;   /* em statt px: skaliert mit der Schriftgröße */
 }
 
 .reveal a {
@@ -318,6 +336,8 @@ ul.embedded-quote-block {
   font-weight: var(--vl-weight-display);
 }
 
+/* Wird gebraucht, um den Text: "3. Sitzung:" zu verbergen, 
+wenn es Folien für einen Einzelvortrag sind */
 .session-span[data-session="0"],
 .session-span[data-session=""] {
   display: none;
