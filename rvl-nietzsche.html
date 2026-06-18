@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Freund/Feind. Philosophie und Prophetie bei Nietzsche</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/slides-tokens.css" />
+    <link rel="stylesheet" href="Resources/css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/e/e6/Rohde_Gersdorff_Nietzsche-2.JPG" data-background-size="cover" data-background-position="top" data-background-color="black" data-img-id="nietzsche-leipzig" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="block">
+
+<h2>Freund/Feind<br>Philosophie und Prophetie bei Nietzsche</h2>
+<h2>Dr. phil. habil. Joachim Harst</h2>
+<p style="font-size: smaller">Eines Freundes Freund zu sein<br>Über Freundschaft und Literatur<br>
+22. Juli 2026</p>
+</div>
+
+ <!-- .element: style="background: #DFE1E195; border-radius: 5px; padding: 20px; text-align: left; position: absolute; left: 0%; top: 25%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="auto-fragments has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[Nietzsche – Freundschaft.md] -->
+- ["] _Freundschaft_. — \[…\] Das Altertum hat die Freundschaft tief und stark ausgelebt, ausgedacht und fast mit sich in’s Grab gelegt. Dies ist sein Vorsprung vor uns: dagegen haben wir die idealisierte Geschlechtsliebe aufzuweisen. Alle großen Tüchtigkeiten der antiken Menschen hatten darin ihren Halt, dass _Mann neben Mann_ stand, und dass nicht ein Weib den Anspruch erheben durfte, das Nächste, Höchste, ja Einzige seiner Liebe zu sein, — wie die Passion zu empfinden lehrt. Vielleicht wachsen unsere Bäume nicht so hoch, wegen des Epheu’s und der Weinreben daran. (Nietzsche: *Morgenröthe*, §503)
+<!-- end::[Nietzsche – Freundschaft.md] -->
+
+
+<!-- begin::[Nietzsche NL 3(68).md] -->
+- ["] „Mein Ziel ist: volle Feindschaft zwischen unserer jetzigen ‚Cultur‘ und dem Alterthum zu erzeugen. Wer der ersten dienen will, muss das letztere hassen“ (März 1875, NL 3\[68\], KSA 8, 33).
+<!-- end::[Nietzsche NL 3(68).md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="nietzsche-leipzig" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Gliederung
+1. der Philologe: Lesen als Freundschafts-Fest *(Wagner)*
+2. der Philosoph: Bildung und Freundschaft *(Vorträge)*
+3. der Prophet: Gefolgschaft und Verrat *(Zarathustra)*
+4. der Antichrist: Freund und Feind *(Anti-Wagner)*
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="nietzsche-leipzig" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Freundschaft bei Nietzsche
+
+<!-- begin::[@Zwick-1995.md] -->
+- ["] Die Suche nach Freundschaft und Gemeinschaft gehört zu den Konstanten der Biographie Nietzsches. Immer wieder läßt sich beobachten, wie er Freundschaften schließt und wieder aufkündigt, wie er Jünger sucht und organisierte Gemeinschaften wie den Schülerbund „Germania“ oder den „philologischen Verein“ in Leipzig mitbegründet. #Quote (54)
+<!-- end::[@Zwick-1995.md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Cancik über Freundschaftskult im 18. Jhdt.
+- ["] (a) <mark>die (mehr oder weniger) regelmäßigen Feiern</mark> (Bundesfeste, Erneuerung des Bundes, Nachtfeiern); (b) besondere Räume - ein Tempel, Hain oder ein eigenes Zimmer wenigstens; (c) <mark>Riten, symbolische Handlungen und Gesten</mark>: Bruderschaft schwören oder trinken, gemeinsam singen (‚Bundesgesang’, ‚Bundeslied’), Sprüche ausbringen, Festreden halten, die von Jubel und Zurufen unterbrochen werden; <mark>Gedenken der toten Freunde</mark> (Klopstock, ‚Weihtrunk’), gemeinsames Wandern, Besuche, Ausflüge, Austausch von Geschenken, von Briefen, gegebenenfalls von Gedichten; Einträge in Stammbücher; Benutzung von Losungen, Symbolen, geheimnisvollen Abkürzungen; <mark>imaginierte oder auch praktizierte Kultakte</mark> wie Libation oder Versammlung um einen Altar mit Feuer im Freien; (d) Requisiten: Bundesbuch, Stammbuch, Liederbuch (ggf. mit Kompositionen der Freunde); Bilder, Scherenschnitte, Freundschaftsbänder.
+
+<p class="source">Hubert Cancik: „Freundschaftskult”. Religionsgeschichtliche Bemerkungen zu Mythos, Kult und Theologie der Freundschaft bei Friedrich Hölderlin, in: Loyalitätskonflikte in der Religionsgeschichte, hg.v. Christoph Elsas und Hans Kippenberg, Würzburg 1990, S. 30.</p>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="nietzsche-leipzig" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 1. Lesen als Freundschafts-Fest
+- Freundschaftsfeste und „Dämonenopfer”
+- Schopenhauer-Lesebund
+- Wagner-Verehrung
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="nietzsche-leipzig" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 1. Lesen als Freundschafts-Fest
+- Wagner und „die Geburt der Tragödie” (1872)
+	- Festspiel und Tragödie
+	- Wagner als Gegen-Typus
+	- Philologenstreit und Lesen als Fest
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="auto-fragments has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## 1. Lesen als Freundschafts-Fest
+
+
+<!-- begin::[@Zwick-1995.md] -->
+- ["] Morgen werde ich mir dann, und \[…\] auch übermorgen noch, zu reinen Festtagen einweihen, indem ich an deiner Hand eingehe in das Land dionysischen Entzückens! und alles übrige versinken lasse (KGB II 2, 503) (63)
+<!-- end::[@Zwick-1995.md] -->
+
+
+<!-- begin::[@Zwick-1995.md] -->
+- ["] Nietzsches Buch ist für Rohde, den idealen Leser, nicht in erster Linie Philologie, nicht einmal eine Philosophie der Kunst, sondern der Widerschein einer althellenischen Existenz, und die Lektüre wird ihm zum Medium, seine Gelehrtenexistenz eine Zeitlang zu vergessen, um ein anderer, ein Grieche zu werden. #Quote (64)
+<!-- end::[@Zwick-1995.md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="Nietzsche-Munch" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 2. Bildung und Freundschaft
+- *Über die Zukunft unserer Bildungsanstalten* (1872)
+- autofiktionale Rahmung
+- philosophische Gespräche
+- Kritik an moderner Bildung
+- Korrektur durch „Bildungsbünde”
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[@Nietzsche-1999b.md] -->
+- ["] Diese will \[…\] verhüten, daß sie selbst, durch jenen Schwarm, weggeschwemmt und auseinander getrieben werden, daß ihre Einzelnen in frühzeitiger Ermattung oder abgelenkt, entartet, zerstört, ihre edele und erhabene Aufgabe aus dem Auge verlieren. <mark>Diese Einzelnen sollen ihr Werk vollenden, das ist der Sinn ihrer gemeinschaftlichen Institution – und zwar ein Werk, das gleichsam von den Spuren des Subjekts gereinigt und über das Wechselspiel der Zeiten hinaus getragen sein soll, als lautere Widerspiegelung des ewigen und unveränderlichen Wesens der Dinge. Und alle, die an jedem Institute teilhaben, sollen auch mit bemüht sein, durch eine solche Reinigung vom Subjekt die Geburt des Genius und die Erzeugung seines Werkes vorzubereiten.</mark> Nicht wenige, auch aus der Reihe der zweiten und dritten Begabungen, sind zu einem solchen Mithelfen bestimmt und kommen nur im Dienste einer solchen wahren Bildungsinstitution zu dem Gefühl, ihrer Pflicht zu leben. (729).
+<!-- end::[@Nietzsche-1999b.md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[@Nietzsche-1999b.md] -->
+- ["] Im Namen aller Kultur und Pseudokultur! Was will der dumme Hund von uns! Vermaledeiter Hund, weg von hier du Uneingeweihter, Nie-einzuweihender, weg von uns und unseren Eingeweiden, gehe schweigend zurück, schweigend und beschämt!” (719)
+<!-- end::[@Nietzsche-1999b.md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="Nietzsche-Munch" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## 2. Bildung und Freundschaft: Fazit
+- Bildungsprogramm im Zeichen der Freundscshaft
+- Problematisierung von philosophischer Gefolgschaft
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://images.thalia.media/07/-/7cc99c98dfab4a9db0f47bed50cf4d91/also-sprach-zarathustra-taschenbuch-friedrich-nietzsche.jpeg" data-src-label="Cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 3. Gefolgschaft und Verrat
+- exoterische Philosophie und esoterische Lehre
+- die Bibel als Prätext: Umwertungen von Freundschaft, Nächstenliebe und Mitleid
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Zarathustra über Freundschaft
+- ["] In seinem Freunde soll man seinen besten Feind haben (71)
+- ["] Der Mensch der Erkenntnis muss nicht nur seine Feinde lieben, sondern auch seine Freunde hassen können (101).
+- ["] – mit der grossen Liebe lieben, mit der grossen Verachtung lieben! (216) 
+- ["] \[d\]u kannst dich für deinen Freund nicht schön genug putzen, denn du sollst ihm ein Pfeil und eine Sehnsucht nach dem Übermenschen sein (72)
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://images.thalia.media/07/-/7cc99c98dfab4a9db0f47bed50cf4d91/also-sprach-zarathustra-taschenbuch-friedrich-nietzsche.jpeg" data-src-label="Cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 3. Gefolgschaft und Verrat
+- exoterische Philosophie und esoterische Lehre
+- die Bibel als Prätext: Umwertungen von Freundschaft, Nächstenliebe und Mitleid
+
+</div>- Predigt und Selektion: 
+	- „wer Ohren hat, der höre!” (Za; Mt 11:11-15)
+	- Jesus als Eckstein *und* Stein des Anstoßes
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+- ["] 6 Darum steht in der Schrift: „Siehe da, ich lege einen auserwählten, köstlichen Eckstein in Zion; und wer an ihn glaubt, der soll nicht zu Schanden werden.” 7 Euch nun, die ihr glaubet, ist er köstlich; den Ungläubigen aber ist der Stein, den die Bauleute verworfen haben, der zum Eckstein geworden ist, 8 ein Stein des Anstoßens und ein Fels des Ärgernisses; denn sie stoßen sich an dem Wort und glauben nicht daran, wozu sie auch gesetzt sind. (1 Petrus 2,6)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[Nietzsche – Ohren.md] -->
+[FW §381](http://www.nietzschesource.org/#eKGWB/FW-381): _Zur Frage der Verständlichkeit_. — Man will nicht nur verstanden werden, wenn man schreibt, sondern ebenso gewiss auch nicht verstanden werden. Es ist noch ganz und gar kein Einwand gegen ein Buch, wenn irgend Jemand es unverständlich findet: vielleicht gehörte eben dies zur Absicht seines Schreibers, — er wollte nicht von „irgend Jemand“ verstanden werden. Jeder vornehmere Geist und Geschmack wählt sich, wenn er sich mittheilen will, auch seine Zuhörer; indem er sie wählt, zieht er zugleich gegen „die Anderen“ seine Schranken. Alle feineren Gesetze eines Stils haben da ihren Ursprung: sie halten zugleich ferne, sie schaffen Distanz, sie verbieten „den Eingang“, das Verständniss, wie gesagt, — während sie Denen die Ohren aufmachen, die uns mit den Ohren verwandt sind. […]
+<!-- end::[Nietzsche – Ohren.md] -->
+
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://images.thalia.media/07/-/7cc99c98dfab4a9db0f47bed50cf4d91/also-sprach-zarathustra-taschenbuch-friedrich-nietzsche.jpeg" data-src-label="Cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## 3. Gefolgschaft und Verrat
+- Verhältnis von Gefolgschaft und Verrat
+	- biblisch: menschliche Fehlbarkeit und göttlicher Heilsplan
+	- nietzscheanisch: paradoxe Aufforderung zum Abfall
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Bibel: Fehlbarkeit und Heilsplan
+- ["] Als Jesus das gesagt hatte, wurde er erregt im Geist und bezeugte und sprach: Wahrlich, wahrlich, ich sage euch: **Einer unter euch wird mich verraten.** Da sahen sich die Jünger untereinander an, und ihnen wurde bange, von wem er wohl redete.  Es war aber einer unter seinen Jüngern, der zu Tische lag an der Brust Jesu, den hatte Jesus lieb.  Dem winkte Simon Petrus, dass er fragen sollte, wer es wäre, von dem er redete. Da lehnte der sich an die Brust Jesu und fragte ihn: Herr, wer ist’s? **Jesus antwortete: Der ist’s, dem ich den Bissen eintauche und gebe. Und er nahm den Bissen, tauchte ihn ein und gab ihn Judas, dem Sohn des Simon Iskariot. Und nach dem Bissen fuhr der Satan in ihn.** Da sprach Jesus zu ihm: Was du tust, das tue bald! (Joh 13, 21–27)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Zarathustra: Aufforderung zum Abfall
+- ["] geht fort von mir und wehrt euch gegen Zarathustra! \[…\] Vielleicht betrog er euch! (101)
+- ["] Nun heisse ich euch, mich verlieren und euch finden; und erst, wenn ihr mich Alle verleugnet habt, will ich euch wiederkehren (101)
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://static.actu.fr/uploads/2022/05/nietzsche-et-wagner.jpg" data-src-label="Nietzsche ⚡️Wagner" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## 4. Freund und Feind
+- der Bruch mit Wagner im Horizont von *Parsifal* (1882) und *Zarathustra* (1885–89)
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[Nietzsche -EH-MA-§5.md] -->
+- ["] Als das Buch \[die Rede ist von *Menschliches, Allzumenschliches*, 1878–1880\] endlich fertig mir zu Händen kam \[…\]  sandte ich, unter Anderem, auch nach Bayreuth zwei Exemplare. Durch ein Wunder von Sinn im Zufall kam gleichzeitig bei mir ein schönes Exemplar des Parsifal-Textes an, mit Wagners Widmung an mich „seinem theuren Freunde Friedrich Nietzsche, Richard Wagner, Kirchenrath“. — Diese Kreuzung der zwei Bücher — mir war’s, als ob ich einen ominösen Ton dabei hörte. Klang es nicht, als ob sich _Degen_ kreuzten?… Jedenfalls empfanden wir es beide so: denn wir schwiegen beide. — Um diese Zeit erschienen die ersten Bayreuther Blätter: ich begriff, wozu es höchste Zeit gewesen war. — Unglaublich! Wagner war fromm geworden…
+<!-- end::[Nietzsche -EH-MA-§5.md] -->
+
+<p class="source">Friedrich Nietzsche: <em>Ecce homo</em> (1889). KSA 6, 255–374.</p>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+- ["] Daher darf der Leser „rücksichtslos meinen \[also Nietzsches\] Namen oder das Wort ‚Zarathustra‘ hinstellen, wo der Text das Wort Wagner giebt.
+<p class="source">Friedrich Nietzsche: <em>Ecce homo</em> (1889). KSA 6, 255–374.</p>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+
+<!-- begin::[Nietzsche zu Wagner.md] -->
+- ["] Was mich am tiefsten beschäftigt hat, das ist in der That das Problem der décadence, — ich habe Gründe dazu gehabt. „Gut und Böse“ ist nur eine Spielart jenes Problems. Hat man sich für die Abzeichen des Niedergangs ein Auge gemacht, so versteht man auch die Moral, — man versteht, was sich unter ihren heiligsten Namen und Werthformeln versteckt: das verarmte Leben, der Wille zum Ende, die grosse Müdigkeit. **Moral verneint das Leben…** Zu einer solchen Aufgabe war mir eine Selbstdisciplin von Nöthen: — **Partei zu nehmen gegen alles Kranke an mir, eingerechnet Wagner, eingerechnet Schopenhauer, eingerechnet die ganze moderne „Menschlichkeit“**. — Eine tiefe Entfremdung, Erkältung, Ernüchterung gegen alles Zeitliche, Zeitgemässe: und als höchsten Wunsch das Auge Zarathustra’s, ein Auge, das die ganze Thatsache Mensch aus ungeheurer Ferne übersieht, — unter sich sieht… (Vorrede, KSA 6, 12).
+<!-- end::[Nietzsche zu Wagner.md] -->
+
+<p class="source">Friedrich Nietzsche: <em>Der Fall Wagner</em> (1889). KSA 6, 12.</p>
+
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-url="https://static.actu.fr/uploads/2022/05/nietzsche-et-wagner.jpg" data-src-label="Nietzsche ⚡️Wagner" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text" style="transform: rotate(-79deg) translate(-10%, 60%); transform-origin: left top;"><span class="session-span" data-session="0">0. Sitzung: </span><span> Freund/Feind. Philosophie und Prophetie bei Nietzsche</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## 4. Freund und Feind
+- der Bruch mit Wagner im Horizont von *Parsifal* (1882) und *Zarathustra* (1885–89)
+
+</div>- Nietzsche als Gegen-Wagner und Anti-Christ
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
