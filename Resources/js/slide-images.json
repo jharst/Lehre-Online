@@ -1464,8 +1464,37 @@
       "Anonym"
     ],
     "year": 1871,
+    "src-label": "Nietzsche mit Freunden",
     "src-title": "Erwin Rohde mit Carl von Gersdorff und Friedrich Nietzsche (v. l.), Oktober 1871 auf der Leipziger Messe",
     "src-href": "https://de.wikipedia.org/wiki/Friedrich_Nietzsche",
+    "src-position": "top",
+    "keywords": [
+      "Nietzsche"
+    ]
+  },
+  "nietzsche-wagner": {
+    "url": "https://s1.elespanol.com/2025/04/01/actualidad/935667182_254375799_1706x960.jpg",
+    "author": [
+      "Ruben Vique"
+    ],
+    "year": 2025,
+    "src-label": "Nietzsche und Wagner",
+    "src-title": "Richard Wagner y Friedrich Nietzsche. Diseño: Rubén Vique",
+    "src-href": "https://www.elespanol.com/el-cultural/letras/20250402/apasionadas-cartas-wagner-nietzsche-amigos-volvimos-extranos/935656839_0.html",
+    "keywords": [
+      "Nietzsche",
+      "Wagner"
+    ]
+  },
+  "Nietzsche-Munch": {
+    "url": "https://uploads1.wikiart.org/images/edvard-munch/friedrich-nietzsche-1906(1).jpg",
+    "author": [
+      "Edvard Munch"
+    ],
+    "year": 1906,
+    "src-label": "Munch: Nietzsche (1906)",
+    "src-title": "Edvard Munch, Portrait Friedrich Nietzsche, Öl auf Leinwand, 1906, Thielska Galleriet, Stockholm.",
+    "src-href": "https://www.wikiart.org/en/edvard-munch/friedrich-nietzsche-1906",
     "keywords": [
       "Nietzsche"
     ]

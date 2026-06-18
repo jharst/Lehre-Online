@@ -318,6 +318,11 @@ ul.embedded-quote-block {
   font-weight: var(--vl-weight-display);
 }
 
+.session-span[data-session="0"],
+.session-span[data-session=""] {
+  display: none;
+}
+
 .right-top-div {
   position: absolute; 
   top: 0; 
