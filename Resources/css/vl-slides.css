@@ -32,22 +32,14 @@
   padding: 10px;
 }*/
 .reveal mark {
-  /* Kein background-color – stattdessen ein leicht schräger Gradient,
-     der an den Rändern weich ausläuft (transparente Enden = "Pinselkanten") */
-  background: linear-gradient(
-    -2deg,                          /* minimale Neigung = Handauftrag */
-    transparent 2%,
-    var(--vl-brand-25) 4%,
-    var(--vl-brand-25) 96%,
-    transparent 98%
-  );
-
-  /* Multipliziert Highlight-Farbe mit dem Untergrund –
-     Text bleibt lesbar, Wirkung = echter Textmarker */
-  mix-blend-mode: multiply;
-
+  background-color: var(--vl-brand-25);
   border-radius: 2px;
-  padding: 0.1em 0.4em;   /* em statt px: skaliert mit der Schriftgröße */
+  padding: 10px;
+}
+
+.reveal strong {
+  color: var(--vl-brand);
+  font-weight: 600;
 }
 
 .reveal a {
