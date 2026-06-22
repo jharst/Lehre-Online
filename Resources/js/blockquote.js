@@ -4,11 +4,18 @@ document.addEventListener('DOMContentLoaded', function() {
         //und lösche alle Tags (aber nicht style-Anweisungen wie 'color: #772F8B75')
         
         if (ul.innerHTML.includes('["]')) {
-            ul.classList.add('fa-ul');
+            // ul.classList.add('fa-ul');
             ul.classList.add('embedded-quote-block');
 
+            // ul.querySelectorAll('li').forEach(li => {
+            //     li.innerHTML = li.innerHTML.replace(/\[\"\]/g, '<span class="fa-li"><i class="fa-solid fa-quote-right" style="color: #772F8B"></i></span>');
+            //     li.innerHTML = li.innerHTML.replace(/(?<!")(#[a-zA-Z_]+\b)(?!")/g, '');
+            // });
             ul.querySelectorAll('li').forEach(li => {
-                li.innerHTML = li.innerHTML.replace(/\[\"\]/g, '<span class="fa-li"><i class="fa-solid fa-quote-right" style="color: #772F8B"></i></span>');
+                li.innerHTML = li.innerHTML.replace(
+                    /\[\"\]/g,
+                    '<i class="fa-solid fa-quote-right float-icon"></i>'
+                );
                 li.innerHTML = li.innerHTML.replace(/(?<!")(#[a-zA-Z_]+\b)(?!")/g, '');
             });
         };

@@ -92,15 +92,37 @@
   justify-content: center;
 }
 
-/*Regel für embedded Blocks (Zitate)*/
+/* Regel für embedded Blocks (Zitate) */
 ul.embedded-quote-block {
-  list-style-type: none !important;
+  list-style: none;
+  margin-left: 0 !important;  /* keine Einrückung der Liste */
+  padding-left: 0;
 }
 
-ul.embedded-quote-block.fa-ul {
-  --fa-li-width: var(--quote-icon-slot);  /* Icon-Breite & Rückzug nach links */
-  --fa-li-margin: var(--quote-icon-slot); /* Einrückung der Liste */
-  margin-left: var(--quote-icon-slot) !important; /* überschreibt Reveal-Regel */
+ul.embedded-quote-block li {
+  overflow: hidden;           /* Float-Containment */
+  list-style: none;
+  margin-bottom: 1em !important;       /* Abstand zwischen Zitat-Absätzen */
+}
+
+ul.embedded-quote-block li:last-child {
+  margin-bottom: 0;           /* kein überschüssiger Abstand nach dem letzten */
+}
+
+/* Icon schwimmt links, Text umfließt es */
+.embedded-quote-block .float-icon {
+  float: left;
+  color: #772F8B;
+  font-size: 0.9em;        /* Icon kleiner als Text */
+  margin-right: 0.4em;     /* Luft zwischen Icon und Text */
+  margin-top: 0.15em;      /* vertikale Feinkorrektur zur ersten Textzeile */
+  shape-outside: margin-box; /* Text schmiegt sich an Icon-Kontur */
+}
+
+/* Wichtig: li braucht overflow:hidden, sonst "bricht" der Float aus */
+.embedded-quote-block li {
+  overflow: hidden;
+  list-style: none;
 }
 
 .hidden-tag {
