@@ -94,7 +94,11 @@
 
   /* Diagonale Layouts (clip-path)
      Steuern den Winkel der Farbflächen auf Titelfolien.
-     Änderung hier wirkt auf alle right-*/left-* Elemente. */
+     Änderung hier wirkt auf alle right-/left- Elemente. */
   --vl-clip-diagonal-right: 20%;  /* Diagonale beginnt bei 20% von links  */
   --vl-clip-diagonal-left:  80%;  /* Diagonale endet bei 80% von links    */
+  /* Breite des Icon-Slots in fa-ul-Listen. Da diese Variable gleichzeitig
+     die Einrückung der <ul> UND den Rückzug des Icons (.fa-li) bestimmt,
+     heben sich beide exakt auf -> Icon bündig mit linkem Rand. */
+  --quote-icon-slot: 1.4em;
 }

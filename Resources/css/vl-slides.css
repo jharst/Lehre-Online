@@ -97,6 +97,12 @@ ul.embedded-quote-block {
   list-style-type: none !important;
 }
 
+ul.embedded-quote-block.fa-ul {
+  --fa-li-width: var(--quote-icon-slot);  /* Icon-Breite & Rückzug nach links */
+  --fa-li-margin: var(--quote-icon-slot); /* Einrückung der Liste */
+  margin-left: var(--quote-icon-slot) !important; /* überschreibt Reveal-Regel */
+}
+
 .hidden-tag {
   display: none;
 }
