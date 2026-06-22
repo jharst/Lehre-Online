@@ -1498,5 +1498,19 @@
     "keywords": [
       "Nietzsche"
     ]
+  },
+  "freud-portrait": {
+    "url": "https://narzissmus-diskussion.de/wp-content/uploads/2020/02/Sigmund_Freud_LIFE.jpg",
+    "author": [
+      "Max Halberstadt"
+    ],
+    "year": 1921,
+    "src-label": "Freud: Portrait",
+    "src-title": "Sigmund Freud (Fotografie von Freuds Schwiegersohn Max Halberstadt, 1921)",
+    "src-href": "https://de.wikipedia.org/wiki/Sigmund_Freud",
+    "keywords": [
+      "Freud",
+      "Psychoanalyse"
+    ]
   }
 }
