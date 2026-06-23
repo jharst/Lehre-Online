@@ -168,10 +168,28 @@ ul.embedded-quote-block li:last-child {
   position: absolute;
   right: 0;
   top: 0;
-  width: 8%;
+  width: 10%;
   height: 100%;
   background: var(--vl-brand-25);                   
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.quote-bg-title {
+  position: absolute;
+  right: 1.5%;
+  bottom: var(--vl-space-sm);      /* Abstand zum unteren Rand */
+  width: 5%;
+  writing-mode: vertical-rl;
+  transform: rotate(184deg);       /* Leserichtung: unten → oben */
+  text-align: left;                /* = visuell unten nach Rotation */
+
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: var(--vl-size-lg);
+  color: white;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /*====== MERMAID ===========*/
