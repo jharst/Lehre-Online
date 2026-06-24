@@ -366,12 +366,19 @@ ul.embedded-quote-block li:last-child {
 .right-title-text {
   position: absolute; 
   bottom: 0; 
-  left: 0; 
-  white-space: no wrap; 
-  padding: 10px; 
+  left: 8%; 
+  white-space: nowrap; 
+  bottom: var(--vl-space-sm);
+  width: 5%;
+  writing-mode: vertical-rl;
+  transform: rotate(191.5deg);
+  text-align: left;
+
   color: white; 
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
+  letter-spacing: 0.05em;
+  overflow: hidden;
 }
 
 /* Wird gebraucht, um den Text: "3. Sitzung:" zu verbergen, 
