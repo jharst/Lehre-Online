@@ -174,7 +174,7 @@ ul.embedded-quote-block li:last-child {
   clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
 }
 
-.quote-bg-title {
+.slide[data-title=""] > .quote-bg-title {
   position: absolute;
   right: 1.5%;
   bottom: 0;      /* Abstand zum unteren Rand */
