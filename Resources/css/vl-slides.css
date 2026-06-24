@@ -177,15 +177,18 @@ ul.embedded-quote-block li:last-child {
 .quote-bg-title {
   position: absolute;
   right: 1.5%;
-  bottom: var(--vl-space-sm);      /* Abstand zum unteren Rand */
+  bottom: 0;      /* Abstand zum unteren Rand */
   width: 5%;
+  height: 95%;
   writing-mode: vertical-rl;
-  transform: rotate(184deg);       /* Leserichtung: unten → oben */
+  transform: rotate(184.75deg);       /* Leserichtung: unten → oben */
   text-align: left;                /* = visuell unten nach Rotation */
+  /* border: 4px solid red; for debugging*/
 
+  white-space: nowrap;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  font-size: var(--vl-size-lg);
+  font-size: larger;
   color: white;
   letter-spacing: 0.05em;
   overflow: hidden;
@@ -366,19 +369,19 @@ ul.embedded-quote-block li:last-child {
 .right-title-text {
   position: absolute;
   left: 9%;
-  bottom: var(--vl-space-xs);
-  width: 1080px;                  /* fest – ändert sich nicht mit Textlänge */
+  bottom: 0;
+  width: 90%;
   white-space: nowrap;
   overflow: hidden;
-  /*border: 4px solid red; for debugging*/
+  border: 4px solid red; /*for debugging*/
 
-  transform: rotate(-79deg);
+  transform: rotate(-78.25deg);
   transform-origin: left bottom; /* Ankerpunkt = linke untere Ecke, immer fix */
 
   color: white;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  font-size: var(--vl-size-lg);
+  font-size: larger;
   letter-spacing: 0.05em;
   text-align: left;
 }
@@ -470,15 +473,17 @@ wenn es Folien für einen Einzelvortrag sind */
   position: absolute; 
   bottom: 0;
   left: 71%; 
-  width: 100%; 
+  width: 95%; 
   text-align: left; 
   padding-left: 20px; 
   color: white; 
+  white-space: nowrap;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
   font-size: larger;
   transform: rotate(-78deg) translate(-5%, 50%); 
-  transform-origin: left top; 
+  transform-origin: left top;
+  overflow: hidden;
 }
 
 /*POEM*/
