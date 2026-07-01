@@ -356,6 +356,7 @@ ul.embedded-quote-block li:last-child {
   display: flex !important;
   align-items: center;
   align-self: stretch;
+  background-color: #f0eaf4;
   justify-content: center;      /* horizontal zentrieren */
   height: 100%;                 /* volle Slide-Höhe als Referenz */
   width: 100%;
