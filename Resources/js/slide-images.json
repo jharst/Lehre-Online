@@ -1512,5 +1512,48 @@
       "Freud",
       "Psychoanalyse"
     ]
+  },
+  "viola-dolorosa": {
+    "url": "https://journals.openedition.org/imagesrevues/docannexe/image/497/img-2-small580.jpg",
+    "author": [
+      "Bill Viola"
+    ],
+    "year": 2000,
+    "src-label": "Viola: Dolorosa (2000)",
+    "src-title": "Bill Viola, Dolorosa, 2000, in: K. Perov (dir.), Bill Viola.Visioni Interiori, cat. exp. Palazzo delle Esposizioni, Rome, 21 octobre 2008 – 6 janvier 2009, Rome, Giunti, 2008, p. 58",
+    "src-href": "https://journals.openedition.org/imagesrevues/497?lang=en",
+    "keywords": [
+      "Viola",
+      "Film",
+      "Bild"
+    ]
+  },
+  "bouts-diptych": {
+    "url": "https://1.bp.blogspot.com/-CwJwp9CaB7I/XXXyCj84rvI/AAAAAAAAHyo/7cPASWq9QaMDkHUwiWRFtgcyexdVf_1EACLcBGAs/s1600/Dieric%2BBouts%2B%2528Workshop%2Bof%2529_Christ%2Band%2Bthe%2Bvirgin%2B%25281470-75%2529.jpg",
+    "author": [
+      "Dieric Bouts"
+    ],
+    "year": null,
+    "src-label": "Bouts: Mater dolorosa (um 1450)",
+    "src-title": "Dieric Bouts, Mater Dolorosa/Ecce Homo (Diptychon, um 1450)",
+    "src-href": "https://gl.wikipedia.org/wiki/Ficheiro:Seguace_di_dirck_bouts,_dittico_con_mater_dolorosa_e_cristo_coronato_di_spine,_1450-1500_ca._01.JPG",
+    "keywords": [
+      "Narziss"
+    ]
+  },
+  "viola-surrender-installation": {
+    "url": "https://static01.nyt.com/images/2019/01/25/arts/25VIOLA-1/merlin_149632776_9f98bcc4-aae6-4392-adb6-62eee636bb28-articleLarge.jpg",
+    "author": [
+      "Bill Viola"
+    ],
+    "year": 1990,
+    "src-label": "Bill Viola: Surrender (1990, Installationsansicht)",
+    "src-title": "Bill Viola, Surrender, Colour video diptych on flat panel display, 1990, National Galleries of Scotland, Installationsansicht",
+    "src-href": "https://www.nytimes.com/2019/01/24/arts/design/bill-viola-michelangelo-royal-academy-london.html",
+    "keywords": [
+      "Viola",
+      "Film",
+      "Narziss"
+    ]
   }
 }

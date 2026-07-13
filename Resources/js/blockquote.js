@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     /\[\"\]/g,
                     '<i class="fa-solid fa-quote-right float-icon"></i>'
                 );
-                li.innerHTML = li.innerHTML.replace(/(?<!")(#[a-zA-Z_]+\b)(?!")/g, '');
+                li.innerHTML = li.innerHTML.replace(/(?<!")(#[\p{L}\p{M}\p{N}_]+\b)(?!")/gu, '');
             });
         };
     });
