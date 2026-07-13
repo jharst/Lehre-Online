@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Bill Viola – The Surrender</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/slides-tokens.css" />
+    <link rel="stylesheet" href="Resources/css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: black">
+<div style="position: absolute; width: 55%; height: 100%; bottom: 0; right: 0; background-image: url('https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg'); background-size: cover; background-position: center;"></div>
+<div class="left-bottom-div" style="width: 60%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span>14. Sitzung: </span><span>Bill Viola – The Surrender</span>
+</div><div class="left-bottom-div" style="width: 90%; background-color: rgba(119, 47, 139, 1);">
+<p class="slide-title-left" style="align-items: flex-end;">Echo und Narziss<br>Figurationen der Selbstreflexion</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-surrender" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="14">14. Sitzung: </span><span> Bill Viola – The Surrender</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einleitung
+- Thema: Bill Violas experimentelle Video-Kunst als Medienreflexion
+- Beispiel: *The Surrender* als Teil der Ausstellung *The Passions* (1990)
+- Hintergrund: Rolle des Bildes in der postmodernen „Realität”
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="14">14. Sitzung: </span><span>Bill Viola – The Surrender</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Lacan: Bild-Verarbeitung
+
+<!-- begin::[11 HS Echo und Narziss (slides) SoSe 2026.md] -->
+- ["] Man kann das Spiegelstadium als eine Identifikation verstehen im vollen Sinne, den die Psychoanalyse diesem Terminus gibt: als eine beim Subjekt durch die Aufnahme eines Bildes ausgelöste Verwandlung. #Imaginär #Bild #Lacan #Psychoanalyse #Quote
+<p class="source">Jacques Lacan: <em>Das Spiegelstadium als Bildner der Ichfunktion</em>, S. 64.</p>
+<!-- end::[11 HS Echo und Narziss (slides) SoSe 2026.md] -->
+
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="14">14. Sitzung: </span><span>Bill Viola – The Surrender</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Viola: Bild-Verarbeitung
+
+<!-- begin::[@Viola-2003.md] -->
+- ["] We are living databases of images—collectors of images—and these images do not stop transforming and growing once they get inside us. The act of perception is, for me, only the first step in the art experience. \[…\] As you know, the term aesthetics comes from the ancient Greek and has to do with sense perception, particularly the visual, as it relates to pleasure, beauty, and taste. It’s the point when you raise your fork and you take a bite of the food—you taste it. But this is really only the beginning. Much more important is what happens when the food goes into your body, where it is digested and assimilated as energy. \[…\] Nutrition ultimately becomes the most important thing about images, not the taste. (210)
+<!-- end::[@Viola-2003.md] -->
+
+<p class="source">Viola, B. and Belting, H. (2003). A Conversation. In <em>The passions</em>. Ed. by. J. Walsh. Getty.</p>
+
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://upload.wikimedia.org/wikipedia/commons/2/29/Narcissus-Caravaggio_%281594-96%29_edited.jpg" data-background-size="contain" data-background-position="left" data-background-color="black" template="" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<!-- begin::[5 HS Echo und Narziss (slides) SoSe 2026.md] -->
+## Narziss und die Malerei
+
+
+
+<div class="block">
+
+„Quae cum ita sint, consuevi inter familiares dicere picturae inventorem fuisse, poetarum sententia, Narcissum illum qui sit in florem versus, nam cum sit omnium artium flos pictura, tum de Narcisso omnis fabula pulchre ad rem ipsam perapta erit. **Quid est enim aliud pingere quam arte superficiem illam fontis amplecti?**”
+
+„Weil dem so ist, pflege ich nach einer Redeweise der Dichter zu meinen Freunden zu sagen, jener Narziss, der in eine Blume verwandelt wurde, sei der Erfinder der Malerei gewesen. Da die Malerei zum einen die Blume aller Künste ist, passt die Erzählung von Narziß auch sonst gut zur Sache. **Was nämlich ist das Malen anderes, als durch die Kunst jene Oberfläche der Quelle zu umarmen?**”
+
+Text: L.B. Alberti, De pictura (1436), 2,26. Bild: Caravaggio: Narziss (1597–1599). Öl auf Leinwand. Galleria Nazionale d’Arte Antica, Rom
+</div>
+
+<!-- .element: style="text-align: left; font-size: smaller; position: absolute; left: 60%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: start; justify-content: center" -->
+</div>
+
+<aside class="notes"><!-- end::[5 HS Echo und Narziss (slides) SoSe 2026.md] --></aside></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="auto-fragments has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="14">14. Sitzung: </span><span>Bill Viola – The Surrender</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Ovid: Narziss
+- ["] Wie oft tauchte er, um den Hals, den er sah, zu erhaschen, die Arme mitten ins Wasser und konnte sich nicht darin ergreifen! (430) Er weiß nicht, was er sieht; doch was er sieht, setzt ihn in Flammen. Und seine Augen reizt dasselbe Trugbild, das sie täuscht. Leichtgläubiger! Was greifst du vergeblich nach dem flüchtigen Bild! Was du erstrebst, ist nirgends; was du liebst, wirst du verlieren, sobald du dich abwendest. Was du siehst, ist nur Schatten, nur Spiegelbild. (435)
+- ["] Sprach’s und kehrte in rasender Leidenschaft zu demselben Spiegelbild zurück, (475) trübte das Wasser mit Tränen, und durch die Bewegung im See wurden die Umrisse unscharf. Als er sah, daß das Bild verschwand, schrie er: „Wohin fliehst du? Bleib und laß mich, du Grausamer, in meiner Liebe nicht allein!”
+<p class="source">Ovid. (2004). Metamorphosen (G. Fink, Ed. & Trans.). Artemis \& Winkler.</p>
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-surrender" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="14">14. Sitzung: </span><span> Bill Viola – The Surrender</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Videokunst und Malerei
+- das Videobild als Reflexion/virtuelles Bild
+- experimentelle Elemente: Close Up und hochauflösende Zeitlupe 
+- gleichzeitig Bezug auf „Alte Meister”: formale und inhaltliche Parallelen 
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="bouts-diptych" data-src-size="contain" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-dolorosa" data-src-size="contain" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+## Videokunst und Malerei
+- das Videobild als Reflexion/virtuelles Bild
+- experimentelle Elemente: Close Up und hochauflösende Zeitlupe 
+- gleichzeitig Bezug auf „Alte Meister”: formale und inhaltliche Parallelen 
+- Medium und Performanz: „manipulating and shaping the fluid surface of the paint so it becomes the emotion”
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+  <div class="bg-video-wrapper">
+  <iframe width="560" height="315" src="https://player.vimeo.com/video/15130088?h=de0977a7be" title="Vimeo video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-surrender-installation" data-src-size="contain" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+  <div class="bg-video-wrapper">
+  <iframe width="560" height="315" src="https://geo.dailymotion.com/player.html?video=x1pgg6v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-surrender-landscape" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="right-image-source"><a href="#" title="" target="_blank">Quelle<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="viola-surrender" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="14">14. Sitzung: </span><span> Bill Viola – The Surrender</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+
+## Viola: Surrender (1990)
+- Vervielfachung der narzisstischen Situation
+- Interpretation des Bewegungsablaufs
+	1. „Umarmung” des Spiegelbilds
+	2. Einswerden von Gesicht und Spiegelmedium (Wasser und Tränen, verzerrte Gesichtszüge)
+	3. Enthüllung des Bilds als vervielfachtes Abbild
+	4. Endlosschleife
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/titles.js"></script>
+    <script src="Resources/js/blockquote.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":true,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
