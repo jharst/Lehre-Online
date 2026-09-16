@@ -366,10 +366,12 @@ ul.embedded-quote-block li:last-child {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;   /* neu: zentriert img-row + figcaption vertikal in der figure */
   height: 100%;        /* ← schon drin? */
   flex: 1 1 auto;      /* ← neu: figure selbst als Flex-Child strecken */
   min-height: 0;
   gap: 10px;
+  padding-bottom: var(--vl-space-sm);
 }
 
 .img-wrapper > img {
@@ -386,14 +388,18 @@ ul.embedded-quote-block li:last-child {
   gap: 30px;
   justify-content: center;
   width: auto;
+  flex: 1 1 auto;      /* neu: nimmt sich den Rest-Platz in .img-wrapper */
+  min-height: 0;       /* neu: darf innerhalb der Column auch schrumpfen */
+  min-width: 0;        /* neu: verhindert Overflow durch img min-content */
 }
 
 .img-row > img {
   display: inline-block;
   max-width: 100%;
-  max-height: 65vh;   /* war: height: 700px – jetzt responsiv */
+  max-height: 100%;   /* statt 65vh: an img-row gebunden, nicht an Viewport */
   height: auto;
   width: auto;
+  min-width: 0;        /* neu: erlaubt Schrumpfen unter die natürliche Breite */
   object-fit: contain;
 }
 
@@ -404,6 +410,10 @@ ul.embedded-quote-block li:last-child {
   font-size: smaller;
   color: #555;
   margin-top: 0em !important;
+}
+
+.img-source::before {
+  content: 'Quelle: ';
 }
 
 /* img grid */
