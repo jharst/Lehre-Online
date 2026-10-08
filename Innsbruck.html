@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>RVL Digitale Nachhaltigkeit</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/video-background.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url('./Resources/images/Anadol-Glacier-Dreams-frame.jpg'); background-position: center; background-size: cover;"><video id="background-video" autoplay muted loop style="">
+        <source src="../Resources/images/Anadol-clip.mp4" type="video/mp4">
+</video>
+
+<div class="left-bottom-div"><div class="left-top-div">
+
+
+<div class="left-top-div-text fragment fade-out"><p class="slide-title-left">Künstliche Intelligenz und Nachhaltigkeit</br>Positionen investigativer Medienkunst</p>
+<p class="slide-title-left" style="align-items: flex-start; font-size: smaller;">Dr. habil. Joachim Harst<br>Allgemeine und Vergl. Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out"><h2>Refik Anadol: Glacier Dreams (2023)</h2>
+
+<ul> <li>„living data paintings” und „machine hallucinations”</li> 
+<li>Mustererkennung, machine learning und Bildproduktion</li>
+<li>Grundlage: Datenbank von Gletscherbildern</li> 
+<li>Algorithmus „erträumt” virtuelle Natur</li></ul>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out">
+<h2 style="color: white">Refik Anadol: Glacier Dreams (2023)</h2>
+
+<blockquote>
+„I realized that because these forms are going away, my ability to capture them digitally with data and AI meant I could preserve nature.” (R. Anadol)</blockquote>
+
+<ul style="margin-top: 40px;"> 
+<li>Sensibilisierung für Klimawandel?</li> 
+<li>machine learning und Erderwärmung</li>
+<li>virtuelle vs. tatsächliche Verflüssigung der Gletscher</li> 
+</ul>
+</div>
+
+
+<div class="left-top-div-text fragment fade-in-then-out">
+<h2>KI und Nachhaltigkeit</h2>
+<ul><li>Nachhaltigkeit von KI</li>
+<li>Nachhaltigkeit durch KI?</li>
+<li>investigative und ästhetische Auseinandersetzungen</il>
+<li>Fotografien, Diagramme, Karten</li></ul></div>
+
+
+
+</div></div>
+
+<div class="right-image-source is-light"><a href="https://www.glacierdreams.com" title="Refik Anadol: Glacier Dreams, Videoinstallation. Kunsthaus Zürich, Zürich, Schweiz. Schenkung Bank Julius Bär." target="_blank">R. Anadol: Glacier Dreams (2023)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+
+<aside class="notes"><h2 id="anadol">Anadol</h2>
+<ul>
+<li><mark>2*FOLIE</mark> Was Sie hier sehen, ist ein KI-generiertes visuelles Kunstwerk von Refik Anadol. Anadol ist Computerwissenschaftler und nennt sich selbst „Datenkünstler”, seine  Werke „living data paintings”. Grund dafür ist, dass Anadols Werke auf Bilddatenbanken beruhen, die er mit künstlicher Intelligenz analysieren lässt und zur Grundlage für computergenierte Animationen nimmt. Er nennt diese Werke auch „machine hallucinations” oder „machine dreams”, weil er die KI auf der Basis von vorgefundenen Mustern neue Muster generieren lässt, die sich in unserer Wirklichkeit nicht finden lassen. → Maschinelle Kreativität </li>
+<li>Dieses Video ist ein Ausschnitt aus dem Werk „Glacier Dreams” von 2022, die zur Zeit im Kunsthaus Zürich zu sehen war. Es handelt sich dabei um eine immersive Videoinstallation, einen geschlossenen Raum, der aus hochauslösenden Videodisplays besteht. Die generierte Computeranimation kann also gleichsam räumlich erfahren werden. Sie ist ein paar Minuten lang und wird im inifinite loop gezeigt; mein Ausschnitt zeigt nur einen besonders charakteristischen Abschnitt. </li>
+<li>Grundlage der Animation ist eine umfangreiche Bilddatenbank von Gletschern aus aller Welt. Mehrere Millionen Bilder sind ausgewertet worden. Die Animation zeigt, wie die KI die Bilder klassifiziert und dann auf ihrer Grundlage zu „träumen” beginnt. Mein Ausschnitt zeigt eine für Anadol typische Verflüssigung der Formen. Aus den statischen Bildern werden dynamische, fluide Bewegungen erzeugt, die sich in majestätischem Fluss, in beständiger Metamorphose befinden. So wird der Eindruck eines ewigen Wandels, aber auch eines unablässigen Zusammenhangs erweckt: Alles geht in einander über, alles ist mit allem verbunden.</li>
+<li><mark>FOLIE</mark> In seinen Äußerungen zum Kunstwerk erklärt Anadol, ihn habe das Bewusstsein der Vergänglichkeit der Natur zu seinem Schaffen bewogen. „I realized that because these forms are going away, my ability to capture them digitally with data and AI meant I could preserve nature.” (R. Anadol) Die Animation wird also als Sensibilisierung für Klimawandel beschrieben, ja als eine Form der Bewahrung einer bereits im Verschwinden befindlichen Natur.</li>
+<li>Ich begegne Anadols Begeisterung für seine virtuelle Rettung der Natur mit einiger Skepsis. Schließlich ist die Entwicklung von AI ein immer größerer Faktor für die Produktion von Treibhausgasen und damit der Erderwärmung. Die riesigen Energiemengen, die zum Training von AI und zur Betreibung ihrer Infrastruktur verbraucht werden, stehen quer zu Anadols Inanspruchnahme einer Sensibilisierung. In meinen Augen ist die Verflüssigung der Formen, die man in diesem Ausschnitt sieht, eine unfreiwillige Bejahung der Verflüssigung der Gletscher, für die AI mit verantwortlich ist. In meiner Vorlesung möchte ich diesen Zusammenhängen weiter nachgehen und künstlerische Werke vorstellen, die ihn diskursiv und ästhetisch problematisieren.</li>
+<li><mark>FOLIE</mark> Mein Schwerpunkt wird dabei auf dem Ressourcenverbrauch von KI und ihrer Infrastrukturen liegen. Mein einfacher Punkt ist, dass KI aktuell nicht nachhaltig entwickelt wird. Zwar gibt es verschiedene Projekte, die KI in einem zweiten Schritt für eine nachhaltige Ressourcenbewirtschaftung einsetzen wollen, aber es bleibt fraglich, ob damit die primäre Verschwendung wettgemacht werden kann. Ich muss dazu sagen, dass ich kein Fachmann für diese Zusammenhänge bin. Der Produktionshintergrund von KI ist enorm komplex und die Datenlage zum Ressourcenverbrauch unklar. Ich konzentriere mich daher auf investigativ vorgehende Wissenschaftler:innen und Künstler:innen, die einen Beitrag zum allgemeinen Verständnis von KI als Infrastruktur leisten. Die Werke, die ich vorstellen werde, kommen darin überein, dass sie diese komplexen Zusammenhänge auf ästhetischem Weg erfahrbar machen.</li>
+<li>Instrumente: Fotografien, Diagramme, Karten = grafische Analyse komplexer Zusammenhänge, nicht linear</div></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-image: url(https://images.prismic.io/verticalatlas/038e5416-926b-4ca9-bc1b-5171311c548c_1920x1180_QiuZhijie_Map-of-AI.jpg?auto=compress,format&rect=0,0,1920,1180&w=1920&h=1180); background-size: cover;">
+
+
+<div class="left-bottom-div fragment fade-in" style="background-color: rgba(119, 47, 139, 0.75); width: 50%"><div class="left-top-div" style="background-color: rgba(119, 47, 139); color: white; display-flex; justify-content: center; align-items: center; text-align: left; box-sizing: border-box; padding-left: 3%;">
+<h2>Eine Kartografie Künstlicher Intelligenz</h2>
+<ul> 
+<li>topografische Karte</li>
+<li>mythologische Landschaft</li> 
+<li>Mindmap</li>
+<li>Einschreibung von KI in materielle Welt</li></ul>
+</div></div>
+
+
+</div>
+<div class="right-image-source is-light"><a href="https://verticalatlas.net/#qiu-zhijie-x-chen-stanley-qiufan" title="Qiu Zhijie: Map of Ai (2020). Kalligrafische Karte, fotografiert von Yan Haibo." target="_blank">Qiu Zhijie: Map of AI (2020).<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+
+
+<aside class="notes"><img src="https://images.prismic.io/verticalatlas/038e5416-926b-4ca9-bc1b-5171311c548c_1920x1180_QiuZhijie_Map-of-AI.jpg?auto=compress,format&rect=0,0,1920,1180&w=1920&h=1180" alt="image" style="object-fit: scale-down">
+
+<h2 id="einleitende-worte-zu-zhijie">Einleitende Worte zu Zhijie</h2>
+<ul>
+<li><mark>FOLIE</mark> Sie sehen hier eine Karte des chinesischen Kalligrafen Qiu Zhijie mit dem Titel „Map of AI”. Sie ist Teil einer Werkserie, die komplexe Zusammenhänge in Kartenform aufbereitet. Die Karten können dabei verschiedene Größen haben. Sie werden u.a. als Wandgemälde und großformatige Projektionen auf Gebäuden inszeniert. → Frage an Publikum</li>
+</ul>
+<h2 id="brainstorming-zu-seinen-karten">Brainstorming zu seinen Karten</h2>
+<ul>
+<li>Klassifizierung verschiedenster Bereiche im Zusammenhang mit AI (Programmiersprachen, Hardware, Machine Learning Strategien, Firmen, etc.) – Zusammenhänge werden allerdings von der Grafik nicht näher erläutert</li>
+<li>Einschreibung von KI in die materielle Welt – Technik beruht auf Ausbeutung von materiellen Ressourcen, Umstrukturierung von Produktionsprozessen, globalen Lieferketten, prekären Arbeitsverhältnissen – eine weltumspannende Infrastruktur, von der unsere Endgeräte nur die Spitze des Eisbergs sind – und wie beim Eisberg ist der größte Teil dieser Infrastruktur unsichtbar</li>
+<li><mark>FOLIE</mark> Aspekte<ul>
+<li>topografische Karte</li>
+<li>mythologische Landschaft</li>
+<li>Mindmap</li>
+<li>Einschreibung von KI in die materielle Welt</div></li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: #F5E0D6; background-image: url('https://m.media-amazon.com/images/I/71HGbZqJLaL._SL1500_.jpg'); background-size: contain; background-position: 90% bottom; background-repeat: no-repeat;">
+
+<div class="left-bottom-div" style="width: 55%"><div class="left-top-div">
+
+<div class="left-top-div-text"><h2>Crawford: Atlas of AI</h2>
+<blockquote class="fragment fade-in-then-out"><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>The French philosopher Georges Didi-Huberman thinks of the atlas as something that inhabits the aesthetic paradigm of the visual and the epistemic paradigm of knowledge. By implicating both, it undermines the idea that science and art are ever completely separate. Instead, an atlas offers us the possibility of rereading the world, linking disparate pieces differently and „reediting and piecing it together again without thinking we are summarizing or exhausting it.” (10)</blockquote>
+</div>
+
+<div class="left-top-div-text"><h2>Crawford: Atlas of AI</h2>
+<blockquote class="fragment fade-in-then-out" style="font-size: 95%"><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>By invoking an atlas, I’m suggesting that we need new ways to understand the empires of artificial intelligence. We need a theory of AI that accounts for the states and corporations that drive and dominate it, the extractive mining that leaves an imprint on the planet, the mass capture of data, and the profoundly unequal and increasingly exploitative labor practices that sustain it. […] <br><strong>A topographical approach offers different perspectives and scales, beyond the abstract promises of artificial intelligence or the latest machine learning models. The aim is to understand AI in a wider context by walking through the many different landscapes of computation and seeing how they connect.</strong> (11)</blockquote></div>
+
+</div></div>
+
+
+<aside class="notes"><h2 id="crawford--atlas-of-ai--kartografie-ästhetik-wissen">Crawford – Atlas of AI – Kartografie, Ästhetik, Wissen</h2>
+<ul>
+<li>Kate Crawford ist eine australische Forscherin, Autorin und Wissenschaftlerin, die sich mit den sozialen und politischen Auswirkungen der künstlichen Intelligenz beschäftigt. Sie lebt in New York und ist Mitbegründerin des AI Now Institute an der NYU. Vor kurzem hat sie ein wichtiges Buch über die globale Produktion und Kosten von KI veröffentlicht, auf das ich mich in meiner Vorlesung stütze. Sie hat es <em>Atlas of AI</em> genannt und damit ebenfalls eine Metapher aus der Kartografie verwendet. Ich möchte hier auf diese Metapher eingehen, weil sie begründet, inwiefern Forschung zu KI und kartografische Visualisation – die auch immer ein sinnliches, ja ästhetisches Element hat – zusammengehören.</li>
+<li>Atlas als Sammlung von Karten mit verschiedener Auflösung und Maßstab – unterschiedliche Schwerpunkte und Informationslagen – können auf verschiedene Weise zusammen gelesen werden, aber präsentieren keine fertige Totalität</li>
+<li>neben geografischen Atlanten gibt es auch Atlanten, die sich anderen Wissensgebieten widmen – so z.B. der anatomische Atlas, der den menschlichen Körper und das Wissen der Medizin kartiert – sinnliche Darstellung von Wissen, aber auch Vermittlung von Wissen durch Training des Auges</li>
+<li>Zusammenbringen von Epistemologie/Wissen und Ästhetik: Didi-Huberman<ul>
+<li>[&quot;] The French philosopher Georges Didi-Huberman thinks of the atlas as something that inhabits the aesthetic paradigm of the visual and the epistemic paradigm of knowledge. By implicating both, it undermines the idea that science and art are ever completely separate. Instead, an atlas offers us the possibility of rereading the world, linking disparate pieces differently and “reediting and piecing it together again without thinking we are summarizing or exhausting it.” (10)</li>
+</ul>
+</li>
+<li>Gründe für die Verwendung der Metapher bei Crawford:<ul>
+<li>in Analogie zum geografischen Atlas als umfassende Darstellung der ganzen Welt – zugrunde liegende These: die Produktion von KI ist ein globales Unternehmen, umspannt den Erdball</li>
+<li>Kartografie und Macht – KI-Industrie ist dabei, die Welt neu zu kartieren – KI-Industrie und politische Macht – in Verbindung damit auch: neue Kartierung von Beständen des Wissens – das bedeutet auch, Wissensbestände zu privatisieren, neue Grenzen einzuziehen</li>
+<li>Crawfords Anspruch einer wissenschaftlichen <strong>Gegenkartografie</strong>: „By invoking an atlas, I’m suggesting that we need new ways to understand the empires of artificial intelligence. We need a theory of AI that accounts for the states and corporations that drive and dominate it, the extractive mining that leaves an imprint on the planet, the mass capture of data, and the profoundly unequal and increasingly exploitative labor practices that sustain it. […] **A topographical approach offers different perspectives and scales, beyond the abstract promises of artificial intelligence or the latest machine learning models. The aim is to understand AI in a wider context by walking through the many different landscapes of computation and seeing how they connect.**”</li>
+</ul>
+</li>
+<li>Interessant: Crawfords Buch enthält keinerlei Grafiken und Visualisationen. Es versteht den Begriff „Atlas” als Metapher für einen „topografischen Ansatz” auch in der sprachlichen Darstellung von Wissen. Zusammenstellung verschiedener Sichtweisen. Subjektiver Ansatz. Problem mit dem Versprechen absoluter Transparenz und Sichtbarkeit, gerade in Bezug auf die Black Boxes der KI.</div></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<style> 
+
+#animatedBackground { 
+    position: relative;
+    background-size: cover; 
+    animation: backgroundChange 15s infinite; 
+}
+
+@keyframes backgroundChange { 
+    0%, 32% {
+        background-image: url('https://images.prismic.io/verticalatlas/df60a55b-01c9-47c2-91f8-d7e15dd6b568_2015_Farm-CouncilBluffs_Gerrard_017.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080');
+        opacity: 1;
+    }
+    33%, 66% {
+        background-image: url('https://images.prismic.io/verticalatlas/d6551f3a-d924-4665-9a6b-14bdcc44e0d2_2015_Farm-CouncilBluffs_Gerrard_010.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080');
+        opacity: 1;
+    }
+    67%, 100% {
+        background-image: url('https://images.prismic.io/verticalatlas/c5572dcd-fbe1-4ebc-a227-1f8f0f891ac1_2015_Farm-CouncilBluffs_Gerrard_013.png?auto=compress,format&rect=0,0,3840,2160&w=1920&h=1080');
+        opacity: 1;
+    }
+}
+</style>
+
+<div class="container" id="animatedBackground">
+
+
+<div class="left-bottom-div fragment fade-in-then-out"><div class="left-top-div"><div class="left-top-div-text"><blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>The viewer is slowly led through the environment. A slow-motion hyperrealistic impression provides glimpses of a usually invisible place. The slowness of the images indirectly emphasizes the unimaginable amount of data that is processed here hour after hour, day after day. This is a visual representation of the robust house where the Internet lives. The heavy matter and energy that the cloud actually consists of are made tangible.<br><p style="font-size: smaller; margin-top: 20px !important;">Quelle: <a href="https://verticalatlas.net/#john-gerrard" title="Dellanoce, L., et al. (Hrsg.). (2022). Vertical Atlas. ArtEZ Press. https://verticalatlas.net/">Vertical Atlas</a></p></blockquote></div></div></div>
+
+
+
+<div class="left-bottom-div fragment fade-in-then-out"><div class="left-top-div"><div class="left-top-div-text">
+<h2>Die Materialität<br>der Cloud</h2>
+<ul><li>„hyperscale data centers”</li> 
+<li>Größe: bis zu 4km<sup>2</sup></li>
+<li>Anschlussleistungs: 1000 MW</li>
+<li>Wasserverbrauch 2023 global: 30 Mrd. Liter</li>
+<li>exponentielle Steigerung erwartet</li></ul>
+<p style="font-size: smaller; margin-top: 20px !important;">Quelle: <a href="https://www.greenpeace.de/ueber-uns/loesungen-finden/kuenstliche-intelligenz-energieverbrauch-und-umweltauswirkungen" title="Greenpeace: Künstliche Intelligenz: Energieverbrauch und Umweltauswirkungen. (2025, May 14).">Greenpeace-Report</a></p>
+</div></div></div>
+
+
+<div class="fragment fade-in-then-out" style="width: 65%; height: auto;"><img src="./Resources/images/Global-DC-Electricity-Consumption.jpg" style="border: solid #772F8B 5px; border-radius: 4px;"></div>
+
+
+<div class="left-bottom-div fragment fade-in-then-out" style="font-size: smaller"><div class="left-top-div"><div class="left-top-div-text"><blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>The carbon footprint of training a single big language model is equal to around 300,000 kg of carbon dioxide emissions. This is of the order of 125 round-trip flights between New York and Beijing (Strubell et al. 2019).</blockquote>
+
+<blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>For a linear gain in performance, an exponentially larger model is required, which can come in the form of increasing the amount of training data or the number of experiments, thus escalating computational costs, and therefore carbon emissions (Dhar 2020).</blockquote>
+
+<blockquote><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>OpenAI estimated that since 2012, the amount of compute used to train a single AI model has increased by a factor of ten every year (Crawford 2021).</blockquote></div></div></div>
+
+
+<div class="right-image-source is-dark"><a href="https://verticalatlas.net/#john-gerrard" title="John Gerrard: _FARM (COUNCIL BLUFFS, IOWA) 2015,_ 2015." target="_blank">J. Gerrard: Farm (2015)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+<aside class="notes"><h2 id="einleitende-worte-zu-gerrard">Einleitende Worte zu Gerrard</h2>
+<ul>
+<li>[?] …eine weltumspannende Infrastruktur, von der unsere Endgeräte nur die Spitze des Eisbergs sind – und wie beim Eisberg ist der größte Teil dieser Infrastruktur für die gewöhnlichen Nutzer unsichtbar</li>
+<li>Ich zeige Ihnen hier drei Fotografien aus einer digitalen Visualisation des irischen Künstlers John Gerrard. Gerrard beschäftigt sich in vielen seiner Werke damit, die materielle Infrastruktur des Internets sichtbar zu machen. In Werken der Serie „Farm” porträtiert er Rechenzentren von Google. Weil Google ihm den Zutritt zu den Rechenzentren untersagt hat, hat Gerrard das Gelände mit einem Hubschrauber überflogen. Die dabei entstandenen Aufnahmen aus der Vogelperspektive hat er zur Datengrundlage einer virtuellen Rekonstruktion genommen, die das Rechenzentrum jetzt als begehbares 3D-Modell darstellen. Das ausgestellte Ergebnis ist eine digitale Animation, die in entnervender Langsamkeit durch das Rechenzentrum führt.</li>
+<li><mark>FOLIE</mark> Gerrard schreib dazu: „The viewer is slowly led through the environment. A slow-motion hyperrealistic impression provides glimpses of a usually invisible place. The slowness of the images indirectly emphasizes the unimaginable amount of data that is processed here hour after hour, day after day. This is a visual representation of the robust house where the Internet lives. The heavy matter and energy that the cloud actually consists of are made tangible.”</li>
+</ul>
+<h2 id="die-materialität-der-cloud">Die Materialität der Cloud</h2>
+<ul>
+<li>ggf. streichen</li>
+<li><mark>FOLIE</mark> Um KI zu entwickeln und zu betreiben, werden sog. „hyperscale data centers” gebaut, die herkömmliche Rechenzentren in ihren Dimensionen weit übertreffen. Die Datenlage ist unklar, weil es keine einheitlichen Gesetze gibt, die Firmen zur Offenlegung ihres Ressourcenverbrauchs verpflichten. Die folgenden Angaben stammen aus einer Greenpeace-Studie, die eine große Zahl weiterer Studien ausgewertet hat. Auf ihrer Basis lassen sich die folgenden Angaben machen, um die Dimensionen von hyperscale data centers einzuschätzen:<ul>
+<li>Ein einziges Hyperscale-Rechenzentrum mit einer Anschlussleistung von 1.000 Megawatt verbraucht so viel Strom wie eine europäische Stadt mit 1 Million Einwohnern. Die Fläche eines solchen Zentrums kann bis zu 4 Quadratkilometern betragen und damit die Größe eines Stadtteils haben (S. 19)</li>
+<li>Zur Kühlung der Server werden riesige Wassermengen benötigt. 2023 lag der gesamte Wasserverbrauch aller KI-Rechenzentren weltweit bereits bei 30 Milliarden Litern (S. 24). In trockenen Regionen treten „hyperscale data centers” in direkte Konkurrenz mit der Bevölkerung und graben ihr im Wortsinne das Wasser ab.</li>
+<li>Es wird damit gerechnet, dass der Ressourcenverbrauch der Rechenzentren exponentiell steigen wird. Greenpeace geht in einem moderaten Szenario von einer Steigerung des anteiligen Stromverbrauchs um 16% pro Jahr aus, was eine Verdreifachung bis 2030 bedeuten würde. (s. Diagramm)</li>
+</ul>
+</li>
+</ul>
+<h2 id="gründe-für-den-energieverbrauch">Gründe für den Energieverbrauch</h2>
+<p><mark>FOLIE</mark></p>
+<ul>
+<li>[&quot;] the carbon footprint of training a single big language model is equal to around 300,000 kg of carbon dioxide emissions. This is of the order of 125 round-trip flights between New York and Beijing [@Dhar-2020; @Strubell-2019]</li>
+<li>[&quot;] For a linear gain in performance, an exponentially larger model is required, which can come in the form of increasing the amount of training data or the number of experiments, thus escalating computational costs, and therefore carbon emissions [@Dhar-2020, 425]. </li>
+<li>Datenverarbeitung als Basis für machine learning – „scraping” des Internets (Datenabruf, -aufbereitung und -speicherung) – Training (weitere Datenverarbeitung) – AI-Chips mit besonders hohem Stromverbrauch (GPU und TPU)</li>
+<li>Bedeutung von Cloud Computing und offenem Zugang zu KI – Möglichkeit für jeden, eigene Modelle zu trainieren – Integration von AI im Hintergrund beliebiger Anwendungen</li>
+<li>[?] stetiges Steigen der Parameter von LLMs – entsprechende Steigerung des Energieverbrauchs bei Datenverarbeitung und training → RED AI: Präzision wird durch exponentielle Steigerung der rechnerischen Leistung auf Kosten der Effizienz erkauft – vs. Forderungen nach GREEN AI: bessere Ergebnisse ohne rechnerische Zusatzkosten</div></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-iframe="https://anatomyof.ai/index.html" data-background-interactive"="true" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container fragment" style="background-color: transparent"><div class="left-bottom-div" style="z-index: 2;"><div class="left-top-div"><div class="left-top-div-text"><blockquote style="font-size: smaller; line-height: 1.3;"><i class="fa fa-quote-left  fa-2x fa-pull-left" aria-hidden="true"></i>With each interaction, Alexa is training to hear better, to interpret more precisely, […] and to build a more complete model of their preferences, habits and desires. What is required to make this possible? <strong>Put simply: each small moment of convenience – be it answering a question, turning on a light, or playing a song – requires a vast planetary network, fueled by the extraction of non-renewable materials, labor, and data.</strong> The scale of resources required is many magnitudes greater than the energy and labor it would take a human to operate a household appliance or flick a switch. <strong>A full accounting for these costs is almost impossible,</strong> but it is increasingly important that we grasp the scale and scope if we are to understand and govern the technical infrastructures that thread through our lives.</blockquote></div></div>
+</div>
+<div class="right-image-source is-dark"><a href="https://anatomyof.ai/index.html" title="Crawford/Joler: Anatomy of AI (2018)" target="_blank">Crawford/Joler: Anatomy (2018)<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<style> 
+#animatedBackgroundYoung { 
+    position: relative;
+    background-size: cover; 
+    animation: backgroundChangeYoung 15s infinite; 
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes backgroundChangeYoung { 
+    0%, 24% {
+        background-image: url('https://images.prismic.io/verticalatlas/d7cd6f37-7b15-4e62-a52f-101afad929c7_rockwood+lithium+mine+04.jpg?auto=compress,format&rect=0,0,1920,1280&w=1920&h=1280');
+        opacity: 1;
+    }
+    25%, 50% {
+        background-image: url('https://images.prismic.io/verticalatlas/c8b7780a-4c3c-4b36-a703-8833ce4d36d1_bolivia+lithium+mine+01+%281%29.jpg?auto=compress,format&rect=2,0,5155,3437&w=1920&h=1280');
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out;
+    }
+    51%, 75% {
+        background-image: url('https://images.prismic.io/verticalatlas/58295c14-b369-47ef-a36f-e74679d11864_rockwood+lithium+mine+35+%281%29.jpg?auto=compress,format&rect=60,0,1801,1013&w=1920&h=1080');
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out;
+    }
+    76%, 100% {
+        background-image: url('https://images.prismic.io/verticalatlas/a1a03c3f-6a16-4027-8abd-d243219c3549_bolivia+lithium+mine+04.jpg?auto=compress,format&rect=60,0,1801,1013&w=1920&h=1080');
+        opacity: 1;
+        transition: opacity 1.5s ease-in-out;
+    }
+}
+</style>
+
+<div class="container" id="animatedBackgroundYoung">
+
+
+<div class="left-bottom-div fragment fade-in-then-out"><div class="left-top-div"><div class="left-top-div-text"><h2>Unknown Fields<br>Breast-Milk of the Volcano</h2><blockquote><i class="fa fa-quote-right" aria-hidden="true"></i><em>Tales from the Dark Side of the City</em> is a book series that forms an <strong>atlas</strong> to the territories and stories of a city that stretches across the entire planet, a city that sits <strong>between documentary and fiction</strong>, a city of dislocated sites, of drone footage and hidden-camera investigations, of interviews and speculative narratives,  of toxic objects and distributed matter from distant grounds. They are a collection of tales from the constellation of elsewheres that are conjured into being by the city’s wants and needs, fears and dreams.<br><p style="font-size: smaller; margin-top: 20px !important;">Quelle: <a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano" title="Dellanoce, L., et al. (Hrsg.). (2022). Vertical Atlas. ArtEZ Press. https://verticalatlas.net/">Vertical Atlas</a></p></blockquote></div></div></div>
+
+
+<div class="left-bottom-div fragment fade-in-then-out"><div class="left-top-div"><div class="left-top-div-text"><h2>Unknown Fields<br>Breast-Milk of the Volcano</h2><blockquote><i class="fa fa-quote-right" aria-hidden="true"></i>Around 50 millilitres of Tunupa’s tears and breast milk are poured into each of our phones. […] These are the first things we reach for as we wake, the last things we look at before we sleep. We keep them close, a part of us, warm to the touch. But if we look closely, reflected in the polished glass of our screens is the crystal white expanse of an ancient salt lake. […] We power our future with the breast milk of volcanoes.<br><p style="font-size: smaller; margin-top: 20px !important;">Quelle: <a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano" title="Dellanoce, L., et al. (Hrsg.). (2022). Vertical Atlas. ArtEZ Press. https://verticalatlas.net/">Vertical Atlas</a></p></blockquote></div></div></div>
+
+</div>
+
+
+<div class="right-image-source is-dark"><a href="https://verticalatlas.net/#the-breast-milk-of-the-volcano" target="_blank">Unknown Fields (2016)<i class="fas fa-external-link-alt link-icon"></i></a></div>
+
+
+<aside class="notes"><h2 id="breast-milk-of-the-volcano">Breast-Milk of the Volcano</h2>
+<ul>
+<li>Ich möchte nun noch zwei künstlerische Projekte ansprechen, die sich mit der Materialität und Nachhaltigkeit von KI auseinandersetzen und etwas positivere Perspektiven vertreten. Gleichzeitig handelt es sich um zwei Projekte, die mit Sprache und Kreativität umgehen.</li>
+<li>Mein erstes Beispiel ist das Kollektiv „Unknown Fields”. Unter diesem Namen arbeiten der Design-Architekt Liam Young und die Schriftstellerin Kate Davies zusammen. Sie bringen Bücher unter dem Titel „Tales from the Dark Side of the City” heraus, die investigative und zugleich fiktionale Züge aufweisen. Sie beschreiben ihre Buchserie wie folgt: <mark>FOLIE</mark><ul>
+<li>[&quot;] <em>Tales from the Dark Side of the City</em> is a book series that forms an <strong>atlas</strong> to the territories and stories of a city that stretches across the entire planet, a city that sits <strong>between documentary and fiction</strong>, a city of dislocated sites, of drone footage and hidden-camera investigations, of interviews and speculative narratives, of toxic objects and distributed matter from distant grounds. They are a collection of tales from the constellation of elsewheres that are conjured into being by the city’s wants and needs, fears and dreams.</li>
+</ul>
+</li>
+<li>In einem ihrer Bücher erkunden sie die Lithium-Produktion, die für mobile digitale Geräte von der Smartwatch bis zum E-Auto wesentlich ist. Lithium ist ein unabdingbarer Bestandteil aller Akkus und damit auch fundamental für die Energiewende. Lithium ist ein unbeständiges Element und kommt daher nicht in Reinform vor. Es ist u.a. in den großen Salzseen und Salzwüsten Lateinamerikas gebunden, wo es in riesigen Produktionsstätten abgebaut wird. In <em>The Breast Milk of the Volcano</em> erforscht Unknown Fields eine bolivianische Abbaustätte von Lithium und überblendet die industrielle Ausbeutung der Erde im Dienste einer elektrifizierten Zukunft mit den uralten Mythen der indigenen Bevölkerung. Beigegebene Fotografien, die Sie hier im Durchlauf sehen, unterstreichen den unwirklichen Charakter der Landschaft und des Abbau-Industrie.</li>
+<li>Der Titel „The Breast Milk of the Volcano” spielt auf einen indigenen Mythos an, der die Existenz der weißen Salzseen erklärt. Ich fasse zusammen: In der weiten bolivianischen Hochebene wandelten einst Riesen auf der Erde, darunter die schöne Tunupa. Tunupa verliebte sich in den starken jungen Cuzco, sie gebar ihm einen Sohn, Calicatin. Doch schon bald verliebte sich ihr Geliebter in eine andere und sie liefen gemeinsam davon. Die Götter, die der Täuschung und des Verrats der Riesen überdrüssig waren, beschlossen, sie alle zu bestrafen und versteinerten sie zu Bergen. Tunupa, der Vulkan, begann zu weinen und spuckte Asche und Gestein aus den Tiefen des Planeten. Tränen flossen über ihre Wangen, und Muttermilch floss an ihrem Körper hinab und sammelte sich zu ihren Füßen. Die Salzseen der Hochebene sind also Tränen und Muttermilch einer trauernden Gigantin.</li>
+<li>Die beiden Künstler:innen überblenden nun diese mythische Ursprungsgeschichte der Lithium-Vorkommen mit der heutigen Ausbeutung. Sie beschreiben das industrielle Abpumpen der Salzlake als neuerliche Eruption des Vulkans. Wie man auf den Fotos sieht, wird die Salzlake in riesigen Becken gesammelt. Natürliche Verdunstung führt zu einer Steigerung des Lithium-Anteils und zu einer grellen Verfärbung des Wassers. Wenn der Lithium-Anteil 6% erreicht hat, wird die Lake in eine industrielle Raffinierie gepumpt.</li>
+<li>Die literarische Pointe dieser Überblendung möchte ich deutlich machen, indem ich direkt aus dem Buch zitiere:<ul>
+<li>[&quot;] Around 50 milliliters of Tunupa’s tears and breast milk are poured into each of our phones. […] These are the first things we reach for as we wake, the last things we look at before we sleep. We keep them close, a part of us, warm to the touch. But if we look closely, reflected in the polished glass of our screens is the crystal white expanse of an ancient salt lake. […] We power our future with the breast milk of volcanoes.</li>
+</ul>
+</li>
+<li>→ Sensibilisierung, Verfremdung, globale und überzeitliche Zusammenhänge vs. kapitalistisches „Produkt”, das von seinen Entstehungsbedingungen gekappt wurde</div></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container" style="background-color: #F5E0D6; background-image: url('https://posts.decontextualize.com/material-paratexts/133131b91dc4dfcaaf40a3b222e21729.jpg'); background-size: contain; background-position: right; background-repeat: no-repeat;">
+
+<div class="left-bottom-div"><div class="left-top-div">
+
+<div class="left-top-div-text"><h2>Allison Parrish<br>Solar Powered Dawn Poems</h2>
+<blockquote class="fragment fade-in" style="margin-top: 40px">
+	For rage to be numbered,<br>
+	And whilst love mounts her on earth.  <br>
+	Still wander, weeping, wishing for the fair,  <br>
+	Lest the cock crow reveillie,  <br>
+	Thou too, Phoebus,  <br>
+	Wake up! wake up!  <br>
+	as if shedding on me a light that sorowe  <br>
+	So thou wilt have it so.<br></blockquote></div></div></div>
+
+
+<aside class="notes"><h2 id="parrish-solar-poems">Parrish: Solar Poems</h2>
+<ul>
+<li>Als letztes Beispiel möchte ich ein technisches Experiment der Computerwissenschaftlerin und Dichterin Allison Parrish nennen. Parrish hat in den letzten Jahren sowohl Programmcode als auch Dichtungen veröffentlicht, die mit KI und ihrem Sprachverständnis arbeiten. Zu ihrer Veröffentlichungen zählen Texte, die aus der maschinellen Analyse literarischer Korpora wie „Projekt Gutenberg” hervorgegangen sind. Ebenso hat sie Gedichte veröffentlicht, die auf der Manipulation von Large Language Models beruhen. Es handelt sich dabei um experimentelle Texte, die auf sprachlich-sinnliche Weise die Bedingungen generativer Künstlicher Intelligenz erkunden. Wie unterscheidet sich maschineller Sprachgebrauch von menschlichem? Was können wir von ihm über Dichtung und Sprache lernen?</li>
+<li>Dabei hat Parrish häufig mit den großen Sprachmodellen gearbeitet, die online kostenlos zugänglich sind, aber (wie ich beschrieben habe) enorm ressourcenintensiv hergestellt werden. Weil sich Parrish aber auch für die materiellen Bedingungen der Herstellung von KI interessiert (= den materiellen Paratext computergenerierter Literatur), hat sie ausprobiert, ob sich nicht auch ein dezidiert <em>kleines</em> Sprachmodell für die Generation von literarischen Texten herstellen lässt. Dieses Projekt heißt <em>Solar Powered Dawn Poems</em>. Weil es noch nicht beendet und veröffentlicht ist, kann ich nur Parrishs Beschreibung zitieren und hoffen, dass der poetische Charakter des Experiments sich Ihnen erschließt.</li>
+<li>[&quot;] Dieses Projekt besteht aus einem radikal kleinen Sprachmodell, das auf einem stromsparenden Mikrocontroller trainiert wird, der nur dann funktioniert, wenn er ausreichend Energie von Solarpanels bezieht. <strong>Das Sprachmodell wird auf einem Korpus von Morgenliedern trainiert, einer Gattung von Gedichten, in denen Liebende die bevorstehende Morgendämmerung beklagen.</strong> Das System generiert neue Beispiele für Gedichte dieses Genres – wiederum nur mit Sonnenenergie. [...] Die Materialkosten für das System belaufen sich auf weniger als 60 US-Dollar, und es läuft ausschließlich mit Solarenergie: keine Batterien oder Steckdosen sind erforderlich. Das System verbraucht im Durchschnitt etwa ein Achtel Watt – etwa 0,04 % des Stromverbrauchs eines typischen Grafikprozessors. [...] Mein Ziel bei diesem Projekt ist es, zu zeigen, wie es ist, wirklich über den materiellen Paratext von computergeneriertem Text nachzudenken. Wie sieht es aus, wenn man über jedes verbrauchte Watt Rechenschaft ablegen muss, anstatt fossile Brennstoffe und Dollarnoten in die &quot;Cloud&quot; zu speisen? Wie sieht es aus, wenn man über jedes Wort in seinem Korpus Rechenschaft ablegen muss, anstatt sich munter durch Terabytes von Wörtern zu wühlen, die man aus dem Internet gestohlen hat? Was kann man mit dieser Art von Sorgfalt erreichen?</li>
+<li>[&quot;] For rage to be numbered,<br>  And whilst love mounts her on earth.<br>  Still wander, weeping, wishing for the fair,<br>  Lest the cock crow reveillie,<br>  Thou too, Phoebus,<br>  Wake up! wake up!<br>  as if shedding on me a light that sorowe<br>  So thou wilt have it so.</li>
+<li><a href="https://posts.decontextualize.com/material-paratexts/133131b91dc4dfcaaf40a3b222e21729.jpg">https://posts.decontextualize.com/material-paratexts/133131b91dc4dfcaaf40a3b222e21729.jpg</a></div></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<svg width="500" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definiere einen Pfad -->
+  <path id="myPath" d="M10,190 Q150,15 190,90 S570,90" fill="none" stroke="black"></path>
+
+  <!-- Text auf dem Pfad platzieren -->
+  <text font-size="20" fill="blue">
+    <textPath href="#myPath">
+      Text, der entlang eines benutzerdefinierten Pfads verläuft.
+    </textPath>
+  </text>
+</svg>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="\*notes:\*" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<style>
+        .trapez {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #4CAF50;
+            clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); /* Definiere die trapezförmige Form */
+            overflow: hidden; /* Verhindert, dass der Text außerhalb des divs angezeigt wird */
+            padding: 20px; /* Innenabstand für den Text */
+            color: white;
+            font-size: 1.2em;
+        }
+
+        .trapez p {
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0; /* Damit der Text über die gesamte Breite geht */
+            text-align: left; /* Um einen gleichmäßigen Umbruch zu erreichen */
+        }
+</style>
+
+<div class="trapez">
+    <p>Hier ist ein Beispieltext, der in einem trapezförmigen Block untergebracht ist. Der Umbruch erfolgt an der schrägen Linie. Du kannst sehen, dass der Text an die Form des DIVs angepasst wird.</p>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/blockquote.js"></script>
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/titles.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
