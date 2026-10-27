@@ -63,10 +63,10 @@
   height: 100%;
   display: flex;                    /* neu */
   flex-direction: column;           /* neu: Titel oben, Bild darunter */
-  background: #f0eaf4;
-  border-left: 10px solid var(--vl-brand-50);
+  background-color: #f0eaf450;
+  /*border-left: 10px solid var(--vl-brand-50);*/
   overflow: hidden;
-  border-radius: var(--vl-radius-md);
+  /*border-radius: var(--vl-radius-md);*/
 }
 
 .diagram .img-container {
@@ -83,6 +83,17 @@
   width: 100%;
   height: 100%;
   object-fit: contain !important;              /* Seitenverhältnis erhalten */
+}
+.diagram figure .mermaid,
+.diagram figure .block-language-mermaid,
+.diagram figure svg {
+  width: auto !important;
+  height: 90% !important;
+  max-width: 100% !important;
+  max-height: 90% !important;
+}
+.diagram figure svg {
+  display: block;
 }
  
 /* Helle Diagonale – breitere Fläche im Hintergrund links */
