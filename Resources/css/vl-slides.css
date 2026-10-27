@@ -74,9 +74,29 @@
   min-height: 0;                    /* neu: verhindert Overflow in Flex */
 }
 
+/* Figure als Flex-Spalte: Überschrift nimmt ihre natürliche Höhe,
+   das Diagramm bekommt den Rest. Verhindert Überlauf ohne Prozent-Raten. */
 .diagram figure {
-  height: 100%;                     /* neu: füllt img-container */
+  height: 100%;                     /* füllt img-container */
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* .img-wrapper setzt padding-bottom + gap; beides würde hier
+     zusätzlich zur height:100% dazukommen und die Folie überlaufen lassen. */
+  box-sizing: border-box;
+  padding-bottom: 0 !important;
+  gap: 0 !important;
+}
+
+/* Überschrift darf nicht schrumpfen und keine Ränder nach oben/unten setzen */
+.diagram figure > h1,
+.diagram figure > h2,
+.diagram figure > h3,
+.diagram figure > h4 {
+  flex: 0 0 auto;
+  margin-top: 0 !important;
+  margin-bottom: 0.3em !important;
 }
 
 .diagram img {
@@ -85,11 +105,14 @@
   object-fit: contain !important;              /* Seitenverhältnis erhalten */
 }
 /* Mermaid-Container muss die volle Fläche bekommen, sonst schrumpft er
-   auf die Intrinsic-Breite des SVG (width:auto) und das Diagramm bleibt klein. */
+   auf die Intrinsic-Breite des SVG (width:auto) und das Diagramm bleibt klein.
+   flex:1 + min-height:0 = restlicher Platz nach der Überschrift. */
 .diagram figure .mermaid,
 .diagram figure .block-language-mermaid {
   width: 100% !important;
-  height: 100% !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
