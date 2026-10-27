@@ -84,16 +84,26 @@
   height: 100%;
   object-fit: contain !important;              /* Seitenverhältnis erhalten */
 }
+/* Mermaid-Container muss die volle Fläche bekommen, sonst schrumpft er
+   auf die Intrinsic-Breite des SVG (width:auto) und das Diagramm bleibt klein. */
 .diagram figure .mermaid,
-.diagram figure .block-language-mermaid,
-.diagram figure svg {
-  width: auto !important;
-  height: 90% !important;
-  max-width: 100% !important;
-  max-height: 90% !important;
+.diagram figure .block-language-mermaid {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
 }
-.diagram figure svg {
-  display: block;
+/* SVG füllt den Container; preserveAspectRatio sorgt für contain-Verhalten. */
+.diagram figure .mermaid svg,
+.diagram figure .block-language-mermaid svg,
+.diagram figure > svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
 }
  
 /* Helle Diagonale – breitere Fläche im Hintergrund links */
