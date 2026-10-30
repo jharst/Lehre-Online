@@ -324,13 +324,13 @@ ul.embedded-quote-block li:last-child {
   width: 100% !important;
   height: auto;
   display: block;
-  font-size: 12px;
+  font-family: var(--vl-font-body) !important;
 }
 
 .reveal .mermaid svg .edgeLabel {   
   background-color: rgba(0,0,0,0) !important;   
   color: var(--r-main-color) !important;   
-  font-size: smaller;
+  font-family: var(--vl-font-body) !important;
 }
 
 /* ---% SLIDE LAYOUTS %--- */

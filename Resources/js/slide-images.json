@@ -1555,5 +1555,21 @@
       "Film",
       "Narziss"
     ]
+  },
+  "klenner-olimpia": {
+    "url": "https://klenner-otto-hoffmann.gla.ac.uk/wp-content/gallery/der-sandman/otto-4-14.jpg",
+    "author": [
+      "Stephan Klenner-Otto"
+    ],
+    "year": 2008,
+    "src-label": "Klenner-Otto: Olimpia (2008)",
+    "src-title": "Stephan Klenner-Otto: Am Fenster. Illustration zu Hoffmanns „Der Sandmann“.",
+    "src-href": "https://klenner-otto-hoffmann.gla.ac.uk",
+    "src-position": "10% 50%",
+    "src-size": "100%",
+    "keywords": [
+      "Hoffmann",
+      "Olimpia"
+    ]
   }
 }
