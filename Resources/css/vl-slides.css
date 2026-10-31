@@ -298,20 +298,49 @@ ul.embedded-quote-block li:last-child {
   margin-bottom: 0;           /* kein überschüssiger Abstand nach dem letzten */
 }
 
-/* Icon schwimmt links, Text umfließt es */
+/* Icon im Textfluss: kein Float, damit das Icon nicht in den Text läuft */
 .embedded-quote-block .float-icon {
-  float: left;
+  float: none;
+  display: inline-block;
+  vertical-align: -0.05em;
   color: #772F8B;
-  font-size: 0.9em;        /* Icon kleiner als Text */
-  margin-right: 0.4em;     /* Luft zwischen Icon und Text */
-  margin-top: 0.15em;      /* vertikale Feinkorrektur zur ersten Textzeile */
-  shape-outside: margin-box; /* Text schmiegt sich an Icon-Kontur */
+  font-size: 0.85em;
+  margin-right: 0.45em;
+  line-height: 1;
 }
 
 /* Wichtig: li braucht overflow:hidden, sonst "bricht" der Float aus */
 .embedded-quote-block li {
   overflow: hidden;
   list-style: none;
+}
+
+/* Regel für [>]-Listen: nur das markierte <li> bekommt ein Icon statt Bullet.
+   Die übrigen <li> der Liste behalten ihren normalen Bullet. */
+ul.marker-bullet-block {
+  /* kein list-style: none – Bullets bleiben für die nicht markierten <li> */
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+ul.marker-bullet-block li.marker-bullet {
+  list-style: none;           /* nur hier verschwindet der Bullet */
+  position: relative;         /* Bezug für das absolut positionierte Icon */
+}
+
+ul.marker-bullet-block li.marker-bullet .fa-li {
+  position: absolute;
+  left: -1em;              /* Icon dorthin, wo sonst der Bullet steht */
+  width: 1.2em;
+  top: 0.22em;                /* optische Korrektur zur ersten Textzeile */
+  text-align: left;
+  line-height: 1;
+  color: #772F8B;
+}
+
+ul.marker-bullet-block li.marker-bullet .source {
+  margin: 0.15em 0 0;
+  line-height: 1.25;
 }
 
 .hidden-tag {

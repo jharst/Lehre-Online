@@ -1,8 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('ul').forEach(ul => {
+        if (ul.innerHTML.includes('[>]')) {
+            ul.classList.add('embedded-quote-block');
+            ul.querySelectorAll('li').forEach(li => {
+                li.innerHTML = li.innerHTML.replace(
+                    /\[\>\]|\[&gt;\]/g,
+                    '<i class="fa-solid fa-hand-point-right float-icon"></i>'
+                );
+                li.innerHTML = li.innerHTML.replace(/(?<!")(#[\p{L}\p{M}\p{N}_]+\b)(?!")/gu, '');
+            });
+        };
+        
         //Bearbeite alle ul-Elemente, die ["] beinhalten, füge ihnen die Klassen 'fa-ul' und 'embedded-quote-block' hinzu
         //und lösche alle Tags (aber nicht style-Anweisungen wie 'color: #772F8B75')
-        
         if (ul.innerHTML.includes('["]')) {
             // ul.classList.add('fa-ul');
             ul.classList.add('embedded-quote-block');
