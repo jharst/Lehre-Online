@@ -109,7 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
           if (merged['src-label']) sourceEl.childNodes[0].textContent = merged['src-label'];
         }
 
-        // 7. data-css-* automatisch als CSS-Properties setzen
+        // 7. Seminartitel und Untertitel überschreiben (Frontmatter bleibt Standard)
+        const titleLeft = slide.querySelector('.slide-title-left');
+        const seminar = slide.dataset.srcSeminar || merged['src-seminar'];
+        const subtitle = slide.dataset.srcSubtitle || merged['src-subtitle'];
+        if (titleLeft && (seminar || subtitle)) {
+          titleLeft.innerHTML = [seminar, subtitle].filter(Boolean).join('<br>');
+        }
+
+        // 8. data-css-* automatisch als CSS-Properties setzen
         Object.entries(slide.dataset).forEach(([key, value]) => {
           console.log('dataset key:', key, '→ starts with css?', key.startsWith('css'));
           if (key.startsWith('css')) {

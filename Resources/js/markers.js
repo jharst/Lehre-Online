@@ -6,8 +6,8 @@
 // Alle anderen <li> behalten ihren normalen Bullet und ihr Standard-Layout.
 const MARKERS = {
     '["]': { mode: 'inline', icon: 'fa-quote-right' },
-    '[>]': { mode: 'bullet', icon: 'fa-angle-right fa-xs' },
-    '[!]': { mode: 'bullet', icon: 'fa-exclamation fa-xs' }
+    '[>]': { mode: 'bullet', icon: 'fa-angle-right fa-xs', style: 'font-weight: 600;' },
+    '[!]': { mode: 'bullet', icon: 'fa-exclamation fa-xs', style: 'font-weight: bold;' }
 };
 
 const TAG_RE = /(?<!")(#[\p{L}\p{M}\p{N}_]+\b)(?!")/gu;
@@ -47,7 +47,7 @@ function replaceList(ul) {
             node.nodeValue = text.replace(/^\s+/, '');
             const bullet = document.createElement('span');
             bullet.className = 'fa-li';
-            bullet.innerHTML = `<i class="fa-solid ${icon}"></i>`;
+            bullet.innerHTML = `<i class="fa-solid ${icon}" style="font-weight: 900;"></i>`;
             li.prepend(bullet);
             li.classList.add('marker-bullet');
         }
