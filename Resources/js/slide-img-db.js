@@ -112,9 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // 7. Veranstaltungstitel (maintitle) und Untertitel überschreiben (Frontmatter bleibt Standard)
         //    maintitle ersetzt die frühere seminar-Variable im Titelfolien-Template;
         //    seminar wird nur noch als Fallback unterstützt (ältere Aufrufe).
-        //    Leere Felder dürfen keinen Output erzeugen: fehlt ein Wert, wird das
-        //    Element geleert bzw. ausgeblendet (Slides Extended lässt sonst den
-        //    Platzhalter "<% subtitle %>" als Text stehen).
+        //    Wichtig: Nur überschreiben, wenn ein Wert per data-src-* / JSON-DB vorliegt.
+        //    Sonst bleibt stehen, was Slides Extended aus dem Frontmatter eingesetzt hat.
+        //    Ausgeblendet werden nur echte Platzhalter-Reste ("<% subtitle %>")
+        //    oder wirklich leere Elemente.
         const titleLeft = slide.querySelector('.slide-title-left');
         const maintitle = slide.dataset.srcMaintitle || merged['src-maintitle']
           || slide.dataset.srcSeminar || merged['src-seminar'];
@@ -129,14 +130,15 @@ document.addEventListener('DOMContentLoaded', () => {
           if (subEl && outer) {
             // Span-Struktur (VL Titelfolie js): Schriftgrößen bleiben erhalten
             if (!isPlaceholder(maintitle)) outer.childNodes[0].textContent = maintitle;
-            if (!isPlaceholder(subtitle)) {
-              subEl.innerHTML = subtitle;
-              subEl.style.display = '';
-            } else {
+            if (!isPlaceholder(subtitle)) subEl.innerHTML = subtitle;
+            // Erst nach dem Überschreiben entscheiden, ob ausgeblendet wird
+            if (isPlaceholder(subEl.textContent)) {
               subEl.innerHTML = '';
               subEl.style.display = 'none';
+            } else {
+              subEl.style.display = '';
             }
-          } else if (maintitle || subtitle) {
+          } else if (!isPlaceholder(maintitle) || !isPlaceholder(subtitle)) {
             // Fallback für Templates ohne Span-Struktur
             titleLeft.innerHTML = [maintitle, subtitle].filter(v => !isPlaceholder(v)).join('<br>');
           }
@@ -144,12 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 7b. Platzhalter-Reste entfernen, die Slides Extended nicht ersetzt hat
         //     (z.B. "<% subtitle %>", wenn das Feld im Frontmatter fehlt)
-        slide.querySelectorAll('.slide-title-sub').forEach(el => {
-          if (isPlaceholder(el.textContent)) {
-            el.innerHTML = '';
-            el.style.display = 'none';
-          }
-        });
         slide.querySelectorAll('.slide-subtitle-left span, .slide-title-left span').forEach(el => {
           if (/^<%[^%]*%>$/.test(el.textContent.trim())) {
             el.textContent = '';
