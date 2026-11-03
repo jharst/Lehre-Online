@@ -142,6 +142,21 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         }
 
+        // 7b. Platzhalter-Reste entfernen, die Slides Extended nicht ersetzt hat
+        //     (z.B. "<% subtitle %>", wenn das Feld im Frontmatter fehlt)
+        slide.querySelectorAll('.slide-title-sub').forEach(el => {
+          if (isPlaceholder(el.textContent)) {
+            el.innerHTML = '';
+            el.style.display = 'none';
+          }
+        });
+        slide.querySelectorAll('.slide-subtitle-left span, .slide-title-left span').forEach(el => {
+          if (/^<%[^%]*%>$/.test(el.textContent.trim())) {
+            el.textContent = '';
+            el.style.display = 'none';
+          }
+        });
+
         // 8. data-css-* automatisch als CSS-Properties setzen
         Object.entries(slide.dataset).forEach(([key, value]) => {
           console.log('dataset key:', key, '→ starts with css?', key.startsWith('css'));
