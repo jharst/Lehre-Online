@@ -109,12 +109,37 @@ document.addEventListener('DOMContentLoaded', () => {
           if (merged['src-label']) sourceEl.childNodes[0].textContent = merged['src-label'];
         }
 
-        // 7. Seminartitel und Untertitel überschreiben (Frontmatter bleibt Standard)
+        // 7. Veranstaltungstitel (maintitle) und Untertitel überschreiben (Frontmatter bleibt Standard)
+        //    maintitle ersetzt die frühere seminar-Variable im Titelfolien-Template;
+        //    seminar wird nur noch als Fallback unterstützt (ältere Aufrufe).
+        //    Leere Felder dürfen keinen Output erzeugen: fehlt ein Wert, wird das
+        //    Element geleert bzw. ausgeblendet (Slides Extended lässt sonst den
+        //    Platzhalter "<% subtitle %>" als Text stehen).
         const titleLeft = slide.querySelector('.slide-title-left');
-        const seminar = slide.dataset.srcSeminar || merged['src-seminar'];
+        const maintitle = slide.dataset.srcMaintitle || merged['src-maintitle']
+          || slide.dataset.srcSeminar || merged['src-seminar'];
         const subtitle = slide.dataset.srcSubtitle || merged['src-subtitle'];
-        if (titleLeft && (seminar || subtitle)) {
-          titleLeft.innerHTML = [seminar, subtitle].filter(Boolean).join('<br>');
+
+        // Platzhalter-Reste erkennen (Slides Extended ersetzt fehlende Felder nicht)
+        const isPlaceholder = (s) => !s || !s.trim() || /^<%[^%]*%>$/.test(s.trim());
+
+        if (titleLeft) {
+          const subEl = titleLeft.querySelector('.slide-title-sub');
+          const outer = titleLeft.querySelector('span');
+          if (subEl && outer) {
+            // Span-Struktur (VL Titelfolie js): Schriftgrößen bleiben erhalten
+            if (!isPlaceholder(maintitle)) outer.childNodes[0].textContent = maintitle;
+            if (!isPlaceholder(subtitle)) {
+              subEl.innerHTML = subtitle;
+              subEl.style.display = '';
+            } else {
+              subEl.innerHTML = '';
+              subEl.style.display = 'none';
+            }
+          } else if (maintitle || subtitle) {
+            // Fallback für Templates ohne Span-Struktur
+            titleLeft.innerHTML = [maintitle, subtitle].filter(v => !isPlaceholder(v)).join('<br>');
+          }
         }
 
         // 8. data-css-* automatisch als CSS-Properties setzen

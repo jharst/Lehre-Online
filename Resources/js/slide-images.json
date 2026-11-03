@@ -1,4 +1,20 @@
 {
+  "ingres-paolo-francesca": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Gianciotto_Discovers_Paolo_and_Francesca_Jean_Auguste_Dominique_Ingres.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Paolo_and_Francesca_(Ingres)",
+    "src-title": "J.A.D. Ingres: Gianciotto entdeckt Paolo und Francesca (1819), Musée des beaux arts, Angers",
+    "src-label": "Abbildungsnachweis",
+    "src-size": "cover",
+    "src-position": "left",
+    "year": 1819,
+    "author": [
+      "Jean Auguste Dominique Ingres"
+    ],
+    "keywords": [
+      "Dante",
+      "Paolo und Francesca"
+    ]
+  },
   "mattotti": {
     "url": "https://i.pinimg.com/564x/ea/ff/cb/eaffcb1ebca1897991f576030e239a81.jpg",
     "src-href": null,
@@ -769,6 +785,114 @@
       "Ludwig XIV."
     ],
     "keywords": []
+  },
+  "patel-versailles": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Chateau_de_Versailles_1668_Pierre_Patel.jpg",
+    "src-href": "https://fr.wikipedia.org/wiki/Château_de_Versailles",
+    "src-title": "Pierre Patel: Vue du château et des jardins de Versailles, prise de l'avenue de Paris, 1668, Öl auf Leinwand, Chateau de Versailles.",
+    "src-label": "Patel: Le château de Versailles (1668).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1668,
+    "author": [
+      "Pierre Patel"
+    ],
+    "keywords": [
+      "Versailles",
+      "Ludwig XIV.",
+      "Absolutismus"
+    ]
+  },
+  "plaat-rauch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Oedipus.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Tragödie#/media/Datei:Oedipus.jpg",
+    "src-title": "Louis Bouwmeester als geblendeter Ödipus. Fotografie, 1896.",
+    "src-label": "Louis Bouwmeester als geblendeter Ödipus (1896)",
+    "src-size": "cover",
+    "src-position": "right",
+    "year": 1896,
+    "author": [
+      "Louis Bouwmeester"
+    ],
+    "keywords": [
+      "Ödipus",
+      "Tragödie"
+    ]
+  },
+  "waterhouse-decameron": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Waterhouse_decameron.jpg",
+    "src-href": null,
+    "src-title": "John William Waterhouse: A Tale from the Decameron. Öl auf Leinwand, Lady Lever Art Gallery, Port Sunlight, 1916.",
+    "src-label": "J.W. Waterhouse: A Tale from the Decameron (1916).",
+    "src-size": "cover",
+    "src-position": "center",
+    "year": 1916,
+    "author": [
+      "John William Waterhouse"
+    ],
+    "keywords": [
+      "Decameron",
+      "Boccaccio"
+    ]
+  },
+  "werther-playmobil": {
+    "url": "./Resources/images/Werther-Playmobil.jpg",
+    "src-href": null,
+    "src-title": null,
+    "src-label": null,
+    "src-size": "contain",
+    "src-position": "right",
+    "year": null,
+    "author": [],
+    "keywords": [
+      "Werther"
+    ]
+  },
+  "courbet-casseurs": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Gustave_Courbet_-_The_Stonebreakers_-_WGA05457.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/The_Stone_Breakers",
+    "src-title": "Gustave Courbet: Les casseurs de pierres, ehem. Gemäldegalerie Alter Meister, Dresden, Öl auf Leinwand, 1849 (165 x 257 cm).",
+    "src-label": "Courbet: Les Casseurs de pierres (1849).",
+    "src-size": "contain",
+    "src-position": "center",
+    "year": 1849,
+    "author": [
+      "Gustave Courbet"
+    ],
+    "keywords": [
+      "Realismus"
+    ]
+  },
+  "menzel-eisenwalzwerk": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Adolph_Menzel_-_Eisenwalzwerk_-_Google_Art_Project.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Eisenwalzwerk_(Moderne_Cyklopen)",
+    "src-title": "Adolf Menzel: Das Eisenwalzwerk (Moderne Cyklopen), Berlin, Alte Nationalgalerie, Öl auf Leinwand, 158 x 254cm, 1875.",
+    "src-label": "Menzel: Das Eisenwalzwerk (1875).",
+    "src-size": "contain",
+    "src-position": "center",
+    "year": 1875,
+    "author": [
+      "Adolf Menzel"
+    ],
+    "keywords": [
+      "Realismus"
+    ]
+  },
+  "frida-kahlo": {
+    "url": "https://uploads4.wikiart.org/images/magdalena-carmen-frieda-kahlo-y-calderón-de-rivera/the-two-fridas-1939.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/The_Two_Fridas#/media/File:The_Two_Fridas.jpg",
+    "src-title": "Frida Kahlo: Las dos Fridas, Öl auf Leinwand, 173.5 x 173cm, 1939, Mexico City, Museo de Arte Moderno.",
+    "src-label": "F. Kahlo: Las dos Fridas (1939).",
+    "src-size": "cover",
+    "src-position": "top",
+    "year": 1939,
+    "author": [
+      "Frida Kahlo"
+    ],
+    "keywords": [
+      "Surrealismus",
+      "Magischer Realismus"
+    ]
   },
   "alberti-zentralperspektive": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Della_Pittura_Alberti_perspective_pillars_on_grid.jpg",
@@ -1565,8 +1689,8 @@
     "src-label": "Klenner-Otto: Olimpia (2008)",
     "src-title": "Stephan Klenner-Otto: Am Fenster. Illustration zu Hoffmanns „Der Sandmann“.",
     "src-href": "https://klenner-otto-hoffmann.gla.ac.uk",
-    "src-position": "10% 50%",
-    "src-size": "100%",
+    "src-position": "-10% 40%",
+    "src-size": "120%",
     "keywords": [
       "Hoffmann",
       "Olimpia"
