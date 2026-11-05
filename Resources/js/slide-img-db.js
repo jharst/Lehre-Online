@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const isPlaceholder = (s) => !s || !s.trim() || /^<%[^%]*%>$/.test(s.trim());
 
         if (titleLeft) {
-          const subEl = titleLeft.querySelector('.slide-title-sub');
+          const subEl = titleLeft.querySelector('.slide-title-left--subtitle');
           const outer = titleLeft.querySelector('span');
           if (subEl && outer) {
             // Span-Struktur (VL Titelfolie js): Schriftgrößen bleiben erhalten

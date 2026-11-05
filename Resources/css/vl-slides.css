@@ -689,19 +689,74 @@ wenn es Folien für einen Einzelvortrag sind */
   /* to be added */
 }
 
+/* Titelfolie: zwei Textblöcke in der linken Fläche.
+   Die beiden Absätze sind reine Textblöcke – Layout und Höhenverteilung
+   macht ausschließlich der Container (.title-panel).
+   Modifier:
+     --title    : Selektionshaken für titles.js (kein Styling)
+     --subtitle : kleinerer Untertitel innerhalb des Titelblocks
+     --author   : kleinerer Autorblock, wird vom Container nach unten
+                  gedrückt (margin-top: auto)
+   white-space: no wrap war ungültig (richtig wäre nowrap); der Wert
+   wird hier bewusst weggelassen, damit der Titel umbrechen darf. */
 .slide-title-left {
-  display: flex;
-  justify-content: left;
-  align-items: center;
   text-align: left;
-  height: 50%;
   width: 100%;
-  white-space: no wrap;
-  padding: 5%; 
-  color: white; 
+  padding: 5%;
+  box-sizing: border-box;
+  color: white;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  font-size: larger;
+  /* Basisgröße: em bezieht sich auf die geerbte Schriftgröße des
+     Elternelements, hier also auf den Fließtext der Folie.
+     1.2em statt "larger": larger rechnet in einem groben Stufensprung
+     des Browsers, em ist ein exakter Faktor. */
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Leer mit Absicht: titles.js skaliert genau diesen Block
+   (.slide-title-left--title). Die Regel ist ein Selektionshaken,
+   keine Gestaltung – bitte nicht löschen. */
+.slide-title-left--title {
+}
+
+/* Untertitel: 0.8em der Basis (jetzt 0.96em des Fließtexts) */
+.slide-title-left--subtitle {
+  font-size: 0.8em;
+}
+
+/* Autorblock: 0.7em der Basis (jetzt 0.84em des Fließtexts),
+   klar kleiner als der Titel und nicht von der Browser-Stufentabelle
+   abhängig.
+   margin-top: auto schiebt den Absatz im Flex-Container nach unten.
+   Voraussetzung: das Elternelement ist display:flex mit flex-direction:column
+   (siehe .title-panel). Ohne Flex-Container bleibt der Wert wirkungslos. */
+.slide-title-left--author {
+  font-size: 0.7em;
+  line-height: 1.3;
+  margin-top: auto;
+}
+
+/* Container der beiden Textblöcke auf der Titelfolie.
+   Sitzt INNERHALB des zweiten .left-bottom-div (der die Diagonale
+   erzeugt, auf der .slide-subtitle-left liegt). Deshalb hier KEINE
+   absolute Positionierung und kein eigener Hintergrund: der Container
+   füllt einfach seinen Elternbereich und bleibt transparent.
+   Er ist die einzige Flex-Spalte dieser Folie: der Titelblock steht oben,
+   der Autorblock wird per margin-top:auto an den unteren Rand gedrückt. */
+.title-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Untertitel im Titelblock (früher Inline-Style im Template) */
+.slide-title-left .slide-title-sub {
+  font-size: 0.8em;
 }
 
 .slide-subtitle-left {
