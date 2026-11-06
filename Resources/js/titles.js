@@ -21,7 +21,7 @@ function fitTitleText(el) {
 }
 
 Reveal.on('ready', ({ currentSlide }) => {
-  currentSlide.querySelectorAll('.right-title-text, .slide-title-left--title, .quote-bg-title, .diagram-title')
+  currentSlide.querySelectorAll('.right-title-text, .slide-title-left--title, .slide-title-left--subtitle .quote-bg-title, .diagram-title')
     .forEach(fitTitleText);
 });
 
