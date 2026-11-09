@@ -1,4 +1,19 @@
 {
+  "kafka-1923": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Franz_Kafka%2C_1923.jpg/960px-Franz_Kafka%2C_1923.jpg",
+    "src-href": "https://de.wikipedia.org/wiki/Franz_Kafka",
+    "src-title": "Franz Kafka, Fotografie 1923.",
+    "src-label": "Franz Kafka (1923).",
+    "src-size": null,
+    "src-position": null,
+    "year": 1923,
+    "author": [
+      "Franz Kafka"
+    ],
+    "keywords": [
+      "Kafka"
+    ]
+  },
   "ingres-paolo-francesca": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Gianciotto_Discovers_Paolo_and_Francesca_Jean_Auguste_Dominique_Ingres.jpg",
     "src-href": "https://en.wikipedia.org/wiki/Paolo_and_Francesca_(Ingres)",

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Liebe in der Bibel</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/slides-tokens.css" />
+    <link rel="stylesheet" href="Resources/css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-top-div" style="width: 55%; clip-path: none;"></div><div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span>
+</div>
+
+<div class="left-bottom-div" style="width: 90%; background-color: var(--vl-brand)">
+<div class="title-panel">
+<p class="slide-title-left"><span class="slide-title-left--title">Lieben, Leben, Lesen<br></span><span class="slide-title-left--subtitle">Einführung in die vergleichende Literaturgeschichte</span></p>
+<p class="slide-title-left slide-title-left--author">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<!--Bildnachweis wird durch slide-img-js befüllt -->
+<div class="right-image-source"><a href="#" title="" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="slide-bg-vignette has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="img-container">
+<figure class="img-wrapper">
+  <img src="">
+  <figcaption style="width: 80% !important;">
+    CAPTION
+  </figcaption >
+  </figure>
+</div>
+</div>
+
+<aside class="notes"><!-- .slide: data-img-id="hohelied" --></aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Thema der Sitzungen
+- Liebe und Transzendenz aus biblischer und philosophischer Perspektive
+- [>] „erotischer” Liebesdiskurs
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Anfang mit Frage: wer würde von sich sagen, dass er einen christlichen Hintergrund hat?</li>
+<li>kurze Beschreibung meines eigenen Zugangs zur Bibel</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Altes Testament
+- Bibel = „Buch der Bücher”
+- wichtige Bestandteile: Bücher Mose, Propheten, Spruchdichtung/Hohelied
+- verschiedene Autoren und Redaktoren
+- [!] Zeitraum: 12. bis 2. Jhdt. v. Chr.
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fullscreen"><div class="img-container"><figure class="img-wrapper">
+
+## Zeitachse des Alten Testaments
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAotLS0KY29uZmlnOgogIHRoZW1lOiBuZXV0cmFsCi0tLQp0aW1lbGluZQogICAgc2VjdGlvbiBUb3JhIChXZWlzdW5nKQogICAgRXJ6dsOkdGVyLCBFeG9kdXMsIExhbmRuYWhtZSA6IDIuIEp0c2QuIC0gMTIuIEpoLiB2LiBDaHIuCiAgICBHZXNldHplc3NhbW1sdW5nZW4gKExldiwgTnVtLCBEdG4pIDogOC4tNS4gSmguIHYuIENoci4KICAgIHNlY3Rpb24gTmViaSdpbSAoUHJvcGhldGVuKQogICAgRnLDvGhlIFByb3BoZXRlbiAoSm9zLCBSaSwgU2FtLCBLw7ZuKSA6IDEyLi02LiBKaC4gdi4gQ2hyLgogICAgQW1vcywgSG9zZWEsIEplc2FqYSwgSmVyZW1pYSwgRXplY2hpZWwgOiA4Li02LiBKaC4gdi4gQ2hyLgogICAgc2VjdGlvbiBLZXR1YmltIChTY2hyaWZ0ZW4pCiAgICBQc2FsbWVuLCBTcHLDvGNoZSwgSGlvYiwgS2xhZ2VsaWVkZXIgOiAxMC4tNC4gSmguIHYuIENoci4KICAgIEhvaGVsaWVkLCBLb2hlbGV0LCBFc3RoZXIsIERhbmllbCA6IDQuLTIuIEpoLiB2LiBDaHIuCiAgICBFc3JhLCBOZWhlbWlhLCBDaHJvbmlrIDogNS4tNC4gSmguIHYuIENoci4KYGBgECODDECNEF
+
+</figure></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Jahreszahlen offen datiert; die Angaben bezeichnen die Entstehung der Texte, nicht die erzählte Zeit</li>
+<li>Bücher Mose: erzählte Frühzeit (Erzväter bis Landnahme), verschriftlicht aber erst 8.-5. Jh. – daher zweigeteilt</li>
+<li>Kanon-Gliederung: Tora (5 Bücher Mose), Nebi&#39;im (frühe + späte Propheten), Ketubim (Schriften, u.a. Hohelied)</li>
+<li>Hohelied: Salomo zugeschrieben, aber erst hellenistisch verschriftlicht – vgl. Hohelied-Folie<!-- .slide: class="has-light-background" data-background-color="lightgray" --></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Geschichte Israels im Spiegel der Schriften
+- **Erzväter und Exodus**: Bundesschlüsse, Befreiung aus Ägypten, Wüstenwanderung
+- **Ansiedlung und Richterzeit**: Landnahme in Kanaan, Stämmeverband
+- **Monarchie**: Saul, David, Salomo; Reichsteilung, 722 Untergang des Nordreichs
+- **Exil**: 586 Zerstörung Jerusalems und des Tempels, Deportation nach Babylon
+- **Rückkehr und zweiter Tempel**: 538 Kyros-Erlass, Wiederaufbau; danach hellenistische Zeit bis zu den Makkabäern
+- [>] Ausblick Neues Testament: römische Besetzung 63 v. Chr., Zerstörung des Tempels 70 n. Chr.
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Erzväter: Abraham, Isaak, Jakob, Josef – Vorgeschichte, die erklärt, wie Israel nach Ägypten kommt</li>
+<li>722 Nordreich (Assyrer) vs. 586 Juda (Babylonier): „Exil“ im engeren Sinn ist 586–538</li>
+<li>Hiskia und Joschija (Reformen, 8./7. Jh.): Gerichtsworte der Propheten an König und Volk</li>
+<li>Hellenistische Zeit 4.–2. Jh.: Ptolemäer und Seleukiden, Makkabäeraufstand 167; in dieser Phase Kanonisierung der Schriften, darunter das Hohelied</li>
+<li>für die Sitzung wichtig: Exil (Gericht und Hochzeitsmetapher) und hellenistische Kanonisierung (Hohelied als Liebesdichtung im Kanon)<!-- .slide: class="has-light-background" data-background-color="lightgray" --></li>
+</ul>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+#### Gott und sein Volk: Eine Beziehungsgeschichte
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Moses**: Untreue, Eifersucht und neue Bundschlüsse durchziehen die Geschichte des jüdischen Volks (Bsp. Sintflut/Noah, Abraham, Goldenes Kalb)
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Propheten**: Gericht wegen Untreue, Hochzeits-Metapher veranschaulicht das Kommen des Messias
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Propheten: Jeremia (~7. Jhdt. v.Chr.)
+- ["] So spricht der HERR: Ich gedenke der Treue deiner Jugend und der Liebe deiner Brautzeit, wie du mir folgtest in der Wüste, im Lande, da man nicht sät. Da war Israel dem HERRN heilig, die Erstlingsfrucht seiner Ernte. Wer davon essen wollte, machte sich schuldig, und Unheil musste über ihn kommen, spricht der HERR. \[…\] Und ich brachte euch in ein fruchtbares Land, dass ihr äßet seine Früchte und Güter. Aber als ihr hineinkamt, machtet ihr mein Land unrein und mein Eigentum mir zum Gräuel. Die Priester fragten nicht: Wo ist der HERR?, und die Hüter des Gesetzes achteten meiner nicht, und die Hirten des Volks wurden mir untreu, und die Propheten weissagten im Namen des Baal und hingen den Götzen an, die nicht helfen können. Darum muss ich noch weiter mit euch und mit euren Kindeskindern rechten, spricht der HERR. (Jer 1,2-9)
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Propheten: Jesaja (~8. Jhdt. v.Chr.)
+- Prophet des Weltgerichts und des Messias
+- „Ich freue mich im HERRN, und meine Seele ist fröhlich in meinem Gott; denn er hat mich angezogen mit Kleidern des Heils und mit dem Rock der Gerechtigkeit gekleidet, wie einen Bräutigam, mit priesterlichem Schmuck geziert, und wie eine Braut, die in ihrem Geschmeide prangt.” (61:10)
+- „Denn wie ein Mann ein Weib liebhat, so werden dich deine Kinder liebhaben; und wie sich ein Bräutigam freut über die Braut, so wird sich dein Gott über dich freuen.” (62:5)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Propheten: Hosea (~8. Jhdt. v.Chr.)
+- Kampf gegen den Götzendienst in Metaphern einer Liebesbeziehung
+- Reinszenierung der Gottesbeziehung im Leben des Propheten
+- Androhung des Gerichts
+- Versprechen eines neuen Bundes: „Ich will mich mit dir verloben für alle Ewigkeit, ich will mich mit dir verloben in Gerechtigkeit und Recht, in Gnade und Barmherzigkeit.” (2:21)
+</div>
+</div></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied: Ein Skandal
+- König Salomo (10. Jhdt. v.Chr.) zugesprochen, aber vermutlich viel später entstanden und bis ins 2. Jhdt. v.Chr. veränderlich
+- Kontexte: heilige oder menschliche Hochzeit?
+- sinnliche Liebeslieder – Ort in der Bibel? → allegorische Auslegungsstrategien
+- Textschwierigkeiten (Übersetzung, Einteilung/Struktur, Sprecherrollen und narrativer Zusammenhang, fremde Bildsprache)
+
+</div>
+</div>
+
+<aside class="notes"><h2 id="gründe-für-übersetzungsschwierigkeiten">Gründe für Übersetzungsschwierigkeiten</h2>
+<ul>
+<li>unsicherer hebräischer Text: viele hapax legomena, Lehnwörter, mehrere Lesarten</li>
+<li>nicht eindeutig auflösbare Bildsprache (Tauben, Türme, Weizenhaufen)</li>
+<li>Sprecherrollen im hebräischen Text nicht markiert</li>
+<li>Übersetzungstradition von der Allegorese geprägt (Dämpfung des Sinnlichen)</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied: Aspekte der Lektüre
+- 8,6: Liebe als göttliche Gabe
+- 2, 1-4 und 7,12-13: Sehnsucht und Erfüllung der Liebe
+- 1, 9-17 und 4,1-7: Bildsprache, Vergleiche
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>Das Hohelied ist im Kanon ein Fremdkörper: kein Gesetz, kein Gebet, kein Gottesnamen im Text</li>
+<li>Vergleiche mit Tauben, Türmen, Herden: die Geliebte ist aus Tieren, Landschaft, Natur zusammengesetzt – keine naturalistische Beschreibung, sondern rhetorische Konstruktion von Sinnlichkeit</li>
+</ul>
+</aside></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Hohelied: Interpretationen der Liebe
+- die zwischengeschlechtliche Liebe als Geschenk Gottes (vgl. [1 Mose 2,23-25](#Mose))
+- AT: Abbild der Verbindung zwischen Gott und seinem Volk (Jer 2,2; Hos 1-3)
+- NT: … zwischen Christus und seiner Gemeinde ([Eph 5,25.31-32](#Epheser))
+- Mystik: zwischen Christus und der Seele
+- [>] Eingang dieser Dimensionen auch in die weltliche Dichtung (Bsp. *Tristan*)
+- [>] ein Gedicht über die Sinnsuche?
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li>zentrale Frage: Wessen Liebe ist gemeint? die Liebenden selbst (Schöpfungsgabe), Gott und Volk (Propheten), Christus und Gemeinde (Eph 5), Christus und Seele (Mystik). </li>
+<li>Wichtig: Die allegorische Auslegung ist keine Verdrängung des Körperlichen, sondern eine Verdopplung – der Körper bleibt lesbar, bekommt aber einen zweiten Sinn.</li>
+<li>das wird bes. in der weltlichen Dichtung betont, in der Liebe zwischen Körperlichkeit und Transzendenz schwankt <em>(Tristan)</em></li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Epheser" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Paulus: Ehe als Symbol
+- ["] Ihr Männer, liebt eure Frauen, wie auch Christus die Gemeinde geliebt hat (…) Wer seine Frau liebt, der liebt sich selbst. Denn niemand hat je sein eigenes Fleisch gehasst; sondern er nährt und pflegt es wie auch Christus die Gemeinde. Denn wir sind Glieder seines Leibes. »Darum wird ein Mann Vater und Mutter verlassen und an seiner Frau hängen, und die zwei werden ein Fleisch sein.« [(1 Mose 2,23-25)](#Mose) Dies Geheimnis ist groß; ich deute es aber auf Christus und die Gemeinde. (Eph 5, 25-32)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" id="Mose" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Mose: Liebe als Geschenk Gottes
+- ["] „Da sprach der Mensch: Das ist doch Bein von meinem Bein und Fleisch von meinem Fleisch; man wird sie Männin nennen, weil sie vom Manne genommen ist. Darum wird ein Mann seinen Vater und seine Mutter verlassen und seiner Frau anhangen, und sie werden sein ein Fleisch. Und sie waren beide nackt, der Mensch und seine Frau, und schämten sich nicht.” (1 Mose 2,23-25)
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Das Neue Testament
+- wichtige Bestandteile: Evangelien, Apostelbriefe (bes. Paulus)
+- Zeitraum: 1 Jhdt. n.Chr.
+- Sprache: Griechisch
+- Beziehung zwischen AT und NT: 
+	- komplexes intertextuelles Gewebe
+	- „Präfiguration” = Zitat und Erfüllung (Bsp.: Pessachfest)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="fullscreen"><div class="img-container"><figure class="img-wrapper">
+
+## Zeitachse des Neuen Testaments
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAotLS0KY29uZmlnOgogIHRoZW1lOiBuZXV0cmFsCi0tLQp0aW1lbGluZQogICAgc2VjdGlvbiBWb3JnZXNjaGljaHRlCiAgICBSw7ZtZXIgaW4gSnVkw6RhLCBIZXJvZGVzIDogNjMgdi4gQ2hyLiAtIDQgdi4gQ2hyLgogICAgc2VjdGlvbiBKZXN1cyB2b24gTmF6YXJldGgKICAgIFdpcmtlbiB1bmQgS3JldXppZ3VuZyA6IHVtIDMwIG4uIENoci4KICAgIHNlY3Rpb24gUGF1bHVzIHVuZCBkaWUgR2VtZWluZGVuCiAgICBNaXNzaW9uLCBCcmllZmUgYW4gZGllIEdlbWVpbmRlbiA6IDUwLTYwIG4uIENoci4KICAgIHNlY3Rpb24gRXZhbmdlbGllbgogICAgTWFya3VzLCBNYXR0aMOkdXMsIEx1a2FzIDogNzAtOTAgbi4gQ2hyLgogICAgSm9oYW5uZXMgOiB1bSAxMDAgbi4gQ2hyLgogICAgc2VjdGlvbiBOYWNoYXBvc3RvbGlzY2hlIFplaXQKICAgIFBhc3RvcmFsYnJpZWZlLCAyLiBQZXRydXMgOiB1bSAxMDAtMTMwIG4uIENoci4KICAgIHNlY3Rpb24gS2Fub24gdW5kIEthdGFzdHJvcGhlCiAgICBaZXJzdMO2cnVuZyBkZXMgVGVtcGVscyA6IDcwIG4uIENoci4KICAgIEthbm9uYmlsZHVuZyA6IDIuLTQuIEpoLiBuLiBDaHIuCmBgYA==ECODDECNEF
+
+</figure></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Jahreszahlen offen datiert; die Angaben bezeichnen die Abfassung der Schriften, nicht die erzählte Zeit</li>
+<li>Jesus: Wirken um 28-30, Kreuzigung um 30; die Evangelien entstehen Jahrzehnte später</li>
+<li>Paulus schreibt vor den Evangelien: seine Briefe sind die ältesten Texte des NT</li>
+<li>Zerstörung des Tempels 70 n. Chr.: Einschnitt für Judentum und Christentum, nicht zufällig in der Zeit der Evangelienabfassung</li>
+<li>Kanonbildung erst ab dem 2. Jh. (Muratorisches Fragment), abgeschlossen im 4. Jh.</li>
+</ul>
+</aside></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="hohelied" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="2">2. Sitzung: </span><span> Liebe in der Bibel</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Hochzeit und Liebe im Evangelium
+- Jesus als Bräutigam (Mt 9:15; 25:1-13; → Erfüllung der Prophezeiung)
+- die Episode von der Ehebrecherin (Joh 7,53-8,11)
+- die Bergpredigt (Mt 5-7): 
+	- Verschärfung des Gesetzes
+	- Liebe als Erfüllung des Gesetzes
+	- Buchstabe und Geist des Gesetzes
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Die Bergpredigt: Liebe und Gesetz
+- ["] Ihr sollt nicht meinen, dass ich gekommen bin, das Gesetz oder die Propheten aufzulösen; ich bin nicht gekommen aufzulösen, sondern zu erfüllen. Denn wahrlich, ich sage euch: Bis Himmel und Erde vergehen, wird nicht vergehen der kleinste Buchstabe noch ein Tüpfelchen vom Gesetz, bis es alles geschieht. (Mt 5:17-18)
+- ["] Ihr habt gehört, dass gesagt ist (2 Mose 20:14): »Du sollst nicht ehebrechen.« Ich aber sage euch: Wer eine Frau ansieht, sie zu begehren, der hat schon mit ihr die Ehe gebrochen in seinem Herzen. (Mt 5:27-28)
+- ["] Alles nun, was ihr wollt, dass euch die Leute tun sollen, das tut ihnen auch! Das ist das Gesetz und die Propheten. (Mt 5:12, vgl. Mt 22,35-39)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgray" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="2">2. Sitzung: </span><span>Liebe in der Bibel</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: start; justify-content: center" align="center">
+
+
+## Paulus: Liebe und Gesetz
+- ["] Seid niemandem etwas schuldig, außer dass ihr euch untereinander liebt; **denn wer den andern liebt, der hat das Gesetz erfüllt.** Denn was da gesagt ist (2.Mose 20,13-17): »Du sollst nicht ehebrechen; du sollst nicht töten; du sollst nicht stehlen; du sollst nicht begehren«, und was da sonst an Geboten ist, das wird in diesem Wort zusammengefasst (3.Mose 19,18): »Du sollst deinen Nächsten lieben wie dich selbst.« Die Liebe tut dem Nächsten nichts Böses. So ist nun die Liebe des Gesetzes Erfüllung. (Röm 13:8-10)
+</div>
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/markers.js"></script>
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/titles.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

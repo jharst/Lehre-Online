@@ -759,6 +759,149 @@ wenn es Folien für einen Einzelvortrag sind */
   font-size: 0.8em;
 }
 
+/* --- Layout "Standard viel Text und Foto" ---------------------------
+   Baut auf den bestehenden Klassen auf:
+     .container        : Rahmen und Hintergrund der Folie
+     .left-bottom-div  : schmale Farbstreifen links (Diagonale)
+     .left-top-div     : innere, dunklere Streifenfläche
+     .right-bottom-div : schmaler Streifen rechts
+   Neu sind die Klasse .slide-img-left und die vl-text-photo-*
+   Klassen unten. Alle Farben kommen aus den Tokens
+   (--vl-brand-50 / --vl-brand-75), damit das Layout bei Änderungen
+   der Markenfarbe mitzieht.
+
+   Hinweis zum Bild: Position und Breite des Fotos (left/top/max-width)
+   stehen bewusst inline im Template (element-style-Kommentar), weil
+   Slides Extended daraus ein Inline-Style setzt und so die
+   max-height-Regel des reveal-Themes (".reveal img { max-height: 95% }")
+   zuverlässig überschreibt. Hier bleibt nur die Höhenbegrenzung. */
+
+/* Schmale Diagonale links: äußere Fläche in --vl-brand-50,
+   innere Fläche (::before) in --vl-brand-75. Beide Breiten und
+   Clip-Pfade stammen aus dem ursprünglichen grid-Layout. */
+.vl-text-photo-stripe {
+  width: 20%;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  background-color: var(--vl-brand-50);
+}
+
+.vl-text-photo-stripe-inner {
+  width: 80%;
+  clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+  background-color: var(--vl-brand-75);
+}
+
+/* Schmaler Streifen rechts, trägt den rotierten Sitzungstitel. */
+.vl-text-photo-bar {
+  width: 8%;
+  background-color: var(--vl-brand-50);
+}
+
+/* Hochkant-Foto links unten. Begrenzung und Einpassung hier,
+   Position und Breite setzt das Template per element-style-Kommentar
+   (left/top/max-width) – beides zusammen ergibt die endgültige Größe. */
+.slide-img-left {
+  max-height: 34%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+/* Rotierter Sitzungstitel rechts. Nachbau der ehemaligen
+   <grid drag="55 10" drop="90 86">-Box: schmal, um 88° gedreht,
+   Schrift aus den Display-Tokens.
+   Der Container ist auf den rechten Farbstreifen (.right-bottom-div,
+   8 % ab rechter Kante) begrenzt; die Rotation erfolgt um die
+   linke untere Ecke, damit der Text senkrecht im Streifen läuft.
+   right: -1% schiebt den Titel etwas weiter nach rechts in den Streifen. */
+.vl-text-photo-title {
+  position: absolute;
+  right: -1%;
+  bottom: 4%;
+  width: 8%;
+  height: 90%;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: visible;
+  z-index: 3;
+}
+
+/* Der eigentliche Titeltext: um 88° gedreht, von unten nach oben lesbar.
+   Kein Rahmen mehr – border: none und padding ohne Seitenabstand,
+   damit die Titelangabe frei im Streifen steht. */
+.vl-text-photo-title > span {
+  position: absolute;
+  left: 55%;
+  bottom: 0;
+  padding: 0;
+  border: none;
+  transform: rotate(-88.6deg);
+  transform-origin: left bottom;
+  transform-box: border-box;
+}
+
+/* Damit "N. Sitzung:" und Titel einzeilig bleiben */
+.vl-text-photo-title .session-span {
+  display: inline;
+}
+
+/* Textfläche. Nachbau der ehemaligen <grid drag="60 90" drop="30 5">:
+   belegt den Großteil der Folie, kleinerer Fließtext, linksbündig.
+   left 29 % statt 26 %: mehr Abstand zur Abbildung.
+   Kein Rahmen mehr – der Block grenzt sich über den Hintergrund ab. */
+.vl-text-photo-body {
+  position: absolute;
+  left: 29%;
+  top: 5%;
+  width: 58%;
+  height: 85%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: none;
+  font-size: var(--vl-size-sm);
+  text-align: left;
+  overflow: auto;
+}
+
+.vl-text-photo-body h1,
+.vl-text-photo-body h2,
+.vl-text-photo-body h3,
+.vl-text-photo-body h4,
+.vl-text-photo-body p,
+.vl-text-photo-body ul,
+.vl-text-photo-body ol {
+  text-align: left;
+}
+
+/* Bildnachweis unter der Abbildung, am linken Rand.
+   Überschreibt die Standardposition von .right-image-source
+   (unten rechts) nur auf diesem Layout. */
+.vl-text-photo-source {
+  position: absolute;
+  left: 5%;
+  bottom: 3%;
+  max-width: 22%;
+  padding: 4px 6px;
+  font-size: var(--vl-size-xs);
+  line-height: 1.2;
+  text-align: left;
+  color: black;
+  background-color: #FFFFFF50;
+  border-radius: 3px;
+}
+
+.vl-text-photo-source a {
+  color: black;
+  text-decoration: none;
+}
+
 .slide-subtitle-left {
   position: absolute; 
   bottom: 0;

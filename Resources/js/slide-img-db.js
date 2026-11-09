@@ -60,9 +60,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 5. Bild setzen
         const imgEl = slide.querySelector('.img-wrapper img');
+        const leftImgEl = slide.querySelector('img.slide-img-left');
         const rightTopDiv = slide.querySelector('.right-top-div');
 
-        if (imgEl) {
+        if (leftImgEl && url) {
+          // Template mit frei platziertem <img> (VL Standard viel Text und Foto, js)
+          leftImgEl.setAttribute('src', url);
+          if (merged['src-alt']) leftImgEl.setAttribute('alt', merged['src-alt']);
+
+        } else if (imgEl) {
           // Template mit <img>-Tag
           if (url) imgEl.setAttribute('src', url);
           const caption = slide.querySelector('.img-wrapper figcaption');
@@ -102,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 6. Quellenangabe befüllen
-        const sourceEl = slide.querySelector('.right-image-source a');
+        const sourceEl = slide.querySelector('.right-image-source a, .vl-text-photo-source a');
         if (sourceEl) {
           if (merged['src-href'])  sourceEl.href  = merged['src-href'];
           if (merged['src-title']) sourceEl.title = merged['src-title'];
