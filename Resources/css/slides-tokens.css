@@ -64,6 +64,18 @@
   --vl-weight-heading: 600;
   --vl-weight-body:    400;
 
+  /* Überschriften-Skala – relativ zur reveal.js-Basis (42px in white.css).
+     h1 = h2 (Titelfolie und Folientitel), ab h2 monoton fallend,
+     h4 = h5. In em, damit Änderungen an der Basis skaliert mitgehen.
+     rem wäre hier falsch: das bezieht sich auf html (16px), nicht auf
+     die reveal-Basis. Damit Überschriften auf allen Templates gleich
+     groß bleiben, setzt kein Layout-Container eine eigene font-size. */
+  --vl-h1:   1.6em;
+  --vl-h2:   1.25em;
+  --vl-h3:   1em;
+  --vl-h4:   0.8em;
+  --vl-h5:   0.8em;
+
   /* Schriftgrößen – relativ zur reveal.js-Basis (42px in white.css) */
   --vl-size-xl:   2.2em;    /* Folientitel                          */
   --vl-size-lg:   1.4em;    /* Zwischenüberschriften                */

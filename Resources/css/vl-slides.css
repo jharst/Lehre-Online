@@ -26,11 +26,9 @@
   /*margin: 2% 0 0 2%;*/
 }
 
-/*.reveal mark {
-  background-color: var(--vl-brand-25);
-  border-radius: 2px;
-  padding: 10px;
-}*/
+.reveal p {
+  text-align: left;
+}
 .reveal mark {
   background-color: var(--vl-brand-25);
   border-radius: 6px;
@@ -443,12 +441,27 @@ ul.marker-bullet-block li.marker-bullet .source {
   margin-top: 1em !important;
 }
 
-.reveal h1, h2, h3 {
-  font-size: xxx-large !important;
+/* Größen aus slides-tokens.css (--vl-h1 … --vl-h5) */
+.reveal h1 {
+  font-size: var(--vl-h1) !important;
 }
 
-.reveal h3, h4 {
+.reveal h2 {
+  font-size: var(--vl-h2) !important;
+}
+
+.reveal h3 {
+  font-size: var(--vl-h3) !important;
   text-transform: none !important;
+}
+
+.reveal h4 {
+  font-size: var(--vl-h4) !important;
+  text-transform: none !important;
+}
+
+.reveal h5 {
+  font-size: var(--vl-h5) !important;
 }
 
 .link-icon {
@@ -812,50 +825,73 @@ wenn es Folien für einen Einzelvortrag sind */
 /* Rotierter Sitzungstitel rechts. Nachbau der ehemaligen
    <grid drag="55 10" drop="90 86">-Box: schmal, um 88° gedreht,
    Schrift aus den Display-Tokens.
-   Der Container ist auf den rechten Farbstreifen (.right-bottom-div,
-   8 % ab rechter Kante) begrenzt; die Rotation erfolgt um die
-   linke untere Ecke, damit der Text senkrecht im Streifen läuft.
-   right: -1% schiebt den Titel etwas weiter nach rechts in den Streifen. */
+   Gedreht wird nur das p, nicht die Spans: Sitzung und Titel stehen
+   als normaler Inline-Text im gedrehten Block und laufen hintereinander
+   von unten nach oben. transform-origin: left bottom ist der einzige
+   stabile Ankerpunkt; left: 93% setzt ihn an die linke Kante des
+   rechten Farbstreifens (.right-bottom-div, right: 0; width: 7 %).
+   Breite: max-content, ausdrücklich ohne max-width. Nur so entspricht
+   offsetWidth der tatsächlichen Textlänge, und nur dann kann titles.js
+   einen Überlauf erkennen und die Schrift verkleinern. Eine feste Breite
+   (früher 90vh) oder ein max-width-Deckel macht die Box unabhängig vom
+   Text gleich breit; die Messung liefert dann immer denselben Wert und
+   die Skalierung greift nie. Die Begrenzung übernimmt titles.js.
+
+   Schriftgröße bewusst wie .right-title-text (font-size: larger), nicht
+   var(--vl-h1): titles.js startet bei derselben Ausgangsgröße, sonst
+   wird ein Titel im Streifen kleiner skaliert als auf dem Standardlayout,
+   obwohl die verfügbare Strecke gleich ist. --vl-h1 (1.6em) ist für einen
+   einzeiligen Streifentitel zu groß und läuft fast immer über. */
 .vl-text-photo-title {
   position: absolute;
-  right: -1%;
+  left: 65%;
   bottom: 4%;
-  width: 8%;
-  height: 90%;
+  width: max-content;
+  height: auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
   color: white;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  font-size: 1em;
+  font-size: larger;
+  line-height: 1.1;
+  text-align: left;
   white-space: nowrap;
   overflow: visible;
-  z-index: 3;
-}
-
-/* Der eigentliche Titeltext: um 88° gedreht, von unten nach oben lesbar.
-   Kein Rahmen mehr – border: none und padding ohne Seitenabstand,
-   damit die Titelangabe frei im Streifen steht. */
-.vl-text-photo-title > span {
-  position: absolute;
-  left: 55%;
-  bottom: 0;
-  padding: 0;
-  border: none;
   transform: rotate(-88.6deg);
   transform-origin: left bottom;
   transform-box: border-box;
+  z-index: 3;
 }
 
-/* Damit "N. Sitzung:" und Titel einzeilig bleiben */
+/* Sitzung und Titel stehen als normaler Inline-Text im gedrehten Block.
+   Keine eigene Positionierung, keine eigene Rotation: die Drehung
+   passiert nur einmal am p, sonst liegen beide Spans übereinander.
+   left/bottom aus der alten Regel entfallen, weil sie bei
+   position: static ohnehin wirkungslos sind. */
+.vl-text-photo-title > span {
+  position: static;
+  display: inline;
+  padding: 0;
+  border: none;
+  transform: none;
+}
+
+/* "N. Sitzung:" bleibt normales Inline, damit es vor dem Titel steht.
+   Die Ausblend-Regel für session 0 / leer steht global weiter oben
+   (.session-span[data-session="0"]); sie muss hier nicht wiederholt
+   werden, weil diese Regel gleich spezifisch ist und früher steht. */
 .vl-text-photo-title .session-span {
   display: inline;
 }
 
 /* Textfläche. Nachbau der ehemaligen <grid drag="60 90" drop="30 5">:
-   belegt den Großteil der Folie, kleinerer Fließtext, linksbündig.
+   belegt den Großteil der Folie, linksbündig.
    left 29 % statt 26 %: mehr Abstand zur Abbildung.
-   Kein Rahmen mehr – der Block grenzt sich über den Hintergrund ab. */
+   Flex-Spalte, damit .source per margin-top: auto am unteren Rand
+   klebt (siehe Regel darunter). */
+
 .vl-text-photo-body {
   position: absolute;
   left: 29%;
@@ -865,9 +901,20 @@ wenn es Folien für einen Einzelvortrag sind */
   box-sizing: border-box;
   padding: 10px 14px;
   border: none;
-  font-size: var(--vl-size-sm);
   text-align: left;
   overflow: auto;
+  font-size: var(--vl-size-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Quellenangabe am unteren Rand der Textfläche. margin-top: auto
+   schiebt sie nach unten; ohne Flex-Container hätte die Regel keine Wirkung.
+   Der negative bottom-Abstand gleicht den 10px-Padding des Containers aus,
+   damit der Text optisch bündig am Rahmen sitzt. */
+.vl-text-photo-body > .source {
+  margin-top: auto;
+  margin-bottom: -10px;
 }
 
 .vl-text-photo-body h1,
@@ -888,13 +935,13 @@ wenn es Folien für einen Einzelvortrag sind */
   left: 5%;
   bottom: 3%;
   max-width: 22%;
-  padding: 4px 6px;
-  font-size: var(--vl-size-xs);
+  padding: 10px;
+  font-size: var(--vl-size-sm);
   line-height: 1.2;
   text-align: left;
   color: black;
   background-color: #FFFFFF50;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .vl-text-photo-source a {

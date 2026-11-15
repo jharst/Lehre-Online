@@ -1726,5 +1726,31 @@
       "Uncanny",
       "Unheimlich"
     ]
+  },
+  "martinez-cover": {
+    "url": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1579606454i/50614925.jpg",
+    "author": [
+      "Guillermo Martínez"
+    ],
+    "year": 2005,
+    "src-label": "Cover",
+    "src-title": "Buchcover",
+    "src-href": "https://de.wikipedia.org/wiki/Die_Pythagoras-Morde",
+    "keywords": [
+      "Detektiv",
+      "Postkolonialismus"
+    ]
+  },
+  "animal-tracks": {
+    "url": "https://www.slc.gov/parks/wp-content/uploads/sites/17/2024/12/AnimalTracksPhotos-04.jpg",
+    "author": [
+      "Unknown"
+    ],
+    "src-label": "Spuren im Schnee",
+    "src-title": "Rabbit tracks",
+    "src-href": "https://www.slc.gov/parks/animal-tracks-in-snow/",
+    "keywords": [
+      "Spur"
+    ]
   }
 }
