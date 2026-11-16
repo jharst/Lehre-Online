@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Platon – Symposion</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/slides-tokens.css" />
+    <link rel="stylesheet" href="Resources/css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod-ausschnitt" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-top-div" style="width: 55%; clip-path: none;"></div><div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span>
+</div>
+
+<div class="left-bottom-div" style="width: 90%; background-color: var(--vl-brand)">
+<div class="title-panel">
+<p class="slide-title-left"><span class="slide-title-left--title">Lieben, Leben, Lesen<br></span><span class="slide-title-left--subtitle">Einführung in die vergleichende Literaturgeschichte</span></p>
+<p class="slide-title-left slide-title-left--author">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<!--Bildnachweis wird durch slide-img-js befüllt -->
+<div class="right-image-source"><a href="#" title="" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" template="" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- begin::[Antike Literaturgeschichte.md] -->
+## Antike Literaturgeschichte
+FENCEDCODEmermaid:1:YGBgbWVybWFpZAolJXsKICBpbml0OiB7CiAgICAndGhlbWUnOiAnZm9yZXN0JwogICAgfQp9JSUKdGltZWxpbmUKICAgICAgICBzZWN0aW9uIErDvGRpc2NoZXMgQWx0ZXJ0dW0KICAgICAgICAgIFRhbmFjaCA6IEhvaGVsaWVkICg1MDAtMzAwIHYuQ2hyLikKICAgICAgICBzZWN0aW9uIEdyaWVjaGlzY2hlIEFudGlrZSAKICAgICAgICAgIEtsYXNzaXNjaGUgWmVpdCAoNTAwLTMyMyB2LkNoci4pIDogRXVyaXBpZGVzLCBIaXBwb2x5dG9zICg0Mjggdi5DaHIuKSA6IFBsYXRvbiwgU3ltcG9zaW9uICgzODUtMzcwIHYuIENoci4pIDogQXJpc3RvdGVsZXMsIFBvZXRpayAoMzM1IHYuQ2hyLikKICAgICAgICAgIEhlbGxlbmlzdGlzY2hlIFplaXQgKDMyM+KAkzE0NiB2LiBDaHIuKQogICAgICAgIHNlY3Rpb24gUsO2bWlzY2hlIEFudGlrZSA8YnI+IAogICAgICAgICAgUsO2bWlzY2hlIFJlcHVibGlrICg1MDnigJMyNyB2LiBDaHIuKQogICAgICAgICAgUsO2bWlzY2hlcyBLYWlzZXJyZWljaCAoMjcgdi4gQ2hyLuKAkzQ3NiBuLiBDaHIuKSA6IE92aWQsIEFtb3JlcyAoMjAgdi5DaHIuKSA6IE1hdHRow6R1cy1FdmFuZ2VsaXVtICg4MC05MCBuLkNoci4pCmBgYA==ECODDECNEF
+<!-- end::[Antike Literaturgeschichte.md] -->
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod-ausschnitt" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Antike: Hintergrundwissen
+- 5.-4. Jhdt. v.Chr.: Blütezeit Athens (zwischen Perserkriegen und Peloponnesischem Krieg)
+- Hegemonialer Stadtstaat, Kolonialpolitik 
+- Direkte, partizipative Demokratie
+- Orale Repräsentationskultur
+- [>] Rolle von Rhetorik
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod-ausschnitt" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Antike: Hintergrundwissen
+- Agonale Wahrheitsfindung in 
+	- Gerichts- und Regierungsreden
+	- (tragischem) Theater
+	- (dialogischer) Philosophie
+- [>] führt zu „sophistischem” Sprachgebrauch
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod-ausschnitt" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Sokrates: Hintergrundwissen
+Polemischer Gegensatz zwischen Sokrates und Sophistik:
+- Sophistik: Mit Sprache lässt sich alles beweisen oder widerlegen; keine absolute Erkenntnis möglich
+- Sokrates: Ohne Bezug auf Wahrheit wäre gar keine Erkenntnis möglich, es muss sie also geben, auch wenn sie unerreichbar sein mag
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod-ausschnitt" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Sokrates: Hintergrundwissen
+- „ich weiß, dass ich nichts weiß”
+- Erkenntnissuche im Dialog mit Mitbürgern (Maieutik)
+- Philo-sophie als *Liebe* zur Weisheit
+- steht mit seinem Leben für seine Lehre ein (→ Märtyrer?)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="david-tod" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="fullscreen"><div class="img-container"><figure class="img-wrapper">
+
+
+</figure></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>399 v.Chr.: Sokrates wegen Gottlosigkeit und Verführung der Jugend zum Tod verurteilt – in seiner Verteidigungsrede steht Sokrates zu seinen „Fehlern”, ja fordert das Gericht offen heraus</li>
+<li>stellt sich dem Urteil und lehrt auch in der Stunde des Selbstmords</li>
+<li>wichtigstes Zeugnis: Dialog „Apologie des Sokrates” von seinem Schüler Platon (deutlich später verfasst) – gestaltet Verurteilung und Tod Sokrates’ als Vollendung seiner Lehre</li>
+<li>im Gemälde ist Platon der bärtige Mann am Fußende: deutlich älter dargestellt als historisch richtig (= das Gemälde zeigt die Szene aus der Perspektive des alten Platon)</li>
+</ul>
+</aside></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="platon-und-sokrates" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Platon: Hintergrundwissen
+Komplexes Verhältnis Sokrates/Platon:
+- Lehrer/Schüler
+- Mündlichkeit/Schriftlichkeit
+- Interpretation und Umschreibung
+- literarische Überformung
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="platon-und-sokrates" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Platon: Hintergrundwissen
+- Platonische Ideenlehre (Trennung von Schein und Sein; Wahrheit transzendent; Begriffe existieren außerhalb der empirischen Welt)
+- Irdische Erkenntnis als „Erinnerung” an transzendente Begriffe
+- Identifikation des Schönen, Wahren und Guten 
+- Liebe/Begehren als Streben nach dem Schönen/Wahren/Guten
+- [>] erotische Philosophie
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="drop" data-background-image="https://pngimg.com/uploads/chair/chair_PNG6862.png" data-background-size="25%" data-background-position="left" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="fullscreen"><div class="img-container"><figure class="img-wrapper">
+
+<img src="Resources/Excalidraw/Platon – Ideenlehre.svg" alt="" style="object-fit: scale-down">
+
+<figcaption>Diagrammatische Darstellung von Platons Ideenlehre</figcaption>
+</figure></div></div>
+</div></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="tpl-symposion" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Symposion: Hintergrundwissen
+- philosophischer Dialog von Platon mit historischen Personen (4. Jhdt. v.Chr.)
+- Gastmahl, bei dem Lobreden auf Eros gehalten werden (→ Wein und Wahrheit)
+- Philosophie als rhetorischer Wettstreit
+- Ambivalenzen:
+	- ironisch und ernsthaft
+	- systematisch und widersprüchlich
+	- Wahrheitsanspruch und Fiktionalitätsbewusstsein
+- komplexe Rahmenkonstruktion
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="tpl-symposion" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Symposion: Struktur
+zweifach indirekte Überlieferung (Apollodor < Aristodemos)
+- Reden der Teilnehmer des Symposions auf den Eros (Pausanias, Aristophanes, Agathon, …)
+- Dialog Sokrates/Agathon
+- Sokrates gibt einen Dialog mit Diotima wieder
+- Lobrede des Alkibiades auf Sokrates
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="fullscreen"><div class="img-container"><figure class="img-wrapper">
+
+<img src="Resources/Excalidraw/Platon – Symposion (Erzählebenen).svg" alt="" style="object-fit: scale-down">
+
+
+<figcaption>Erzähl- und Zeitebenen des Dialogs „Symposion”</figcaption>
+
+</figure></div></div>
+</div></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+
+
+<!-- begin::[Platon – Symposion.md] -->
+### Pausanias: Erotik und Erkenntnis
+- ["] Denn das ist bei uns Sitte, wenn jemand einem anderen ergeben sein will, weil er glaubt, besser durch ihn zu werden, es sei in irgendeiner Einsicht oder in einem anderen Teile der Tugend, dass ein solcher freiwilliger Dienst nicht schändlich sei, noch eine Niedrigkeit. Dann, wenn beide so zusammen treffen, Liebhaber und Liebling, dass jeder die Meinung für sich hat, jene die, dass er recht daran tue, dem Liebling, der ihm gefällig geworden, jeglichen Dienst zu erzeugen, dieser aber die, dass es recht sei, dem, der ihn weise und gut macht, was es auch immer sei, zu erweisen, und dann jener auch wirklich vermag, zur Weisheit und Tugend behilflich zu sein, dieser aber begehrt, zur Bildung und zu jeglicher Art der Weisheit Hilfe zu erlangen, dann also, wenn diese beiden Satzungen übereinkommen, da allein trifft es auch zu, daß es schön ist für den Liebling, dem Liebhaber gefällig zu sein, sonst aber nirgends. (184c-e)  (41)
+<!-- end::[Platon – Symposion.md] -->
+
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="aristophanes-kugelmenschen" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Symposion: Aristophanes
+- Mythos von den „Kugelmenschen” (rund = perfekt)
+- erotisches Verlangen gründet auf Mangel
+- Homo-Erotik: Begehren nach dem Ähnlichen
+- Glückseligkeit: Rückkehr zum Ursprungszustand
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+
+
+<!-- begin::[Platon – Symposion.md] -->
+### Aristophanes: Definition der Liebe
+- ["] Hiervon ist nun dies die Ursache, daß unsere ursprüngliche Beschaffenheit diese war und wir ganz waren, und dies Verlangen eben und Trachten nach dem Ganzen heißt Liebe. (…) daß unser Geschlecht glückselig würde, wenn es uns in der Liebe gelänge und jeder seinen eigentümlichen Liebling gewönne, um so zur ursprünglichen Natur zurückzukehren. (…) (193a, 63)
+- ["] Wenn wir nun also den Gott preisen wollen, dem wir das verdanken, so müssen wir gerechterweise den Eros preisen, der uns schon jetzt am meisten Gutes erweist, weil er uns zu dem hinführt, was uns verwandt ist, und der uns für die Zukunft die größten Hoffnungen haben läßt, wenn wir uns nur den Göttern gegenüber fromm zeigen; dann versetzt er uns in den ursprünglichen Zustand und heilt uns und macht uns damit glücklich und selig. (193cd; 65)
+<!-- end::[Platon – Symposion.md] -->
+
+
+</div>
+</div></script></section></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="tpl-symposion" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Symposion: Sokrates
+- Mythos: Genealogie des Eros (Penia > Mangel, Poros > Liebe zum Schönen und Guten)
+- Analyse: Eros als Zwischenwesen (Daimon)
+- Ziel: Verewigung, „Zeugung im Schönen”  (leiblich > Nachkommen/geistig > Bildung)
+- Erotische Mysterien als Stufengang
+- moralische Wirkung des Schönen
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+
+
+<!-- begin::[Platon – Symposion.md] -->
+### Sokrates/Diotima: Das Dämonische
+- ["] Es verdolmetscht und überbringt den Göttern, was von den Menschen kommt, und den Menschen, was von den Göttern kommt: von den einen die Gebete und Opfer, von den anderen die Befehle und die Vergeltung für die Opfer. Es steht in der Mitte zwischen beiden und füllt die Kluft aus, so daß das All in sich verbunden ist. \[…\] Ein Gott aber verkehrt nicht mit einem Menschen, sondern durch dieses Daimonische geschieht aller Umgang und alle Zwiesprache zwischen Göttern und Menschen, im Wachen wie im Schlafen. Und wer sich darauf versteht, der ist ein daimonischer Mann; wer aber sonst auf einem Gebiet Bescheid weiß \[…\], der ist ein gewöhnlicher Mann. (202e-203a, 93)
+<!-- end::[Platon – Symposion.md] -->
+
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+### Sokrates/Diotima: Aufstieg zum Schönen
+
+<!-- begin::[Platon – Symposion.md] -->
+- ["] Denn das bedeutet den rechten Weg zu den Dingen der Liebe gehen oder von einem anderen geführt werden, daß man, mit diesen schönen Dingen hier beginnend, um jenes Schönen willen immer weiter hinaufsteigt, wie auf Stufen: von einem schönen Leibe zu zweien und von zweien zu allen schönen Leibern, und von den schönen Leibern zu den schönen Einrichtungen und von den Einrichtungen zu den schönen Wissenschaften, bis man dann von den Wissenschaften aus zu jener Wissenschaft gelangt, die die Wissenschaft von nichts anderem als von jenem Schönen selbst ist, und er schließlich das erkennt, was das Schöne selbst ist. (211c, 117)
+<!-- end::[Platon – Symposion.md] -->
+
+
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="quote-bg"><p class="quote-bg-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Platon – Symposion</span></p></div>
+
+
+<div class="" style="padding: 20px; box-sizing: border-box; position: absolute; left: 10%; top: 10%; height: 80%; width: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center" align="center">
+
+
+### Sokrates/Diotima: Ethische Wirkung des Schönen
+
+<!-- begin::[Platon – Symposion.md] -->
+- ["] An dieser Stelle im Leben, mein lieber Sokrates \[…\] wenn überhaupt irgendwo, ist das Leben für den Menschen lebenswert: wenn er das Schöne selbst schaut. Wenn du es einmal erblickst, so wirst du den Eindruck haben, daß es ganz anders ist als Gold und Gewänder und als die schönen Knaben und Jünglinge \[…\]  wenn es einem zuteil würde, das Schöne selbst lauter, rein und unvermischt zu sehen, nicht voll von menschlichem Fleisch und von Farben und von all dem anderen sterblichen Flitter, sondern wenn er das göttliche Schöne selbst in seiner Eingestaltigkeit zu sehen vermöchte? Glaubst du \[…\] es werde ein Mensch ein schlechtes Leben führen, der dorthin schaut und das anblickt und mit ihm zusammen ist? (211de, 117–119)
+<!-- end::[Platon – Symposion.md] -->
+
+</div>
+</div></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="tpl-symposion" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Platon – Symposion</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: center; justify-content: center" >
+
+
+## Symposion: Alkibiades
+- Verhältnis Alkibiades-Sokrates-Agathon
+- Sokrates als begehrenswerter Silen („wahrhaft dämonischer Mensch”, 219c)
+- moralische Wirkung seines vorbildlichen Lebens
+- verkehrt die Rollen von Liebhaber/ Lehrer und Geliebtem/Schüler
+- widerlegt damit seine Eros-Lehre?
+
+
+</div>
+</div>
+
+<aside class="notes"><ul>
+<li><strong>Agathon</strong> verkörpert die äußerlich-sinnliche Schönheit und ist als junger Dichter der konventionell begehrenswerte Geliebte.</li>
+<li><strong>Sokrates</strong> verkörpert die schwer zugängliche geistige Schönheit und entzieht sich der erotischen Vereinnahmung.</li>
+<li><strong>Alkibiades</strong> steht zwischen beiden Formen des Eros: Er kann Agathons Schönheit unmittelbar begehren, wird aber von Sokrates’ innerer Überlegenheit gerade deshalb gefesselt, weil sie sich seinem Besitzanspruch entzieht.</li>
+</ul>
+</aside></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/markers.js"></script>
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/titles.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":true,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>

@@ -1116,8 +1116,8 @@
     "src-href": "https://cplong.org/2014/04/cover-art-pariss-plato-and-socrates",
     "src-title": "Mittelalterliche Miniatur, Bodleian Library, MS Ashmole 304, 31v.",
     "src-label": "Platon und Sokrates",
-    "src-size": "100%",
-    "src-position": "15% center",
+    "src-size": "120%",
+    "src-position": "15% 35%",
     "year": null,
     "author": [
       "Platon",
@@ -1751,6 +1751,54 @@
     "src-href": "https://www.slc.gov/parks/animal-tracks-in-snow/",
     "keywords": [
       "Spur"
+    ]
+  },
+  "david-tod-ausschnitt": {
+    "url": "https://indigodergisi.com/wp-content/uploads/2015/12/sokrates-in-ölümü_257881.jpg",
+    "author": [
+      "Jacques-Louis David"
+    ],
+    "year": 1787,
+    "src-label": "David: Tod des Sokrates (Ausschnitt)",
+    "src-title": "Jacques Louis David, Der Tod des Sokrates, Öl auf Leinwand, 1787. 129,5 × 196,2 cm. Metropolitan Museum of Art, New York. Ausschnitt",
+    "src-href": "https://de.wikipedia.org/wiki/Der_Tod_des_Sokrates",
+    "keywords": [
+      "Platon",
+      "Sokrates",
+      "Antike",
+      "Philosophie"
+    ]
+  },
+  "david-tod": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/David_-_The_Death_of_Socrates.jpg?utm_source=de.wikipedia.org&utm_campaign=index&utm_content=original",
+    "author": [
+      "Jacques-Louis David"
+    ],
+    "year": 1787,
+    "src-label": "David: Tod des Sokrates (1787)",
+    "src-title": "Jacques Louis David, Der Tod des Sokrates, Öl auf Leinwand, 1787. 129,5 × 196,2 cm. Metropolitan Museum of Art, New York.",
+    "src-href": "https://de.wikipedia.org/wiki/Der_Tod_des_Sokrates",
+    "keywords": [
+      "Platon",
+      "Sokrates",
+      "Antike",
+      "Philosophie"
+    ]
+  },
+  "aristophanes-kugelmenschen": {
+    "url": "https://static.wixstatic.com/media/719a5e_36323d0c474b40a8a63937ee6271f1e2~mv2.jpeg",
+    "author": [
+      "Unbekannt"
+    ],
+    "year": null,
+    "src-label": "Quelle",
+    "src-title": "Keine Details bekannt",
+    "src-href": "https://www.vivace-blog.de/post/9-der-kugelmensch-nach-platon",
+    "keywords": [
+      "Platon",
+      "Symposion",
+      "Aristophanes",
+      "Kugelmenschen"
     ]
   }
 }
