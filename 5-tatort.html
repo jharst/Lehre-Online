@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Martínez – Crímenes imperceptibles (1)</title>
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="css/slides-extended.css" />
+    <link rel="stylesheet" href="dist/theme/white.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+    <link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+    <link rel="stylesheet" href="Resources/css/slides-tokens.css" />
+    <link rel="stylesheet" href="Resources/css/vl-slides.css" />
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+    <script type="text/javascript">
+        function pageInIframe() {
+            return (window.location !== window.parent.location);
+        }
+
+        let forgetPop = true;
+        function onPopState(event) {
+            if(forgetPop){
+                forgetPop = false;
+            } else if( pageInIframe()) {
+                parent.postMessage(event.target.location.href, "app://obsidian.md");
+            }
+        }
+        window.onpopstate = onPopState;
+        window.onmessage = event => {
+            if(event.data == "reload"){
+                window.document.location.reload();
+            }
+            forgetPop = true;
+        }
+
+        function fitElements() {
+            const itemsToFit = document.getElementsByClassName('fitText');
+            for (const item in itemsToFit) {
+                if (Object.hasOwnProperty.call(itemsToFit, item)) {
+                    const element = itemsToFit[item];
+                    fitElement(element, 1, 1000);
+                    element.classList.remove('fitText');
+                }
+            }
+        }
+
+        function fitElement(element, start, end) {
+
+            let size = (end + start) / 2;
+            element.style.fontSize = `${size}px`;
+
+            if (Math.abs(start - end) < 1) {
+                while (element.scrollHeight > element.offsetHeight) {
+                    size--;
+                    element.style.fontSize = `${size}px`;
+                }
+                return;
+            }
+
+            if (element.scrollHeight > element.offsetHeight) {
+                fitElement(element, start, size);
+            } else {
+                fitElement(element, size, end);
+            }
+        }
+
+        document.onreadystatechange = () => {
+            fitElements();
+            if (document.readyState === 'complete') {
+                if (pageInIframe() && window.location.href.indexOf("?export") != -1){
+                    parent.postMessage(event.target.location.href, "app://obsidian.md");
+                }
+                if (window.location.href.indexOf("print-pdf") != -1){
+                    let stateCheck = setInterval(() => {
+                        clearInterval(stateCheck);
+                        window.print();
+                    }, 250);
+                }
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides"><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="martinez-cover" data-src-label="Cover" data-src-maintitle="Tatort Campus" data-src-subtitle="Detektivisches Wissen<br>zwischen Nord und Süd" data-src-href="https://de.wikipedia.org/wiki/Die_Pythagoras-Morde" data-src-title="Buchcover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-top-div" style="width: 55%; clip-path: none;"></div><div class="left-bottom-div" style="width: 65%"><div class="slide-subtitle-left" onclick="Reveal.getPlugins().notes.open();">
+  <span class="session-span" data-session="5">5. Sitzung: </span><span>Martínez – Crímenes imperceptibles (1)</span>
+</div>
+
+<div class="left-bottom-div" style="width: 90%; background-color: var(--vl-brand)">
+<div class="title-panel">
+<p class="slide-title-left"><span class="slide-title-left--title"><% maintitle %><br></span><span class="slide-title-left--subtitle"><% subtitle %></span></p>
+<p class="slide-title-left slide-title-left--author">Dr. habil. Joachim Harst<br>Allgemeine und Vergleichende Literaturwissenschaft<br>Universität des Saarlandes</p>
+</div></div></div>
+
+<!--Bildnachweis wird durch slide-img-js befüllt -->
+<div class="right-image-source"><a href="#" title="" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div></div>
+</div>
+
+<aside class="notes"><ul>
+<li>Einführung<ul>
+<li>Zusammenhang mit Seminar</li>
+<li>Figuren und Handlung</li>
+<li>Mathematik, Logik und Spurenlesen</li>
+</ul>
+</li>
+<li>Kap. 4: Zeichen, Kontext, Regel (das einzelne Zeichen wird als Element eines Codes verstanden; dieser Code muss hypothetisch erschlossen werden, wenn er nicht durch den Kontext nahegelegt wird)</li>
+<li>Schlüsselbegriff: Abduktion [@Eco:1983a]<ul>
+<li>Hypothese: man kennt eine Regel und ein Ergebnis und fragt, welcher konkrete Fall dieses Ergebnis erklären könnte</li>
+<li>Abduktion – Sachverhalt wird erklärlich als &gt; Fall &gt; eines allgemeinen Gesetzes</li>
+<li>Plausibilisierung</li>
+</ul>
+</li>
+</ul>
+</aside></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="martinez-cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Einführung
+- Zusammenhang mit Seminar
+- Figuren und Handlung
+- Mathematik, Logik und Spurenlesen
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="martinez-cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+# Kap. 4: Zeichen, Kontext, Regel
+
+</div>
+</div></script></section><section ><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="animal-tracks" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Hypothese/Abduktion
+Man kennt eine Regel und ein Ergebnis und fragt, welcher konkrete Fall dieses Ergebnis erklären könnte:
+
+- *Ergebnis:* Diese Bohnen sind weiß.
+- *Regel:* Alle Bohnen aus diesem Sack sind weiß.
+- [>] *Hypothese über den Fall:* Diese Bohnen stammen wahrscheinlich aus diesem Sack.
+
+<p class="source">Charles S. Peirce nach Eco, U. (1983). Some Hypotheses on Three Types of Abduction. In U. Eco & T. A. Sebeok (Eds.), <em>The Sign of Three: Dupin, Holmes, Peirce</em> (pp. 198–220). Indiana UP</p>
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="animal-tracks" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="left-bottom-div vl-text-photo-stripe"><div class="left-top-div vl-text-photo-stripe-inner"></div></div>
+<div class="right-bottom-div" style="width: 7%"><p class="vl-text-photo-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Martínez – Crímenes imperceptibles (1)</span></p></div>
+
+<img class="slide-img-left" src="" alt=""><!-- .element: style="position: absolute; left: 5%; bottom: 8%; max-width: 400px" -->
+
+
+
+<div class="vl-text-photo-body">
+
+## Varianten von Hypothesen
+### 1. Regel bereits bekannt: Hypothese eines Falls
+- *Ergebnis*: Die Straße ist nass.
+- *Bekannte Regel*: Regen macht Straßen nass.
+- [>] *Hypothese*: Es hat geregnet.
+
+### 2. Fall bekannt, Regel unbekannt: Hypothese einer Regel
+- *Fall*: Dieses Metallstück wurde erhitzt.
+- *Ergebnis*: Es hat sich ausgedehnt.
+- [>] *Hypothese*: Erhitzte Metalle dehnen sich aus.
+
+These: Hypothetisches Denken prägt jede Form von Erkenntnis.
+<p class="source">Charles S. Peirce nach Eco, U. (1983). Some Hypotheses on Three Types of Abduction. In U. Eco & T. A. Sebeok (Eds.), <em>The Sign of Three: Dupin, Holmes, Peirce</em> (pp. 198–220). Indiana UP</p>
+
+
+</div>
+
+<div class="vl-text-photo-source"><a href="#" title="" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div>
+</div>
+
+<aside class="notes"><p>In Fall 2 wird eine mögliche Regel erschlossen; Ähnlichkeit zur Induktion; Unterschied liegt darin, dass die Regel bei der Abduktion zunächst als <strong>Erklärung oder Vermutung</strong> vorgeschlagen wird; bei der Induktion wird sie aus einer Reihe von Fällen verallgemeinert und überprüft.</p>
+</aside></script></section></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="animal-tracks" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="left-bottom-div vl-text-photo-stripe"><div class="left-top-div vl-text-photo-stripe-inner"></div></div>
+<div class="right-bottom-div" style="width: 7%"><p class="vl-text-photo-title"><span class="session-span" data-session="5">5. Sitzung: </span><span>Martínez – Crímenes imperceptibles (1)</span></p></div>
+
+<img class="slide-img-left" src="" alt=""><!-- .element: style="position: absolute; left: 5%; bottom: 8%; max-width: 400px" -->
+
+
+
+<div class="vl-text-photo-body">
+
+## Sprachverstehen als „undercoded abduction”
+### 1. Lexikalische Identifikation: Zeichenfolge → Wort
+- *Ergebnis:* Die Zeichenfolge „Bank“ erscheint in einer Äußerung.
+- *Regel/Code:* Im deutschen Wortschatz gibt es das Wort _Bank_; bestimmte Laut- und Schreibmuster können als deutsche Wörter identifiziert werden.
+- [>] *Hypothese über den Fall:* Die Zeichenfolge ist wahrscheinlich das deutsche Wort _Bank_ und gehört zum deutschen Wortschatz.
+### 2. Semantische Interpretation: Wort → Bedeutung
+- *Ergebnis:* Jemand sagt: „Ich gehe zur Bank.“
+- *Regel/Code:* Das Wort _Bank_ hat mehrere mögliche Bedeutungen, unter anderem „Sitzmöbel“ und „Geldinstitut“.
+- [>] *Hypothese über den Fall:* Gemeint ist wahrscheinlich das Geldinstitut.
+
+<p class="source">Eco, U. (1983). Some Hypotheses on Three Types of Abduction. In U. Eco & T. A. Sebeok (Eds.), <em>The Sign of Three: Dupin, Holmes, Peirce</em> (pp. 198–220). Indiana UP</p>
+</div>
+
+<div class="vl-text-photo-source"><a href="#" title="" target="_blank">Bildnachweis<i class="fas fa-external-link-alt link-icon"></i></a></div>
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="martinez-cover" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Kap. 7: Ästhetik des Denkens
+- Gödel: Unvollständigkeit (51)
+- Heisenberg: Ungewissheit (53)
+- „Ästhetik der Schlichtheit und Eleganz” des mathematischen Beweises (54)
+- Ästhetik des Denkens in Kriminaluntersuchungen (56)
+	- Überbewertung der materiellen Beweise (57)
+	- Bevorzugung der einfachsten Hypothese (58)
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="animal-tracks" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Invention/kreative Abduktion
+Man kennt ein Ergebnis und fragt, a) welcher Fall vorliegt und b) begründet dies mit einer angenommenen möglichen Regel.
+- *Ergebnis*: Ein Fenster ist beschädigt, auf dem Fußboden liegen Scherben.
+- *Regel*: Ein Einbrecher, der durch ein Fenster eindringt, hinterlässt solche Spuren.
+- [>] *Fall*: Jemand ist durch das Fenster eingebrochen.
+- Problem: Wie kann die Existenz von Regel und Fall beweisen werden? 
+
+<p class="source">Eco, U. (1983). Some Hypotheses on Three Types of Abduction. In U. Eco & T. A. Sebeok (Eds.), <em>The Sign of Three: Dupin, Holmes, Peirce</em> (pp. 198–220). Indiana UP</p>
+</div>
+</div></script></section><section data-separator="?
+---?
+" data-separator-vertical="?
+--?
+" data-separator-notes="_notes:_" data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-img-id="animal-tracks" data-background-color="lightgrey" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 1080px; width: 1920px; min-height: 1080px; display: flex; flex-direction: column; align-items: start; justify-content: center" absolute="true">
+
+<div class="container">
+<div class="right-bottom-div" style="width: 60%;"><p class="right-title-text"><span class="session-span" data-session="5">5. Sitzung: </span><span> Martínez – Crímenes imperceptibles (1)</span></p>
+<div class="right-top-div">
+</div>
+<div class="right-image-source"><a href="#" title="" target="_blank">QUELLE<i class="fas fa-external-link-alt link-icon"></i></a></div></div></div>
+
+<div class="" style="padding: 5px; box-sizing: border-box; position: absolute; left: 1%; top: 1%; height: 100%; width: 43%; display: flex; flex-direction: column; align-items: start; justify-content: center" >
+
+
+## Plausibilisierung
+- Ästhetische und ökonomische Aspekte (Kohärenz, Eleganz/Sparsamkeit, Wahrscheinlichkeit)
+- [>] eine überzeugende kreative Abduktion macht möglichst viele verstreute und unverständliche Einzelheiten durch eine möglichst einfache Regel zu einem kohärenten „Fall”
+- Meta-Abduktion (die Welt, in der die erfundene Regel gilt, ist die Welt der Wahrnehmung)
+
+<p class="source">Eco, U. (1983). Some Hypotheses on Three Types of Abduction. In U. Eco & T. A. Sebeok (Eds.), <em>The Sign of Three: Dupin, Holmes, Peirce</em> (pp. 198–220). Indiana UP</p>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/obsidian-markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/math/math.js"></script>
+    <script src="plugin/mermaid/mermaid.js"></script>
+    <script src="plugin/chart/chart.umd.js"></script>
+    <script src="plugin/chart/plugin.js"></script>
+    <script src="plugin/menu/menu.js"></script>
+    <script src="plugin/customcontrols/plugin.js"></script>
+
+    <script src="Resources/js/markers.js"></script>
+    <script src="Resources/js/slide-img-db.js"></script>
+    <script src="Resources/js/titles.js"></script>
+
+    <script>
+        function extend() {
+            const target = {};
+            for (let i = 0; i < arguments.length; i++) {
+                const source = arguments[i];
+                for (const key in source) {
+                    if (source.hasOwnProperty(key)) {
+                        target[key] = source[key];
+                    }
+                }
+            }
+            return target;
+        }
+
+        function isLight(color) {
+            // normalize to rgb(a)
+            const optionEl = document.createElement("option");
+            optionEl.style.color = color;
+            const normalizedColor = optionEl.style.color;
+
+            const match = normalizedColor.match(/(\d+), (\d+), (\d+)/);
+            if (!match) return false;
+            const [, c_r, c_g, c_b] = match;
+
+            const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+            return brightness > 155;
+        }
+
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+
+        if (isLight(bgColor)) {
+            document.body.classList.add('has-light-background');
+        } else {
+            document.body.classList.add('has-dark-background');
+        }
+
+        // default options to init reveal.js
+        const defaultOptions = {
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            transition: 'default', // none/fade/slide/convex/concave/zoom
+            plugins: [
+                ObsidianMarkdown,
+                RevealHighlight,
+                RevealZoom,
+                RevealNotes,
+                RevealMath.KaTeX,
+                RevealMermaid,
+                RevealChart,
+                RevealCustomControls,
+                RevealMenu,
+            ],
+            allottedTime: "120",
+
+            katex: {
+                local: 'plugin/math/katex',
+                extensions: ["mhchem"],
+            },
+            markdown: {
+                gfm: true,
+            },
+            mermaid: {
+                theme: isLight(bgColor) ? 'default' : 'dark',
+            },
+            customcontrols: {
+                controls: [
+                ]
+            },
+            menu: {
+                loadIcons: false
+            },
+        };
+
+        if ( pageInIframe() ) {
+            defaultOptions.scrollActivationWidth = 5;
+        }
+
+        // options from URL query string
+        const queryOptions = Reveal().getQueryHash() || {};
+
+        const options = extend(defaultOptions, {"controls":true,"progress":true,"slideNumber":false,"center":false,"transition":"slide","transitionSpeed":"default","width":1920,"height":1080,"margin":0.04}, queryOptions);
+    </script>
+
+    <script>
+      /**
+       * KaTeX Equation Numbering Note
+       *
+       * KaTeX maintains a global equation counter for \begin{equation} environments.
+       * When navigating between slides, reveal.js math plugin may re-render math, causing
+       * equation numbers to change randomly.
+       *
+       * Note: Regular $$ blocks don't have equation numbers - only \begin{equation} does.
+       *
+       * If you experience issues with equation numbers changing:
+       * Use manual \tag{} commands: \begin{equation}\tag{1} ... \end{equation}
+       */
+
+      Reveal.initialize(options);
+    </script>
+    <!-- created with Slides Extended reveal.html template -->
+</body>
+</html>
