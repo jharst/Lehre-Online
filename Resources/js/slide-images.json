@@ -667,7 +667,7 @@
     "keywords": []
   },
   "celestina-1": {
-    "url": "../Resources/images/Celestina4.jpg",
+    "url": "Resources/images/Celestina4.jpg",
     "src-href": "https://museupicassobcn.cat/index.php/en/node/809",
     "src-title": "Quelle: Fernando de Rojas (1500/1989). La Celestina oder Tragikomödie von Calisto und Melibea. Übers. von Fritz Vogelgsang. Illustriert von Pablo Picasso. Frankfurt a.M.: Insel.",
     "src-label": "Picasso: Illustration zu La Celestina (1968).",
@@ -680,7 +680,7 @@
     "keywords": []
   },
   "celestina-2": {
-    "url": "../Resources/images/Celestina3.jpg",
+    "url": "Resources/images/Celestina3.jpg",
     "src-href": "https://museupicassobcn.cat/index.php/en/collection/artwork/young-woman-showing-her-sex-two-grotesque-prostrated-courtiers",
     "src-title": "Quelle: Fernando de Rojas (1500/1989). La Celestina oder Tragikomödie von Calisto und Melibea. Übers. von Fritz Vogelgsang. Illustriert von Pablo Picasso. Frankfurt a.M.: Insel.",
     "src-label": "Picasso: Illustration zu La Celestina (1968).",
@@ -1799,6 +1799,30 @@
       "Symposion",
       "Aristophanes",
       "Kugelmenschen"
+    ]
+  },
+  "karloff-frankenstein": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Frankenstein%27s_monster_%28Boris_Karloff%29.jpg",
+    "author": [
+      "Boris Karloff"
+    ],
+    "year": 1935,
+    "src-label": "B. Karloff",
+    "src-title": "Boris Karloff als Frankenstein's Monster in \"Bride of Frankenstein\" (1925)",
+    "src-href": "https://en.wikipedia.org/wiki/Boris_Karloff",
+    "keywords": [
+      "Frankenstein",
+      "Cyborg"
+    ]
+  },
+  "blade-runner-test": {
+    "url": "https://lparchive.org/Blade-Runner/Update%2010/20-Screen148.JPG",
+    "src-label": "Empathy-Testgear",
+    "src-href": "https://lparchive.org/Blade-Runner/Update%2010/",
+    "keywords": [
+      "Cyborg",
+      "Blade Runner",
+      "Dick"
     ]
   }
 }
