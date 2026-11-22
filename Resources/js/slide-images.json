@@ -74,22 +74,9 @@
     "author": [
       "Jean Honoré Fragonard"
     ],
-    "keywords": []
+    "keywords": ["Lesen"]
   },
-  "friedrich": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
-    "src-href": "https://de.wikipedia.org/wiki/Caspar_David_Friedrich",
-    "src-title": "Caspar David Friedrich: Wanderer über dem Nebelmeer. Öl auf Leinwand. Hamburger Kunsthalle, 1817.",
-    "src-label": "C.D. Friedrich: Über dem Nebelmeer (1817).",
-    "src-size": "cover",
-    "src-position": "left",
-    "year": 1817,
-    "author": [
-      "Caspar David Friedrich"
-    ],
-    "keywords": []
-  },
-  "richardson": {
+  "richardson-pamela-fainting": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/HighmorePamelaFainting.jpeg",
     "src-href": "https://en.wikipedia.org/wiki/Pamela;_or,_Virtue_Rewarded",
     "src-title": "Joseph Highmore, Pamela Fainting, National Gallery of Victoria, Öl auf Leinwand, 1743.",
@@ -100,9 +87,9 @@
     "author": [
       "Joseph Highmore"
     ],
-    "keywords": []
+    "keywords": ["Pamela", "Richardson"]
   },
-  "rousseau": {
+  "rousseau-lac": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/LePrincePromenade.jpg",
     "src-href": "https://fr.wikipedia.org/wiki/Julie_ou_la_Nouvelle_Héloïse",
     "src-title": "Charles-Édouard Le Prince, Promenade de Julie et St Preux sur le lac Léman, Öl auf Leinwand, Montmorency, Musée Jean-Jacques Rousseau, 1824.",
@@ -113,7 +100,7 @@
     "author": [
       "Charles-Édouard Le Prince"
     ],
-    "keywords": []
+    "keywords": ["Rousseau", "Heloisa", "Heloise"]
   },
   "friedrich-mond": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Caspar_David_Friedrich_-_Zwei_Männer_in_Betrachtung_des_Mondes.jpg",
@@ -126,7 +113,7 @@
     "author": [
       "Caspar David Friedrich"
     ],
-    "keywords": []
+    "keywords": ["Romantik"]
   },
   "friedrich-nebelmeer": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
@@ -139,9 +126,9 @@
     "author": [
       "Caspar David Friedrich"
     ],
-    "keywords": []
+    "keywords": ["Romantik"]
   },
-  "leighton-vollbild": {
+  "leighton-lady": {
     "url": "https://farm6.staticflickr.com/5245/29918621396_eb5353e1d8_o.jpg",
     "src-href": "https://en.wikipedia.org/wiki/Edmund_Leighton",
     "src-title": "Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906.",
@@ -152,20 +139,7 @@
     "author": [
       "Edmund Blair Leighton"
     ],
-    "keywords": []
-  },
-  "leighton": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Leighton-Lady_in_a_Garden.jpg/2560px-Leighton-Lady_in_a_Garden.jpg",
-    "src-href": "https://en.wikipedia.org/wiki/Edmund_Leighton",
-    "src-title": "Edmund Blair Leighton: Lady in a Garden. Öl auf Leinwand, Privatsammlung, 1906.",
-    "src-label": "E.B. Leighton: The Garden (1906).",
-    "src-size": "cover",
-    "src-position": "left",
-    "year": 1906,
-    "author": [
-      "Edmund Blair Leighton"
-    ],
-    "keywords": []
+    "keywords": ["Romantik", "Austen"]
   },
   "manzoni": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Molteni_Giuseppe%2C_Alessandro_Manzoni.jpg",
@@ -1457,22 +1431,6 @@
     "src-href": "https://de.wikipedia.org/wiki/Sunset_Boulevard",
     "keywords": [
       "Film/Noir"
-    ]
-  },
-  "warburg-mnemosyne": {
-    "url": "https://warburg.library.cornell.edu/images/warburg-exhibit.png",
-    "author": [
-      "Aby Warburg"
-    ],
-    "year": 1924,
-    "src-label": "Warburg: Mnemosyne (Ausschnitt)",
-    "src-title": "Warburg, Bilderatlas Mnemosyne, panel 39 (recovered, detail) | Photo: Wootton / fluid; Courtesy The Warburg Institute, London",
-    "src-href": "https://warburg.library.cornell.edu",
-    "src-position": "center",
-    "src-size": "contain",
-    "keywords": [
-      "Rhetorik",
-      "Bild"
     ]
   },
   "arcimboldo-bibliothekar": {
