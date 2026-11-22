@@ -17,10 +17,16 @@ const TITLE_MAX_SIZE = 1.4;   // em, Ausgangsgröße
 const TITLE_MIN_SIZE = 0.6;   // em, Untergrenze
 const TITLE_STEP     = 0.05;  // em, Schrittweite
 
+// Untertitel der Titelfolie startet kleiner als der Obertitel.
+// Verhältnis entspricht dem CSS (.slide-title-left--subtitle: 0.8em).
+const SUBTITLE_MAX_SIZE = TITLE_MAX_SIZE * 0.8;   // em
+const SUBTITLE_MIN_SIZE = TITLE_MIN_SIZE * 0.8;   // em
+
 // Standardfall: Text läuft waagerecht (oder per writing-mode senkrecht) in
 // einer Box mit fester Breite/Höhe. Überlauf heißt: scrollWidth bzw.
 // scrollHeight ist größer als die Innenbreite/-höhe.
-function fitBoxText(el) {
+// maxSize/minSize sind optional; ohne Angabe gelten die Titel-Werte.
+function fitBoxText(el, maxSize = TITLE_MAX_SIZE, minSize = TITLE_MIN_SIZE) {
   const isVertical = getComputedStyle(el).writingMode.includes('vertical');
   const overflows = () => isVertical
     ? el.scrollHeight > el.clientHeight
@@ -30,10 +36,10 @@ function fitBoxText(el) {
   // bereits verkleinerten Inline-Wert aufsetzt.
   el.style.fontSize = '';
 
-  let size = TITLE_MAX_SIZE;
+  let size = maxSize;
   el.style.fontSize = size + 'em';
 
-  while (overflows() && size > TITLE_MIN_SIZE) {
+  while (overflows() && size > minSize) {
     size -= TITLE_STEP;
     el.style.fontSize = size + 'em';
   }
@@ -85,6 +91,9 @@ function fitRotatedStripTitle(el) {
 function fitTitleText(el) {
   if (el.classList.contains('vl-text-photo-title')) {
     fitRotatedStripTitle(el);
+  } else if (el.classList.contains('slide-title-left--subtitle')) {
+    // Untertitel bleibt proportional kleiner als der Obertitel
+    fitBoxText(el, SUBTITLE_MAX_SIZE, SUBTITLE_MIN_SIZE);
   } else {
     fitBoxText(el);
   }
@@ -92,7 +101,7 @@ function fitTitleText(el) {
 
 function fitAll(root) {
   (root || document).querySelectorAll(
-    '.right-title-text, .slide-title-left--title, .slide-title-left--subtitle .quote-bg-title, .diagram-title, .vl-text-photo-title'
+    '.right-title-text, .slide-title-left--title, .slide-title-left--subtitle, .quote-bg-title, .diagram-title, .vl-text-photo-title'
   ).forEach(fitTitleText);
 }
 

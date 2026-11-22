@@ -61,7 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // 5. Bild setzen
         const imgEl = slide.querySelector('.img-wrapper img');
         const leftImgEl = slide.querySelector('img.slide-img-left');
-        const rightTopDiv = slide.querySelector('.right-top-div');
+        // Anker für "nur CSS-Variablen setzen, kein Reveal-Hintergrundbild".
+        // Der Name sagt, was passiert, nicht welches Element es ist:
+        //   .right-top-div       – Standard-Bildtemplate (Bildträger)
+        //   .curtain             – Vorhang-Layout (VL Blockquote pseudo),
+        //                          Layout-Rahmen, kein Bildträger
+        const cssVarAnker = slide.querySelector('.right-top-div, .curtain');
 
         if (leftImgEl && url) {
           // Template mit frei platziertem <img> (VL Standard viel Text und Foto, js)
@@ -74,22 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
           const caption = slide.querySelector('.img-wrapper figcaption');
           if (caption && merged['src-title']) caption.textContent = merged['src-title'];
 
-        } else if (url && rightTopDiv) {
-          // Template mit .right-top-div → CSS-Variablen am section-Element setzen,
-          // damit vl-slides.css sie per var(--slide-img) im .right-top-div abrufen kann.
+        } else if (url && cssVarAnker) {
+          // Template mit cssVarAnker → CSS-Variablen am section-Element setzen,
+          // damit vl-slides.css sie per var(--slide-img) im Element abrufen kann.
           // Direktes backgroundImage vermeiden – CSS-Variablen umgehen Probleme
           // mit Sonderzeichen wie %20 und Klammern in der URL.
           slide.style.setProperty('--slide-img', `url("${url}")`);
           slide.style.setProperty('--slide-img-size', merged['src-size'] || 'cover');
           slide.style.setProperty('--slide-img-position', merged['src-position'] || 'center');
-          console.log('--slide-img gesetzt:', slide.style.getPropertyValue('--slide-img'));
-          console.log('url:', url);
-          console.log('merged url:', merged['url']);
-          console.log('slide.dataset.url:', slide.dataset.url);
-          console.log('rightTopDiv:', rightTopDiv);
-          console.log('imgEl:', imgEl);
-        } else if (url && !rightTopDiv) {
-          // Template ohne .right-top-div → Bild als section-Hintergrund
+        } else if (url && !cssVarAnker) {
+          // Template ohne cssVarAnker → Bild als section-Hintergrund
           slide.style.setProperty('--slide-img', `url("${url}")`);
           if (!slide.dataset.backgroundImage) {
             slide.setAttribute('data-background-image', url);

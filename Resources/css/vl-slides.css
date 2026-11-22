@@ -1,17 +1,20 @@
 /* ============================================================
-   vl-slides.css  –  Version 0.2 (konservativ)
-   
-   Geändert gegenüber slides.css:
-     - Farbwerte → CSS-Variablen aus slides-tokens.css
-     - Schriftarten → CSS-Variablen aus slides-tokens.css
-   
-   Nicht geändert:
-     - Alle Layout-Werte (clip-path, position, width, height …)
-     - Alle !important-Deklarationen
-     - Selektoren (inkl. bekannter Fehler – werden separat angegangen)
-   
+   vl-slides.css
+   Präsentations-Styles für Slides Extended.
+
+   Aufbau (Reihenfolge = Kaskade beachten):
+     1. Basis        – reveal-Einstellungen, Typografie, Inline-Elemente
+     2. Bausteine    – .container, .img-container, .source, .figcaption
+     3. Layouts      – Bild rechts/links, Vollbild, Diagramm, Vorhang,
+                       Text-und-Foto, Titelfolie
+     4. Zitate       – Blockquotes, Zitatfolie
+     5. Mermaid
+     6. Sonstiges    – Poem, Bildunterschrift, Video, Vignette
+
    Voraussetzung: slides-tokens.css muss vorher geladen sein.
    ============================================================ */
+
+/* ===== 1. Basis ===== */
 
 .reveal {
   --r-main-font: var(--vl-font-body);
@@ -54,387 +57,6 @@
   padding: 2px;
 }
 
-/*====== FULLSCREEN IMAGE =====*/
-.fullscreen {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;                    /* neu */
-  flex-direction: column;           /* neu: Titel oben, Bild darunter */
-  /*border-left: 10px solid var(--vl-brand-50);*/
-  overflow: hidden;
-  /*border-radius: var(--vl-radius-md);*/
-}
-
-.fullscreen .img-container {
-  border: none;
-  background-color: transparent;
-  flex: 1;                          /* neu: nimmt restlichen Raum ein */
-  min-height: 0;                    /* neu: verhindert Overflow in Flex */
-}
-
-/* Figure als Flex-Spalte: Überschrift nimmt ihre natürliche Höhe,
-   das fullscreenm bekommt den Rest. Verhindert Überlauf ohne Prozent-Raten. */
-.fullscreen figure {
-  height: 100%;                     /* füllt img-container */
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  /* .img-wrapper setzt padding-bottom + gap; beides würde hier
-     zusätzlich zur height:100% dazukommen und die Folie überlaufen lassen. */
-  box-sizing: border-box;
-  padding-bottom: 0 !important;
-  gap: 0 !important;
-}
-
-/* Überschrift darf nicht schrumpfen und keine Ränder nach oben/unten setzen */
-.fullscreen figure > h1,
-.fullscreen figure > h2,
-.fullscreen figure > h3,
-.fullscreen figure > h4 {
-  flex: 0 0 auto;
-  margin-top: 0 !important;
-  margin-bottom: 0.3em !important;
-}
-
-.fullscreen img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain !important;              /* Seitenverhältnis erhalten */
-}
-/* Mermaid-Container muss die volle Fläche bekommen, sonst schrumpft er
-   auf die Intrinsic-Breite des SVG (width:auto) und das fullscreenm bleibt klein.
-   flex:1 + min-height:0 = restlicher Platz nach der Überschrift. */
-.fullscreen figure .mermaid,
-.fullscreen figure .block-language-mermaid {
-  width: 100% !important;
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  height: auto !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 !important;
-}
-/* SVG füllt den Container; preserveAspectRatio sorgt für contain-Verhalten. */
-.fullscreen figure .mermaid svg,
-.fullscreen figure .block-language-mermaid svg,
-.fullscreen figure > svg {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  display: block !important;
-}
-/*====== DIAGRAMME ====*/
-.diagram {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;                    /* neu */
-  flex-direction: column;           /* neu: Titel oben, Bild darunter */
-  background-color: #f0eaf450;
-  /*border-left: 10px solid var(--vl-brand-50);*/
-  overflow: hidden;
-  /*border-radius: var(--vl-radius-md);*/
-}
-
-.diagram .img-container {
-  flex: 1;                          /* neu: nimmt restlichen Raum ein */
-  min-height: 0;                    /* neu: verhindert Overflow in Flex */
-}
-
-/* Figure als Flex-Spalte: Überschrift nimmt ihre natürliche Höhe,
-   das Diagramm bekommt den Rest. Verhindert Überlauf ohne Prozent-Raten. */
-.diagram figure {
-  height: 100%;                     /* füllt img-container */
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  /* .img-wrapper setzt padding-bottom + gap; beides würde hier
-     zusätzlich zur height:100% dazukommen und die Folie überlaufen lassen. */
-  box-sizing: border-box;
-  padding-bottom: 0 !important;
-  gap: 0 !important;
-}
-
-/* Überschrift darf nicht schrumpfen und keine Ränder nach oben/unten setzen */
-.diagram figure > h1,
-.diagram figure > h2,
-.diagram figure > h3,
-.diagram figure > h4 {
-  flex: 0 0 auto;
-  margin-top: 0 !important;
-  margin-bottom: 0.3em !important;
-}
-
-.diagram img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain !important;              /* Seitenverhältnis erhalten */
-}
-/* Mermaid-Container muss die volle Fläche bekommen, sonst schrumpft er
-   auf die Intrinsic-Breite des SVG (width:auto) und das Diagramm bleibt klein.
-   flex:1 + min-height:0 = restlicher Platz nach der Überschrift. */
-.diagram figure .mermaid,
-.diagram figure .block-language-mermaid {
-  width: 100% !important;
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  height: auto !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin: 0 !important;
-}
-/* SVG füllt den Container; preserveAspectRatio sorgt für contain-Verhalten. */
-.diagram figure .mermaid svg,
-.diagram figure .block-language-mermaid svg,
-.diagram figure > svg {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  display: block !important;
-}
- 
-/* Helle Diagonale – breitere Fläche im Hintergrund links */
-.diagram::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8%;
-  height: 100%;
-  background: var(--vl-brand-25);                   /* 25% Deckkraft */
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
-}
-
-/* schmalere Fläche im Hintergrund rechts */
-.diagram::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 10%;
-  height: 100%;
-  background: var(--vl-brand-25);                   
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.diagram-title {
-  position: absolute;
-  right: 1.5%;
-  bottom: 0;      /* Abstand zum unteren Rand */
-  width: 5%;
-  height: 95%;
-  writing-mode: vertical-rl;
-  transform: rotate(184.75deg);       /* Leserichtung: unten → oben */
-  text-align: left;                /* = visuell unten nach Rotation */
-  /* border: 4px solid red; for debugging*/
-
-  white-space: nowrap;
-  font-family: var(--vl-font-display);
-  font-weight: var(--vl-weight-display);
-  font-size: larger;
-  color: white;
-  letter-spacing: 0.05em;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/*======= BLOCKQUOTES ==============*/
-/* Blockquote definition: white.css */
-.reveal blockquote {
-  font-style: normal !important;
-  text-align: left;
-  width: 90%;
-  box-shadow: none !important;
-  background-color: transparent !important;
-  line-height: 1.5 !important;
-}
-
-.quote-block {
-  position: relative;
-  display: flex;
-  padding: 20px 20px 20px 60px;
-  border-radius: 10px;
-  text-align: justify;
-  width: 40%; 
-  height: auto;  
-  background-color: var(--vl-bg-subtle);
-}
-
-.quote-block::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 40%;
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Regel für embedded Blocks (Zitate) */
-ul.embedded-quote-block {
-  list-style: none;
-  margin-left: 0 !important;  /* keine Einrückung der Liste */
-  padding-left: 0;
-}
-
-ul.embedded-quote-block li {
-  overflow: hidden;           /* Float-Containment */
-  list-style: none;
-  margin-bottom: 1em !important;       /* Abstand zwischen Zitat-Absätzen */
-}
-
-ul.embedded-quote-block li:last-child {
-  margin-bottom: 0;           /* kein überschüssiger Abstand nach dem letzten */
-}
-
-/* Icon im Textfluss: kein Float, damit das Icon nicht in den Text läuft */
-.embedded-quote-block .float-icon {
-  float: none;
-  display: inline-block;
-  vertical-align: -0.05em;
-  color: #772F8B;
-  font-size: 0.85em;
-  margin-right: 0.45em;
-  line-height: 1;
-}
-
-/* Wichtig: li braucht overflow:hidden, sonst "bricht" der Float aus */
-.embedded-quote-block li {
-  overflow: hidden;
-  list-style: none;
-}
-
-/* Regel für [>]-Listen: nur das markierte <li> bekommt ein Icon statt Bullet.
-   Die übrigen <li> der Liste behalten ihren normalen Bullet. */
-ul.marker-bullet-block {
-  /* kein list-style: none – Bullets bleiben für die nicht markierten <li> */
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-}
-
-ul.marker-bullet-block li.marker-bullet {
-  list-style: none;           /* nur hier verschwindet der Bullet */
-  position: relative;         /* Bezug für das absolut positionierte Icon */
-}
-
-ul.marker-bullet-block li.marker-bullet .fa-li {
-  position: absolute;
-  left: -1em;              /* Icon dorthin, wo sonst der Bullet steht */
-  width: 1.2em;
-  top: 0.22em;                /* optische Korrektur zur ersten Textzeile */
-  text-align: left;
-  line-height: 1;
-  color: #772F8B;
-}
-
-ul.marker-bullet-block li.marker-bullet .source {
-  margin: 0.15em 0 0;
-  line-height: 1.25;
-}
-
-.hidden-tag {
-  display: none;
-}
-
-/*====== Styles ===*/
-.transparent-bg {
-  background-color: var(--vl-bg-subtle) !important;
-  border-radius: 5px;
-}
-
-/* ZITATFOLIE: Hintergrund mit diagonaler Farbfläche links
-   ::before erzeugt die Diagonale als Pseudo-Element –
-   kein zusätzlicher <div> im Template nötig.
-   position: relative ist Voraussetzung damit ::before
-   sich relativ zu diesem Element positioniert. */
-.quote-bg {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #f0eaf4;                              /* helles Lila */
-  border-left: 10px solid var(--vl-brand-50);        /* linke Akzentlinie */
-  overflow: hidden;
-  border-radius: var(--vl-radius-md);
-}
- 
-/* Helle Diagonale – breitere Fläche im Hintergrund links */
-.quote-bg::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 25%;
-  height: 100%;
-  background: var(--vl-brand-25);                   /* 25% Deckkraft */
-  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
-}
-
-/* schmalere Fläche im Hintergrund rechts */
-.quote-bg::after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 10%;
-  height: 100%;
-  background: var(--vl-brand-25);                   
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
-}
-
-.quote-bg-title {
-  position: absolute;
-  right: 1.5%;
-  bottom: 0;      /* Abstand zum unteren Rand */
-  width: 5%;
-  height: 95%;
-  writing-mode: vertical-rl;
-  transform: rotate(184.75deg);       /* Leserichtung: unten → oben */
-  text-align: left;                /* = visuell unten nach Rotation */
-  /* border: 4px solid red; for debugging*/
-
-  white-space: nowrap;
-  font-family: var(--vl-font-display);
-  font-weight: var(--vl-weight-display);
-  font-size: larger;
-  color: white;
-  letter-spacing: 0.05em;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/*====== MERMAID ===========*/
-.reveal .mermaid {   
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.reveal .mermaid svg {   
-  width: 100% !important;
-  height: auto;
-  display: block;
-  font-family: var(--vl-font-body) !important;
-}
-
-.reveal .mermaid svg .edgeLabel {   
-  background-color: rgba(0,0,0,0) !important;   
-  color: var(--r-main-color) !important;   
-  font-family: var(--vl-font-body) !important;
-}
-
-/* ---% SLIDE LAYOUTS %--- */
-/* ----------------------- */
 .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
   font-family: var(--vl-font-heading) !important;
   margin-bottom: 0.5em !important;
@@ -470,27 +92,22 @@ ul.marker-bullet-block li.marker-bullet .source {
   vertical-align: middle;
 }
 
-.figcaption {
-  display: block !important; 
-  width: 90% !important; 
-  min-width: 90% !important; 
-  text-align: center; 
-  margin-top: 0.75em !important;
+.hidden-tag {
+  display: none;
 }
 
-.source {
-  display: block;
-  width: 100%;
-  text-align: left;
-  font-size: var(--vl-size-xs);
-  color: var(--vl-text-muted);
-  margin-top: auto;
-  padding-top: 0.5em;
+.transparent-bg {
+  background-color: var(--vl-bg-subtle) !important;
+  border-radius: 5px;
 }
 
-.source:before {
-  content: "Quelle: ";
+/* "N. Sitzung:" ausblenden, wenn es Folien für einen Einzelvortrag sind */
+.session-span[data-session="0"],
+.session-span[data-session=""] {
+  display: none;
 }
+
+/* ===== 2. Bausteine ===== */
 
 /* CONTAINERS */
 .container {
@@ -503,13 +120,12 @@ ul.marker-bullet-block li.marker-bullet .source {
   border-color: var(--vl-brand); 
   border-radius: 5px;
 }
- 
-/* --- NEU: .img-container zentriert Bilder vertikal ---
+
+/* .img-container zentriert Bilder vertikal.
    align-items: center zentriert den figure-Block
    auf der vollen Slide-Höhe (height: 100%).
    Ohne height: 100% hat der Container keine Referenzgröße
-   und center hat keinen Effekt.
-*/
+   und center hat keinen Effekt. */
 .img-container {
   position: relative;
   display: flex !important;
@@ -529,9 +145,9 @@ ul.marker-bullet-block li.marker-bullet .source {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;   /* neu: zentriert img-row + figcaption vertikal in der figure */
-  height: 100%;        /* ← schon drin? */
-  flex: 1 1 auto;      /* ← neu: figure selbst als Flex-Child strecken */
+  justify-content: center;   /* zentriert img-row + figcaption vertikal in der figure */
+  height: 100%;
+  flex: 1 1 auto;            /* figure selbst als Flex-Child strecken */
   min-height: 0;
   gap: 10px;
   padding-bottom: var(--vl-space-sm);
@@ -552,18 +168,18 @@ ul.marker-bullet-block li.marker-bullet .source {
   gap: 30px;
   justify-content: center;
   width: auto;
-  flex: 1 1 auto;      /* neu: nimmt sich den Rest-Platz in .img-wrapper */
-  min-height: 0;       /* neu: darf innerhalb der Column auch schrumpfen */
-  min-width: 0;        /* neu: verhindert Overflow durch img min-content */
+  flex: 1 1 auto;      /* nimmt sich den Rest-Platz in .img-wrapper */
+  min-height: 0;       /* darf innerhalb der Column auch schrumpfen */
+  min-width: 0;        /* verhindert Overflow durch img min-content */
 }
 
 .img-row > img {
   display: inline-block;
   max-width: 100%;
-  max-height: 100%;   /* statt 65vh: an img-row gebunden, nicht an Viewport */
+  max-height: 100%;   /* an img-row gebunden, nicht an Viewport */
   height: auto;
   width: auto;
-  min-width: 0;        /* neu: erlaubt Schrumpfen unter die natürliche Breite */
+  min-width: 0;        /* erlaubt Schrumpfen unter die natürliche Breite */
   object-fit: contain;
   border-radius: 5px;
 }
@@ -603,44 +219,31 @@ ul.marker-bullet-block li.marker-bullet .source {
   min-width: 0;
 }
 
-/* RIGHT LAYOUT */
-.right-bottom-div {
-  position: absolute; 
-  bottom: 0; 
-  right: 0; 
-  width: 70%; 
-  height: 100%; 
-  background-color: var(--vl-brand-75); 
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+.figcaption {
+  display: block !important; 
+  width: 90% !important; 
+  min-width: 90% !important; 
+  text-align: center; 
+  margin-top: 0.75em !important;
 }
 
-.right-title-text {
-  position: absolute;
-  left: 7.5%;
-  bottom: 0;
-  width: 90%;
-  white-space: nowrap;
-  overflow: hidden;
-  /*border: 4px solid red; /*for debugging*/
-
-  transform: rotate(-78.5deg);
-  transform-origin: left bottom; /* Ankerpunkt = linke untere Ecke, immer fix */
-
-  color: white;
-  font-family: var(--vl-font-display);
-  font-weight: var(--vl-weight-display);
-  font-size: larger;
-  letter-spacing: 0.05em;
+.source {
+  display: block;
+  width: 100%;
   text-align: left;
+  font-size: var(--vl-size-xs);
+  color: var(--vl-text-muted);
+  margin-top: auto;
+  padding-top: 0.5em;
 }
 
-/* Wird gebraucht, um den Text: "3. Sitzung:" zu verbergen, 
-wenn es Folien für einen Einzelvortrag sind */
-.session-span[data-session="0"],
-.session-span[data-session=""] {
-  display: none;
+.source:before {
+  content: "Quelle: ";
 }
 
+/* ===== 3. Layouts ===== */
+
+/* --- Bild rechts (.right-top-div als Bildträger) --- */
 .right-top-div {
   position: absolute; 
   top: 0; 
@@ -674,7 +277,36 @@ wenn es Folien für einen Einzelvortrag sind */
   text-decoration: none;
 }
 
-/* LEFT LAYOUT */
+/* --- Farbflächen rechts und links (Diagonale) --- */
+.right-bottom-div {
+  position: absolute; 
+  bottom: 0; 
+  right: 0; 
+  width: 70%; 
+  height: 100%; 
+  background-color: var(--vl-brand-75); 
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.right-title-text {
+  position: absolute;
+  left: 7.5%;
+  bottom: 0;
+  width: 90%;
+  white-space: nowrap;
+  overflow: hidden;
+  /*border: 4px solid red; /*for debugging*/
+
+  transform: rotate(-78.5deg);
+  transform-origin: left bottom; /* Ankerpunkt = linke untere Ecke, immer fix */
+  color: white;
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: larger;
+  letter-spacing: 0.05em;
+  text-align: left;
+}
+
 .left-bottom-div {
   position: absolute;
   top: 0;
@@ -702,86 +334,265 @@ wenn es Folien für einen Einzelvortrag sind */
   /* to be added */
 }
 
-/* Titelfolie: zwei Textblöcke in der linken Fläche.
-   Die beiden Absätze sind reine Textblöcke – Layout und Höhenverteilung
-   macht ausschließlich der Container (.title-panel).
-   Modifier:
-     --title    : Selektionshaken für titles.js (kein Styling)
-     --subtitle : kleinerer Untertitel innerhalb des Titelblocks
-     --author   : kleinerer Autorblock, wird vom Container nach unten
-                  gedrückt (margin-top: auto)
-   white-space: no wrap war ungültig (richtig wäre nowrap); der Wert
-   wird hier bewusst weggelassen, damit der Titel umbrechen darf. */
-.slide-title-left {
-  text-align: left;
-  width: 100%;
-  padding: 5%;
-  box-sizing: border-box;
-  color: white;
+.slide-subtitle-left {
+  position: absolute; 
+  bottom: 0;
+  left: 71%; 
+  width: 95%; 
+  text-align: left; 
+  padding-left: 20px; 
+  color: white; 
+  white-space: nowrap;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  /* Basisgröße: em bezieht sich auf die geerbte Schriftgröße des
-     Elternelements, hier also auf den Fließtext der Folie.
-     1.2em statt "larger": larger rechnet in einem groben Stufensprung
-     des Browsers, em ist ein exakter Faktor. */
-  font-size: 1.2em;
-  margin: 0;
+  font-size: larger;
+  transform: rotate(-78deg) translate(-5%, 50%); 
+  transform-origin: left top;
+  overflow: hidden;
 }
 
-/* Leer mit Absicht: titles.js skaliert genau diesen Block
-   (.slide-title-left--title). Die Regel ist ein Selektionshaken,
-   keine Gestaltung – bitte nicht löschen. */
-.slide-title-left--title {
-}
-
-/* Untertitel: 0.8em der Basis (jetzt 0.96em des Fließtexts) */
-.slide-title-left--subtitle {
-  font-size: 0.8em;
-}
-
-/* Autorblock: 0.7em der Basis (jetzt 0.84em des Fließtexts),
-   klar kleiner als der Titel und nicht von der Browser-Stufentabelle
-   abhängig.
-   margin-top: auto schiebt den Absatz im Flex-Container nach unten.
-   Voraussetzung: das Elternelement ist display:flex mit flex-direction:column
-   (siehe .title-panel). Ohne Flex-Container bleibt der Wert wirkungslos. */
-.slide-title-left--author {
-  font-size: 0.7em;
-  line-height: 1.3;
-  margin-top: auto;
-}
-
-/* Container der beiden Textblöcke auf der Titelfolie.
-   Sitzt INNERHALB des zweiten .left-bottom-div (der die Diagonale
-   erzeugt, auf der .slide-subtitle-left liegt). Deshalb hier KEINE
-   absolute Positionierung und kein eigener Hintergrund: der Container
-   füllt einfach seinen Elternbereich und bleibt transparent.
-   Er ist die einzige Flex-Spalte dieser Folie: der Titelblock steht oben,
-   der Autorblock wird per margin-top:auto an den unteren Rand gedrückt. */
-.title-panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* --- Vollbild (.fullscreen) und Diagramm (.diagram) ---
+   Beide Layouts teilen den Aufbau: Titel oben, Bild darunter, Figure als
+   Flex-Spalte. Sie unterscheiden sich nur in der Hintergrundfarbe und
+   darin, ob der Rahmen von .img-container sichtbar bleibt. */
+.fullscreen,
+.diagram {
+  position: relative;
   width: 100%;
   height: 100%;
+  display: flex;                    /* Titel oben, Bild darunter */
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Nur das Diagramm bekommt die lila Tönung */
+.diagram {
+  background-color: #f0eaf450;
+}
+
+.fullscreen .img-container,
+.diagram .img-container {
+  flex: 1;                          /* nimmt restlichen Raum ein */
+  min-height: 0;                    /* verhindert Overflow in Flex */
+}
+
+/* Beim Vollbild soll kein Rahmen um das Bild liegen */
+.fullscreen .img-container {
+  border: none;
+  background-color: transparent;
+}
+
+/* Figure als Flex-Spalte: Überschrift nimmt ihre natürliche Höhe,
+   das Bild bekommt den Rest. Verhindert Überlauf ohne Prozent-Raten. */
+.fullscreen figure,
+.diagram figure {
+  height: 100%;                     /* füllt img-container */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  /* .img-wrapper setzt padding-bottom + gap; beides würde hier
+     zusätzlich zur height:100% dazukommen und die Folie überlaufen lassen. */
   box-sizing: border-box;
+  padding-bottom: 0 !important;
+  gap: 0 !important;
 }
 
-/* Untertitel im Titelblock (früher Inline-Style im Template) */
-.slide-title-left .slide-title-sub {
-  font-size: 0.8em;
+/* Überschrift darf nicht schrumpfen und keine Ränder nach oben/unten setzen */
+.fullscreen figure > h1,
+.fullscreen figure > h2,
+.fullscreen figure > h3,
+.fullscreen figure > h4,
+.diagram figure > h1,
+.diagram figure > h2,
+.diagram figure > h3,
+.diagram figure > h4 {
+  flex: 0 0 auto;
+  margin-top: 0 !important;
+  margin-bottom: 0.3em !important;
 }
 
-/* --- Layout "Standard viel Text und Foto" ---------------------------
+.fullscreen img,
+.diagram img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain !important;              /* Seitenverhältnis erhalten */
+}
+
+/* Mermaid-Container muss die volle Fläche bekommen, sonst schrumpft er
+   auf die Intrinsic-Breite des SVG (width:auto) und das Bild bleibt klein.
+   flex:1 + min-height:0 = restlicher Platz nach der Überschrift. */
+.fullscreen figure .mermaid,
+.fullscreen figure .block-language-mermaid,
+.diagram figure .mermaid,
+.diagram figure .block-language-mermaid {
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+/* SVG füllt den Container; preserveAspectRatio sorgt für contain-Verhalten. */
+.fullscreen figure .mermaid svg,
+.fullscreen figure .block-language-mermaid svg,
+.fullscreen figure > svg,
+.diagram figure .mermaid svg,
+.diagram figure .block-language-mermaid svg,
+.diagram figure > svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
+}
+
+/* Helle Diagonale – breitere Fläche im Hintergrund links */
+.diagram::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8%;
+  height: 100%;
+  background: var(--vl-brand-25);                   /* 25% Deckkraft */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+/* schmalere Fläche im Hintergrund rechts */
+.diagram::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  background: var(--vl-brand-25);                   
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Vertikaler Sitzungstitel am rechten Rand.
+   Gilt für das Diagramm- und das Zitat-Layout. */
+.diagram-title,
+.quote-bg-title {
+  position: absolute;
+  right: 1.5%;
+  bottom: 0;      /* Abstand zum unteren Rand */
+  width: 5%;
+  height: 95%;
+  writing-mode: vertical-rl;
+  transform: rotate(184.75deg);       /* Leserichtung: unten → oben */
+  text-align: left;                /* = visuell unten nach Rotation */
+  /* border: 4px solid red; for debugging*/
+
+  white-space: nowrap;
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: larger;
+  color: white;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* --- Vorhang (.curtain) --- */
+.curtain {
+  background-image: var(--slide-img); 
+  background-size: cover; 
+  background-color: rgba(255, 255, 255, 0.8);  
+  background-blend-mode: lighten;
+}
+
+.curtain .curtain-body {
+  position: absolute;
+  left: 25%;
+  top: 5%;
+  width: 58%;
+  height: 85%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: none;
+  text-align: left;
+  justify-content: center;
+  overflow: auto;
+  font-size: var(--vl-size-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.curtain .curtain-left,
+.curtain .curtain-right {
+  background-image: var(--slide-img);
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  overflow: hidden;
+}
+
+.curtain .curtain-left {
+  width: 20%;
+  background-size: 500%;
+}
+
+.curtain .curtain-right {
+  width: 16%;
+  background-size: 625%;
+  background-position: right top;
+}
+
+.curtain .curtain-left::after,
+.curtain .curtain-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-image: var(--slide-img);
+  background-color: transparent;
+}
+
+.curtain .curtain-left::after{
+  background-size: 1000%;
+  clip-path: polygon(0 0, 100% 0, 80% 100%, 0 100%);
+}
+
+.curtain .curtain-right::after {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  background-size: 1250%;
+  background-position: right top;
+  left: auto;
+  right: 0;
+}
+
+.curtain-right--title {
+  position: absolute;
+  right: 0.5%;
+  bottom: 0;
+  width: 5%;
+  height: 95%;
+  writing-mode: vertical-rl;
+  transform: rotate(180.5deg);
+  text-align: left;                
+  white-space: nowrap;
+  font-family: var(--vl-font-display);
+  font-weight: var(--vl-weight-display);
+  font-size: larger;
+  color: white;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* --- Layout "Standard viel Text und Foto" ---
    Baut auf den bestehenden Klassen auf:
      .container        : Rahmen und Hintergrund der Folie
      .left-bottom-div  : schmale Farbstreifen links (Diagonale)
      .left-top-div     : innere, dunklere Streifenfläche
      .right-bottom-div : schmaler Streifen rechts
-   Neu sind die Klasse .slide-img-left und die vl-text-photo-*
-   Klassen unten. Alle Farben kommen aus den Tokens
-   (--vl-brand-50 / --vl-brand-75), damit das Layout bei Änderungen
-   der Markenfarbe mitzieht.
+   Alle Farben kommen aus den Tokens (--vl-brand-50 / --vl-brand-75),
+   damit das Layout bei Änderungen der Markenfarbe mitzieht.
 
    Hinweis zum Bild: Position und Breite des Fotos (left/top/max-width)
    stehen bewusst inline im Template (element-style-Kommentar), weil
@@ -790,8 +601,7 @@ wenn es Folien für einen Einzelvortrag sind */
    zuverlässig überschreibt. Hier bleibt nur die Höhenbegrenzung. */
 
 /* Schmale Diagonale links: äußere Fläche in --vl-brand-50,
-   innere Fläche (::before) in --vl-brand-75. Beide Breiten und
-   Clip-Pfade stammen aus dem ursprünglichen grid-Layout. */
+   innere Fläche in --vl-brand-75. */
 .vl-text-photo-stripe {
   width: 20%;
   clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
@@ -867,9 +677,7 @@ wenn es Folien für einen Einzelvortrag sind */
 
 /* Sitzung und Titel stehen als normaler Inline-Text im gedrehten Block.
    Keine eigene Positionierung, keine eigene Rotation: die Drehung
-   passiert nur einmal am p, sonst liegen beide Spans übereinander.
-   left/bottom aus der alten Regel entfallen, weil sie bei
-   position: static ohnehin wirkungslos sind. */
+   passiert nur einmal am p, sonst liegen beide Spans übereinander. */
 .vl-text-photo-title > span {
   position: static;
   display: inline;
@@ -879,9 +687,7 @@ wenn es Folien für einen Einzelvortrag sind */
 }
 
 /* "N. Sitzung:" bleibt normales Inline, damit es vor dem Titel steht.
-   Die Ausblend-Regel für session 0 / leer steht global weiter oben
-   (.session-span[data-session="0"]); sie muss hier nicht wiederholt
-   werden, weil diese Regel gleich spezifisch ist und früher steht. */
+   Die Ausblend-Regel für session 0 / leer steht global in Abschnitt 1. */
 .vl-text-photo-title .session-span {
   display: inline;
 }
@@ -891,7 +697,6 @@ wenn es Folien für einen Einzelvortrag sind */
    left 29 % statt 26 %: mehr Abstand zur Abbildung.
    Flex-Spalte, damit .source per margin-top: auto am unteren Rand
    klebt (siehe Regel darunter). */
-
 .vl-text-photo-body {
   position: absolute;
   left: 29%;
@@ -949,24 +754,233 @@ wenn es Folien für einen Einzelvortrag sind */
   text-decoration: none;
 }
 
-.slide-subtitle-left {
-  position: absolute; 
-  bottom: 0;
-  left: 71%; 
-  width: 95%; 
-  text-align: left; 
-  padding-left: 20px; 
-  color: white; 
-  white-space: nowrap;
+/* --- Titelfolie ---
+   Zwei Textblöcke in der linken Fläche.
+   Die beiden Absätze sind reine Textblöcke – Layout und Höhenverteilung
+   macht ausschließlich der Container (.title-panel).
+   Modifier:
+     --title    : Selektionshaken für titles.js (kein Styling)
+     --subtitle : kleinerer Untertitel innerhalb des Titelblocks
+     --author   : kleinerer Autorblock, wird vom Container nach unten
+                  gedrückt (margin-top: auto) */
+.slide-title-left {
+  text-align: left;
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  color: white;
   font-family: var(--vl-font-display);
   font-weight: var(--vl-weight-display);
-  font-size: larger;
-  transform: rotate(-78deg) translate(-5%, 50%); 
-  transform-origin: left top;
-  overflow: hidden;
+  /* Basisgröße: em bezieht sich auf die geerbte Schriftgröße des
+     Elternelements, hier also auf den Fließtext der Folie.
+     1.2em statt "larger": larger rechnet in einem groben Stufensprung
+     des Browsers, em ist ein exakter Faktor. */
+  font-size: 1.2em;
+  margin: 0;
 }
 
-/*POEM*/
+/* Leer mit Absicht: titles.js skaliert genau diesen Block
+   (.slide-title-left--title). Die Regel ist ein Selektionshaken,
+   keine Gestaltung – bitte nicht löschen. */
+.slide-title-left--title {
+}
+
+/* Untertitel: 0.8em der Basis (jetzt 0.96em des Fließtexts) */
+.slide-title-left--subtitle {
+  font-size: 0.8em;
+}
+
+/* Autorblock: 0.7em der Basis (jetzt 0.84em des Fließtexts),
+   klar kleiner als der Titel und nicht von der Browser-Stufentabelle
+   abhängig.
+   margin-top: auto schiebt den Absatz im Flex-Container nach unten.
+   Voraussetzung: das Elternelement ist display:flex mit flex-direction:column
+   (siehe .title-panel). Ohne Flex-Container bleibt der Wert wirkungslos. */
+.slide-title-left--author {
+  font-size: 0.7em;
+  line-height: 1.3;
+  margin-top: auto;
+}
+
+/* Container der beiden Textblöcke auf der Titelfolie.
+   Sitzt INNERHALB des zweiten .left-bottom-div (der die Diagonale
+   erzeugt, auf der .slide-subtitle-left liegt). Deshalb hier KEINE
+   absolute Positionierung und kein eigener Hintergrund: der Container
+   füllt einfach seinen Elternbereich und bleibt transparent.
+   Er ist die einzige Flex-Spalte dieser Folie: der Titelblock steht oben,
+   der Autorblock wird per margin-top:auto an den unteren Rand gedrückt. */
+.title-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Untertitel im Titelblock */
+.slide-title-left .slide-title-sub {
+  font-size: 0.8em;
+}
+
+/* ===== 4. Zitate ===== */
+
+/* Blockquote-Grundlage (überschreibt white.css) */
+.reveal blockquote {
+  font-style: normal !important;
+  text-align: left;
+  width: 90%;
+  box-shadow: none !important;
+  background-color: transparent !important;
+  line-height: 1.5 !important;
+}
+
+.quote-block {
+  position: relative;
+  display: flex;
+  padding: 20px 20px 20px 60px;
+  border-radius: 10px;
+  text-align: justify;
+  width: 40%; 
+  height: auto;  
+  background-color: var(--vl-bg-subtle);
+}
+
+.quote-block::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 40%;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Regel für embedded Blocks (Zitate) */
+ul.embedded-quote-block {
+  list-style: none;
+  margin-left: 0 !important;  /* keine Einrückung der Liste */
+  padding-left: 0;
+}
+
+/* overflow: hidden ist Float-Containment,
+   sonst "bricht" der Float des Icons aus dem li aus */
+ul.embedded-quote-block li {
+  overflow: hidden;
+  list-style: none;
+  margin-bottom: 1em !important;       /* Abstand zwischen Zitat-Absätzen */
+}
+
+ul.embedded-quote-block li:last-child {
+  margin-bottom: 0;           /* kein überschüssiger Abstand nach dem letzten */
+}
+
+/* Icon im Textfluss: kein Float, damit das Icon nicht in den Text läuft */
+.embedded-quote-block .float-icon {
+  float: none;
+  display: inline-block;
+  vertical-align: -0.05em;
+  color: #772F8B;
+  font-size: 0.85em;
+  margin-right: 0.45em;
+  line-height: 1;
+}
+
+/* Regel für [>]-Listen: nur das markierte <li> bekommt ein Icon statt Bullet.
+   Die übrigen <li> der Liste behalten ihren normalen Bullet. */
+ul.marker-bullet-block {
+  /* kein list-style: none – Bullets bleiben für die nicht markierten <li> */
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+ul.marker-bullet-block li.marker-bullet {
+  list-style: none;           /* nur hier verschwindet der Bullet */
+  position: relative;         /* Bezug für das absolut positionierte Icon */
+}
+
+ul.marker-bullet-block li.marker-bullet .fa-li {
+  position: absolute;
+  left: -1em;              /* Icon dorthin, wo sonst der Bullet steht */
+  width: 1.2em;
+  top: 0.22em;                /* optische Korrektur zur ersten Textzeile */
+  text-align: left;
+  line-height: 1;
+  color: #772F8B;
+}
+
+ul.marker-bullet-block li.marker-bullet .source {
+  margin: 0.15em 0 0;
+  line-height: 1.25;
+}
+
+/* ZITATFOLIE: Hintergrund mit diagonaler Farbfläche links
+   ::before erzeugt die Diagonale als Pseudo-Element –
+   kein zusätzlicher <div> im Template nötig.
+   position: relative ist Voraussetzung damit ::before
+   sich relativ zu diesem Element positioniert. */
+.quote-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f0eaf4;                              /* helles Lila */
+  border-left: 10px solid var(--vl-brand-50);        /* linke Akzentlinie */
+  overflow: hidden;
+  border-radius: var(--vl-radius-md);
+}
+ 
+/* Helle Diagonale – breitere Fläche im Hintergrund links */
+.quote-bg::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--vl-brand-25);                   /* 25% Deckkraft */
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0 100%);
+}
+
+/* schmalere Fläche im Hintergrund rechts */
+.quote-bg::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+  height: 100%;
+  background: var(--vl-brand-25);                   
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ===== 5. Mermaid ===== */
+
+.reveal .mermaid {   
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.reveal .mermaid svg {   
+  width: 100% !important;
+  height: auto;
+  display: block;
+  font-family: var(--vl-font-body) !important;
+}
+
+.reveal .mermaid svg .edgeLabel {   
+  background-color: rgba(0,0,0,0) !important;   
+  color: var(--r-main-color) !important;   
+  font-family: var(--vl-font-body) !important;
+}
+
+/* ===== 6. Sonstiges ===== */
+
+/* POEM */
 #poem { 
   width: 70%;
   max-width: 1000px;
@@ -1016,7 +1030,7 @@ wenn es Folien für einen Einzelvortrag sind */
   text-align: center;
 }
 
-/*=== VIDEO BACKGROUND =====*/
+/* VIDEO BACKGROUND */
 .container video#background-video,
 .container video {
   position: absolute;
@@ -1056,12 +1070,11 @@ wenn es Folien für einen Einzelvortrag sind */
   height: auto;
 }
 
-/* ======== VIGNETTE BACKGROUND FÜR DIAGRAMME ======== */
-/* Verwendung: <!-- .slide: class="slide-bg-vignette" -->
+/* VIGNETTE BACKGROUND FÜR DIAGRAMME
+   Verwendung: <!-- .slide: class="slide-bg-vignette" -->
    Geeignet für Folien mit S/W-Diagrammen oder Filmstills.
    Das radial-gradient erzeugt eine Vignette: helles Zentrum,
    dunklere Ränder – der Blick wird zur Bildmitte gelenkt. */
-
 .slide-bg-vignette {
   /* Vignette: weißes Zentrum, mittelgrauer Rand */
   background: radial-gradient(
@@ -1084,4 +1097,3 @@ wenn es Folien für einen Einzelvortrag sind */
 .slide-bg-vignette .source {
   color: #333 !important;
 }
-
