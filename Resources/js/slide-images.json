@@ -1782,5 +1782,25 @@
       "Blade Runner",
       "Dick"
     ]
+  },
+  "ortelius-typus": {
+    "url": "https://www.vintage-maps.com/3849-extra_large/ortelius-world-map-1570-1572.jpg",
+    "src-href": "https://en.wikipedia.org/wiki/Theatrum_Orbis_Terrarum",
+    "src-title": "Abraham Ortelius: Typus Orbis Terrarum. Kupferstich aus dem Theatrum Orbis Terrarum, Antwerpen 1572.",
+    "src-label": "A. Ortelius: Typus Orbis Terrarum (1572).",
+    "src-size": "contain",
+    "src-position": "center",
+    "year": 1572,
+    "author": [
+      "Abraham Ortelius"
+    ],
+    "keywords": [
+      "Mignolo",
+      "Ortelius",
+      "Weltkarte",
+      "Nullpunkt",
+      "Kolonialität",
+      "Tordesillas"
+    ]
   }
 }

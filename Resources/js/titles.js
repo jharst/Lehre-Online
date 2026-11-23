@@ -101,7 +101,7 @@ function fitTitleText(el) {
 
 function fitAll(root) {
   (root || document).querySelectorAll(
-    '.right-title-text, .slide-title-left--title, .slide-title-left--subtitle, .quote-bg-title, .diagram-title, .vl-text-photo-title'
+    '.right-title-text, .slide-title-left--title, .slide-title-left--subtitle, .curtain-right--title, .quote-bg-title, .diagram-title, .vl-text-photo-title'
   ).forEach(fitTitleText);
 }
 
